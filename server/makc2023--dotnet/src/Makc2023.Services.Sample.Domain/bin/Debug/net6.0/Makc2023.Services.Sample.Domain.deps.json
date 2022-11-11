@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Makc2023.Services.Sample.Domain/1.0.0": {
+        "runtime": {
+          "Makc2023.Services.Sample.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Makc2023.Services.Sample.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

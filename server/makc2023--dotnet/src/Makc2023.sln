@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Makc2023.Services.Sample.Domain", "Makc2023.Services.Sample.Domain\Makc2023.Services.Sample.Domain.csproj", "{F18F0FAD-96A7-4A8E-BF3E-122641C06F9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F18F0FAD-96A7-4A8E-BF3E-122641C06F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F18F0FAD-96A7-4A8E-BF3E-122641C06F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F18F0FAD-96A7-4A8E-BF3E-122641C06F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F18F0FAD-96A7-4A8E-BF3E-122641C06F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B139510-D0E2-4301-9C5D-1D82BAD0C2B1}
+	EndGlobalSection
+EndGlobal
