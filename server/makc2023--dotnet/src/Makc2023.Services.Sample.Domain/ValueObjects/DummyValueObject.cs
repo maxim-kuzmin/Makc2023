@@ -1,9 +1,9 @@
-﻿namespace Makc2023.Services.Sample.Domain.DummyMainAggregate;
+﻿namespace Makc2023.Services.Sample.Domain.ValueObjects;
 
 /// <summary>
-/// Макет части главной сущности.
+/// Фиктивный объект-значение.
 /// </summary>
-public class DummyMainPart : ValueObject
+public class DummyValueObject : ValueObject
 {
     #region Properties
 
@@ -30,7 +30,7 @@ public class DummyMainPart : ValueObject
     /// Конструктор.
     /// </summary>
     /// <param name="prop1">Свойство 1.</param>
-    public DummyMainPart(string prop1, string prop2, string prop3) =>
+    public DummyValueObject(string prop1, string prop2, string prop3) =>
         (Prop1, Prop2, Prop3) = (prop1, prop2, prop3);
 
     #endregion Constructors
@@ -41,6 +41,8 @@ public class DummyMainPart : ValueObject
     protected override IEnumerable<object> GetEqualityComponents()
     {
         yield return Prop1;
+        yield return Prop2;
+        yield return Prop3;
     }
 
     #endregion Protected methods

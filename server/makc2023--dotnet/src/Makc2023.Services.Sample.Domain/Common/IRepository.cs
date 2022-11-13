@@ -3,8 +3,7 @@
 /// <summary>
 /// Интерфейс репозитория.
 /// </summary>
-/// <typeparam name="T">Тип корня агрегата.</typeparam>
-public interface IRepository<T> where T : IAggregateRoot
+public interface IRepository
 {
     #region Properties
 

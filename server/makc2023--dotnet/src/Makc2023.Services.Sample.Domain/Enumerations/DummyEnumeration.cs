@@ -1,33 +1,33 @@
-﻿namespace Makc2023.Services.Sample.Domain.DummyMainAggregate;
+﻿namespace Makc2023.Services.Sample.Domain.Enumerations;
 
 /// <summary>
-/// Макет перечисления главной сущности.
+/// Фиктивное перечисление.
 /// </summary>
-public class DummyMainEnum : Enumeration
+public class DummyEnumeration : Enumeration
 {
     #region Fields
 
     /// <summary>
     /// Значение 1.
     /// </summary>
-    public static readonly DummyMainEnum Value1 = new(1, nameof(Value1).ToLowerInvariant());
+    public static readonly DummyEnumeration Value1 = new(1, nameof(Value1).ToLowerInvariant());
 
     /// <summary>
     /// Зеачение 2.
     /// </summary>
-    public static readonly DummyMainEnum Value2 = new(2, nameof(Value2).ToLowerInvariant());
+    public static readonly DummyEnumeration Value2 = new(2, nameof(Value2).ToLowerInvariant());
 
     /// <summary>
     /// Значение 3.
     /// </summary>
-    public static readonly DummyMainEnum Value3 = new(3, nameof(Value3).ToLowerInvariant());
+    public static readonly DummyEnumeration Value3 = new(3, nameof(Value3).ToLowerInvariant());
 
     #endregion Fields
 
     #region Constructors
 
     /// <inheritdoc/>
-    public DummyMainEnum(int id, string name)
+    public DummyEnumeration(int id, string name)
         : base(id, name)
     {
     }
@@ -40,7 +40,7 @@ public class DummyMainEnum : Enumeration
     /// Получить список элементов перечисления.
     /// </summary>
     /// <returns>Список элементов перечисления.</returns>
-    public static IEnumerable<DummyMainEnum> GetList()
+    public static IEnumerable<DummyEnumeration> GetList()
     {
         yield return Value1;
         yield return Value2;
@@ -52,8 +52,8 @@ public class DummyMainEnum : Enumeration
     /// </summary>
     /// <param name="name">Имя.</param>
     /// <returns>Элемент перечисления.</returns>
-    /// <exception cref="DomainException">Выбрасывается в случае, если элемент не найден.</exception>
-    public static DummyMainEnum GetById(int id)
+    /// <exception cref="DummyException">Выбрасывается в случае, если элемент не найден.</exception>
+    public static DummyEnumeration GetById(int id)
     {
         var result = GetList().SingleOrDefault(x => x.Id == id);
 
@@ -61,7 +61,7 @@ public class DummyMainEnum : Enumeration
         {
             string possibleIds = string.Join(",", GetList().Select(x => x.Id));
 
-            throw new DomainException($"Possible identifiers for {nameof(DummyMainEnum)}: {possibleIds}"); //makc//!!!//Localization//
+            throw new DummyException($"Possible identifiers for {nameof(DummyEnumeration)}: {possibleIds}"); //makc//!!!//Localization//
         }
 
         return result;
@@ -72,8 +72,8 @@ public class DummyMainEnum : Enumeration
     /// </summary>
     /// <param name="name">Имя.</param>
     /// <returns>Элемент перечисления.</returns>
-    /// <exception cref="DomainException">Выбрасывается в случае, если элемент не найден.</exception>
-    public static DummyMainEnum GetByName(string name)
+    /// <exception cref="DummyException">Выбрасывается в случае, если элемент не найден.</exception>
+    public static DummyEnumeration GetByName(string name)
     {
         var result = GetList().SingleOrDefault(x => string.Equals(
             x.Name,
@@ -84,7 +84,7 @@ public class DummyMainEnum : Enumeration
         {
             string possibleNames = string.Join(",", GetList().Select(x => x.Name));
 
-            throw new DomainException($"Possible names for {nameof(DummyMainEnum)}: {possibleNames}"); //makc//!!!//Localization//
+            throw new DummyException($"Possible names for {nameof(DummyEnumeration)}: {possibleNames}"); //makc//!!!//Localization//
         }
 
         return result;
