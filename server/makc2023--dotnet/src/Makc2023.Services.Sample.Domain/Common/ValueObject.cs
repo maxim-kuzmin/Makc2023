@@ -1,10 +1,12 @@
-﻿namespace Makc2023.Services.Sample.Domain.SeedWork;
+﻿namespace Makc2023.Services.Sample.Domain.Common;
 
 /// <summary>
 /// Объект-значение.
 /// </summary>
 public abstract class ValueObject
 {
+    #region Protected methods
+
     protected static bool EqualOperator(ValueObject left, ValueObject right)
     {
         if (left is null ^ right is null)
@@ -21,6 +23,10 @@ public abstract class ValueObject
     }
 
     protected abstract IEnumerable<object> GetEqualityComponents();
+
+    #endregion Protected methods
+
+    #region Public methods
 
     public override bool Equals(object? obj)
     {
@@ -45,4 +51,6 @@ public abstract class ValueObject
     {
         return (MemberwiseClone() as ValueObject)!;
     }
+
+    #endregion Public methods
 }

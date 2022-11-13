@@ -1,9 +1,3 @@
-﻿global using MediatR;
-global using System;
-global using System.Collections.Generic;
-global using System.IO;
-global using System.Linq;
-global using System.Reflection;
-global using System.Net.Http;
-global using System.Threading;
-global using System.Threading.Tasks;
+﻿global using Makc2023.Services.Sample.Domain.Common;
+global using Makc2023.Services.Sample.Domain.Exceptions;
+global using MediatR;

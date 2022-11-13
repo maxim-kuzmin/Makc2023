@@ -1,4 +1,4 @@
-﻿namespace Makc2023.Services.Sample.Domain.SeedWork;
+﻿namespace Makc2023.Services.Sample.Domain.Common;
 
 /// <summary>
 /// Интерфейс единицы работы.
