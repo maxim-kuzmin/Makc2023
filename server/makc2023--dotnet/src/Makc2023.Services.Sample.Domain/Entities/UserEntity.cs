@@ -1,15 +1,11 @@
 ﻿namespace Makc2023.Services.Sample.Domain.Entities;
 
 /// <summary>
-/// Сущность "Фиктивное отношение многие ко многим".
+/// Сущность "Пользователь".
 /// 
-/// Служит для демонстрации связи многих экземпляров одной сущности
-/// со многими экземплярами другой сущности.
-/// 
-/// Многие экземпляры сущности "Фиктивное отношение многие ко многим"
-/// связаны со многими экземплярами сущности "Фиктивное главное".
+/// Учётная запись, используемая приложением для проверки прав доступа.
 /// </summary>
-public class DummyManyToManyEntity : Entity<int>
+public class UserEntity : Entity<int>
 {
     #region Properties
 
@@ -23,6 +19,16 @@ public class DummyManyToManyEntity : Entity<int>
     /// </summary>
     public string Name { get; private set; }
 
+    /// <summary>
+    /// Адрес электронной почты.
+    /// </summary>
+    public string Email { get; private set; }
+
+    /// <summary>
+    /// Признак блокировки.
+    /// </summary>
+    public bool IsBlocked { get; private set; }
+
     #endregion Properties    
 
     #region Constructors
@@ -33,11 +39,16 @@ public class DummyManyToManyEntity : Entity<int>
     /// <exception cref="NullReferenceException">
     /// Возникает, если NULL содержится в свойстве, которое не должно его содержать.
     /// </exception>
-    protected DummyManyToManyEntity()
+    protected UserEntity()
     {
         if (string.IsNullOrWhiteSpace(Name))
         {
             throw new NullReferenceException(nameof(Name));
+        }
+
+        if (string.IsNullOrWhiteSpace(Email))
+        {
+            throw new NullReferenceException(nameof(Email));
         }
     }
 
@@ -45,21 +56,29 @@ public class DummyManyToManyEntity : Entity<int>
     /// Конструктор.
     /// </summary>
     /// <param name="name">Имя.</param>
+    /// <param name="email">Адрес электронной почты.</param>
+    /// <param name="isBlocked">Признак блокировки.</param>
     /// <exception cref="ArgumentNullException">
     /// Возникает, если значение содержится в аргументе, который не должен его содержать.
     /// </exception>
-    public DummyManyToManyEntity(string name)
+    public UserEntity(string name, string email, bool isBlocked)
     {
         Name = string.IsNullOrWhiteSpace(name)
             ? throw new ArgumentNullException(nameof(name))
             : name;
+
+        Email = string.IsNullOrWhiteSpace(email)
+            ? throw new ArgumentNullException(nameof(email))
+            : email;
+
+        IsBlocked = isBlocked;
     }
 
     #endregion Constructors
 
     #region Public methods
 
-        /// <inheritdoc/>
+    /// <inheritdoc/>
     protected override int GetId() => Id;
 
     #endregion Public methods

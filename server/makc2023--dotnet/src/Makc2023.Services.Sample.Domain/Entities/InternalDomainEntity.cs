@@ -1,15 +1,11 @@
 ﻿namespace Makc2023.Services.Sample.Domain.Entities;
 
 /// <summary>
-/// Сущность "Фиктивное отношение многие ко многим".
+/// Сущность "Внутренний домен".
 /// 
-/// Служит для демонстрации связи многих экземпляров одной сущности
-/// со многими экземплярами другой сущности.
-/// 
-/// Многие экземпляры сущности "Фиктивное отношение многие ко многим"
-/// связаны со многими экземплярами сущности "Фиктивное главное".
+/// Часть бизнес-логики сервиса, на действия с которой пользователю требуются разрешения.
 /// </summary>
-public class DummyManyToManyEntity : Entity<int>
+public class InternalDomainEntity : Entity<int>
 {
     #region Properties
 
@@ -33,7 +29,7 @@ public class DummyManyToManyEntity : Entity<int>
     /// <exception cref="NullReferenceException">
     /// Возникает, если NULL содержится в свойстве, которое не должно его содержать.
     /// </exception>
-    protected DummyManyToManyEntity()
+    protected InternalDomainEntity()
     {
         if (string.IsNullOrWhiteSpace(Name))
         {
@@ -48,7 +44,7 @@ public class DummyManyToManyEntity : Entity<int>
     /// <exception cref="ArgumentNullException">
     /// Возникает, если значение содержится в аргументе, который не должен его содержать.
     /// </exception>
-    public DummyManyToManyEntity(string name)
+    public InternalDomainEntity(string name)
     {
         Name = string.IsNullOrWhiteSpace(name)
             ? throw new ArgumentNullException(nameof(name))

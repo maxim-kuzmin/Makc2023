@@ -51,9 +51,7 @@ public class DummyMainDummyManyToManyJoin
     /// <exception cref="ArgumentOutOfRangeException">
     /// Возникает, если ненулевое значение содержится в аргументе, который не должен его содержать.
     /// </exception>
-    public DummyMainDummyManyToManyJoin(
-        int dummyMainId,
-        int dummyManyToManyId)
+    public DummyMainDummyManyToManyJoin(int dummyMainId, int dummyManyToManyId)
     {
         DummyMainId = dummyMainId < 1
             ? throw new ArgumentOutOfRangeException(nameof(dummyMainId))
