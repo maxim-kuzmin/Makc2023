@@ -1,0 +1,527 @@
+# Инфраструктура
+---
+infrastructure:
+
+  Cashe:
+    name: Кэш
+    description: >
+      Кэширование данных.
+    implementation: >
+      Хранилище данных в памяти "Redis": https://redis.io/.
+
+  Identity:
+    name: Идентичность
+    description: >
+      Регистрация пользователей.
+
+      Аутентификация по технологии единого входа (SSO) в соответствии со стандартом "OpenID Connect":
+      https://habr.com/ru/company/nixys/blog/566910/.
+    implementation: >
+      Постащик услуг SSO "Keycloak": https://www.keycloak.org/.
+
+  MessageBrocker:
+    name: Брокер сообщений
+    description: >
+      Обмен сообщениями в очереди.
+    implementation: >
+      Брокер сообщений "RabbitMQ": https://rabbitmq.com/.
+
+  SqlDatbaseServer:
+    name: Сервер баз данных SQL
+    description: >
+      Управление реляционными базами данных.
+    implementation: >
+      СУБД "PostgreSQL": https://www.postgresql.org/.
+
+# Сервисы
+---
+services:
+
+  Gateway:
+    id: 3
+    name: Шлюз
+    description: >
+      Предназначен для соединения частей функциональности других сервисов.
+    entities:
+
+      InternalDomain:
+        name: Внутренний домен
+        description: >
+          Часть бизнес-логики сервиса, на действия с которой пользователю требуются разрешения.
+        Properties:
+          Id:
+            name: Идентификатор
+            type: int
+          Name:
+            name: Имя
+            type: string
+
+      InternalPermission:
+        name: Внутреннее разрешение
+        description: >
+          Разрешение внутри сервиса на действие во внутреннем домене.
+        properties:
+          Id:
+            name: Идентификатор
+            type: int
+          Name:
+            name: Имя
+            type: string                                        
+          InternalDomainId:
+            name: Идентификатор внутреннего сервиса
+            type: int       
+
+      User:
+        name: Пользователь
+        description: >
+          Учётная запись, используемая приложением для проверки идентичности.
+        properties:
+          Id:
+            name: Идентификатор
+            type: int
+          Name:
+            name: Имя
+            type: string
+          Email:
+            name: Адрес электронной почты
+            type: string
+          IsBlocked:
+            name: Признак блокировки
+            type: bool
+
+      UserInternalPermission:
+        name: Внутреннее разрешение пользователя
+        description: >
+          Связывает пользователя с внутренним разрешением.
+
+          Используется для разграничения прав доступа в доменах сервиса.
+        properties:
+          UserId:
+            name: Идентификатор пользователя
+            type: int
+          InternalPermissionId:
+            name: Идентификатор внутреннего разрешения
+            type: int
+
+  Sample:
+    id: 2
+    name: Образец
+    description: >
+      Служит образцом для копирования при создании нового сервиса.
+
+    entities:
+
+      InternalDomainEntity:
+        name: Сущность "Внутренний домен"
+        description: >
+          Часть бизнес-логики сервиса, на действия с которой пользователю требуются разрешения.
+        Properties:
+          Id:
+            name: Идентификатор
+            type: int
+          Name:
+            name: Имя
+            type: string
+        table: InternalDomain
+
+      InternalPermissionEntity:
+        name: Сущность "Внутреннее разрешение"
+        description: >
+          Разрешение внутри сервиса на действие во внутреннем домене.
+        properties:
+          Id:
+            name: Идентификатор
+            type: int
+          Name:
+            name: Имя
+            type: string                                        
+          InternalDomainId:
+            name: Идентификатор экземпляра сущности "Внутренний домен"
+            type: int       
+        table: InternalPermission
+
+      UserEntity:
+        name: Сущность "Пользователь"
+        description: >
+          Учётная запись, используемая приложением для проверки идентичности.
+        properties:
+          Id:
+            name: Идентификатор
+            type: int
+          Name:
+            name: Имя
+            type: string
+          Email:
+            name: Адрес электронной почты
+            type: string
+          IsBlocked:
+            name: Признак блокировки
+            type: bool
+        table: User
+
+      UserInternalPermissionEntity:
+        name: Сущность "Внутреннее разрешение пользователя"
+        description: >
+          Связывает экземпляр сущности "Пользователь" с экземпляром сущности "Внутреннее разрешение".
+
+          Используется для разграничения прав доступа в доменах сервиса.
+        properties:
+          UserId:
+            name: Идентификатор экземпляра сущности "Пользователь"
+            type: int
+          InternalPermissionId:
+            name: Идентификатор экземпляра сущности "Внутреннее разрешение"
+            type: int
+        table: UserInternalPermission
+
+      DummyMainEntity:
+        name: Сущность "Фиктивное главное"
+        description: >
+          Содержит в себе свойства наиболее распространённых типов данных.        
+        properties:
+          Id:
+            name: Идентификатор
+            type: int
+          Name:
+            name: Имя
+            type: string
+          DummyOneToManyId:
+            name: Идентификатор экземпляра сущности "Фиктивное отношение один ко многим"
+            type: int
+          PropBoolean:
+            name: Свойство, содержащее логическое значение
+            type: bool
+          PropBooleanNullable:
+            name: Свойство, содержащее логическое значение или NULL
+            type: bool?      
+          PropDate:
+            name: Свойство, содержащее дату
+            type: DateTime
+          PropDateNullable:
+            name: Свойство, содержащее дату или NULL
+            type: DateTime?      
+          PropDateTime:
+            name: Свойство, содержащее дату и время с часовым поясом
+            type: DateTimeOffset 
+          PropDateTimeNullable:
+            name: Свойство, содержащее дату и время с часовым поясом или NULL
+            type: DateTimeOffset?      
+          PropDecimal:
+            name: Свойство, содержащее десятичное дробное число
+            type: decimal
+          PropDecimalNullable:
+            name: Свойство, содержащее десятичное дробное число или NULL
+            type: decimal?      
+          PropInt32:
+            name: Свойство, содержащее целое 32-разрядное число
+            type: int
+          PropInt32Nullable:
+            name: Свойство, содержащее целое 32-разрядное число или NULL
+            type: int?      
+          PropInt64:
+            name: Свойство, содержащее целое 64-разрядное число
+            type: int
+          PropInt64Nullable:
+            name: Свойство, содержащее целое 64-разрядное число или NULL
+            type: int?      
+          PropString:
+            name: Свойство, содержащее строку
+            type: string
+          PropStringNullable:
+            name: Свойство, содержащее строку или NULL
+            type: string?
+        table: DummyMain     
+
+      DummyManyToManyEntity:
+        name: Сущность "Фиктивное отношение многие ко многим"
+        description: >
+          Служит для демонстрации связи многих экземпляров одной сущности
+          со многими экземплярами другой сущности.
+
+          Многие экземпляры сущности "Фиктивное отношение многие ко многим"
+          связаны со многими экземплярами сущности "Фиктивное главное".
+        properties:
+          Id:
+            name: Идентификатор
+            type: int
+          Name:
+            name: Имя
+            type: string        
+        table: DummyManyToMany
+
+      DummyOneToManyEntity:
+        name: Сущность "Фиктивное отношение один ко многим"
+        description: >
+          Служит для демонстрации связи одного экземпляра одной сущности
+          со многими экземплярами другой сущности.
+
+          Один экземпляр сущности "Фиктивное отношение один ко многим"
+          связан со многими экземплярами сущности "Фиктивное главное".
+        properties:
+          Id:
+            name: Идентификатор
+            type: int
+          Name:
+            name: Имя
+            type: string
+      table: DummyOneToMany
+
+      DummyTreeEntity:
+        name: Сущность "Фиктивное дерево"
+        description: >
+          Служит для демонстрации иерархической структуры данных.
+        properties:
+          Id:
+            name: Идентификатор
+            type: int
+          Name:
+            name: Имя
+            type: string
+          ParentId:
+            name: Идентификатор родителя
+            type: int?
+          TreeChildCount:
+            name: Число детей в дереве
+            type: int
+          TreeDescendantCount:
+            name: Число потомков в дереве
+            type: int
+          TreeLevel:
+            name: Уровень в дереве
+            type: int
+          TreePath:
+            name: Путь в дереве
+            type: string
+          TreePosition:
+            name: Позиция в дереве
+            type: int
+          TreeSort:
+            name: Сортировка в дереве
+            type: string              
+        table: DummyTree
+
+    joins:
+
+      DummyMainDummyManyToManyJoin:
+        name: Соединение "Фиктивное отношение многие ко многим фиктивного главного".
+        description: >
+          Служит для соединения экземпляров сущностей "Фиктивное главное" и
+          "Фиктивное отношение многие ко многим".
+        properties:
+          IdOfDummyMainEntity:
+            name: Идентификатор экземпляра сущности "Фиктивное главное"
+            type: int
+          IdOfDummyManyToManyEntity:
+            name: Идентификатор экземпляра сущности "Фиктивное отношение многие ко многим"
+            type: int
+        table: DummyMainDummyManyToMany
+
+      DummyTreeLinkJoin:
+        name: Соединение "Связь фиктивного дерева"
+        description: >
+          Служит для соединения экземпляров сущности "Фиктивного дерева" с каждым из его предков,
+          что позволяет производить выборку предков и потомков экземпляра без рекурсии.
+        properties:
+          Id:
+            name: Идентификатор
+            type: int
+          ParentId:
+            name: Идентификатор родителя
+            type: int
+        table: DummyTreeLink
+
+  Security:    
+    id: 1
+    name: Безопасность
+    description: >
+      Управление пользователями и ролями.
+      
+      Загрузка из сервисов их внутренних доменов и предназначенных для них внутренних разрешений.
+
+      Под внутренними доменами сервисов понимаются все возможные части их бизнес-логики,
+      на действия с которыми пользователю требуются разрешения.
+
+      Под внутренними разрешениями понимаются все возможные разрешения,
+      которые выделяются сервисами для действий в их внутренних доменах.
+
+      Назначение ролям разрешений.
+
+      Назначение ролей пользователям.
+    entities:
+
+      InternalDomain:
+        name: Внутренний домен
+        description: >
+          Часть бизнес-логики сервиса, на действия с которой пользователю требуются разрешения.
+        Properties:
+          Id:
+            name: Идентификатор
+            type: int
+          Name:
+            name: Имя
+            type: string
+
+      InternalPermission:
+        name: Внутреннее разрешение
+        description: >
+          Разрешение внутри сервиса на действие во внутреннем домене.
+        properties:
+          Id:
+            name: Идентификатор
+            type: int
+          Name:
+            name: Имя
+            type: string                                        
+          InternalDomainId:
+            name: Идентификатор внутреннего сервиса
+            type: int       
+
+      Service:
+        name: Сервис
+        description: >
+          Часть приложения, которая реализует функциональность одной из частей бизнес логики приложения.
+        properties:
+          Id:
+            name: Идентификатор
+            type: int
+          Name:
+            name: Имя
+            type: string
+
+      Domain:
+        name: Домен
+        description: >
+          Часть бизнес-логики приложения, на действия с которой пользователю требуются разрешения.
+
+          Связывает сервис с его внутренним доменом.
+        Properties:
+          Id:
+            name: Идентификатор
+            type: int
+          ServiceId:
+            name: Идентификатор сервиса
+            type: int
+          InternalDomainId:
+            name: Идентификатор внутреннего домена
+            type: int
+          InternalDomainName:
+            name: Имя внутреннего домена
+            type: string
+
+      Permission:
+        name: Разрешение
+        description: >
+          Разрешение внутри приложения на действие в домене.
+
+          Связывает домен с его внутренним разрешением.
+        Properties:
+          Id:
+            name: Идентификатор
+            type: int
+          DomainId:
+            name: Идентификатор домена
+            type: int
+          InternalPermissionId:
+            name: Идентификатор внутреннего разрешения
+            type: int
+          InternalPermissionName:
+            name: Имя внутреннего разрешения
+            type: string
+
+      Role:
+        name: Роль
+        description: >
+          Совокупность разрешений.
+        properties:
+          Id:
+            name: Идентификатор
+            type: int
+          Name:
+            name: Имя
+            type: string
+
+      RolePermission:
+        name: Разрешение роли
+        description: >
+          Связывает роль с разрешением.
+        properties:
+          RoleId:
+            name: Идентификатор роли
+            type: int
+          PermissionId:
+            name: Идентификатор разрешения
+            type: int
+
+      LoginProvider:
+        name: Поставщик входа
+        description: >
+          Поставщик услуги обеспечения входа в приложение.
+          
+          Проверяет пароль пользователя и генерирует JWT-токен доступа.
+        properties:
+          Id:
+            name: Идентификатор
+            type: int
+          Name:
+            name: Имя
+            type: string
+
+      User:
+        name: Пользователь
+        description: >
+          Учётная запись, используемая приложением для проверки идентичности.
+        properties:
+          Id:
+            name: Идентификатор
+            type: int
+          Name:
+            name: Имя
+            type: string
+          Email:
+            name: Адрес электронной почты
+            type: string
+          IsBlocked:
+            name: Признак блокировки
+            type: bool
+
+      UserRole:
+        name: Роль пользователя
+        description: >
+          Связывает пользователя с ролью.
+        properties:
+          UserId:
+            name: Идентификатор пользователя
+            type: int
+          RoleId:
+            name: Идентификатор роли
+            type: int
+
+      UserLogin:
+        name: Вход пользователя
+        description: >
+          Связывает пользователя с ключом, предоставляемым поставщиком для входа в приложение.
+        properties:
+          UserId:
+            name: Идентификатор пользователя
+            type: int
+          LoginProviderId:
+            name: Идентификатор поставщика входа
+            type: int
+          ProviderKey:
+            name: Ключ поставщика
+            type: string
+
+      UserInternalPermission:
+        name: Внутреннее разрешение пользователя
+        description: >
+          Связывает пользователя с внутренним разрешением.
+
+          Используется для разграничения прав доступа в доменах сервиса.
+        properties:
+          UserId:
+            name: Идентификатор пользователя
+            type: int
+          InternalPermissionId:
+            name: Идентификатор внутреннего разрешения
+            type: int
+...

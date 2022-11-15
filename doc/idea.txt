@@ -1,0 +1,40 @@
+Разрешения:
+
+Services:
+    Identity:
+        Id: 1
+        Name: Идентичность
+        InternalDomains:
+            User:
+                Id: 1
+                Name: Пользователь
+                InternalPermissions:
+                    Read:
+                        Id: 1
+                        Name: Чтение
+                    Write:
+                        Id: 2
+                        Name: Запись
+                    Block:
+                        Id: 3
+                        Name: Блокировка
+            Role:
+                Id: 2
+                Name: Роль
+                InternalPermissions:
+                    Read:
+                        Id: 4
+                        Name: Чтение
+                    Write:
+                        Id: 5
+                        Name: Запись
+            Permission:
+                Id: 3
+                Name: Разрешение
+                InternalPermissions:
+                    Read:
+                        Id: 6
+                        Name: Чтение
+                    Write:
+                        Id: 7
+                        Name: Запись
