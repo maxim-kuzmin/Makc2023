@@ -3,41 +3,15 @@
 /// <summary>
 /// Сущность.
 /// </summary>
-public abstract class Entity
+public abstract class Entity<T>
 {
     #region Fields
 
-    private List<INotification>? _domainEvents;
+    private List<INotification>? _events;
 
-    int _id;
-
-    int? _requestedHashCode;
+    int? _hashCode;
 
     #endregion Fields
-
-    #region Properties
-
-    /// <summary>
-    /// Доменные события.
-    /// </summary>
-    public IReadOnlyCollection<INotification>? DomainEvents => _domainEvents?.AsReadOnly();
-
-    /// <summary>
-    /// Идентификатор.
-    /// </summary>
-    public virtual int Id
-    {
-        get
-        {
-            return _id;
-        }
-        protected set
-        {
-            _id = value;
-        }
-    }
-
-    #endregion Properties
 
     #region Operators
 
@@ -47,7 +21,7 @@ public abstract class Entity
     /// <param name="left">Левый операнд.</param>
     /// <param name="right">Правый операнд.</param>
     /// <returns>Результат проверки на равенство.</returns>
-    public static bool operator ==(Entity left, Entity right)
+    public static bool operator ==(Entity<T> left, Entity<T> right)
     {
         if (Equals(left, null))
         {
@@ -65,7 +39,7 @@ public abstract class Entity
     /// <param name="left">Левый операнд.</param>
     /// <param name="right">Правый операнд.</param>
     /// <returns>Результат проверки на неравенство.</returns>
-    public static bool operator !=(Entity left, Entity right)
+    public static bool operator !=(Entity<T> left, Entity<T> right)
     {
         return !(left == right);
     }
@@ -75,28 +49,28 @@ public abstract class Entity
     #region Public methods
 
     /// <summary>
-    /// Добавить доменное событие.
+    /// Добавить событие.
     /// </summary>
     /// <param name="eventItem"></param>
-    public void AddDomainEvent(INotification eventItem)
+    public void AddEvent(INotification eventItem)
     {
-        _domainEvents ??= new List<INotification>();
+        _events ??= new List<INotification>();
 
-        _domainEvents.Add(eventItem);
+        _events.Add(eventItem);
     }
 
     /// <summary>
-    /// Очистить доменные события.
+    /// Очистить события.
     /// </summary>
-    public void ClearDomainEvents()
+    public void ClearEvents()
     {
-        _domainEvents?.Clear();
+        _events?.Clear();
     }
 
     /// <inheritdoc/>
     public override bool Equals(object? obj)
     {
-        if (obj == null || obj is not Entity)
+        if (obj == null || obj is not Entity<T>)
         {
             return false;
         }
@@ -111,7 +85,7 @@ public abstract class Entity
             return false;
         }
 
-        Entity item = (Entity)obj;
+        Entity<T> item = (Entity<T>)obj;
 
         if (item.IsTransient() || IsTransient())
         {
@@ -119,27 +93,37 @@ public abstract class Entity
         }
         else
         {
-            return item.Id == Id;
+            return item.GetId()!.Equals(GetId());
         }
     }
+
+    /// <summary>
+    /// Получить события.
+    /// </summary>
+    public IReadOnlyCollection<INotification>? GetEvents() => _events?.AsReadOnly();
 
     /// <inheritdoc/>
     public override int GetHashCode()
     {
-        if (!IsTransient())
-        {
-            if (!_requestedHashCode.HasValue)
-            {
-                _requestedHashCode = Id.GetHashCode() ^ 31; // XOR for random distribution (https://ericlippert.com/2011/02/28/guidelines-and-rules-for-gethashcode/)
-            }
-
-            return _requestedHashCode.Value;
-        }
-        else
+        if (IsTransient())
         {
             return base.GetHashCode();
         }
+        else
+        {
+            if (!_hashCode.HasValue)
+            {
+                _hashCode = GetId()!.GetHashCode() ^ 31; // XOR for random distribution (https://ericlippert.com/2011/02/28/guidelines-and-rules-for-gethashcode/)
+            }
+
+            return _hashCode.Value;
+        }
     }
+
+    /// <summary>
+    /// Получить идентификатор.
+    /// </summary>
+    protected abstract T GetId();
 
     /// <summary>
     /// Проверить на транзитивность.
@@ -147,16 +131,18 @@ public abstract class Entity
     /// <returns>Признак транзитивности.</returns>
     public bool IsTransient()
     {
-        return Id == default;
+        T id = GetId();
+
+        return id is null || id.Equals(default);
     }
 
     /// <summary>
-    /// Удалить доменное событие.
+    /// Удалить событие.
     /// </summary>
     /// <param name="eventItem">Событие.</param>
-    public void RemoveDomainEvent(INotification eventItem)
+    public void RemoveEvent(INotification eventItem)
     {
-        _domainEvents?.Remove(eventItem);
+        _events?.Remove(eventItem);
     }
 
     #endregion Public methods
