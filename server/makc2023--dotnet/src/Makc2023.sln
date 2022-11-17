@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Makc2023.Services.Sample.Domain", "Makc2023.Services.Sample.Domain\Makc2023.Services.Sample.Domain.csproj", "{F18F0FAD-96A7-4A8E-BF3E-122641C06F9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.Domain", "Makc2023.Services.Sample.Domain\Makc2023.Services.Sample.Domain.csproj", "{F18F0FAD-96A7-4A8E-BF3E-122641C06F9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Makc2023.Core", "Makc2023.Core\Makc2023.Core.csproj", "{B3D98836-284C-43B9-A0B1-FCE85FB449E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F18F0FAD-96A7-4A8E-BF3E-122641C06F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F18F0FAD-96A7-4A8E-BF3E-122641C06F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F18F0FAD-96A7-4A8E-BF3E-122641C06F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3D98836-284C-43B9-A0B1-FCE85FB449E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3D98836-284C-43B9-A0B1-FCE85FB449E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3D98836-284C-43B9-A0B1-FCE85FB449E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3D98836-284C-43B9-A0B1-FCE85FB449E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

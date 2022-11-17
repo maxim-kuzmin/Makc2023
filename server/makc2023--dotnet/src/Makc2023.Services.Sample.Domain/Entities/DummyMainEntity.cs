@@ -5,8 +5,14 @@
 /// 
 /// Содержит в себе свойства наиболее распространённых типов данных.
 /// </summary>
-public class DummyMainEntity : Entity<int>
+public class DummyMainEntity : Entity<int>, IAggregateRoot
 {
+    #region Fields
+
+    private readonly List<DummyManyToOneEntity> _dummyManyToOneList;
+
+    #endregion Fields
+
     #region Properties
 
     /// <summary>
@@ -106,6 +112,30 @@ public class DummyMainEntity : Entity<int>
 
     #endregion Properties    
 
+    #region Navigation properties
+
+    /// <summary>
+    /// Список элементов соединения "Фиктивное отношение многие ко многим фиктивного главного".
+    /// </summary>
+    public List<DummyMainDummyManyToManyJoin>? DummyMainDummyManyToManyList { get; set; }
+
+    /// <summary>
+    /// Список элементов сущности "Фиктивное отношение многие ко многим".
+    /// </summary>
+    public ICollection<DummyManyToManyEntity>? DummyManyToManyList { get; set; }
+
+    /// <summary>
+    /// Список элементов сущности "Фиктивное отношение многие к одному".
+    /// </summary>
+    public IReadOnlyCollection<DummyManyToOneEntity> DummyManyToOneList => _dummyManyToOneList;
+
+    /// <summary>
+    /// Экземпляр сущности "Фиктивное отношение один ко многим".
+    /// </summary>
+    public DummyOneToManyEntity? DummyOneToMany { get; set; }
+
+    #endregion Navigation properties
+
     #region Constructors
 
     /// <summary>
@@ -119,6 +149,8 @@ public class DummyMainEntity : Entity<int>
     /// </exception>
     protected DummyMainEntity()
     {
+        _dummyManyToOneList = new();
+
         if (string.IsNullOrWhiteSpace(Name))
         {
             throw new NullReferenceException(nameof(Name));
@@ -190,7 +222,7 @@ public class DummyMainEntity : Entity<int>
         int? propInt64Nullable,
         string propString,
         string? propStringNullable,
-        DummyValueObject propValueObject)
+        DummyValueObject propValueObject) : this()
 
     {
         Name = string.IsNullOrWhiteSpace(name)
@@ -231,8 +263,31 @@ public class DummyMainEntity : Entity<int>
 
     #region Public methods
 
+    /// <summary>
+    /// Добавить экземпляр сущности "Фиктивное отношение многие к одному".
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns>Добавленный экземпляр.</returns>
+    public DummyManyToOneEntity AddDummyManyToOne(string name)
+    {
+        var result = _dummyManyToOneList.Where(x => x.Name == name).SingleOrDefault();
+
+        if (result is null)
+        {
+            result = new DummyManyToOneEntity(name);
+
+            _dummyManyToOneList.Add(result);
+        }
+
+        return result;
+    }
+
+    #endregion Public methods
+
+    #region Protected methods
+
     /// <inheritdoc/>
     protected override int GetId() => Id;
 
-    #endregion Public methods
+    #endregion Protected methods
 }

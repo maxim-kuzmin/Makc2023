@@ -5,7 +5,7 @@
 /// 
 /// Служит для демонстрации иерархической структуры данных.
 /// </summary>
-public class DummyTreeEntity : Entity<int>
+public class DummyTreeEntity : Entity<int>, IAggregateRoot
 {
     #region Properties
 
@@ -56,6 +56,30 @@ public class DummyTreeEntity : Entity<int>
 
     #endregion Properties    
 
+    #region Navigation properties
+
+    /// <summary>
+    /// Дети.
+    /// </summary>
+    public List<DummyTreeEntity>? Children { get; set; }
+
+    /// <summary>
+    /// Связи по идентификатору.
+    /// </summary>
+    public List<DummyTreeLinkJoin>? LinksById { get; set; }
+
+    /// <summary>
+    /// Связи по идентификатору родителя.
+    /// </summary>
+    public List<DummyTreeLinkJoin>? LinksByParentId { get; set; }
+
+    /// <summary>
+    /// Родитель.
+    /// </summary>
+    public DummyTreeEntity? Parent { get; set; }
+
+    #endregion Navigation properties
+
     #region Constructors
 
     /// <summary>
@@ -98,7 +122,7 @@ public class DummyTreeEntity : Entity<int>
         int treeLevel,
         string treePath,
         int treePosition,
-        string treeSort)
+        string treeSort) : this()
     {
         Name = string.IsNullOrWhiteSpace(name)
             ? throw new ArgumentNullException(nameof(name))
@@ -127,10 +151,10 @@ public class DummyTreeEntity : Entity<int>
 
     #endregion Constructors
 
-    #region Public methods
+    #region Protected methods
 
     /// <inheritdoc/>
     protected override int GetId() => Id;
 
-    #endregion Public methods
+    #endregion Protected methods
 }

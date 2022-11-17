@@ -7,6 +7,12 @@
 /// </summary>
 public class InternalDomainEntity : Entity<int>
 {
+    #region Fields
+
+    private readonly List<InternalPermissionEntity> _internalPermissionList;
+
+    #endregion Fields
+
     #region Properties
 
     /// <summary>
@@ -21,6 +27,15 @@ public class InternalDomainEntity : Entity<int>
 
     #endregion Properties    
 
+    #region Navigation properties
+
+    /// <summary>
+    /// Список элементов сущности "Внутреннее разрешение".
+    /// </summary>
+    public IReadOnlyCollection<InternalPermissionEntity> InternalPermissionList => _internalPermissionList;
+
+    #endregion Navigation properties
+
     #region Constructors
 
     /// <summary>
@@ -31,6 +46,8 @@ public class InternalDomainEntity : Entity<int>
     /// </exception>
     protected InternalDomainEntity()
     {
+        _internalPermissionList = new();
+
         if (string.IsNullOrWhiteSpace(Name))
         {
             throw new NullReferenceException(nameof(Name));
@@ -44,7 +61,7 @@ public class InternalDomainEntity : Entity<int>
     /// <exception cref="ArgumentNullException">
     /// Возникает, если значение содержится в аргументе, который не должен его содержать.
     /// </exception>
-    public InternalDomainEntity(string name)
+    public InternalDomainEntity(string name) : this()
     {
         Name = string.IsNullOrWhiteSpace(name)
             ? throw new ArgumentNullException(nameof(name))
@@ -53,10 +70,10 @@ public class InternalDomainEntity : Entity<int>
 
     #endregion Constructors
 
-    #region Public methods
+    #region Protected methods
 
-        /// <inheritdoc/>
+    /// <inheritdoc/>
     protected override int GetId() => Id;
 
-    #endregion Public methods
+    #endregion Protected methods
 }

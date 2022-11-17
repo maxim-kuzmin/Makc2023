@@ -31,6 +31,20 @@ public class UserEntity : Entity<int>
 
     #endregion Properties    
 
+    #region Navigation properties
+
+    /// <summary>
+    /// Список элементов сущности "Внутреннее разрешение".
+    /// </summary>
+    public ICollection<InternalPermissionEntity>? InternalPermissionList { get; set; }
+
+    /// <summary>
+    /// Список элементов соединения "Внутреннее разрешение пользователя".
+    /// </summary>
+    public List<UserInternalPermissionJoin>? UserInternalPermissionList { get; set; }
+
+    #endregion Navigation properties
+
     #region Constructors
 
     /// <summary>
@@ -61,7 +75,7 @@ public class UserEntity : Entity<int>
     /// <exception cref="ArgumentNullException">
     /// Возникает, если значение содержится в аргументе, который не должен его содержать.
     /// </exception>
-    public UserEntity(string name, string email, bool isBlocked)
+    public UserEntity(string name, string email, bool isBlocked) : this()
     {
         Name = string.IsNullOrWhiteSpace(name)
             ? throw new ArgumentNullException(nameof(name))
@@ -76,10 +90,10 @@ public class UserEntity : Entity<int>
 
     #endregion Constructors
 
-    #region Public methods
+    #region Protected methods
 
     /// <inheritdoc/>
     protected override int GetId() => Id;
 
-    #endregion Public methods
+    #endregion Protected methods
 }

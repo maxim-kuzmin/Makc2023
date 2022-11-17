@@ -26,6 +26,20 @@ public class InternalPermissionEntity : Entity<int>
 
     #endregion Properties    
 
+    #region Navigation properties
+
+    /// <summary>
+    /// Список элементов соединения "Внутреннее разрешение пользователя".
+    /// </summary>
+    public List<UserInternalPermissionJoin>? UserInternalPermissionList { get; set; }
+
+    /// <summary>
+    /// Список элементов сущности "Пользователь".
+    /// </summary>
+    public ICollection<UserEntity>? UserList { get; set; }
+
+    #endregion Navigation properties
+
     #region Constructors
 
     /// <summary>
@@ -61,7 +75,7 @@ public class InternalPermissionEntity : Entity<int>
     /// <exception cref="ArgumentOutOfRangeException">
     /// Возникает, если ненулевое значение содержится в аргументе, который не должен его содержать.
     /// </exception>
-    public InternalPermissionEntity(string name, int internalDomainId)
+    public InternalPermissionEntity(string name, int internalDomainId) : this()
     {
         Name = string.IsNullOrWhiteSpace(name)
             ? throw new ArgumentNullException(nameof(name))
@@ -74,10 +88,10 @@ public class InternalPermissionEntity : Entity<int>
 
     #endregion Constructors
 
-    #region Public methods
+    #region Protected methods
 
     /// <inheritdoc/>
     protected override int GetId() => Id;
 
-    #endregion Public methods
+    #endregion Protected methods
 }

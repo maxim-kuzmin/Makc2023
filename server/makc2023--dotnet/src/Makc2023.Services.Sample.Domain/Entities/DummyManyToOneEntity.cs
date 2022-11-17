@@ -1,15 +1,15 @@
 ﻿namespace Makc2023.Services.Sample.Domain.Entities;
 
 /// <summary>
-/// Сущность "Фиктивное отношение один ко многим".
+/// Сущность "Фиктивное отношение многие к одному".
 /// 
-/// Служит для демонстрации связи одного экземпляра одной сущности
-/// со многими экземплярами другой сущности.
-///
-/// Один экземпляр сущности "Фиктивное отношение один ко многим"
-/// связан со многими экземплярами сущности "Фиктивное главное".
+/// Служит для демонстрации связи многих экземпляров одной сущности
+/// со одним экземпляром другой сущности.
+/// 
+/// Многие экземпляры сущности "Фиктивное отношение многие к одному"
+/// связаны с одним экземпляром сущности "Фиктивное главное".
 /// </summary>
-public class DummyOneToManyEntity : Entity<int>, IAggregateRoot
+public class DummyManyToOneEntity : Entity<int>
 {
     #region Properties
 
@@ -25,15 +25,6 @@ public class DummyOneToManyEntity : Entity<int>, IAggregateRoot
 
     #endregion Properties    
 
-    #region Navigation properties
-
-    /// <summary>
-    /// Список экземпляров сущности "Фиктивное главное".
-    /// </summary>
-    public List<DummyMainEntity>? DummyMainList { get; set; }
-
-    #endregion Navigation properties
-
     #region Constructors
 
     /// <summary>
@@ -42,7 +33,7 @@ public class DummyOneToManyEntity : Entity<int>, IAggregateRoot
     /// <exception cref="NullReferenceException">
     /// Возникает, если NULL содержится в свойстве, которое не должно его содержать.
     /// </exception>
-    protected DummyOneToManyEntity()
+    protected DummyManyToOneEntity()
     {
         if (string.IsNullOrWhiteSpace(Name))
         {
@@ -57,7 +48,7 @@ public class DummyOneToManyEntity : Entity<int>, IAggregateRoot
     /// <exception cref="ArgumentNullException">
     /// Возникает, если значение содержится в аргументе, который не должен его содержать.
     /// </exception>
-    public DummyOneToManyEntity(string name) : this()
+    public DummyManyToOneEntity(string name) : this()
     {
         Name = string.IsNullOrWhiteSpace(name)
             ? throw new ArgumentNullException(nameof(name))

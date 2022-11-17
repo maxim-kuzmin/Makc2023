@@ -234,6 +234,23 @@ services:
             type: string        
         table: DummyManyToMany
 
+      DummyManyToOneEntity:
+        name: Сущность "Фиктивное отношение многие к одному"
+        description: >
+          Служит для демонстрации связи многих экземпляров одной сущности
+          со одним экземпляром другой сущности.
+
+          Многие экземпляры сущности "Фиктивное отношение многие к одному"
+          связаны с одним экземпляром сущности "Фиктивное главное".
+        properties:
+          Id:
+            name: Идентификатор
+            type: int
+          Name:
+            name: Имя
+            type: string        
+        table: DummyManyToOne
+
       DummyOneToManyEntity:
         name: Сущность "Фиктивное отношение один ко многим"
         description: >

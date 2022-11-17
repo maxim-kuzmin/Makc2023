@@ -1,4 +1,4 @@
-﻿namespace Makc2023.Services.Sample.Domain.Common;
+﻿namespace Makc2023.Core.Domain;
 
 /// <summary>
 /// Объект-значение.

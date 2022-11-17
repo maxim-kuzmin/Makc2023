@@ -1,4 +1,4 @@
-﻿namespace Makc2023.Services.Sample.Domain.Common;
+﻿namespace Makc2023.Core.Domain;
 
 /// <summary>
 /// Сущность.
@@ -121,11 +121,6 @@ public abstract class Entity<T>
     }
 
     /// <summary>
-    /// Получить идентификатор.
-    /// </summary>
-    protected abstract T GetId();
-
-    /// <summary>
     /// Проверить на транзитивность.
     /// </summary>
     /// <returns>Признак транзитивности.</returns>
@@ -146,4 +141,13 @@ public abstract class Entity<T>
     }
 
     #endregion Public methods
+
+    #region Protected methods
+
+    /// <summary>
+    /// Получить идентификатор.
+    /// </summary>
+    protected abstract T GetId();
+
+    #endregion Protected methods
 }

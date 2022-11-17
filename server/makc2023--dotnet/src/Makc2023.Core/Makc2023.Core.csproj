@@ -7,11 +7,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Folder Include="Events\" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\Makc2023.Core\Makc2023.Core.csproj" />
+		<PackageReference Include="MediatR" Version="11.0.0" />
+		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
 	</ItemGroup>
 
 </Project>

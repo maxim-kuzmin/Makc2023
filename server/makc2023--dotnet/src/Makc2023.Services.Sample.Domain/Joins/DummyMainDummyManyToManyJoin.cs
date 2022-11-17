@@ -22,45 +22,17 @@ public class DummyMainDummyManyToManyJoin
 
     #endregion Properties
 
-    #region Constructors
+    #region Navigation properties
 
     /// <summary>
-    /// Конструктор.
+    /// Сущность "Фиктивное главное".
     /// </summary>
-    /// <exception cref="ArgumentOutOfRangeException">
-    /// Возникает, если ненулевое значение содержится в свойстве, которое не должно его содержать.
-    /// </exception>
-    protected DummyMainDummyManyToManyJoin()
-    {
-        if (DummyMainId < 1)
-        {
-            throw new ArgumentOutOfRangeException(nameof(DummyMainId));
-        }
-
-        if (DummyManyToManyId < 1)
-        {
-            throw new ArgumentOutOfRangeException(nameof(DummyManyToManyId));
-        }
-    }
+    public DummyMainEntity? DummyMain { get; set; }
 
     /// <summary>
-    /// Конструктор.
+    /// Сущность "Фиктивное отношение многие ко многим".
     /// </summary>
-    /// <param name="dummyMainId">Идентификатор экземпляра сущности "Фиктивное главное".</param>
-    /// <param name="dummyManyToManyId">Идентификатор экземпляра сущности "Фиктивное отношение многие ко многим".</param>
-    /// <exception cref="ArgumentOutOfRangeException">
-    /// Возникает, если ненулевое значение содержится в аргументе, который не должен его содержать.
-    /// </exception>
-    public DummyMainDummyManyToManyJoin(int dummyMainId, int dummyManyToManyId)
-    {
-        DummyMainId = dummyMainId < 1
-            ? throw new ArgumentOutOfRangeException(nameof(dummyMainId))
-            : dummyMainId;
+    public DummyManyToManyEntity? DummyManyToMany { get; set; }
 
-        DummyManyToManyId = dummyManyToManyId < 1
-            ? throw new ArgumentOutOfRangeException(nameof(dummyManyToManyId))
-            : dummyManyToManyId;
-    }
-
-    #endregion Constructors
+    #endregion Navigation properties
 }

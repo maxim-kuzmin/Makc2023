@@ -1,9 +1,9 @@
-﻿namespace Makc2023.Services.Sample.Domain.Common;
+﻿namespace Makc2023.Core.Domain;
 
 /// <summary>
 /// Интерфейс репозитория.
 /// </summary>
-public interface IRepository
+public interface IRepository<T> where T : IAggregateRoot
 {
     #region Properties
 

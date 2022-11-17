@@ -23,45 +23,17 @@ public class UserInternalPermissionJoin
 
     #endregion Properties
 
-    #region Constructors
+    #region Navigation properties
 
     /// <summary>
-    /// Конструктор.
+    /// Сущность "Пользователь".
     /// </summary>
-    /// <exception cref="ArgumentOutOfRangeException">
-    /// Возникает, если ненулевое значение содержится в свойстве, которое не должно его содержать.
-    /// </exception>
-    protected UserInternalPermissionJoin()
-    {
-        if (UserId < 1)
-        {
-            throw new ArgumentOutOfRangeException(nameof(UserId));
-        }
-
-        if (InternalPermissionId < 1)
-        {
-            throw new ArgumentOutOfRangeException(nameof(InternalPermissionId));
-        }
-    }
+    public UserEntity? User { get; set; }
 
     /// <summary>
-    /// Конструктор.
+    /// Сущность "Внутреннее разрешение".
     /// </summary>
-    /// <param name="userId">Идентификатор экземпляра сущности "Пользователь".</param>
-    /// <param name="internalPermissionId">Идентификатор экземпляра сущности "Внутреннее разрешение".</param>
-    /// <exception cref="ArgumentOutOfRangeException">
-    /// Возникает, если ненулевое значение содержится в аргументе, который не должен его содержать.
-    /// </exception>
-    public UserInternalPermissionJoin(int userId, int internalPermissionId)
-    {
-        UserId = userId < 1
-            ? throw new ArgumentOutOfRangeException(nameof(userId))
-            : userId;
+    public InternalPermissionEntity? InternalPermission { get; set; }
 
-        InternalPermissionId = internalPermissionId < 1
-            ? throw new ArgumentOutOfRangeException(nameof(internalPermissionId))
-            : internalPermissionId;
-    }
-
-    #endregion Constructors
+    #endregion Navigation properties
 }

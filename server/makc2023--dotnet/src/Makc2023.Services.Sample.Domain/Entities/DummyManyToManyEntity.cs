@@ -9,7 +9,7 @@
 /// Многие экземпляры сущности "Фиктивное отношение многие ко многим"
 /// связаны со многими экземплярами сущности "Фиктивное главное".
 /// </summary>
-public class DummyManyToManyEntity : Entity<int>
+public class DummyManyToManyEntity : Entity<int>, IAggregateRoot
 {
     #region Properties
 
@@ -24,6 +24,20 @@ public class DummyManyToManyEntity : Entity<int>
     public string Name { get; private set; }
 
     #endregion Properties    
+
+    #region Navigation properties
+
+    /// <summary>
+    /// Список элементов сущности "Фиктивное главное".
+    /// </summary>
+    public ICollection<DummyMainEntity>? DummyMainList { get; set; }
+
+    /// <summary>
+    /// Список элементов соединения "Фиктивное отношение многие ко многим фиктивного главного".
+    /// </summary>
+    public List<DummyMainDummyManyToManyJoin>? DummyMainDummyManyToManyList { get; set; }
+
+    #endregion Navigation properties
 
     #region Constructors
 
@@ -48,7 +62,7 @@ public class DummyManyToManyEntity : Entity<int>
     /// <exception cref="ArgumentNullException">
     /// Возникает, если значение содержится в аргументе, который не должен его содержать.
     /// </exception>
-    public DummyManyToManyEntity(string name)
+    public DummyManyToManyEntity(string name) : this()
     {
         Name = string.IsNullOrWhiteSpace(name)
             ? throw new ArgumentNullException(nameof(name))
@@ -57,10 +71,10 @@ public class DummyManyToManyEntity : Entity<int>
 
     #endregion Constructors
 
-    #region Public methods
+    #region Protected methods
 
-        /// <inheritdoc/>
+    /// <inheritdoc/>
     protected override int GetId() => Id;
 
-    #endregion Public methods
+    #endregion Protected methods
 }
