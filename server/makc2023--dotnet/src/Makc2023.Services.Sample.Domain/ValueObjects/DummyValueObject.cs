@@ -1,4 +1,6 @@
-﻿namespace Makc2023.Services.Sample.Domain.ValueObjects;
+﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
+
+namespace Makc2023.Services.Sample.Domain.ValueObjects;
 
 /// <summary>
 /// Фиктивный объект-значение.

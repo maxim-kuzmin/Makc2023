@@ -11,7 +11,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Makc2023.Core\Makc2023.Core.csproj" />
+	  <ProjectReference Include="..\Makc2023.Domain\Makc2023.Domain.csproj" />
 	</ItemGroup>
 
 </Project>
