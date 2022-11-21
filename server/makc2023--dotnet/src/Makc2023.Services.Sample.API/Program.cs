@@ -14,7 +14,7 @@ try
 
     builder.Configure();
 
-    builder.Services.AddAppServices(builder.Configuration);
+    builder.Services.AddAppModules(builder.Configuration);
 
     // Add services to the container.
 
