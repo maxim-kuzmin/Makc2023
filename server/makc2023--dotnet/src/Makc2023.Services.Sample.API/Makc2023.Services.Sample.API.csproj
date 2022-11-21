@@ -11,4 +11,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Makc2023.Core.Apps.WebApp\Makc2023.Core.Apps.WebApp.csproj" />
+    <ProjectReference Include="..\Makc2023.Services.Sample.Infrastructure\Makc2023.Services.Sample.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

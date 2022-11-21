@@ -1,6 +1,6 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Core.Data.Clients.PostgreSql;
+namespace Makc2023.Data.Clients.PostgreSql;
 
 /// <summary>
 /// Значения по умолчанию клиента.

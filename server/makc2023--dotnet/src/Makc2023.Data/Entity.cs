@@ -1,11 +1,11 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Core.Domain;
+namespace Makc2023.Data;
 
 /// <summary>
 /// Сущность.
 /// </summary>
-public abstract class Entity<T>
+public abstract class Entity<T> : IEntity
 {
     #region Fields
 
@@ -61,9 +61,7 @@ public abstract class Entity<T>
         _events.Add(eventItem);
     }
 
-    /// <summary>
-    /// Очистить события.
-    /// </summary>
+    /// <inheritdoc/>
     public void ClearEvents()
     {
         _events?.Clear();
@@ -99,9 +97,7 @@ public abstract class Entity<T>
         }
     }
 
-    /// <summary>
-    /// Получить события.
-    /// </summary>
+    /// <inheritdoc/>
     public IReadOnlyCollection<INotification>? GetEvents() => _events?.AsReadOnly();
 
     /// <inheritdoc/>

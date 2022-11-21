@@ -2,12 +2,12 @@
 
 using NLog;
 
-namespace Makc2023.Core.Logging
+namespace Makc2023.Core.App
 {
     /// <summary>
-    /// Настройка ведения журнала.
+    /// Обработчик приложения.
     /// </summary>
-    public abstract class LoggingSetup : IDisposable
+    public abstract class AppHandler : IDisposable
     {
         #region Fields
 
@@ -26,13 +26,13 @@ namespace Makc2023.Core.Logging
         /// <summary>
         /// Конструктор.
         /// </summary>
-        public LoggingSetup()
+        public AppHandler()
         {
             Logger = CreateLogger();
         }
 
         #endregion Constructors
-        
+
         #region Public methods
 
         /// <inheritdoc/>
