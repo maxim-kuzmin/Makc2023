@@ -1,11 +1,11 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Services.Sample.Infrastructure.Sql;
+namespace Makc2023.Services.Sample.Sql.Clients.SqlServer.Db;
 
 /// <summary>
 /// Контекст базы данных SQL.
 /// </summary>
-public class SqlDbContext : UnitOfWork
+public class ClientDbContext : UnitOfWork
 {
     #region Fields
 
@@ -24,7 +24,7 @@ public class SqlDbContext : UnitOfWork
     /// <exception cref="ArgumentNullException">
     /// Возникает, если NULL содержится в аргументе, который не должен его содержать.
     /// </exception>
-    public SqlDbContext(DbContextOptions<SqlDbContext> options, IDefaults defaults, IMediator mediator)
+    public ClientDbContext(DbContextOptions<ClientDbContext> options, IDefaults defaults, IMediator mediator)
         : base(options, mediator)
     {
         _defaults = defaults ?? throw new ArgumentNullException(nameof(defaults));

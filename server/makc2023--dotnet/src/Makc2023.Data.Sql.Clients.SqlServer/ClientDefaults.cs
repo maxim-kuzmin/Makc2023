@@ -10,49 +10,49 @@ public class ClientDefaults : IDefaults
     #region Properties
 
     /// <inheritdoc/>
-    public string DbColumnForId => "id";
+    public string DbColumnForId => "Id";
 
     /// <inheritdoc/>
-    public string DbColumnForName => "name";
+    public string DbColumnForName => "Name";
 
     /// <inheritdoc/>
-    public string DbColumnForParentId => "parent_id";
+    public string DbColumnForParentId => "ParentId";
 
     /// <inheritdoc/>
-    public string DbColumnForTreeChildCount => "tree_child_count";
+    public string DbColumnForTreeChildCount => "TreeChildCount";
 
     /// <inheritdoc/>
-    public string DbColumnForTreeDescendantCount => "tree_descendant_count";
+    public string DbColumnForTreeDescendantCount => "TreeDescendantCount";
 
     /// <inheritdoc/>
-    public string DbColumnForTreeLevel => "tree_level";
+    public string DbColumnForTreeLevel => "TreeLevel";
 
     /// <inheritdoc/>
-    public string DbColumnForTreePath => "tree_path";
+    public string DbColumnForTreePath => "TreePath";
 
     /// <inheritdoc/>
-    public string DbColumnForTreePosition => "tree_position";
+    public string DbColumnForTreePosition => "TreePosition";
 
     /// <inheritdoc/>
-    public string DbColumnForTreeSort => "tree_sort";
+    public string DbColumnForTreeSort => "TreeSort";
 
     /// <inheritdoc/>
     public string DbColumnPartsSeparator => "_";
 
     /// <inheritdoc/>
-    public string DbForeignKeyPrefix => "fk";
+    public string DbForeignKeyPrefix => "FK";
 
     /// <inheritdoc/>
-    public string DbIndexPrefix => "ix";
+    public string DbIndexPrefix => "IX";
 
     /// <inheritdoc/>
-    public string DbPrimaryKeyPrefix => "pk";
+    public string DbPrimaryKeyPrefix => "PK";
 
     /// <inheritdoc/>
-    public string DbSchema => "public";
+    public string DbSchema => "dbo";
 
     /// <inheritdoc/>
-    public string DbUniqueIndexPrefix => "ux";
+    public string DbUniqueIndexPrefix => "UX";
 
     /// <inheritdoc/>
     public string FullNamePartsSeparator => ".";

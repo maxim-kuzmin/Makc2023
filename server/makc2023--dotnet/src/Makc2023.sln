@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.Do
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Core", "Makc2023.Core\Makc2023.Core.csproj", "{B3D98836-284C-43B9-A0B1-FCE85FB449E4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.Infrastructure", "Makc2023.Services.Sample.Infrastructure\Makc2023.Services.Sample.Infrastructure.csproj", "{1C479008-C71C-4A87-83C1-A08A3949749B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.Sql.Clients.SqlServer", "Makc2023.Services.Sample.Sql.Clients.SqlServer\Makc2023.Services.Sample.Sql.Clients.SqlServer.csproj", "{1C479008-C71C-4A87-83C1-A08A3949749B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.API", "Makc2023.Services.Sample.API\Makc2023.Services.Sample.API.csproj", "{41438686-E6DE-4104-B271-48697387556F}"
 EndProject
@@ -35,9 +35,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{C80749B0-D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{BD53874E-B27F-4A63-A17C-17ADE1D9E802}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Makc2023.Core.Apps.ConsoleApp", "Makc2023.Core.Apps.ConsoleApp\Makc2023.Core.Apps.ConsoleApp.csproj", "{A3727EE8-FBD7-4285-8F89-41A49CD360F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Core.Apps.ConsoleApp", "Makc2023.Core.Apps.ConsoleApp\Makc2023.Core.Apps.ConsoleApp.csproj", "{A3727EE8-FBD7-4285-8F89-41A49CD360F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Makc2023.Core.Apps.WebApp", "Makc2023.Core.Apps.WebApp\Makc2023.Core.Apps.WebApp.csproj", "{9359F76B-298D-4F01-8DCF-F55517296BB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Core.Apps.WebApp", "Makc2023.Core.Apps.WebApp\Makc2023.Core.Apps.WebApp.csproj", "{9359F76B-298D-4F01-8DCF-F55517296BB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Makc2023.Services.Sample.Sql", "Makc2023.Services.Sample.Sql\Makc2023.Services.Sample.Sql.csproj", "{7C81ED11-5196-4EF2-9C0B-08BC3E9F3D22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +87,10 @@ Global
 		{9359F76B-298D-4F01-8DCF-F55517296BB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9359F76B-298D-4F01-8DCF-F55517296BB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9359F76B-298D-4F01-8DCF-F55517296BB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C81ED11-5196-4EF2-9C0B-08BC3E9F3D22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C81ED11-5196-4EF2-9C0B-08BC3E9F3D22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C81ED11-5196-4EF2-9C0B-08BC3E9F3D22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C81ED11-5196-4EF2-9C0B-08BC3E9F3D22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,6 +109,7 @@ Global
 		{BD53874E-B27F-4A63-A17C-17ADE1D9E802} = {79F7A2F4-52CC-4E8A-B2CE-2A4EC4C1098A}
 		{A3727EE8-FBD7-4285-8F89-41A49CD360F6} = {C80749B0-DA43-431B-96B8-0E96789E899C}
 		{9359F76B-298D-4F01-8DCF-F55517296BB0} = {C80749B0-DA43-431B-96B8-0E96789E899C}
+		{7C81ED11-5196-4EF2-9C0B-08BC3E9F3D22} = {BAE95757-FC92-41EC-9D55-F73E695A9CC4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B139510-D0E2-4301-9C5D-1D82BAD0C2B1}

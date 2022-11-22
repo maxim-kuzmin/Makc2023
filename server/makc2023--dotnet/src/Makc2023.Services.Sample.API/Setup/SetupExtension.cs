@@ -20,7 +20,8 @@ public static class SetupExtension
 
         services.AddAppModules(new AppModule[]
         {
-            new CoreModule(configuration.GetRequiredSection($"{root}:Core"))
+            new CoreModule(configuration.GetRequiredSection($"{root}:Core")),
+            new DataSqlModule(configuration.GetRequiredSection($"{root}:Data:Sql")),
         });
     }
 

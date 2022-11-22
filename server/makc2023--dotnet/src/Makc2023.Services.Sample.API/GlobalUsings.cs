@@ -2,3 +2,4 @@
 
 global using Makc2023.Core.App;
 global using CoreModule = Makc2023.Core.Setup.SetupAppModule;
+global using DataSqlModule = Makc2023.Data.Sql.Setup.SetupAppModule;

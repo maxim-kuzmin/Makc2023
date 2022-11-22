@@ -3,7 +3,7 @@
 namespace Makc2023.Data.Sql;
 
 /// <summary>
-/// Значения по умолчанию.
+/// Интерфейс значений по умолчанию.
 /// </summary>
 public interface IDefaults
 {
