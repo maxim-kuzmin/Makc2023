@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.Domain", "Makc2023.Services.Sample.Domain\Makc2023.Services.Sample.Domain.csproj", "{F18F0FAD-96A7-4A8E-BF3E-122641C06F9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.Data", "Makc2023.Services.Sample.Data\Makc2023.Services.Sample.Data.csproj", "{F18F0FAD-96A7-4A8E-BF3E-122641C06F9A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Core", "Makc2023.Core\Makc2023.Core.csproj", "{B3D98836-284C-43B9-A0B1-FCE85FB449E4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.Sql.Clients.SqlServer", "Makc2023.Services.Sample.Sql.Clients.SqlServer\Makc2023.Services.Sample.Sql.Clients.SqlServer.csproj", "{1C479008-C71C-4A87-83C1-A08A3949749B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.Data.Sql.Clients.SqlServer", "Makc2023.Services.Sample.Data.Sql.Clients.SqlServer\Makc2023.Services.Sample.Data.Sql.Clients.SqlServer.csproj", "{1C479008-C71C-4A87-83C1-A08A3949749B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.API", "Makc2023.Services.Sample.API\Makc2023.Services.Sample.API.csproj", "{41438686-E6DE-4104-B271-48697387556F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.App", "Makc2023.Services.Sample.App\Makc2023.Services.Sample.App.csproj", "{41438686-E6DE-4104-B271-48697387556F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9BF949CC-3A5B-4209-B0A5-06E7D6C74D37}"
 	ProjectSection(SolutionItems) = preProject
@@ -39,7 +39,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Core.Apps.ConsoleA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Core.Apps.WebApp", "Makc2023.Core.Apps.WebApp\Makc2023.Core.Apps.WebApp.csproj", "{9359F76B-298D-4F01-8DCF-F55517296BB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Makc2023.Services.Sample.Sql", "Makc2023.Services.Sample.Sql\Makc2023.Services.Sample.Sql.csproj", "{7C81ED11-5196-4EF2-9C0B-08BC3E9F3D22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.Data.Sql", "Makc2023.Services.Sample.Data.Sql\Makc2023.Services.Sample.Data.Sql.csproj", "{7C81ED11-5196-4EF2-9C0B-08BC3E9F3D22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,15 +4,10 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Makc2023.Data.Sql\Makc2023.Data.Sql.csproj" />
+    <ProjectReference Include="..\Makc2023.Data.Sql.Clients.SqlServer\Makc2023.Data.Sql.Clients.SqlServer.csproj" />
   </ItemGroup>
 
 </Project>
