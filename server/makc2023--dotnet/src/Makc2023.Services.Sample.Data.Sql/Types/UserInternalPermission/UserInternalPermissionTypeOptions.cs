@@ -46,46 +46,46 @@ public class UserInternalPermissionTypeOptions : TypeOptions
     /// <summary>
     /// Конструктор.
     /// </summary>
-    /// <param name="optionsOfUserType">Параметры типа "Пользователь".</param>
-    /// <param name="optionsOfInternalPermissionType">Параметры типа "Внутреннее разрешение".</param>
+    /// <param name="userTypeOptions">Параметры типа "Пользователь".</param>
+    /// <param name="internalPermissionTypeOptions">Параметры типа "Внутреннее разрешение".</param>
     /// <param name="defaults">Значения по умолчанию.</param>
     /// <param name="dbTable">Таблица в базе данных.</param>
     /// <param name="dbSchema">Схема в базе данных.</param>
     public UserInternalPermissionTypeOptions(
-        UserTypeOptions optionsOfUserType,
-        InternalPermissionTypeOptions optionsOfInternalPermissionType,
+        UserTypeOptions userTypeOptions,
+        InternalPermissionTypeOptions internalPermissionTypeOptions,
         IDefaults defaults,
         string dbTable,
         string? dbSchema = null
         )
         : base(defaults, dbTable, dbSchema)
     {
-        if (string.IsNullOrWhiteSpace(optionsOfUserType.DbColumnForId))
+        if (string.IsNullOrWhiteSpace(userTypeOptions.DbColumnForId))
         {
             throw new NullOrWhiteSpaceStringVariableException<UserInternalPermissionTypeOptions>(
-                nameof(optionsOfUserType),
-                nameof(optionsOfUserType.DbColumnForId));
+                nameof(userTypeOptions),
+                nameof(userTypeOptions.DbColumnForId));
         }
 
         DbColumnForUserEntityId = CreateDbColumnName(
-            optionsOfUserType.DbTable,
-            optionsOfUserType.DbColumnForId);
+            userTypeOptions.DbTable,
+            userTypeOptions.DbColumnForId);
 
-        if (string.IsNullOrWhiteSpace(optionsOfInternalPermissionType.DbColumnForId))
+        if (string.IsNullOrWhiteSpace(internalPermissionTypeOptions.DbColumnForId))
         {
             throw new NullOrWhiteSpaceStringVariableException<UserInternalPermissionTypeOptions>(
-                nameof(optionsOfInternalPermissionType),
-                nameof(optionsOfInternalPermissionType.DbColumnForId));
+                nameof(internalPermissionTypeOptions),
+                nameof(internalPermissionTypeOptions.DbColumnForId));
         }
 
         DbColumnForInternalPermissionEntityId = CreateDbColumnName(
-            optionsOfInternalPermissionType.DbTable,
-            optionsOfInternalPermissionType.DbColumnForId);
+            internalPermissionTypeOptions.DbTable,
+            internalPermissionTypeOptions.DbColumnForId);
 
 
-        DbForeignKeyToUserEntity = CreateDbForeignKeyName(DbTable, optionsOfUserType.DbTable);
+        DbForeignKeyToUserEntity = CreateDbForeignKeyName(DbTable, userTypeOptions.DbTable);
 
-        DbForeignKeyToInternalPermissionEntity = CreateDbForeignKeyName(DbTable, optionsOfInternalPermissionType.DbTable);
+        DbForeignKeyToInternalPermissionEntity = CreateDbForeignKeyName(DbTable, internalPermissionTypeOptions.DbTable);
 
         DbIndexForInternalPermissionEntityId = CreateDbIndexName(DbTable, DbColumnForInternalPermissionEntityId);
 

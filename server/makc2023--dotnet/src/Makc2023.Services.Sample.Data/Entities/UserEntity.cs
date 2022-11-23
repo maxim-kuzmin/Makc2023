@@ -7,14 +7,14 @@ namespace Makc2023.Services.Sample.Data.Entities;
 /// 
 /// Учётная запись, используемая приложением для проверки прав доступа.
 /// </summary>
-public class UserEntity : Entity<int>
+public class UserEntity : Entity<long>
 {
     #region Properties
 
     /// <summary>
     /// Идентификатор.
     /// </summary>
-    public int Id { get; private set; }
+    public long Id { get; private set; }
 
     /// <summary>
     /// Имя.
@@ -95,7 +95,7 @@ public class UserEntity : Entity<int>
     #region Protected methods
 
     /// <inheritdoc/>
-    protected override int GetId() => Id;
+    protected override long GetId() => Id;
 
     #endregion Protected methods
 }

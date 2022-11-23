@@ -36,11 +36,11 @@ public static class AppExtension
 
         foreach (var module in modules)
         {
-            var notImportedtTypesOfModule = module.GetNotImportedtTypes(allExports);
+            var moduleNotImportedtTypes = module.GetNotImportedtTypes(allExports);
 
-            if (notImportedtTypesOfModule.Any())
+            if (moduleNotImportedtTypes.Any())
             {
-                notImportedTypes = notImportedTypes.Union(notImportedtTypesOfModule);
+                notImportedTypes = notImportedTypes.Union(moduleNotImportedtTypes);
             }
         }
 

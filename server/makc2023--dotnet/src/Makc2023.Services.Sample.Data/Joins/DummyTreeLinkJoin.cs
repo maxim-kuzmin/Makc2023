@@ -12,12 +12,12 @@ public class DummyTreeLinkJoin
     /// <summary>
     /// Идентификатор.
     /// </summary>
-    public int Id { get; private set; }
+    public long Id { get; private set; }
 
     /// <summary>
     /// Идентификатор родителя.
     /// </summary>
-    public int ParentId { get; private set; }
+    public long ParentId { get; private set; }
 
     #endregion Properties
 

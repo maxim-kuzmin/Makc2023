@@ -46,46 +46,46 @@ public class DummyMainDummyManyToManyTypeOptions : TypeOptions
     /// <summary>
     /// Конструктор.
     /// </summary>
-    /// <param name="optionsOfDummyMainType">Параметры типа "Фиктивное главное".</param>
-    /// <param name="optionsOfDummyManyToManyType">Параметры типа "Фиктивное отношение многие ко многим".</param>
+    /// <param name="dummyMainTypeOptions">Параметры типа "Фиктивное главное".</param>
+    /// <param name="dummyManyToManyTypeOptions">Параметры типа "Фиктивное отношение многие ко многим".</param>
     /// <param name="defaults">Значения по умолчанию.</param>
     /// <param name="dbTable">Таблица в базе данных.</param>
     /// <param name="dbSchema">Схема в базе данных.</param>
     public DummyMainDummyManyToManyTypeOptions(
-        DummyMainTypeOptions optionsOfDummyMainType,
-        DummyManyToManyTypeOptions optionsOfDummyManyToManyType,
+        DummyMainTypeOptions dummyMainTypeOptions,
+        DummyManyToManyTypeOptions dummyManyToManyTypeOptions,
         IDefaults defaults,
         string dbTable,
         string? dbSchema = null
         )
         : base(defaults, dbTable, dbSchema)
     {
-        if (string.IsNullOrWhiteSpace(optionsOfDummyMainType.DbColumnForId))
+        if (string.IsNullOrWhiteSpace(dummyMainTypeOptions.DbColumnForId))
         {
             throw new NullOrWhiteSpaceStringVariableException<DummyMainDummyManyToManyTypeOptions>(
-                nameof(optionsOfDummyMainType),
-                nameof(optionsOfDummyMainType.DbColumnForId));
+                nameof(dummyMainTypeOptions),
+                nameof(dummyMainTypeOptions.DbColumnForId));
         }
 
         DbColumnForDummyMainEntityId = CreateDbColumnName(
-            optionsOfDummyMainType.DbTable,
-            optionsOfDummyMainType.DbColumnForId);
+            dummyMainTypeOptions.DbTable,
+            dummyMainTypeOptions.DbColumnForId);
 
-        if (string.IsNullOrWhiteSpace(optionsOfDummyManyToManyType.DbColumnForId))
+        if (string.IsNullOrWhiteSpace(dummyManyToManyTypeOptions.DbColumnForId))
         {
             throw new NullOrWhiteSpaceStringVariableException<DummyMainDummyManyToManyTypeOptions>(
-                nameof(optionsOfDummyManyToManyType),
-                nameof(optionsOfDummyManyToManyType.DbColumnForId));
+                nameof(dummyManyToManyTypeOptions),
+                nameof(dummyManyToManyTypeOptions.DbColumnForId));
         }
 
         DbColumnForDummyManyToManyEntityId = CreateDbColumnName(
-            optionsOfDummyManyToManyType.DbTable,
-            optionsOfDummyManyToManyType.DbColumnForId);
+            dummyManyToManyTypeOptions.DbTable,
+            dummyManyToManyTypeOptions.DbColumnForId);
 
 
-        DbForeignKeyToDummyMainEntity = CreateDbForeignKeyName(DbTable, optionsOfDummyMainType.DbTable);
+        DbForeignKeyToDummyMainEntity = CreateDbForeignKeyName(DbTable, dummyMainTypeOptions.DbTable);
 
-        DbForeignKeyToDummyManyToManyEntity = CreateDbForeignKeyName(DbTable, optionsOfDummyManyToManyType.DbTable);
+        DbForeignKeyToDummyManyToManyEntity = CreateDbForeignKeyName(DbTable, dummyManyToManyTypeOptions.DbTable);
 
         DbIndexForDummyManyToManyEntityId = CreateDbIndexName(DbTable, DbColumnForDummyManyToManyEntityId);
 

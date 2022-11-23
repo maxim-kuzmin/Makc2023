@@ -16,12 +16,12 @@ public class UserInternalPermissionJoin
     /// <summary>
     /// Идентификатор экземпляра сущности "Пользователь".
     /// </summary>
-    public int UserId { get; private set; }
+    public long UserId { get; private set; }
 
     /// <summary>
     /// Идентификатор экземпляра сущности "Внутреннее разрешение".
     /// </summary>
-    public int InternalPermissionId { get; private set; }
+    public long InternalPermissionId { get; private set; }
 
     #endregion Properties
 

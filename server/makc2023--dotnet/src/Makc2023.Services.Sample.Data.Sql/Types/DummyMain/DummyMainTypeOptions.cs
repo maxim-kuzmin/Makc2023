@@ -126,12 +126,12 @@ public class DummyMainTypeOptions : TypeOptions
     /// <summary>
     /// Конструктор.
     /// </summary>
-    /// <param name="optionsOfDummyOneToManyType">Параметры типа "Фиктивное отношение один ко многим".</param>
+    /// <param name="dummyOneToManyTypeOptions">Параметры типа "Фиктивное отношение один ко многим".</param>
     /// <param name="defaults">Значения по умолчанию.</param>
     /// <param name="dbTable">Таблица в базе данных.</param>
     /// <param name="dbSchema">Схема в базе данных.</param>
     public DummyMainTypeOptions(
-        DummyOneToManyTypeOptions optionsOfDummyOneToManyType,
+        DummyOneToManyTypeOptions dummyOneToManyTypeOptions,
         IDefaults defaults,
         string dbTable,
         string? dbSchema = null
@@ -149,18 +149,18 @@ public class DummyMainTypeOptions : TypeOptions
 
         DbColumnForName = defaults.DbColumnForName;
 
-        if (string.IsNullOrWhiteSpace(optionsOfDummyOneToManyType.DbColumnForId))
+        if (string.IsNullOrWhiteSpace(dummyOneToManyTypeOptions.DbColumnForId))
         {
             throw new NullOrWhiteSpaceStringVariableException<DummyMainTypeOptions>(
-                nameof(optionsOfDummyOneToManyType),
-                nameof(optionsOfDummyOneToManyType.DbColumnForId));
+                nameof(dummyOneToManyTypeOptions),
+                nameof(dummyOneToManyTypeOptions.DbColumnForId));
         }
 
         DbColumnForDummyOneToManyEntityId = CreateDbColumnName(
-            optionsOfDummyOneToManyType.DbTable,
-            optionsOfDummyOneToManyType.DbColumnForId);
+            dummyOneToManyTypeOptions.DbTable,
+            dummyOneToManyTypeOptions.DbColumnForId);
 
-        DbForeignKeyToDummyOneToManyEntity = CreateDbForeignKeyName(DbTable, optionsOfDummyOneToManyType.DbTable);
+        DbForeignKeyToDummyOneToManyEntity = CreateDbForeignKeyName(DbTable, dummyOneToManyTypeOptions.DbTable);
 
         DbIndexForDummyOneToManyEntityId = CreateDbIndexName(DbTable, DbColumnForDummyOneToManyEntityId);
 

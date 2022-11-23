@@ -7,7 +7,7 @@ namespace Makc2023.Services.Sample.Data.Entities;
 /// 
 /// Часть бизнес-логики сервиса, на действия с которой пользователю требуются разрешения.
 /// </summary>
-public class InternalDomainEntity : Entity<int>
+public class InternalDomainEntity : Entity<long>
 {
     #region Fields
 
@@ -20,7 +20,7 @@ public class InternalDomainEntity : Entity<int>
     /// <summary>
     /// Идентификатор.
     /// </summary>
-    public int Id { get; private set; }
+    public long Id { get; private set; }
 
     /// <summary>
     /// Имя.
@@ -75,7 +75,7 @@ public class InternalDomainEntity : Entity<int>
     #region Protected methods
 
     /// <inheritdoc/>
-    protected override int GetId() => Id;
+    protected override long GetId() => Id;
 
     #endregion Protected methods
 }

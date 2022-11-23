@@ -7,14 +7,14 @@ namespace Makc2023.Services.Sample.Data.Entities;
 /// 
 /// Разрешение внутри сервиса на действие во внутреннем домене.
 /// </summary>
-public class InternalPermissionEntity : Entity<int>
+public class InternalPermissionEntity : Entity<long>
 {
     #region Properties
 
     /// <summary>
     /// Идентификатор.
     /// </summary>
-    public int Id { get; private set; }
+    public long Id { get; private set; }
 
     /// <summary>
     /// Имя.
@@ -24,7 +24,7 @@ public class InternalPermissionEntity : Entity<int>
     /// <summary>
     /// Идентификатор экземпляра сущности "Внутренний домен".
     /// </summary>
-    public int InternalDomainId { get; private set; }
+    public long InternalDomainId { get; private set; }
 
     #endregion Properties    
 
@@ -77,7 +77,7 @@ public class InternalPermissionEntity : Entity<int>
     /// <exception cref="ArgumentOutOfRangeException">
     /// Возникает, если ненулевое значение содержится в аргументе, который не должен его содержать.
     /// </exception>
-    public InternalPermissionEntity(string name, int internalDomainId) : this()
+    public InternalPermissionEntity(string name, long internalDomainId) : this()
     {
         Name = string.IsNullOrWhiteSpace(name)
             ? throw new ArgumentNullException(nameof(name))
@@ -93,7 +93,7 @@ public class InternalPermissionEntity : Entity<int>
     #region Protected methods
 
     /// <inheritdoc/>
-    protected override int GetId() => Id;
+    protected override long GetId() => Id;
 
     #endregion Protected methods
 }

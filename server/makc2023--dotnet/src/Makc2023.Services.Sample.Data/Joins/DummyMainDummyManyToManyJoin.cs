@@ -15,12 +15,12 @@ public class DummyMainDummyManyToManyJoin
     /// <summary>
     /// Идентификатор экземпляра сущности "Фиктивное главное".
     /// </summary>
-    public int DummyMainId { get; private set; }
+    public long DummyMainId { get; private set; }
 
     /// <summary>
     /// Идентификатор экземпляра сущности "Фиктивное отношение многие ко многим".
     /// </summary>
-    public int DummyManyToManyId { get; private set; }
+    public long DummyManyToManyId { get; private set; }
 
     #endregion Properties
 

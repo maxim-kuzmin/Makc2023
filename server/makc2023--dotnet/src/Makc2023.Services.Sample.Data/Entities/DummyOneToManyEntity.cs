@@ -11,14 +11,14 @@ namespace Makc2023.Services.Sample.Data.Entities;
 /// Один экземпляр сущности "Фиктивное отношение один ко многим"
 /// связан со многими экземплярами сущности "Фиктивное главное".
 /// </summary>
-public class DummyOneToManyEntity : Entity<int>, IAggregateRoot
+public class DummyOneToManyEntity : Entity<long>, IAggregateRoot
 {
     #region Properties
 
     /// <summary>
     /// Идентификатор.
     /// </summary>
-    public int Id { get; private set; }
+    public long Id { get; private set; }
 
     /// <summary>
     /// Имя.
@@ -71,7 +71,7 @@ public class DummyOneToManyEntity : Entity<int>, IAggregateRoot
     #region Protected methods
 
     /// <inheritdoc/>
-    protected override int GetId() => Id;
+    protected override long GetId() => Id;
 
     #endregion Protected methods
 }

@@ -7,14 +7,14 @@ namespace Makc2023.Services.Sample.Data.Entities;
 /// 
 /// Служит для демонстрации иерархической структуры данных.
 /// </summary>
-public class DummyTreeEntity : Entity<int>, IAggregateRoot
+public class DummyTreeEntity : Entity<long>, IAggregateRoot
 {
     #region Properties
 
     /// <summary>
     /// Идентификатор.
     /// </summary>
-    public int Id { get; private set; }
+    public long Id { get; private set; }
 
     /// <summary>
     /// Имя.
@@ -24,22 +24,22 @@ public class DummyTreeEntity : Entity<int>, IAggregateRoot
     /// <summary>
     /// Идентификатор родителя.
     /// </summary>
-    public int? ParentId { get; private set; }
+    public long? ParentId { get; private set; }
 
     /// <summary>
     /// Число детей в дереве.
     /// </summary>
-    public int TreeChildCount { get; private set; }
+    public long TreeChildCount { get; private set; }
 
     /// <summary>
     /// Число потомков в дереве.
     /// </summary>
-    public int TreeDescendantCount { get; private set; }
+    public long TreeDescendantCount { get; private set; }
 
     /// <summary>
     /// Уровень в дереве.
     /// </summary>
-    public int TreeLevel { get; private set; }
+    public long TreeLevel { get; private set; }
 
     /// <summary>
     /// Позиция в дереве.
@@ -118,10 +118,10 @@ public class DummyTreeEntity : Entity<int>, IAggregateRoot
 
     public DummyTreeEntity(
         string name,
-        int? parentId,
-        int treeChildCount,
-        int treeDescendantCount,
-        int treeLevel,
+        long? parentId,
+        long treeChildCount,
+        long treeDescendantCount,
+        long treeLevel,
         string treePath,
         int treePosition,
         string treeSort) : this()
@@ -156,7 +156,7 @@ public class DummyTreeEntity : Entity<int>, IAggregateRoot
     #region Protected methods
 
     /// <inheritdoc/>
-    protected override int GetId() => Id;
+    protected override long GetId() => Id;
 
     #endregion Protected methods
 }

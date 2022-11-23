@@ -7,7 +7,7 @@ namespace Makc2023.Services.Sample.Data.Entities;
 /// 
 /// Содержит в себе свойства наиболее распространённых типов данных.
 /// </summary>
-public class DummyMainEntity : Entity<int>, IAggregateRoot
+public class DummyMainEntity : Entity<long>, IAggregateRoot
 {
     #region Fields
 
@@ -20,7 +20,7 @@ public class DummyMainEntity : Entity<int>, IAggregateRoot
     /// <summary>
     /// Идентификатор.
     /// </summary>
-    public int Id { get; private set; }
+    public long Id { get; private set; }
 
     /// <summary>
     /// Имя.
@@ -30,7 +30,7 @@ public class DummyMainEntity : Entity<int>, IAggregateRoot
     /// <summary>
     /// Идентификатор экземпляра сущности "Фиктивное отношение один ко многим".
     /// </summary>
-    public int DummyOneToManyId { get; private set; }
+    public long DummyOneToManyId { get; private set; }
 
     /// <summary>
     /// Свойство, содержащее логическое значение.
@@ -90,12 +90,12 @@ public class DummyMainEntity : Entity<int>, IAggregateRoot
     /// <summary>
     /// Свойство, содержащее целое 64-разрядное число.
     /// </summary>
-    public int PropInt64 { get; private set; }
+    public long PropInt64 { get; private set; }
 
     /// <summary>
     /// Свойство, содержащее целое 64-разрядное число или NULL.
     /// </summary>
-    public int? PropInt64Nullable { get; private set; }
+    public long? PropInt64Nullable { get; private set; }
 
     /// <summary>
     /// Свойство, содержащее строку.
@@ -208,7 +208,7 @@ public class DummyMainEntity : Entity<int>, IAggregateRoot
     /// </exception>
     public DummyMainEntity(
         string name,
-        int dummyOneToManyId,
+        long dummyOneToManyId,
         bool propBoolean,
         bool? propBooleanNullable,
         DateTime propDate,
@@ -220,8 +220,8 @@ public class DummyMainEntity : Entity<int>, IAggregateRoot
         DummyEnumeration propEnumeration,
         int propInt32,
         int? propInt32Nullable,
-        int propInt64,
-        int? propInt64Nullable,
+        long propInt64,
+        long? propInt64Nullable,
         string propString,
         string? propStringNullable,
         DummyValueObject propValueObject) : this()
@@ -289,7 +289,7 @@ public class DummyMainEntity : Entity<int>, IAggregateRoot
     #region Protected methods
 
     /// <inheritdoc/>
-    protected override int GetId() => Id;
+    protected override long GetId() => Id;
 
     #endregion Protected methods
 }

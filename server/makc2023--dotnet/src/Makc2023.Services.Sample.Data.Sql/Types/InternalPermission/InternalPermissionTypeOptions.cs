@@ -56,12 +56,12 @@ public class InternalPermissionTypeOptions : TypeOptions
     /// <summary>
     /// Конструктор.
     /// </summary>
-    /// <param name="optionsOfInternalDomainType">Параметры типа "Внутренний домен".</param>
+    /// <param name="internalDomainTypeOptions">Параметры типа "Внутренний домен".</param>
     /// <param name="defaults">Значения по умолчанию.</param>
     /// <param name="dbTable">Таблица в базе данных.</param>
     /// <param name="dbSchema">Схема в базе данных.</param>
     public InternalPermissionTypeOptions(
-        InternalDomainTypeOptions optionsOfInternalDomainType,
+        InternalDomainTypeOptions internalDomainTypeOptions,
         IDefaults defaults,
         string dbTable,
         string? dbSchema = null
@@ -79,18 +79,18 @@ public class InternalPermissionTypeOptions : TypeOptions
 
         DbColumnForName = defaults.DbColumnForName;
 
-        if (string.IsNullOrWhiteSpace(optionsOfInternalDomainType.DbColumnForId))
+        if (string.IsNullOrWhiteSpace(internalDomainTypeOptions.DbColumnForId))
         {
             throw new NullOrWhiteSpaceStringVariableException<InternalPermissionTypeOptions>(
-                nameof(optionsOfInternalDomainType),
-                nameof(optionsOfInternalDomainType.DbColumnForId));
+                nameof(internalDomainTypeOptions),
+                nameof(internalDomainTypeOptions.DbColumnForId));
         }
 
         DbColumnForInternalDomainEntityId = CreateDbColumnName(
-            optionsOfInternalDomainType.DbTable,
-            optionsOfInternalDomainType.DbColumnForId);
+            internalDomainTypeOptions.DbTable,
+            internalDomainTypeOptions.DbColumnForId);
 
-        DbForeignKeyToInternalDomainEntity = CreateDbForeignKeyName(DbTable, optionsOfInternalDomainType.DbTable);
+        DbForeignKeyToInternalDomainEntity = CreateDbForeignKeyName(DbTable, internalDomainTypeOptions.DbTable);
 
         DbIndexForInternalDomainEntityId = CreateDbIndexName(DbTable, DbColumnForInternalDomainEntityId);
 
