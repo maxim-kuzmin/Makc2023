@@ -1,9 +1,5 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-using System.Reflection;
-using Makc2023.Core.App;
-using Microsoft.EntityFrameworkCore.Design;
-
 namespace Makc2023.Services.Sample.Data.Sql.Clients.SqlServer.Db;
 
 /// <summary>
@@ -22,6 +18,6 @@ public class ClientDbContextFactory : IDesignTimeDbContextFactory<ClientDbContex
             config["ConnectionString"],
             sqlServerOptionsAction: o => o.MigrationsAssembly(Assembly.GetExecutingAssembly().GetName().Name));
 
-        return new ClientDbContext(optionsBuilder.Options, null, null);
+        return new ClientDbContext(optionsBuilder.Options, null);
     }
 }

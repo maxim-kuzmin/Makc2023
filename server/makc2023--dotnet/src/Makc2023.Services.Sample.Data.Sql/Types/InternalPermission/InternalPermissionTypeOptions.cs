@@ -20,19 +20,19 @@ public class InternalPermissionTypeOptions : TypeOptions
     public string? DbColumnForName { get; set; }
 
     /// <summary>
-    /// Колонка в базе данных для поля идентификатора сущности "Внутренний домен".
+    /// Колонка в базе данных для поля "InternalDomainId".
     /// </summary>
-    public string? DbColumnForInternalDomainEntityId { get; set; }
+    public string? DbColumnForInternalDomainId { get; set; }
 
     /// <summary>
-    /// Внешний ключ в базе данных к сущности "Внутренний домен".
+    /// Внешний ключ в базе данных к типу "Внутренний домен".
     /// </summary>
-    public string? DbForeignKeyToInternalDomainEntity { get; set; }
+    public string? DbForeignKeyToInternalDomain { get; set; }
 
     /// <summary>
-    /// Индекс в базе данных для поля идентификатора сущности "Внутренний домен".
+    /// Индекс в базе данных для поля "InternalDomainId".
     /// </summary>
-    public string? DbIndexForInternalDomainEntityId { get; set; }
+    public string? DbIndexForInternalDomainId { get; set; }
 
     /// <summary>
     /// Максимальная длина в базе данных для поля "Name".
@@ -86,13 +86,13 @@ public class InternalPermissionTypeOptions : TypeOptions
                 nameof(internalDomainTypeOptions.DbColumnForId));
         }
 
-        DbColumnForInternalDomainEntityId = CreateDbColumnName(
+        DbColumnForInternalDomainId = CreateDbColumnName(
             internalDomainTypeOptions.DbTable,
             internalDomainTypeOptions.DbColumnForId);
 
-        DbForeignKeyToInternalDomainEntity = CreateDbForeignKeyName(DbTable, internalDomainTypeOptions.DbTable);
+        DbForeignKeyToInternalDomain = CreateDbForeignKeyName(DbTable, internalDomainTypeOptions.DbTable);
 
-        DbIndexForInternalDomainEntityId = CreateDbIndexName(DbTable, DbColumnForInternalDomainEntityId);
+        DbIndexForInternalDomainId = CreateDbIndexName(DbTable, DbColumnForInternalDomainId);
 
         DbMaxLengthForName = 256;
 

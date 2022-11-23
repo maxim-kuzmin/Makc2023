@@ -25,13 +25,30 @@ public class DummyManyToOneEntity : Entity<long>
     /// </summary>
     public string Name { get; private set; }
 
+    /// <summary>
+    /// Идентификатор экземпляра сущности "Фиктивное главное".
+    /// </summary>
+    public long DummyMainId { get; private set; }
+
     #endregion Properties    
+
+    #region Navigation properties
+
+    /// <summary>
+    /// Экземпляр сущности "Фиктивное главное".
+    /// </summary>
+    public DummyMainEntity? DummyMain { get; set; }
+
+    #endregion Navigation properties
 
     #region Constructors
 
     /// <summary>
     /// Конструктор.
     /// </summary>
+    /// <exception cref="ArgumentOutOfRangeException">
+    /// Возникает, если ненулевое значение содержится в свойстве, которое не должно его содержать.
+    /// </exception>
     /// <exception cref="NullReferenceException">
     /// Возникает, если NULL содержится в свойстве, которое не должно его содержать.
     /// </exception>
@@ -41,20 +58,33 @@ public class DummyManyToOneEntity : Entity<long>
         {
             throw new NullReferenceException(nameof(Name));
         }
+
+        if (DummyMainId < 1)
+        {
+            throw new ArgumentOutOfRangeException(nameof(DummyMainId));
+        }
     }
 
     /// <summary>
     /// Конструктор.
     /// </summary>
     /// <param name="name">Имя.</param>
+    /// <param name="dummyMainId">Идентификатор экземпляра сущности "Фиктивное главное".</param>
     /// <exception cref="ArgumentNullException">
     /// Возникает, если значение содержится в аргументе, который не должен его содержать.
     /// </exception>
-    public DummyManyToOneEntity(string name) : this()
+    /// <exception cref="ArgumentOutOfRangeException">
+    /// Возникает, если ненулевое значение содержится в аргументе, который не должен его содержать.
+    /// </exception>
+    public DummyManyToOneEntity(string name, long dummyMainId) : this()
     {
         Name = string.IsNullOrWhiteSpace(name)
             ? throw new ArgumentNullException(nameof(name))
             : name;
+
+        DummyMainId = dummyMainId < 1
+            ? throw new ArgumentOutOfRangeException(nameof(dummyMainId))
+            : dummyMainId;
     }
 
     #endregion Constructors

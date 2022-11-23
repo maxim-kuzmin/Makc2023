@@ -20,9 +20,9 @@ public class DummyMainTypeOptions : TypeOptions
     public string? DbColumnForName { get; set; }
 
     /// <summary>
-    /// Колонка в базе данных для поля идентификатора сущности "Фиктивное отношение один ко многим".
+    /// Колонка в базе данных для поля "DummyOneToManyId".
     /// </summary>
-    public string? DbColumnForDummyOneToManyEntityId { get; set; }
+    public string? DbColumnForDummyOneToManyId { get; set; }
 
     /// <summary>
     /// Колонка в базе данных для поля "PropBoolean".
@@ -45,14 +45,14 @@ public class DummyMainTypeOptions : TypeOptions
     public string? DbColumnForPropDateNullable { get; set; }
 
     /// <summary>
-    /// Колонка в базе данных для поля "PropDateTimeOffset".
+    /// Колонка в базе данных для поля "PropDateTime".
     /// </summary>
-    public string? DbColumnForPropDateTimeOffset { get; set; }
+    public string? DbColumnForPropDateTime { get; set; }
 
     /// <summary>
-    /// Колонка в базе данных для поля "PropDateTimeOffsetNullable".
+    /// Колонка в базе данных для поля "PropDateTimeNullable".
     /// </summary>
-    public string? DbColumnForPropDateTimeOffsetNullable { get; set; }
+    public string? DbColumnForPropDateTimeNullable { get; set; }
 
     /// <summary>
     /// Колонка в базе данных для поля "PropDecimal".
@@ -95,14 +95,14 @@ public class DummyMainTypeOptions : TypeOptions
     public string? DbColumnForPropStringNullable { get; set; }
 
     /// <summary>
-    /// Внешний ключ в базе данных к сущности "Фиктивное отношение один ко многим".
+    /// Внешний ключ в базе данных к типу "Фиктивное отношение один ко многим".
     /// </summary>
-    public string? DbForeignKeyToDummyOneToManyEntity { get; set; }
+    public string? DbForeignKeyToDummyOneToMany { get; set; }
 
     /// <summary>
-    /// Индекс в базе данных для поля идентификатора сущности "Фиктивное отношение один ко многим".
+    /// Индекс в базе данных для поля "DummyOneToManyId".
     /// </summary>
-    public string? DbIndexForDummyOneToManyEntityId { get; set; }
+    public string? DbIndexForDummyOneToManyId { get; set; }
 
     /// <summary>
     /// Максимальная длина в базе данных для поля "Name".
@@ -156,13 +156,13 @@ public class DummyMainTypeOptions : TypeOptions
                 nameof(dummyOneToManyTypeOptions.DbColumnForId));
         }
 
-        DbColumnForDummyOneToManyEntityId = CreateDbColumnName(
+        DbColumnForDummyOneToManyId = CreateDbColumnName(
             dummyOneToManyTypeOptions.DbTable,
             dummyOneToManyTypeOptions.DbColumnForId);
 
-        DbForeignKeyToDummyOneToManyEntity = CreateDbForeignKeyName(DbTable, dummyOneToManyTypeOptions.DbTable);
+        DbForeignKeyToDummyOneToMany = CreateDbForeignKeyName(DbTable, dummyOneToManyTypeOptions.DbTable);
 
-        DbIndexForDummyOneToManyEntityId = CreateDbIndexName(DbTable, DbColumnForDummyOneToManyEntityId);
+        DbIndexForDummyOneToManyId = CreateDbIndexName(DbTable, DbColumnForDummyOneToManyId);
 
         DbMaxLengthForName = 256;
 

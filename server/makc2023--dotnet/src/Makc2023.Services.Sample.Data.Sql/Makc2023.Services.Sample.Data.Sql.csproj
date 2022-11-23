@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Makc2023.Data.Sql.Clients.SqlServer\Makc2023.Data.Sql.Clients.SqlServer.csproj" />
+    <ProjectReference Include="..\Makc2023.Services.Sample.Data\Makc2023.Services.Sample.Data.csproj" />
   </ItemGroup>
 
 </Project>

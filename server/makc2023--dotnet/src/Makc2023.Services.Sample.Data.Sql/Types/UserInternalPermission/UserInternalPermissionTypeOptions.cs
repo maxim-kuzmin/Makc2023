@@ -10,29 +10,29 @@ public class UserInternalPermissionTypeOptions : TypeOptions
     #region Properties
 
     /// <summary>
-    /// Колонка в базе данных для поля идентификатора сущности "Пользователь".
+    /// Колонка в базе данных для поля "UserId".
     /// </summary>
-    public string? DbColumnForUserEntityId { get; set; }
+    public string? DbColumnForUserId { get; set; }
 
     /// <summary>
-    /// Колонка в базе данных для поля идентификатора сущности "Внутреннее разрешение".
+    /// Колонка в базе данных для поля "InternalPermissionId".
     /// </summary>
-    public string? DbColumnForInternalPermissionEntityId { get; set; }
+    public string? DbColumnForInternalPermissionId { get; set; }
 
     /// <summary>
-    /// Внешний ключ в базе данных к сущности "Пользователь".
+    /// Внешний ключ в базе данных к типу "Пользователь".
     /// </summary>
-    public string? DbForeignKeyToUserEntity { get; set; }
+    public string? DbForeignKeyToUser { get; set; }
 
     /// <summary>
-    /// Внешний ключ в базе данных к сущности "Внутреннее разрешение".
+    /// Внешний ключ в базе данных к типу "Внутреннее разрешение".
     /// </summary>
-    public string? DbForeignKeyToInternalPermissionEntity { get; set; }
+    public string? DbForeignKeyToInternalPermission { get; set; }
 
     /// <summary>
-    /// Индекс в базе данных для поля идентификатора сущности "Внутреннее разрешение".
+    /// Индекс в базе данных для поля "InternalPermissionId".
     /// </summary>
-    public string? DbIndexForInternalPermissionEntityId { get; set; }
+    public string? DbIndexForInternalPermissionId { get; set; }
 
     /// <summary>
     /// Первичный ключ в базе данных.
@@ -67,7 +67,7 @@ public class UserInternalPermissionTypeOptions : TypeOptions
                 nameof(userTypeOptions.DbColumnForId));
         }
 
-        DbColumnForUserEntityId = CreateDbColumnName(
+        DbColumnForUserId = CreateDbColumnName(
             userTypeOptions.DbTable,
             userTypeOptions.DbColumnForId);
 
@@ -78,16 +78,16 @@ public class UserInternalPermissionTypeOptions : TypeOptions
                 nameof(internalPermissionTypeOptions.DbColumnForId));
         }
 
-        DbColumnForInternalPermissionEntityId = CreateDbColumnName(
+        DbColumnForInternalPermissionId = CreateDbColumnName(
             internalPermissionTypeOptions.DbTable,
             internalPermissionTypeOptions.DbColumnForId);
 
 
-        DbForeignKeyToUserEntity = CreateDbForeignKeyName(DbTable, userTypeOptions.DbTable);
+        DbForeignKeyToUser = CreateDbForeignKeyName(DbTable, userTypeOptions.DbTable);
 
-        DbForeignKeyToInternalPermissionEntity = CreateDbForeignKeyName(DbTable, internalPermissionTypeOptions.DbTable);
+        DbForeignKeyToInternalPermission = CreateDbForeignKeyName(DbTable, internalPermissionTypeOptions.DbTable);
 
-        DbIndexForInternalPermissionEntityId = CreateDbIndexName(DbTable, DbColumnForInternalPermissionEntityId);
+        DbIndexForInternalPermissionId = CreateDbIndexName(DbTable, DbColumnForInternalPermissionId);
 
         DbPrimaryKey = CreateDbPrimaryKeyName(DbTable);
     }

@@ -11,6 +11,7 @@ global using Makc2023.Data.Sql.Commands.Trigger;
 global using MediatR;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.EntityFrameworkCore.ChangeTracking;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
 global using Microsoft.EntityFrameworkCore.Storage;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;

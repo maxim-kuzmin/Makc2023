@@ -20,9 +20,24 @@ public class UserTypeOptions : TypeOptions
     public string? DbColumnForName { get; set; }
 
     /// <summary>
+    /// Колонка в базе данных для поля "Email".
+    /// </summary>
+    public string? DbColumnForEmail { get; set; }
+
+    /// <summary>
+    /// Колонка в базе данных для поля "IsBlocked".
+    /// </summary>
+    public string? DbColumnForIsBlocked { get; set; }
+
+    /// <summary>
     /// Максимальная длина в базе данных для поля "Name".
     /// </summary>
     public int DbMaxLengthForName { get; set; }
+
+    /// <summary>
+    /// Максимальная длина в базе данных для поля "Email".
+    /// </summary>
+    public int DbMaxLengthForEmail { get; set; }
 
     /// <summary>
     /// Первичный ключ в базе данных.
@@ -34,6 +49,11 @@ public class UserTypeOptions : TypeOptions
     /// </summary>
     public string? DbUniqueIndexForName { get; set; }
 
+    /// <summary>
+    /// Уникальный индекс в базе данных для поля "Email".
+    /// </summary>
+    public string? DbUniqueIndexForEmail { get; set; }
+
     #endregion Properties
 
     #region Constructors
@@ -44,11 +64,12 @@ public class UserTypeOptions : TypeOptions
     /// <param name="defaults">Значения по умолчанию.</param>
     /// <param name="dbTable">Таблица в базе данных.</param>
     /// <param name="dbSchema">Схема в базе данных.</param>
+    /// <param name="dbColumnNameForEmail">Колонка в базе данных для поля "Email".</param>
     public UserTypeOptions(
         IDefaults defaults,
         string dbTable,
-        string? dbSchema = null
-        )
+        string? dbSchema = null,
+        string? dbColumnNameForEmail = null)
         : base(defaults, dbTable, dbSchema)
     {
         DbColumnForId = defaults.DbColumnForId;
@@ -62,11 +83,17 @@ public class UserTypeOptions : TypeOptions
 
         DbColumnForName = defaults.DbColumnForName;
 
+        DbColumnForEmail = dbColumnNameForEmail ?? nameof(UserEntity.Email);
+
         DbMaxLengthForName = 256;
+
+        DbMaxLengthForEmail = 256;
 
         DbPrimaryKey = CreateDbPrimaryKeyName(DbTable);
 
         DbUniqueIndexForName = CreateDbUniqueIndexName(DbTable, DbColumnForName);
+
+        DbUniqueIndexForEmail = CreateDbUniqueIndexName(DbTable, DbColumnForEmail);
     }
 
     #endregion Constructors

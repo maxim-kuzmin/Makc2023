@@ -34,7 +34,7 @@ public class ClientTypesOptions : TypesOptions
 
         DummyManyToMany = new DummyManyToManyTypeOptions(defaults, "DummyManyToMany");
 
-        DummyManyToOne = new DummyManyToOneTypeOptions(defaults, "DummyManyToOne");
+        DummyManyToOne = new DummyManyToOneTypeOptions(DummyMain, defaults, "DummyManyToOne");
 
         DummyMainDummyManyToMany = new DummyMainDummyManyToManyTypeOptions(
             DummyMain,

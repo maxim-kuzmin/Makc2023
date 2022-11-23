@@ -1,5 +1,7 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
+global using System.Reflection;
+global using Makc2023.Core.App;
 global using Makc2023.Data.Clients.SqlServer;
 global using Makc2023.Data.Sql;
 global using Makc2023.Services.Sample.Data.Sql.Types.DummyMain;
@@ -15,4 +17,5 @@ global using Makc2023.Services.Sample.Data.Sql.Types.User;
 global using Makc2023.Services.Sample.Data.Sql.Types.UserInternalPermission;
 global using MediatR;
 global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Design;
 

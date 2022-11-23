@@ -31,6 +31,11 @@ public class InternalPermissionEntity : Entity<long>
     #region Navigation properties
 
     /// <summary>
+    /// Экземпляр сущности "Внутренний домен".
+    /// </summary>
+    public InternalDomainEntity? InternalDomain { get; set; }
+
+    /// <summary>
     /// Список экземпляров соединения "Внутреннее разрешение пользователя".
     /// </summary>
     public List<UserInternalPermissionJoin>? UserInternalPermissionList { get; set; }

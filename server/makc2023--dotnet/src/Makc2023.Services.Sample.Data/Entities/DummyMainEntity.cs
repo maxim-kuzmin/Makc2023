@@ -183,7 +183,7 @@ public class DummyMainEntity : Entity<long>, IAggregateRoot
     /// Конструктор.
     /// </summary>
     /// <param name="name">Имя.</param>
-    /// <param name="dummyOneToManyId">Идентификатор фиктивного отношения один ко многим.</param>
+    /// <param name="dummyOneToManyId">Идентификатор экземпляра сущности "Фиктивное отношение один ко многим".</param>
     /// <param name="propBoolean">Свойство, содержащее логическое значение.</param>
     /// <param name="propBooleanNullable">Свойство, содержащее логическое значение или NULL.</param>
     /// <param name="propDate">Свойство, содержащее дату.</param>
@@ -276,7 +276,7 @@ public class DummyMainEntity : Entity<long>, IAggregateRoot
 
         if (result is null)
         {
-            result = new DummyManyToOneEntity(name);
+            result = new DummyManyToOneEntity(name, Id);
 
             _dummyManyToOneList.Add(result);
         }

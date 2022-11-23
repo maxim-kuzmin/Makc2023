@@ -3,7 +3,7 @@
 namespace Makc2023.Services.Sample.Data.Sql.Types.DummyManyToOne;
 
 /// <summary>
-/// Параметры типа "Фиктивное отношение многие ко одному".
+/// Параметры типа "Фиктивное отношение многие к одному".
 /// </summary>
 public class DummyManyToOneTypeOptions : TypeOptions
 {
@@ -18,6 +18,21 @@ public class DummyManyToOneTypeOptions : TypeOptions
     /// Колонка в базе данных для поля "Name".
     /// </summary>
     public string? DbColumnForName { get; set; }
+
+    /// <summary>
+    /// Колонка в базе данных для поля "DummyMainId".
+    /// </summary>
+    public string? DbColumnForDummyMainId { get; set; }
+
+    /// <summary>
+    /// Внешний ключ в базе данных к типу "Фиктивное главное".
+    /// </summary>
+    public string? DbForeignKeyToDummyMain { get; set; }
+
+    /// <summary>
+    /// Индекс в базе данных для поля "DummyMainId".
+    /// </summary>
+    public string? DbIndexForDummyMainId { get; set; }
 
     /// <summary>
     /// Максимальная длина в базе данных для поля "Name".
@@ -41,10 +56,12 @@ public class DummyManyToOneTypeOptions : TypeOptions
     /// <summary>
     /// Конструктор.
     /// </summary>
+    /// <param name="dummyMainTypeOptions">Параметры типа "Фиктивное главное".</param>
     /// <param name="defaults">Значения по умолчанию.</param>
     /// <param name="dbTable">Таблица в базе данных.</param>
     /// <param name="dbSchema">Схема в базе данных.</param>
     public DummyManyToOneTypeOptions(
+        DummyMainTypeOptions dummyMainTypeOptions,
         IDefaults defaults,
         string dbTable,
         string? dbSchema = null
@@ -61,6 +78,21 @@ public class DummyManyToOneTypeOptions : TypeOptions
         }
 
         DbColumnForName = defaults.DbColumnForName;
+
+        if (string.IsNullOrWhiteSpace(dummyMainTypeOptions.DbColumnForId))
+        {
+            throw new NullOrWhiteSpaceStringVariableException<DummyMainTypeOptions>(
+                nameof(dummyMainTypeOptions),
+                nameof(dummyMainTypeOptions.DbColumnForId));
+        }
+
+        DbColumnForDummyMainId = CreateDbColumnName(
+            dummyMainTypeOptions.DbTable,
+            dummyMainTypeOptions.DbColumnForId);
+
+        DbForeignKeyToDummyMain = CreateDbForeignKeyName(DbTable, dummyMainTypeOptions.DbTable);
+
+        DbIndexForDummyMainId = CreateDbIndexName(DbTable, DbColumnForDummyMainId);
 
         DbMaxLengthForName = 256;
 

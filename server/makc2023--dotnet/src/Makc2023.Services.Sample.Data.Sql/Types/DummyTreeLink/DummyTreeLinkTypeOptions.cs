@@ -15,14 +15,14 @@ public class DummyTreeLinkTypeOptions : TypeOptions
     public string? DbColumnForId { get; set; }
 
     /// <summary>
-    /// Колонка в базе данных для поля идентификатора родителя сущности "DummyTreeEntity".
+    /// Колонка в базе данных для поля "ParentId".
     /// </summary>
-    public string? DbColumnForDummyTreeEntityParentId { get; set; }
+    public string? DbColumnForParentId { get; set; }
 
     /// <summary>
-    /// Внешний ключ в базе данных к сущности "Фиктивное дерево".
+    /// Внешний ключ в базе данных к типу "Фиктивное дерево".
     /// </summary>
-    public string? DbForeignKeyToDummyTreeEntity { get; set; }
+    public string? DbForeignKeyToDummyTree { get; set; }
 
     /// <summary>
     /// Первичный ключ в базе данных.
@@ -50,9 +50,9 @@ public class DummyTreeLinkTypeOptions : TypeOptions
     {
         DbColumnForId = defaults.DbColumnForId;
 
-        DbColumnForDummyTreeEntityParentId = defaults.DbColumnForParentId;
+        DbColumnForParentId = defaults.DbColumnForParentId;
 
-        DbForeignKeyToDummyTreeEntity = CreateDbForeignKeyName(DbTable, dummyTreeTypeOptions.DbTable);
+        DbForeignKeyToDummyTree = CreateDbForeignKeyName(DbTable, dummyTreeTypeOptions.DbTable);
 
         DbPrimaryKey = CreateDbPrimaryKeyName(DbTable);
     }

@@ -20,9 +20,9 @@ public class DummyTreeTypeOptions : TypeOptions
     public string? DbColumnForName { get; set; }
 
     /// <summary>
-    /// Колонка в базе данных для поля идентификатора родителя сущности "Фиктивное дерево".
+    /// Колонка в базе данных для поля "ParentId".
     /// </summary>
-    public string? DbColumnForDummyTreeEntityParentId { get; set; }
+    public string? DbColumnForParentId { get; set; }
 
     /// <summary>
     /// Колонка в базе данных для поля "TreeChildCount".
@@ -55,9 +55,9 @@ public class DummyTreeTypeOptions : TypeOptions
     public string? DbColumnForTreeSort { get; set; }
 
     /// <summary>
-    /// Внешний ключ в базе данных к родителю сущности "Фиктивное дерево".
+    /// Внешний ключ в базе данных к родительскому типу "Фиктивное дерево".
     /// </summary>
-    public string? DbForeignKeyToDummyTreeEntityParent { get; set; }
+    public string? DbForeignKeyToDummyTreeParent { get; set; }
 
     /// <summary>
     /// Индекс в базе данных для поля "Name".
@@ -65,9 +65,9 @@ public class DummyTreeTypeOptions : TypeOptions
     public string? DbIndexForName { get; set; }
 
     /// <summary>
-    /// Индекс в базе данных для поля идентификатора родителя сущности "Фиктивное дерево".
+    /// Индекс в базе данных для поля "ParentId".
     /// </summary>
-    public string? DbIndexForDummyTreeEntityParentId { get; set; }
+    public string? DbIndexForParentId { get; set; }
 
     /// <summary>
     /// Индекс в базе данных для поля "TreeSort".
@@ -95,9 +95,9 @@ public class DummyTreeTypeOptions : TypeOptions
     public string? DbPrimaryKey { get; set; }
 
     /// <summary>
-    /// Индекс в базе данных для полей идентификатора родителя сущности "Фиктивное дерево" и "Name".
+    /// Индекс в базе данных для полей "ParentId" и "Name".
     /// </summary>
-    public string? DbUniqueIndexForDummyTreeEntityParentIdAndName { get; set; }
+    public string? DbUniqueIndexForParentIdAndName { get; set; }
 
     #endregion Properties
 
@@ -134,16 +134,16 @@ public class DummyTreeTypeOptions : TypeOptions
                 nameof(defaults.DbColumnForParentId));
         }
 
-        DbColumnForDummyTreeEntityParentId = defaults.DbColumnForParentId;
-        
+        DbColumnForParentId = defaults.DbColumnForParentId;
+
         DbColumnForTreeChildCount = defaults.DbColumnForTreeChildCount;
 
         DbColumnForTreeDescendantCount = defaults.DbColumnForTreeDescendantCount;
-        
+
         DbColumnForTreeLevel = defaults.DbColumnForTreeLevel;
-        
+
         DbColumnForTreePath = defaults.DbColumnForTreePath;
-        
+
         DbColumnForTreePosition = defaults.DbColumnForTreePosition;
 
         if (string.IsNullOrWhiteSpace(defaults.DbColumnForTreeSort))
@@ -155,25 +155,25 @@ public class DummyTreeTypeOptions : TypeOptions
 
         DbColumnForTreeSort = defaults.DbColumnForTreeSort;
 
-        DbForeignKeyToDummyTreeEntityParent = CreateDbForeignKeyName(DbTable, DbTable, DbColumnForDummyTreeEntityParentId);
+        DbForeignKeyToDummyTreeParent = CreateDbForeignKeyName(DbTable, DbTable, DbColumnForParentId);
 
         DbIndexForName = CreateDbIndexName(DbTable, DbColumnForName);
-        
-        DbIndexForDummyTreeEntityParentId = CreateDbIndexName(DbTable, DbColumnForDummyTreeEntityParentId);
-        
+
+        DbIndexForParentId = CreateDbIndexName(DbTable, DbColumnForParentId);
+
         DbIndexForTreeSort = CreateDbIndexName(DbTable, DbColumnForTreeSort);
 
         DbMaxLengthForName = 256;
-        
+
         DbMaxLengthForTreePath = 900;
-        
+
         DbMaxLengthForTreeSort = 900;
 
         DbPrimaryKey = CreateDbPrimaryKeyName(DbTable);
 
-        DbUniqueIndexForDummyTreeEntityParentIdAndName = CreateDbUniqueIndexName(
+        DbUniqueIndexForParentIdAndName = CreateDbUniqueIndexName(
             DbTable,
-            DbColumnForDummyTreeEntityParentId,
+            DbColumnForParentId,
             DbColumnForName);
     }
 
