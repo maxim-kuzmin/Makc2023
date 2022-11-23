@@ -32,7 +32,7 @@ public class InternalDomainEntity : Entity<long>
     #region Navigation properties
 
     /// <summary>
-    /// Список элементов сущности "Внутреннее разрешение".
+    /// Список экземпляров сущности "Внутреннее разрешение".
     /// </summary>
     public IReadOnlyCollection<InternalPermissionEntity> InternalPermissionList => _internalPermissionList;
 

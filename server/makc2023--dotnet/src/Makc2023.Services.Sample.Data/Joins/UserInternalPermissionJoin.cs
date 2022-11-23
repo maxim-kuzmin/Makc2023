@@ -28,12 +28,12 @@ public class UserInternalPermissionJoin
     #region Navigation properties
 
     /// <summary>
-    /// Сущность "Пользователь".
+    /// Экземпляр сущности "Пользователь".
     /// </summary>
     public UserEntity? User { get; set; }
 
     /// <summary>
-    /// Сущность "Внутреннее разрешение".
+    /// Экземпляр сущности "Внутреннее разрешение".
     /// </summary>
     public InternalPermissionEntity? InternalPermission { get; set; }
 

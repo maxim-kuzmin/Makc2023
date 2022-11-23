@@ -24,14 +24,14 @@ public class DummyTreeLinkJoin
     #region Navigation properties
 
     /// <summary>
-    /// Узел к идентификатору.
+    /// Экземпляр сущности "Фиктивное дерево" по идентификатору.
     /// </summary>
-    public DummyTreeEntity? NodeToId { get; set; }
+    public DummyTreeEntity? DummyTreeById { get; set; }
 
     /// <summary>
-    /// Узел к идентификатору родителя.
+    /// Экземпляр сущности "Фиктивное дерево" по идентификатору родителя.
     /// </summary>
-    public DummyTreeEntity? NodeToParentId { get; set; }
+    public DummyTreeEntity? DummyTreeByParentId { get; set; }
 
     #endregion Navigation properties
 }

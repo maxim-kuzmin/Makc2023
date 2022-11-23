@@ -117,7 +117,7 @@ public class DummyMainEntity : Entity<long>, IAggregateRoot
     #region Navigation properties
 
     /// <summary>
-    /// Список элементов соединения "Фиктивное отношение многие ко многим фиктивного главного".
+    /// Список экземпляров соединения "Фиктивное отношение многие ко многим фиктивного главного".
     /// </summary>
     public List<DummyMainDummyManyToManyJoin>? DummyMainDummyManyToManyList { get; set; }
 

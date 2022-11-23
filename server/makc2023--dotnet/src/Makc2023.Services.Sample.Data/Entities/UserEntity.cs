@@ -36,12 +36,12 @@ public class UserEntity : Entity<long>
     #region Navigation properties
 
     /// <summary>
-    /// Список элементов сущности "Внутреннее разрешение".
+    /// Список экземпляров сущности "Внутреннее разрешение".
     /// </summary>
     public ICollection<InternalPermissionEntity>? InternalPermissionList { get; set; }
 
     /// <summary>
-    /// Список элементов соединения "Внутреннее разрешение пользователя".
+    /// Список экземпляров соединения "Внутреннее разрешение пользователя".
     /// </summary>
     public List<UserInternalPermissionJoin>? UserInternalPermissionList { get; set; }
 

@@ -61,24 +61,24 @@ public class DummyTreeEntity : Entity<long>, IAggregateRoot
     #region Navigation properties
 
     /// <summary>
-    /// Дети.
+    /// Список дочерних экземпляров сущности "Фиктивное дерево".
     /// </summary>
-    public List<DummyTreeEntity>? Children { get; set; }
+    public List<DummyTreeEntity>? DummyTreeChildList { get; set; }
 
     /// <summary>
-    /// Связи по идентификатору.
+    /// Список экземпляров соединения "Связь фиктивного дерева" по идентификатору.
     /// </summary>
-    public List<DummyTreeLinkJoin>? LinksById { get; set; }
+    public List<DummyTreeLinkJoin>? DummyTreeLinkByIdList { get; set; }
 
     /// <summary>
-    /// Связи по идентификатору родителя.
+    /// Список экземпляров соединения "Связь фиктивного дерева" по идентификатору родителя.
     /// </summary>
-    public List<DummyTreeLinkJoin>? LinksByParentId { get; set; }
+    public List<DummyTreeLinkJoin>? DummyTreeLinkByParentIdList { get; set; }
 
     /// <summary>
-    /// Родитель.
+    /// Родительский экземпляр сущности "Фиктивное дерево".
     /// </summary>
-    public DummyTreeEntity? Parent { get; set; }
+    public DummyTreeEntity? DummyTreeParent { get; set; }
 
     #endregion Navigation properties
 

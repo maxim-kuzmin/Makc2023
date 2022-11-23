@@ -30,12 +30,12 @@ public class DummyManyToManyEntity : Entity<long>, IAggregateRoot
     #region Navigation properties
 
     /// <summary>
-    /// Список элементов сущности "Фиктивное главное".
+    /// Список экземпляров сущности "Фиктивное главное".
     /// </summary>
     public ICollection<DummyMainEntity>? DummyMainList { get; set; }
 
     /// <summary>
-    /// Список элементов соединения "Фиктивное отношение многие ко многим фиктивного главного".
+    /// Список экземпляров соединения "Фиктивное отношение многие ко многим фиктивного главного".
     /// </summary>
     public List<DummyMainDummyManyToManyJoin>? DummyMainDummyManyToManyList { get; set; }
 

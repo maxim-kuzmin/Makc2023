@@ -27,12 +27,12 @@ public class DummyMainDummyManyToManyJoin
     #region Navigation properties
 
     /// <summary>
-    /// Сущность "Фиктивное главное".
+    /// Экземпляр сущности "Фиктивное главное".
     /// </summary>
     public DummyMainEntity? DummyMain { get; set; }
 
     /// <summary>
-    /// Сущность "Фиктивное отношение многие ко многим".
+    /// Экземпляр сущности "Фиктивное отношение многие ко многим".
     /// </summary>
     public DummyManyToManyEntity? DummyManyToMany { get; set; }
 

@@ -10,9 +10,9 @@ public class ItemGetOperationInput : OperationInput
     #region Properties
 
     /// <summary>
-    /// Идентификатор сущности.
+    /// Идентификатор.
     /// </summary>
-    public long EntityId { get; set; }
+    public long Id { get; set; }
 
     #endregion Properties
 
@@ -23,9 +23,9 @@ public class ItemGetOperationInput : OperationInput
     /// </summary>
     public virtual void Normalize()
     {
-        if (EntityId < 0)
+        if (Id < 0)
         {
-            EntityId = 0;
+            Id = 0;
         }
     }
 
@@ -34,9 +34,9 @@ public class ItemGetOperationInput : OperationInput
     {
         var result = base.GetInvalidProperties();
 
-        if (EntityId < 1)
+        if (Id < 1)
         {
-            result.Add(nameof(EntityId));
+            result.Add(nameof(Id));
         }
 
         return result;
