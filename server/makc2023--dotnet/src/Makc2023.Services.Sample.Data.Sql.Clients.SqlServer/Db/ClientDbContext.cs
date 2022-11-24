@@ -3,22 +3,15 @@
 namespace Makc2023.Services.Sample.Data.Sql.Clients.SqlServer.Db;
 
 /// <summary>
-/// Контекст базы данных SQL.
+/// Контекст базы данных клиента.
 /// </summary>
-public class ClientDbContext : UnitOfWork
+public class ClientDbContext : MapperDbContext
 {
     #region Constructors
 
-    /// <summary>
-    /// Конструктор.
-    /// </summary>
-    /// <param name="options">Настройки.</param>
-    /// <param name="mediator">Посредник.</param>
-    /// <exception cref="ArgumentNullException">
-    /// Возникает, если NULL содержится в аргументе, который не должен его содержать.
-    /// </exception>
-    public ClientDbContext(DbContextOptions<ClientDbContext> options, IMediator mediator)
-        : base(options, mediator)
+    /// <inheritdoc/>
+    public ClientDbContext(DbContextOptions<ClientDbContext> options)
+        : base(options)
     {
     }
 
@@ -33,17 +26,17 @@ public class ClientDbContext : UnitOfWork
 
         var typesOptions = ClientTypesOptions.Instance;
 
-        modelBuilder.ApplyConfiguration(new DummyMainTypeConfiguration(typesOptions));
-        modelBuilder.ApplyConfiguration(new DummyManyToManyTypeConfiguration(typesOptions));
-        modelBuilder.ApplyConfiguration(new DummyMainDummyManyToManyTypeConfiguration(typesOptions));
-        modelBuilder.ApplyConfiguration(new DummyOneToManyTypeConfiguration(typesOptions));
-        modelBuilder.ApplyConfiguration(new DummyTreeTypeConfiguration(typesOptions));
-        modelBuilder.ApplyConfiguration(new DummyTreeLinkTypeConfiguration(typesOptions));
-        
-        modelBuilder.ApplyConfiguration(new InternalDomainTypeConfiguration(typesOptions));
-        modelBuilder.ApplyConfiguration(new InternalPermissionTypeConfiguration(typesOptions));
-        modelBuilder.ApplyConfiguration(new UserTypeConfiguration(typesOptions));
-        modelBuilder.ApplyConfiguration(new UserInternalPermissionTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new MapperDummyMainTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new MapperDummyManyToManyTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new MapperDummyManyToOneTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new MapperDummyMainDummyManyToManyTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new MapperDummyOneToManyTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new MapperDummyTreeTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new MapperDummyTreeLinkTypeConfiguration(typesOptions));        
+        modelBuilder.ApplyConfiguration(new MapperInternalDomainTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new MapperInternalPermissionTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new MapperUserTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new MapperUserInternalPermissionTypeConfiguration(typesOptions));
     }
 
     #endregion Protected methods

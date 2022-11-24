@@ -3,7 +3,7 @@
 namespace Makc2023.Services.Sample.Data.Sql.Clients.SqlServer.Db;
 
 /// <summary>
-/// Фабрика контекста базы данных SQL.
+/// Фабрика контекста базы данных клиента.
 /// </summary>
 public class ClientDbContextFactory : IDesignTimeDbContextFactory<ClientDbContext>
 {
@@ -18,6 +18,6 @@ public class ClientDbContextFactory : IDesignTimeDbContextFactory<ClientDbContex
             config["ConnectionString"],
             sqlServerOptionsAction: o => o.MigrationsAssembly(Assembly.GetExecutingAssembly().GetName().Name));
 
-        return new ClientDbContext(optionsBuilder.Options, null);
+        return new ClientDbContext(optionsBuilder.Options);
     }
 }
