@@ -23,7 +23,10 @@ public static class SetupExtension
             new CoreModule(configuration.GetRequiredSection($"{root}:Core")),
             new DataSqlModule(configuration.GetRequiredSection($"{root}:Data:Sql")),
             new DataSqlClientsSqlServerModule(),
+            new ServicesSampleDataSqlClientsSqlServerModule(),
             new ServicesSampleDataSqlModule(configuration.GetRequiredSection($"{root}:Services:Sample:Data:Sql")),
+            new ServicesSampleDataSqlMappersEFModule(),
+            new ServicesSampleDataSqlMappersEFClientsSqlServerModule()
         });
     }
 

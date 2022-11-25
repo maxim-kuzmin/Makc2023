@@ -1,16 +1,16 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Services.Sample.Data.Sql.Clients.SqlServer.Db;
+namespace Makc2023.Services.Sample.Data.Sql.Mappers.EF.Clients.SqlServer.Db;
 
 /// <summary>
-/// Контекст базы данных клиента.
+/// Контекст базы данных сопоставителя клиента.
 /// </summary>
-public class ClientDbContext : MapperDbContext
+public class ClientMapperDbContext : MapperDbContext
 {
     #region Constructors
 
     /// <inheritdoc/>
-    public ClientDbContext(DbContextOptions<ClientDbContext> options)
+    public ClientMapperDbContext(DbContextOptions<ClientMapperDbContext> options)
         : base(options)
     {
     }

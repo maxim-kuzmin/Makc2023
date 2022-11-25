@@ -14,7 +14,6 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Makc2023.Data.Sql.Clients.SqlServer\Makc2023.Data.Sql.Clients.SqlServer.csproj" />
-	  <ProjectReference Include="..\Makc2023.Services.Sample.Data.Sql.Mappers.EF\Makc2023.Services.Sample.Data.Sql.Mappers.EF.csproj" />
 	  <ProjectReference Include="..\Makc2023.Services.Sample.Data.Sql\Makc2023.Services.Sample.Data.Sql.csproj" />
 	</ItemGroup>
 
