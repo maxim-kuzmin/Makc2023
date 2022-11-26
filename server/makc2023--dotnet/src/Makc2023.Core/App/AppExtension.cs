@@ -1,5 +1,7 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
+using Makc2023.Core.Exceptions;
+
 namespace Makc2023.Core.App;
 
 /// <summary>
@@ -82,7 +84,7 @@ public static class AppExtension
 
         var resource = new AppResource(localizer);
 
-        throw new Exception(resource.GetErrorMessageForNotImportedTypes(types));
+        throw new LocalizedException(resource.GetErrorMessageForNotImportedTypes(types));
     }
 
     #endregion Private methods

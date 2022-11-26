@@ -5,7 +5,7 @@ namespace Makc2023.Data.Sql;
 /// <summary>
 /// Единица работы сопоставителя.
 /// </summary>
-public class MapperUnitOfWork : IUnitOfWork
+public sealed class MapperUnitOfWork : IUnitOfWork
 {
     #region Properties
 

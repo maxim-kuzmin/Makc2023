@@ -7,12 +7,6 @@ namespace Makc2023.Services.Sample.Data.Sql.Mappers.EF.Db;
 /// </summary>
 public abstract class MapperDbContext : DbContext
 {
-    #region Fields
-
-    private readonly MapperDbTransaction _dbTransaction;
-
-    #endregion Fields
-
     #region Properties        
 
     /// <summary>
@@ -78,18 +72,7 @@ public abstract class MapperDbContext : DbContext
     public MapperDbContext(DbContextOptions options)
         : base(options)
     {
-        _dbTransaction = new(this);
     }
 
     #endregion Constructors
-
-    #region Public methods
-
-    /// <summary>
-    /// Получить транзакцию базы данных.
-    /// </summary>
-    /// <returns>Транзакция.</returns>
-    public MapperDbTransaction GetDbTransaction() => _dbTransaction;
-
-    #endregion Public methods
 }

@@ -20,13 +20,14 @@ public static class SetupExtension
 
         services.AddAppModules(new AppModule[]
         {
-            new CoreModule(configuration.GetRequiredSection($"{root}:Core")),
-            new DataSqlModule(configuration.GetRequiredSection($"{root}:Data:Sql")),
-            new DataSqlClientsSqlServerModule(),
-            new ServicesSampleDataSqlClientsSqlServerModule(),
-            new ServicesSampleDataSqlModule(configuration.GetRequiredSection($"{root}:Services:Sample:Data:Sql")),
-            new ServicesSampleDataSqlMappersEFModule(),
-            new ServicesSampleDataSqlMappersEFClientsSqlServerModule()
+            new ModuleOfCore(configuration.GetRequiredSection($"{root}:Core")),
+            new ModuleOfDataSql(configuration.GetRequiredSection($"{root}:Data:Sql")),
+            new ModuleOfDataSqlClientsSqlServer(),
+            new ModuleOfDataSqlMappersEF(),
+            new ModuleOfServicesSampleDataSqlClientsSqlServer(),
+            new ModuleOfServicesSampleDataSql(configuration.GetRequiredSection($"{root}:Services:Sample:Data:Sql")),
+            new ModuleOfServicesSampleDataSqlMappersEF(),
+            new ModuleOfServicesSampleDataSqlMappersEFClientsSqlServer()
         });
     }
 

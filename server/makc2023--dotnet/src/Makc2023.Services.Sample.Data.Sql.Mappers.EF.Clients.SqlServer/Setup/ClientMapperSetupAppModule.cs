@@ -53,7 +53,7 @@ public class ClientMapperSetupAppModule : AppModule
 
     #region Private methods
 
-    private string GetConnectionStringName(IServiceProvider serviceProvider)
+    private static string GetConnectionStringName(IServiceProvider serviceProvider)
     {
         string? result = serviceProvider.GetRequiredService<IOptions<DbSetupOptionsForSample>>()
             .Value

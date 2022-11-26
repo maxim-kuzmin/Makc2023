@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
@@ -12,7 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Makc2023.Core\Makc2023.Core.csproj" />
+	  <ProjectReference Include="..\Makc2023.Data.Sql\Makc2023.Data.Sql.csproj" />
 	</ItemGroup>
 
 </Project>
