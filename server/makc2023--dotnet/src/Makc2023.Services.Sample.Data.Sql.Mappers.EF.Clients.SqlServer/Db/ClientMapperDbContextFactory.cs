@@ -1,8 +1,5 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-using Makc2023.Core.Exceptions.VariableExceptions;
-using Makc2023.Data.Sql.Mappers.EF.Db;
-
 namespace Makc2023.Services.Sample.Data.Sql.Mappers.EF.Clients.SqlServer.Db;
 
 /// <summary>

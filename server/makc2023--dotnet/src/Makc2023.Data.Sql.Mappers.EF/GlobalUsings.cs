@@ -2,6 +2,7 @@
 
 global using System.Data;
 global using Makc2023.Core.App;
+global using Makc2023.Core.Exceptions;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.EntityFrameworkCore.Diagnostics;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;

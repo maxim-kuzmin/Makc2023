@@ -1,5 +1,7 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
+using Microsoft.Extensions.DependencyInjection;
+
 namespace Makc2023.Services.Sample.Data.Sql.Mappers.EF.Clients.SqlServer.Setup;
 
 /// <summary>
@@ -12,15 +14,25 @@ public class ClientMapperSetupAppModule : AppModule
     /// <inheritdoc/>
     public sealed override void ConfigureServices(IServiceCollection services)
     {
+        services.AddDbContext<ClientMapperDbContext>();
+
         services.AddDbContextFactory<ClientMapperDbContext>((x, options) => ClientMapperDbContextFactory.Configure(
             options,
             x.GetRequiredService<IConfiguration>().GetConnectionString(GetConnectionStringName(x)),
             x.GetRequiredService<ILogger<ClientMapperDbContextFactory>>(),
             x.GetRequiredService<IOptionsMonitor<DbSetupOptions>>()));
 
+        services.AddTransient<MapperDbContext>(x => x.GetRequiredService<ClientMapperDbContext>());
+
         services.AddTransient<IMapperDbContextFactory>(x => new ClientMapperDbContextFactory(
             x.GetRequiredService<IDbContextFactory<ClientMapperDbContext>>(),
             x.GetRequiredService<IOptionsMonitor<DbSetupOptions>>()));
+
+        services.AddTransient(x => new MapperDbManager(
+            x.GetRequiredService<IMapperDbContextFactory>(),
+            x.GetRequiredService<MapperDbContext>(),
+            x.GetRequiredService<IMapperResource>()
+            ));
     }
 
     /// <inheritdoc/>
@@ -28,8 +40,11 @@ public class ClientMapperSetupAppModule : AppModule
     {
         return new[]
             {
+                typeof(ClientMapperDbContext),
                 typeof(IDbContextFactory<ClientMapperDbContext>),
                 typeof(IMapperDbContextFactory),
+                typeof(MapperDbContext),
+                typeof(MapperDbManager),
             };
     }
 
@@ -46,6 +61,7 @@ public class ClientMapperSetupAppModule : AppModule
                 typeof(DbSetupOptionsForSample),
                 typeof(IConfiguration),
                 typeof(ILogger),
+                typeof(IMapperResource),
             };
     }
 

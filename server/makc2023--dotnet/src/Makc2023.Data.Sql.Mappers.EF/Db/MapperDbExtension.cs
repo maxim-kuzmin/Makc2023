@@ -41,22 +41,5 @@ public static class MapperDbExtension
             });
     }
 
-    /// <summary>
-    /// Создать менеджер базы данных.
-    /// </summary>
-    /// <param name="dbContext">Контекст базы данных.</param>
-    /// <param name="resource">Ресурс.</param>
-    /// <param name="functionToGetTransaction">Функция для получения транзакции.</param>
-    /// <param name="actionToSetTransaction">Действие для установки транзакции.</param>
-    /// <returns>Менеджер базы данных.</returns>
-    public static MapperDbManager CreateDbManager(
-        this DbContext dbContext,
-        IMapperResource resource,
-        Func<IDbContextTransaction?> functionToGetTransaction,
-        Action<IDbContextTransaction?> actionToSetTransaction)
-    {
-        return new MapperDbManager(dbContext, resource, functionToGetTransaction, actionToSetTransaction);
-    }
-
     #endregion Public methods
 }

@@ -1,28 +1,31 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-using Makc2023.Core.Exceptions;
-
 namespace Makc2023.Data.Sql.Mappers.EF.Db;
 
 /// <summary>
 /// Менеджер базы данных сопоставителя.
 /// </summary>
-public class MapperDbManager
+/// <typeparam name="TDbContext">Тип контекста базы данных.</typeparam>
+public abstract class MapperDbManager<TDbContext> where TDbContext : DbContext
 {
     #region Properties
-
-    private Action<IDbContextTransaction?> ActionToSetTransaction { get; init; }
-
-    private DbContext DbContext { get; init; }
-
-    private Func<IDbContextTransaction?> FunctionToGetTransaction { get; init; }
 
     private IMapperResource Resource { get; init; }
 
     /// <summary>
+    /// Контекст базы данных.
+    /// </summary>
+    public TDbContext DbContext { get; init; }
+
+    /// <summary>
     /// Содержит транзакцию.
     /// </summary>
-    public bool HasTransaction => FunctionToGetTransaction.Invoke() is not null;
+    public bool HasTransaction => Transaction is not null;
+
+    /// <summary>
+    /// Транзакция.
+    /// </summary>
+    public IDbContextTransaction? Transaction { get; private set; }
 
     #endregion Properties    
 
@@ -33,18 +36,10 @@ public class MapperDbManager
     /// </summary>
     /// <param name="dbContext">Контекст базы данных.</param>
     /// <param name="resource">Ресурс.</param>
-    /// <param name="functionToGetTransaction">Функция для получения транзакции.</param>
-    /// <param name="actionToSetTransaction">Действие для установки транзакции.</param>
-    public MapperDbManager(
-        DbContext dbContext,
-        IMapperResource resource,
-        Func<IDbContextTransaction?> functionToGetTransaction,
-        Action<IDbContextTransaction?> actionToSetTransaction)
+    public MapperDbManager(TDbContext dbContext, IMapperResource resource)
     {
         DbContext = dbContext;
         Resource = resource;
-        FunctionToGetTransaction = functionToGetTransaction;
-        ActionToSetTransaction = actionToSetTransaction;
     }
 
     #endregion Constructors
@@ -63,11 +58,9 @@ public class MapperDbManager
             return null;
         }
 
-        var result = await DbContext.Database.BeginTransactionAsync(IsolationLevel.ReadCommitted);
+        Transaction = await DbContext.Database.BeginTransactionAsync(IsolationLevel.ReadCommitted);
 
-        ActionToSetTransaction.Invoke(result);
-
-        return result;
+        return Transaction;
     }
 
     /// <summary>
@@ -88,9 +81,7 @@ public class MapperDbManager
             throw new ArgumentNullException(nameof(transaction));
         }
 
-        var internalTransaction = FunctionToGetTransaction.Invoke();
-
-        if (transaction != internalTransaction)
+        if (transaction != Transaction)
         {
             throw new LocalizedException(Resource.GetErrorMessageForExternalTransaction(transaction.TransactionId));
         }
@@ -99,7 +90,7 @@ public class MapperDbManager
         {
             await DbContext.SaveChangesAsync();
 
-            await transaction.CommitAsync();
+            await Transaction.CommitAsync();
         }
         catch
         {
@@ -109,12 +100,7 @@ public class MapperDbManager
         }
         finally
         {
-            if (internalTransaction is not null)
-            {
-                internalTransaction.Dispose();
-
-                ActionToSetTransaction.Invoke(null);
-            }
+            EndTransaction();
         }
     }
 
@@ -123,22 +109,29 @@ public class MapperDbManager
     /// </summary>
     public void RollbackTransaction()
     {
-        var internalTransaction = FunctionToGetTransaction.Invoke();
-
         try
         {
-            internalTransaction?.Rollback();
+            Transaction?.Rollback();
         }
         finally
         {
-            if (internalTransaction is not null)
-            {
-                internalTransaction.Dispose();
-
-                ActionToSetTransaction.Invoke(null);
-            }
+            EndTransaction();
         }
     }
 
     #endregion Public methods
+
+    #region Private methods
+
+    private void EndTransaction()
+    {
+        if (Transaction is not null)
+        {
+            Transaction.Dispose();
+
+            Transaction = null;
+        }
+    }
+
+    #endregion Private methods
 }

@@ -3,6 +3,8 @@
 global using System.Reflection;
 global using Makc2023.Core.App;
 global using Makc2023.Core.Exceptions.VariableExceptions;
+global using Makc2023.Data.Sql.Mappers.EF;
+global using Makc2023.Data.Sql.Mappers.EF.Db;
 global using Makc2023.Services.Sample.Data.Sql.Clients.SqlServer;
 global using Makc2023.Services.Sample.Data.Sql.Mappers.EF.Clients.SqlServer.Db;
 global using Makc2023.Services.Sample.Data.Sql.Mappers.EF.Db;
