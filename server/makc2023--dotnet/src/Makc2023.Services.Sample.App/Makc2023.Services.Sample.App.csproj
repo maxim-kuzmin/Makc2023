@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Makc2023.Core.Apps.WebApp\Makc2023.Core.Apps.WebApp.csproj" />
+    <ProjectReference Include="..\Makc2023.Backend.Core.Apps.WebApp\Makc2023.Backend.Core.Apps.WebApp.csproj" />
     <ProjectReference Include="..\Makc2023.Services.Sample.Data.Sql.Clients.SqlServer\Makc2023.Services.Sample.Data.Sql.Clients.SqlServer.csproj" />
     <ProjectReference Include="..\Makc2023.Services.Sample.Data.Sql.Mappers.EF.Clients.SqlServer\Makc2023.Services.Sample.Data.Sql.Mappers.EF.Clients.SqlServer.csproj" />
   </ItemGroup>

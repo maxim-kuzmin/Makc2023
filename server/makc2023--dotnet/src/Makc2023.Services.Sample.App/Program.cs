@@ -1,7 +1,7 @@
 // Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-using Makc2023.Core.Apps.WebApp;
-using Makc2023.Core.Apps.WebApp.Setup;
+using Makc2023.Backend.Core.Apps.WebApp;
+using Makc2023.Backend.Core.Apps.WebApp.Setup;
 using Makc2023.Services.Sample.App.Setup;
 
 using var appHandler = new WebAppHandler();

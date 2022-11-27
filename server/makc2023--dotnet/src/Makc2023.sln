@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Core", "Makc2023.Core\Makc2023.Core.csproj", "{B3D98836-284C-43B9-A0B1-FCE85FB449E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Backend.Core", "Makc2023.Backend.Core\Makc2023.Backend.Core.csproj", "{B3D98836-284C-43B9-A0B1-FCE85FB449E4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.Data.Sql.Clients.SqlServer", "Makc2023.Services.Sample.Data.Sql.Clients.SqlServer\Makc2023.Services.Sample.Data.Sql.Clients.SqlServer.csproj", "{1C479008-C71C-4A87-83C1-A08A3949749B}"
 EndProject
@@ -15,41 +15,43 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Data.Sql", "Makc2023.Data.Sql\Makc2023.Data.Sql.csproj", "{BE2D3C5B-08A1-456A-9858-57EEA92242DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Backend.Data.Sql", "Makc2023.Backend.Data.Sql\Makc2023.Backend.Data.Sql.csproj", "{BE2D3C5B-08A1-456A-9858-57EEA92242DE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Data.Sql.Clients.PostgreSql", "Makc2023.Data.Sql.Clients.PostgreSql\Makc2023.Data.Sql.Clients.PostgreSql.csproj", "{A8C5B903-4A52-42D9-AE4C-F679848F198F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Backend.Data.Sql.Clients.PostgreSql", "Makc2023.Backend.Data.Sql.Clients.PostgreSql\Makc2023.Backend.Data.Sql.Clients.PostgreSql.csproj", "{A8C5B903-4A52-42D9-AE4C-F679848F198F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Data.Sql.Clients.SqlServer", "Makc2023.Data.Sql.Clients.SqlServer\Makc2023.Data.Sql.Clients.SqlServer.csproj", "{CF3B17A6-E5FE-4A3E-B6BD-697095A71B33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Backend.Data.Sql.Clients.SqlServer", "Makc2023.Backend.Data.Sql.Clients.SqlServer\Makc2023.Backend.Data.Sql.Clients.SqlServer.csproj", "{CF3B17A6-E5FE-4A3E-B6BD-697095A71B33}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{42625803-44FD-44F7-9BC5-BEC8C21A7DB7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{BAE95757-FC92-41EC-9D55-F73E695A9CC4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Packages", "Packages", "{79F7A2F4-52CC-4E8A-B2CE-2A4EC4C1098A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{79F7A2F4-52CC-4E8A-B2CE-2A4EC4C1098A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{C80749B0-DA43-431B-96B8-0E96789E899C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{BD53874E-B27F-4A63-A17C-17ADE1D9E802}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Core.Apps.ConsoleApp", "Makc2023.Core.Apps.ConsoleApp\Makc2023.Core.Apps.ConsoleApp.csproj", "{A3727EE8-FBD7-4285-8F89-41A49CD360F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Backend.Core.Apps.ConsoleApp", "Makc2023.Backend.Core.Apps.ConsoleApp\Makc2023.Backend.Core.Apps.ConsoleApp.csproj", "{A3727EE8-FBD7-4285-8F89-41A49CD360F6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Core.Apps.WebApp", "Makc2023.Core.Apps.WebApp\Makc2023.Core.Apps.WebApp.csproj", "{9359F76B-298D-4F01-8DCF-F55517296BB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Backend.Core.Apps.WebApp", "Makc2023.Backend.Core.Apps.WebApp\Makc2023.Backend.Core.Apps.WebApp.csproj", "{9359F76B-298D-4F01-8DCF-F55517296BB0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.Data.Sql", "Makc2023.Services.Sample.Data.Sql\Makc2023.Services.Sample.Data.Sql.csproj", "{7C81ED11-5196-4EF2-9C0B-08BC3E9F3D22}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.Domain", "Makc2023.Services.Sample.Domain\Makc2023.Services.Sample.Domain.csproj", "{D66BCD9F-E84E-48C8-A4BA-D263E932A530}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Domain", "Makc2023.Domain\Makc2023.Domain.csproj", "{D26F9C8C-6439-475E-9180-AD200143C3D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Backend.Domain", "Makc2023.Backend.Domain\Makc2023.Backend.Domain.csproj", "{D26F9C8C-6439-475E-9180-AD200143C3D7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.Data.Sql.Mappers.EF", "Makc2023.Services.Sample.Data.Sql.Mappers.EF\Makc2023.Services.Sample.Data.Sql.Mappers.EF.csproj", "{5F0DD392-60C9-4D07-B381-2D979D5DA189}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Data.Sql.Mappers.EF", "Makc2023.Data.Sql.Mappers.EF\Makc2023.Data.Sql.Mappers.EF.csproj", "{447B20FA-9E34-490E-A827-FDF07394315D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Backend.Data.Sql.Mappers.EF", "Makc2023.Backend.Data.Sql.Mappers.EF\Makc2023.Backend.Data.Sql.Mappers.EF.csproj", "{447B20FA-9E34-490E-A827-FDF07394315D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{7A04E08A-6C67-4F82-8544-47B8EA8C1C18}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Domain.Sql.Mappers.EF", "Makc2023.Domain.Sql.Mappers.EF\Makc2023.Domain.Sql.Mappers.EF.csproj", "{8ACCEBB3-9BB8-42EC-835A-6E1D9AE470C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Backend.Domain.Sql.Mappers.EF", "Makc2023.Backend.Domain.Sql.Mappers.EF\Makc2023.Backend.Domain.Sql.Mappers.EF.csproj", "{8ACCEBB3-9BB8-42EC-835A-6E1D9AE470C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Makc2023.Services.Sample.Data.Sql.Mappers.EF.Clients.SqlServer", "Makc2023.Services.Sample.Data.Sql.Mappers.EF.Clients.SqlServer\Makc2023.Services.Sample.Data.Sql.Mappers.EF.Clients.SqlServer.csproj", "{DC4CA452-997F-4E86-8754-A9465F58B903}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.Data.Sql.Mappers.EF.Clients.SqlServer", "Makc2023.Services.Sample.Data.Sql.Mappers.EF.Clients.SqlServer\Makc2023.Services.Sample.Data.Sql.Mappers.EF.Clients.SqlServer.csproj", "{DC4CA452-997F-4E86-8754-A9465F58B903}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Makc2023.Services.Sample.Domains.DummyMain", "Makc2023.Services.Sample.Domains.DummyMain\Makc2023.Services.Sample.Domains.DummyMain.csproj", "{7162D967-4819-4593-A65A-006A30221C2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,10 @@ Global
 		{DC4CA452-997F-4E86-8754-A9465F58B903}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC4CA452-997F-4E86-8754-A9465F58B903}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC4CA452-997F-4E86-8754-A9465F58B903}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7162D967-4819-4593-A65A-006A30221C2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7162D967-4819-4593-A65A-006A30221C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7162D967-4819-4593-A65A-006A30221C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7162D967-4819-4593-A65A-006A30221C2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -141,6 +147,7 @@ Global
 		{7A04E08A-6C67-4F82-8544-47B8EA8C1C18} = {79F7A2F4-52CC-4E8A-B2CE-2A4EC4C1098A}
 		{8ACCEBB3-9BB8-42EC-835A-6E1D9AE470C0} = {7A04E08A-6C67-4F82-8544-47B8EA8C1C18}
 		{DC4CA452-997F-4E86-8754-A9465F58B903} = {BAE95757-FC92-41EC-9D55-F73E695A9CC4}
+		{7162D967-4819-4593-A65A-006A30221C2B} = {BAE95757-FC92-41EC-9D55-F73E695A9CC4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B139510-D0E2-4301-9C5D-1D82BAD0C2B1}

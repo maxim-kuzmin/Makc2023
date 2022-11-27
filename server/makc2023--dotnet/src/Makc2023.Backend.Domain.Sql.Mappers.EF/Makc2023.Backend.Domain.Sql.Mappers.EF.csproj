@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Makc2023.Backend.Data.Sql.Mappers.EF\Makc2023.Backend.Data.Sql.Mappers.EF.csproj" />
+		<ProjectReference Include="..\Makc2023.Backend.Domain\Makc2023.Backend.Domain.csproj" />
+	</ItemGroup>
+
+</Project>

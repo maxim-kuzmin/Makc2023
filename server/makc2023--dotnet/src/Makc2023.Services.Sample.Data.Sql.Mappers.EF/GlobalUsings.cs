@@ -1,12 +1,12 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-global using Makc2023.Core.App;
-global using Makc2023.Core.Exceptions.VariableExceptions;
-global using Makc2023.Data.Sql;
-global using Makc2023.Data.Sql.Commands.Tree.Trigger;
-global using Makc2023.Data.Sql.Commands.Trigger;
-global using Makc2023.Data.Sql.Mappers.EF;
-global using Makc2023.Data.Sql.Mappers.EF.Db;
+global using Makc2023.Backend.Core.App;
+global using Makc2023.Backend.Core.Exceptions.VariableExceptions;
+global using Makc2023.Backend.Data.Sql;
+global using Makc2023.Backend.Data.Sql.Commands.Tree.Trigger;
+global using Makc2023.Backend.Data.Sql.Commands.Trigger;
+global using Makc2023.Backend.Data.Sql.Mappers.EF;
+global using Makc2023.Backend.Data.Sql.Mappers.EF.Db;
 global using Makc2023.Services.Sample.Data.Sql.Mappers.EF.Db;
 global using Makc2023.Services.Sample.Data.Sql.Mappers.EF.Types.DummyMain;
 global using Makc2023.Services.Sample.Data.Sql.Mappers.EF.Types.DummyMainDummyManyToMany;
@@ -19,6 +19,7 @@ global using Makc2023.Services.Sample.Data.Sql.Mappers.EF.Types.InternalDomain;
 global using Makc2023.Services.Sample.Data.Sql.Mappers.EF.Types.InternalPermission;
 global using Makc2023.Services.Sample.Data.Sql.Mappers.EF.Types.User;
 global using Makc2023.Services.Sample.Data.Sql.Mappers.EF.Types.UserInternalPermission;
+global using Makc2023.Services.Sample.Data.Sql.Setup;
 global using Makc2023.Services.Sample.Data.Sql.Types.DummyMain;
 global using Makc2023.Services.Sample.Data.Sql.Types.DummyMainDummyManyToMany;
 global using Makc2023.Services.Sample.Data.Sql.Types.DummyManyToMany;

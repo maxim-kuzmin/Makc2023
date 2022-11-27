@@ -12,7 +12,7 @@ public class MapperSetupAppModule : AppModule
     /// <inheritdoc/>
     public sealed override void ConfigureServices(IServiceCollection services)
     {
-        services.AddSingleton<IMapperService>(x => new MapperService(
+        services.AddSingleton<ISetupService>(x => new MapperSetupService(
             x.GetRequiredService<IProvider>(),
             x.GetRequiredService<TypesOptions>(),
             x.GetRequiredService<IMapperDbContextFactory>()
@@ -24,7 +24,7 @@ public class MapperSetupAppModule : AppModule
     {
         return new[]
         {
-            typeof(IMapperService)
+            typeof(ISetupService)
         };
     }
 

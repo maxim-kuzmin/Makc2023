@@ -1,10 +1,10 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
 global using System.Reflection;
-global using Makc2023.Core.App;
-global using Makc2023.Core.Exceptions.VariableExceptions;
-global using Makc2023.Data.Sql.Mappers.EF;
-global using Makc2023.Data.Sql.Mappers.EF.Db;
+global using Makc2023.Backend.Core.App;
+global using Makc2023.Backend.Core.Exceptions.VariableExceptions;
+global using Makc2023.Backend.Data.Sql.Mappers.EF;
+global using Makc2023.Backend.Data.Sql.Mappers.EF.Db;
 global using Makc2023.Services.Sample.Data.Sql.Clients.SqlServer;
 global using Makc2023.Services.Sample.Data.Sql.Mappers.EF.Clients.SqlServer.Db;
 global using Makc2023.Services.Sample.Data.Sql.Mappers.EF.Db;
@@ -25,6 +25,6 @@ global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Logging;
 global using Microsoft.Extensions.Options;
-global using DbSetupOptions = Makc2023.Data.Sql.Setup.SetupOptions;
+global using DbSetupOptions = Makc2023.Backend.Data.Sql.Setup.SetupOptions;
 global using DbSetupOptionsForSample = Makc2023.Services.Sample.Data.Sql.Setup.SetupOptions;
 

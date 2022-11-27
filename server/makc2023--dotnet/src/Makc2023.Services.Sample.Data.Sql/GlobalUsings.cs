@@ -1,9 +1,9 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-global using Makc2023.Core;
-global using Makc2023.Core.App;
-global using Makc2023.Core.Exceptions.VariableExceptions;
-global using Makc2023.Data.Sql;
+global using Makc2023.Backend.Core;
+global using Makc2023.Backend.Core.App;
+global using Makc2023.Backend.Core.Exceptions.VariableExceptions;
+global using Makc2023.Backend.Data.Sql;
 global using Makc2023.Services.Sample.Data.Sql.Types.DummyMain;
 global using Makc2023.Services.Sample.Data.Sql.Types.DummyMainDummyManyToMany;
 global using Makc2023.Services.Sample.Data.Sql.Types.DummyManyToMany;
