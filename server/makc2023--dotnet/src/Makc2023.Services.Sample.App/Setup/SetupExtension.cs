@@ -27,7 +27,8 @@ public static class SetupExtension
             new ModuleOfServiceDataSqlClientsSqlServer(),
             new ModuleOfServiceDataSql(configuration.GetRequiredSection($"{root}:Service:Data:Sql")),
             new ModuleOfServiceDataSqlMappersEF(),
-            new ModuleOfServiceDataSqlMappersEFClientsSqlServer()
+            new ModuleOfServiceDataSqlMappersEFClientsSqlServer(),
+            new ModuleOfServiceDomainsDummyMain()
         });
     }
 

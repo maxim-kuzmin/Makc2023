@@ -10,3 +10,4 @@ global using ModuleOfServiceDataSqlClientsSqlServer = Makc2023.Services.Sample.D
 global using ModuleOfServiceDataSqlMappersEFClientsSqlServer = Makc2023.Services.Sample.Data.Sql.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupAppModule;
 global using ModuleOfServiceDataSqlMappersEF = Makc2023.Services.Sample.Data.Sql.Mappers.EF.Setup.MapperSetupAppModule;
 global using ModuleOfServiceDataSql = Makc2023.Services.Sample.Data.Sql.Setup.SetupAppModule;
+global using ModuleOfServiceDomainsDummyMain = Makc2023.Services.Sample.Domains.DummyMain.Setup.DomainSetupAppModule;
