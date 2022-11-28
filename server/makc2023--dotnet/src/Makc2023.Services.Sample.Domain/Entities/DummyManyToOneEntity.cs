@@ -4,87 +4,27 @@ namespace Makc2023.Services.Sample.Domain.Entities;
 
 /// <summary>
 /// Сущность "Фиктивное отношение многие к одному".
-/// 
-/// Служит для демонстрации связи многих экземпляров одной сущности
-/// со одним экземпляром другой сущности.
-/// 
-/// Многие экземпляры сущности "Фиктивное отношение многие к одному"
-/// связаны с одним экземпляром сущности "Фиктивное главное".
 /// </summary>
 public class DummyManyToOneEntity : Entity<long>
 {
     #region Properties
 
     /// <summary>
-    /// Идентификатор.
+    /// Данные.
     /// </summary>
-    public long Id { get; private set; }
-
-    /// <summary>
-    /// Имя.
-    /// </summary>
-    public string Name { get; private set; }
-
-    /// <summary>
-    /// Идентификатор экземпляра сущности "Фиктивное главное".
-    /// </summary>
-    public long DummyMainId { get; private set; }
+    public DummyManyToOneTypeEntity Data { get; init; }
 
     #endregion Properties    
-
-    #region Navigation properties
-
-    /// <summary>
-    /// Экземпляр сущности "Фиктивное главное".
-    /// </summary>
-    public DummyMainEntity? DummyMain { get; set; }
-
-    #endregion Navigation properties
 
     #region Constructors
 
     /// <summary>
     /// Конструктор.
     /// </summary>
-    /// <exception cref="ArgumentOutOfRangeException">
-    /// Возникает, если ненулевое значение содержится в свойстве, которое не должно его содержать.
-    /// </exception>
-    /// <exception cref="NullReferenceException">
-    /// Возникает, если NULL содержится в свойстве, которое не должно его содержать.
-    /// </exception>
-    protected DummyManyToOneEntity()
+    /// <param name="data">Данные.</param>
+    public DummyManyToOneEntity(DummyManyToOneTypeEntity data)
     {
-        if (string.IsNullOrWhiteSpace(Name))
-        {
-            throw new NullReferenceException(nameof(Name));
-        }
-
-        if (DummyMainId < 1)
-        {
-            throw new ArgumentOutOfRangeException(nameof(DummyMainId));
-        }
-    }
-
-    /// <summary>
-    /// Конструктор.
-    /// </summary>
-    /// <param name="name">Имя.</param>
-    /// <param name="dummyMainId">Идентификатор экземпляра сущности "Фиктивное главное".</param>
-    /// <exception cref="ArgumentNullException">
-    /// Возникает, если значение содержится в аргументе, который не должен его содержать.
-    /// </exception>
-    /// <exception cref="ArgumentOutOfRangeException">
-    /// Возникает, если ненулевое значение содержится в аргументе, который не должен его содержать.
-    /// </exception>
-    public DummyManyToOneEntity(string name, long dummyMainId) : this()
-    {
-        Name = string.IsNullOrWhiteSpace(name)
-            ? throw new ArgumentNullException(nameof(name))
-            : name;
-
-        DummyMainId = dummyMainId < 1
-            ? throw new ArgumentOutOfRangeException(nameof(dummyMainId))
-            : dummyMainId;
+        Data = data;
     }
 
     #endregion Constructors
@@ -92,7 +32,7 @@ public class DummyManyToOneEntity : Entity<long>
     #region Protected methods
 
     /// <inheritdoc/>
-    protected override long GetId() => Id;
+    protected override long GetId() => Data.Id;
 
     #endregion Protected methods
 }

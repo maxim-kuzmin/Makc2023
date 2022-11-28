@@ -4,78 +4,71 @@ namespace Makc2023.Services.Sample.Domain.Entities;
 
 /// <summary>
 /// Сущность "Внутренний домен".
-/// 
-/// Часть бизнес-логики сервиса, на действия с которой пользователю требуются разрешения.
 /// </summary>
 public class InternalDomainEntity : Entity<long>
 {
     #region Fields
 
-    private readonly List<InternalPermissionEntity> _internalPermissionList;
+    private readonly List<InternalPermissionEntity> _internalPermissionList = new();
 
     #endregion Fields
 
     #region Properties
 
     /// <summary>
-    /// Идентификатор.
+    /// Данные.
     /// </summary>
-    public long Id { get; private set; }
-
-    /// <summary>
-    /// Имя.
-    /// </summary>
-    public string Name { get; private set; }
-
-    #endregion Properties    
-
-    #region Navigation properties
+    public InternalDomainTypeEntity Data { get; init; }
 
     /// <summary>
     /// Список экземпляров сущности "Внутреннее разрешение".
     /// </summary>
     public IReadOnlyCollection<InternalPermissionEntity> InternalPermissionList => _internalPermissionList;
 
-    #endregion Navigation properties
+    #endregion Properties    
 
     #region Constructors
 
     /// <summary>
     /// Конструктор.
     /// </summary>
-    /// <exception cref="NullReferenceException">
-    /// Возникает, если NULL содержится в свойстве, которое не должно его содержать.
-    /// </exception>
-    protected InternalDomainEntity()
+    /// <param name="data">Данные.</param>
+    public InternalDomainEntity(InternalDomainTypeEntity data)
     {
-        _internalPermissionList = new();
-
-        if (string.IsNullOrWhiteSpace(Name))
-        {
-            throw new NullReferenceException(nameof(Name));
-        }
-    }
-
-    /// <summary>
-    /// Конструктор.
-    /// </summary>
-    /// <param name="name">Имя.</param>
-    /// <exception cref="ArgumentNullException">
-    /// Возникает, если значение содержится в аргументе, который не должен его содержать.
-    /// </exception>
-    public InternalDomainEntity(string name) : this()
-    {
-        Name = string.IsNullOrWhiteSpace(name)
-            ? throw new ArgumentNullException(nameof(name))
-            : name;
+        Data = data;
     }
 
     #endregion Constructors
 
+    #region Public methods
+
+    /// <summary>
+    /// Добавить экземпляр сущности "Фиктивное отношение многие к одному".
+    /// </summary>
+    /// <param name="data">Данные.</param>
+    /// <returns>Добавленный экземпляр.</returns>
+    public InternalPermissionEntity AddInternalPermission(InternalPermissionTypeEntity data)
+    {
+        var result = _internalPermissionList.Where(x => x.Data.Name == data.Name).SingleOrDefault();
+
+        if (result is null)
+        {
+            data.InternalDomainId = GetId();
+
+            result = new InternalPermissionEntity(data);
+
+            _internalPermissionList.Add(result);
+        }
+
+        return result;
+    }
+
+    #endregion Public methods
+
     #region Protected methods
 
     /// <inheritdoc/>
-    protected override long GetId() => Id;
+    protected override long GetId() => Data.Id;
 
     #endregion Protected methods
 }

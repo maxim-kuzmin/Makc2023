@@ -4,159 +4,76 @@ namespace Makc2023.Services.Sample.Domain.Entities;
 
 /// <summary>
 /// Сущность "Фиктивное дерево".
-/// 
-/// Служит для демонстрации иерархической структуры данных.
 /// </summary>
 public class DummyTreeEntity : Entity<long>, IAggregateRoot
 {
+    #region Fields
+
+    private readonly List<DummyTreeEntity> _dummyTreeChildList = new();
+
+    #endregion Fields
+
     #region Properties
 
     /// <summary>
-    /// Идентификатор.
+    /// Данные.
     /// </summary>
-    public long Id { get; private set; }
-
-    /// <summary>
-    /// Имя.
-    /// </summary>
-    public string Name { get; private set; }
-
-    /// <summary>
-    /// Идентификатор родителя.
-    /// </summary>
-    public long? ParentId { get; private set; }
-
-    /// <summary>
-    /// Число детей в дереве.
-    /// </summary>
-    public long TreeChildCount { get; private set; }
-
-    /// <summary>
-    /// Число потомков в дереве.
-    /// </summary>
-    public long TreeDescendantCount { get; private set; }
-
-    /// <summary>
-    /// Уровень в дереве.
-    /// </summary>
-    public long TreeLevel { get; private set; }
-
-    /// <summary>
-    /// Позиция в дереве.
-    /// </summary>
-    public string TreePath { get; private set; }
-
-    /// <summary>
-    /// Позиция в дереве.
-    /// </summary>
-    public int TreePosition { get; private set; }
-
-    /// <summary>
-    /// Сортировка в дереве.
-    /// </summary>
-    public string TreeSort { get; private set; }
-
-    #endregion Properties    
-
-    #region Navigation properties
+    public DummyTreeTypeEntity Data { get; init; }
 
     /// <summary>
     /// Список дочерних экземпляров сущности "Фиктивное дерево".
     /// </summary>
-    public List<DummyTreeEntity>? DummyTreeChildList { get; set; }
-
-    /// <summary>
-    /// Список экземпляров соединения "Связь фиктивного дерева" по идентификатору.
-    /// </summary>
-    public List<DummyTreeLinkJoin>? DummyTreeLinkByIdList { get; set; }
-
-    /// <summary>
-    /// Список экземпляров соединения "Связь фиктивного дерева" по идентификатору родителя.
-    /// </summary>
-    public List<DummyTreeLinkJoin>? DummyTreeLinkByParentIdList { get; set; }
+    public IReadOnlyCollection<DummyTreeEntity> DummyTreeChildList => _dummyTreeChildList;
 
     /// <summary>
     /// Родительский экземпляр сущности "Фиктивное дерево".
     /// </summary>
     public DummyTreeEntity? DummyTreeParent { get; set; }
 
-    #endregion Navigation properties
+    #endregion Properties    
 
     #region Constructors
 
     /// <summary>
     /// Конструктор.
     /// </summary>
-    /// <exception cref="ArgumentOutOfRangeException">
-    /// Возникает, если ненулевое значение содержится в свойстве, которое не должно его содержать.
-    /// </exception>
-    /// <exception cref="NullReferenceException">
-    /// Возникает, если NULL содержится в свойстве, которое не должно его содержать.
-    /// </exception>
-    protected DummyTreeEntity()
+    /// <param name="data">Данные.</param>
+    public DummyTreeEntity(DummyTreeTypeEntity data)
     {
-        if (string.IsNullOrWhiteSpace(Name))
-        {
-            throw new NullReferenceException(nameof(Name));
-        }
-
-        if (ParentId < 1)
-        {
-            throw new ArgumentOutOfRangeException(nameof(ParentId));
-        }
-
-        if (string.IsNullOrWhiteSpace(TreePath))
-        {
-            throw new NullReferenceException(nameof(TreePath));
-        }
-
-        if (string.IsNullOrWhiteSpace(TreeSort))
-        {
-            throw new NullReferenceException(nameof(TreeSort));
-        }
-    }
-
-    public DummyTreeEntity(
-        string name,
-        long? parentId,
-        long treeChildCount,
-        long treeDescendantCount,
-        long treeLevel,
-        string treePath,
-        int treePosition,
-        string treeSort) : this()
-    {
-        Name = string.IsNullOrWhiteSpace(name)
-            ? throw new ArgumentNullException(nameof(name))
-            : name;
-
-        ParentId = parentId is not null && parentId < 1
-            ? throw new ArgumentOutOfRangeException(nameof(parentId))
-            : parentId;
-
-        TreeChildCount = treeChildCount;
-
-        TreeDescendantCount = treeDescendantCount;
-
-        TreeLevel = treeLevel;
-
-        TreePath = string.IsNullOrWhiteSpace(treePath)
-            ? throw new ArgumentNullException(nameof(treePath))
-            : treePath;
-
-        TreePosition = treePosition;
-
-        TreeSort = string.IsNullOrWhiteSpace(treeSort)
-            ? throw new ArgumentNullException(nameof(treeSort))
-            : treeSort;
+        Data = data;
     }
 
     #endregion Constructors
 
+    #region Public methods
+
+    /// <summary>
+    /// Добавить дочерний экземпляр сущности "Фиктивное дерево".
+    /// </summary>
+    /// <param name="data">Данные.</param>
+    /// <returns>Добавленный экземпляр.</returns>
+    public DummyTreeEntity AddDummyChildTree(DummyTreeTypeEntity data)
+    {
+        var result = _dummyTreeChildList.Where(x => x.Data.Name == data.Name).SingleOrDefault();
+
+        if (result is null)
+        {
+            data.ParentId = GetId();
+
+            result = new DummyTreeEntity(data);
+
+            _dummyTreeChildList.Add(result);
+        }
+
+        return result;
+    }
+
+    #endregion Public methods
+
     #region Protected methods
 
     /// <inheritdoc/>
-    protected override long GetId() => Id;
+    protected override long GetId() => Data.Id;
 
     #endregion Protected methods
 }

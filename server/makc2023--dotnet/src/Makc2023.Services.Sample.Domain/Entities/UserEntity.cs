@@ -4,32 +4,21 @@ namespace Makc2023.Services.Sample.Domain.Entities;
 
 /// <summary>
 /// Сущность "Пользователь".
-/// 
-/// Учётная запись, используемая приложением для проверки прав доступа.
 /// </summary>
 public class UserEntity : Entity<long>
 {
+    #region Fields
+
+    private readonly List<InternalPermissionEntity> _internalPermissionList = new();
+
+    #endregion Fields
+
     #region Properties
 
     /// <summary>
-    /// Идентификатор.
+    /// Данные.
     /// </summary>
-    public long Id { get; private set; }
-
-    /// <summary>
-    /// Имя.
-    /// </summary>
-    public string Name { get; private set; }
-
-    /// <summary>
-    /// Адрес электронной почты.
-    /// </summary>
-    public string Email { get; private set; }
-
-    /// <summary>
-    /// Признак блокировки.
-    /// </summary>
-    public bool IsBlocked { get; private set; }
+    public UserTypeEntity Data { get; init; }
 
     #endregion Properties    
 
@@ -38,12 +27,7 @@ public class UserEntity : Entity<long>
     /// <summary>
     /// Список экземпляров сущности "Внутреннее разрешение".
     /// </summary>
-    public ICollection<InternalPermissionEntity>? InternalPermissionList { get; set; }
-
-    /// <summary>
-    /// Список экземпляров соединения "Внутреннее разрешение пользователя".
-    /// </summary>
-    public List<UserInternalPermissionJoin>? UserInternalPermissionList { get; set; }
+    public IReadOnlyCollection<InternalPermissionEntity> InternalPermissionList => _internalPermissionList;
 
     #endregion Navigation properties
 
@@ -52,42 +36,10 @@ public class UserEntity : Entity<long>
     /// <summary>
     /// Конструктор.
     /// </summary>
-    /// <exception cref="NullReferenceException">
-    /// Возникает, если NULL содержится в свойстве, которое не должно его содержать.
-    /// </exception>
-    protected UserEntity()
+    /// <param name="data">Данные.</param>
+    public UserEntity(UserTypeEntity data)
     {
-        if (string.IsNullOrWhiteSpace(Name))
-        {
-            throw new NullReferenceException(nameof(Name));
-        }
-
-        if (string.IsNullOrWhiteSpace(Email))
-        {
-            throw new NullReferenceException(nameof(Email));
-        }
-    }
-
-    /// <summary>
-    /// Конструктор.
-    /// </summary>
-    /// <param name="name">Имя.</param>
-    /// <param name="email">Адрес электронной почты.</param>
-    /// <param name="isBlocked">Признак блокировки.</param>
-    /// <exception cref="ArgumentNullException">
-    /// Возникает, если значение содержится в аргументе, который не должен его содержать.
-    /// </exception>
-    public UserEntity(string name, string email, bool isBlocked) : this()
-    {
-        Name = string.IsNullOrWhiteSpace(name)
-            ? throw new ArgumentNullException(nameof(name))
-            : name;
-
-        Email = string.IsNullOrWhiteSpace(email)
-            ? throw new ArgumentNullException(nameof(email))
-            : email;
-
-        IsBlocked = isBlocked;
+        Data = data;
     }
 
     #endregion Constructors
@@ -95,7 +47,7 @@ public class UserEntity : Entity<long>
     #region Protected methods
 
     /// <inheritdoc/>
-    protected override long GetId() => Id;
+    protected override long GetId() => Data.Id;
 
     #endregion Protected methods
 }
