@@ -1,5 +1,7 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
+using Makc2023.Services.Sample.Data.Sql.Types.DummyOneToMany;
+
 namespace Makc2023.Services.Sample.Domains.DummyMain;
 
 /// <summary>
@@ -17,7 +19,7 @@ public static class DomainExtension
     /// <returns>Запрос с учётом фильтрации.</returns>
     public static IQueryable<MapperDummyMainTypeEntity> ApplyFiltering(
         this IQueryable<MapperDummyMainTypeEntity> query,
-        DomainItemGetOperationInput input
+        DummyMainItemGetOperationInput input
         )
     {
         if (input.Id > 0)
@@ -41,7 +43,7 @@ public static class DomainExtension
     /// <returns>Запрос с учётом фильтрации.</returns>
     public static IQueryable<MapperDummyMainTypeEntity> ApplyFiltering(
         this IQueryable<MapperDummyMainTypeEntity> query,
-        DomainListGetOperationInput input
+        DummyMainListGetOperationInput input
         )
     {
         if (!string.IsNullOrWhiteSpace(input.Name))
@@ -98,7 +100,7 @@ public static class DomainExtension
     /// <returns>Запрос с учётом сортировки.</returns>
     public static IQueryable<MapperDummyMainTypeEntity> ApplySorting(
         this IQueryable<MapperDummyMainTypeEntity> query,
-        DomainListGetOperationInput input
+        DummyMainListGetOperationInput input
         )
     {
         if (string.IsNullOrWhiteSpace(input.SortField))
@@ -115,13 +117,11 @@ public static class DomainExtension
 
         string sortDirection = input.SortDirection.ToLower();
 
-        MapperDummyMainTypeEntity obj;
-
-        string sortFieldForId = nameof(obj.Id).ToLower();
-        string sortFieldForName = nameof(obj.Name).ToLower();
-        string sortFieldForObjectDummyOneToMany = nameof(obj.DummyOneToMany).ToLower();
-        string sortFieldForPropDate = nameof(obj.PropDate).ToLower();
-        string sortFieldForPropBoolean = nameof(obj.PropBoolean).ToLower();
+        string sortFieldForId = nameof(DummyMainTypeEntity.Id).ToLower();
+        string sortFieldForName = nameof(DummyMainTypeEntity.Name).ToLower();
+        string sortFieldForObjectDummyOneToMany = $"{typeof(DummyOneToManyTypeEntity).Name}.{nameof(DummyOneToManyTypeEntity.Name)}".ToLower();
+        string sortFieldForPropDate = nameof(DummyMainTypeEntity.PropDate).ToLower();
+        string sortFieldForPropBoolean = nameof(DummyMainTypeEntity.PropBoolean).ToLower();
 
         if (sortField == sortFieldForId)
         {

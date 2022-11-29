@@ -6,8 +6,8 @@ namespace Makc2023.Services.Sample.Domains.DummyMain.Operations.List.Get;
 /// Обработчик операции получения списка в домене.
 /// </summary>
 public class DomainListGetOperationHandler :
-    OperationWithInputAndOutputHandler<DomainListGetOperationInput, DomainListGetOperationOutput>,
-    IDomainListGetOperationHandler
+    OperationWithInputAndOutputHandler<DummyMainListGetOperationInput, DummyMainListGetOperationOutput>,
+    IDummyMainListGetOperationHandler
 {
     #region Constructors
 
@@ -30,11 +30,11 @@ public class DomainListGetOperationHandler :
 
     #region Private methods
 
-    private DomainListGetOperationInput TransformOperationInput(DomainListGetOperationInput input)
+    private DummyMainListGetOperationInput TransformOperationInput(DummyMainListGetOperationInput input)
     {
         if (input == null)
         {
-            input = new DomainListGetOperationInput();
+            input = new DummyMainListGetOperationInput();
         }
 
         input.Normalize();

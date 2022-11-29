@@ -6,8 +6,8 @@ namespace Makc2023.Services.Sample.Domains.DummyMain.Operations.Item.Get;
 /// Обработчик операции получения элемента в домене.
 /// </summary>
 public class DomainItemGetOperationHandler :
-    OperationWithInputAndOutputHandler<DomainItemGetOperationInput, DomainItemGetOperationOutput>,
-    IDomainItemGetOperationHandler
+    OperationWithInputAndOutputHandler<DummyMainItemGetOperationInput, DummyMainItemGetOperationOutput>,
+    IDummyMainItemGetOperationHandler
 {
     #region Constructors
 
@@ -31,9 +31,9 @@ public class DomainItemGetOperationHandler :
 
     #region Private methods
 
-    private DomainItemGetOperationInput TransformOperationInput(DomainItemGetOperationInput input)
+    private DummyMainItemGetOperationInput TransformOperationInput(DummyMainItemGetOperationInput input)
     {
-        input ??= new DomainItemGetOperationInput();
+        input ??= new DummyMainItemGetOperationInput();
 
         input.Normalize();
 
@@ -47,9 +47,9 @@ public class DomainItemGetOperationHandler :
         return input;
     }
 
-    private DomainItemGetOperationOutput? TransformOperationOutput(DomainItemGetOperationOutput output)
+    private DummyMainItemGetOperationOutput? TransformOperationOutput(DummyMainItemGetOperationOutput output)
     {
-        return output.DummyMain != null ? output : null;
+        return output.Entity is not null ? output : null;
     }
 
     #endregion Private methods

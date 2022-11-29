@@ -1,11 +1,11 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Services.Sample.Domains.DummyMain.Operations.List.Get;
+namespace Makc2023.Services.Sample.Domain.Operations.DummyMain.List.Get;
 
 /// <summary>
-/// Входные данные операции получения списка в домене.
+/// Входные данные операции получения списка "Фиктивное главное".
 /// </summary>
-public class DomainListGetOperationInput : ListGetOperationInput
+public class DummyMainListGetOperationInput : ListGetOperationInput
 {
     #region Properties
 
@@ -55,7 +55,7 @@ public class DomainListGetOperationInput : ListGetOperationInput
 
         if (string.IsNullOrWhiteSpace(SortField))
         {
-            SortField = nameof(MapperDummyMainTypeEntity.Id);
+            SortField = nameof(DummyMainTypeEntity.Id);
         }
 
         if (string.IsNullOrWhiteSpace(SortDirection))
