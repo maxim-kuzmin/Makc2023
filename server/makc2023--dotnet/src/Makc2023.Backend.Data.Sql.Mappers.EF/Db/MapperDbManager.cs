@@ -6,7 +6,7 @@ namespace Makc2023.Backend.Data.Sql.Mappers.EF.Db;
 /// Менеджер базы данных сопоставителя.
 /// </summary>
 /// <typeparam name="TDbContext">Тип контекста базы данных.</typeparam>
-public abstract class MapperDbManager<TDbContext>
+public abstract class MapperDbManager<TDbContext> : IMapperDbManager
     where TDbContext : DbContext
 {
     #region Properties
@@ -18,10 +18,11 @@ public abstract class MapperDbManager<TDbContext>
     /// </summary>
     public TDbContext DbContext { get; init; }
 
-    /// <summary>
-    /// Содержит транзакцию.
-    /// </summary>
+    /// <inheritdoc/>
     public bool HasTransaction => Transaction is not null;
+
+    /// <inheritdoc/>
+    public bool IsUsed { get; private set; }
 
     /// <summary>
     /// Транзакция.
@@ -47,11 +48,7 @@ public abstract class MapperDbManager<TDbContext>
 
     #region Public methods
 
-    /// <summary>
-    /// Начать транзакцию асинхронно.
-    /// Если возвращается нуль, транзакция уже начата и нужно использовать текущую.
-    /// </summary>
-    /// <returns>Задача с транзакцией или нулём.</returns>
+    /// <inheritdoc/>
     public async Task<IDbContextTransaction?> BeginTransactionAsync()
     {
         if (HasTransaction)
@@ -64,17 +61,7 @@ public abstract class MapperDbManager<TDbContext>
         return Transaction;
     }
 
-    /// <summary>
-    /// Зафиксировать транзакцию асинхронно.
-    /// </summary>
-    /// <param name="transaction">Транзакция.</param>
-    /// <returns>Задача.</returns>
-    /// <exception cref="ArgumentNullException">
-    /// Возникает, если NULL содержится в аргументе, который не должен его содержать.
-    /// </exception>
-    /// <exception cref="LocalizedException">
-    /// Возникает, если транзакция является внешней.
-    /// </exception>
+    /// <inheritdoc/>
     public async Task CommitTransactionAsync(IDbContextTransaction transaction)
     {
         if (transaction is null)
@@ -105,6 +92,12 @@ public abstract class MapperDbManager<TDbContext>
         }
     }
 
+    /// <inheritdoc/>
+    public IExecutionStrategy CreateExecutionStrategy()
+    {
+        return DbContext.Database.CreateExecutionStrategy();
+    }
+
     /// <summary>
     /// Откатить транзакцию.
     /// </summary>
@@ -118,6 +111,14 @@ public abstract class MapperDbManager<TDbContext>
         {
             EndTransaction();
         }
+    }
+
+    /// <summary>
+    /// Использовать.
+    /// </summary>
+    public void Use()
+    {
+        IsUsed = true;
     }
 
     #endregion Public methods

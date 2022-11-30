@@ -12,6 +12,7 @@ global using Makc2023.Services.Sample.Data.Sql.Mappers.EF.Db;
 global using Makc2023.Services.Sample.Data.Sql.Mappers.EF.Types.DummyMain;
 global using Makc2023.Services.Sample.Data.Sql.Mappers.EF.Types.DummyManyToMany;
 global using Makc2023.Services.Sample.Data.Sql.Types.DummyMain;
+global using Makc2023.Services.Sample.Data.Sql.Types.DummyOneToMany;
 global using Makc2023.Services.Sample.Domain.Entities;
 global using Makc2023.Services.Sample.Domain.Operations.DummyMain.Item.Get;
 global using Makc2023.Services.Sample.Domain.Operations.DummyMain.List.Get;

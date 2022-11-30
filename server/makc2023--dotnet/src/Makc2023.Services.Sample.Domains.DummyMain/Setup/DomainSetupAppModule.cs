@@ -15,9 +15,6 @@ public class DomainSetupAppModule : AppModule
         services.AddSingleton<IDomainResource>(x => new DomainResource(
             x.GetRequiredService<IStringLocalizer<DomainResource>>()));
 
-        //services.AddTransient<IDomainService>(x => new DomainService(
-        //    x.GetRequiredService<IMapperDbContextFactory>()));
-
         services.AddTransient<IDummyMainItemGetOperationHandler>(x => new DomainItemGetOperationHandler(
             x.GetRequiredService<IDomainResource>(),
             x.GetRequiredService<IOperationResource>(),
@@ -37,7 +34,6 @@ public class DomainSetupAppModule : AppModule
         return new[]
         {
             typeof(IDomainResource),
-            //typeof(IDomainService),
             typeof(IDummyMainItemGetOperationHandler),
             typeof(IDummyMainListGetOperationHandler),
         };

@@ -1,9 +1,10 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-using MediatR;
-
 namespace Makc2023.Services.Sample.App.Setup;
 
+/// <summary>
+/// Модуль настройки приложения.
+/// </summary>
 public class SetupAppModule : AppModule
 {
     #region Public methods
@@ -13,7 +14,10 @@ public class SetupAppModule : AppModule
     {
         services.AddLocalization(x => x.ConfigureLocalization());
 
-        services.AddMediatR(typeof(ModuleOfServiceDomainsDummyMain));
+        services.AddMediatR(
+            typeof(ModuleOfBackendDomain),
+            typeof(ModuleOfBackendDomainSqlMappersEF),
+            typeof(ModuleOfServiceDomainsDummyMain));
     }
 
     /// <inheritdoc/>

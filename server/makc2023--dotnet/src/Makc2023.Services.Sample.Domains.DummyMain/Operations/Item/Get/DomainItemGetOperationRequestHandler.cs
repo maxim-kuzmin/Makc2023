@@ -28,7 +28,6 @@ public class DomainItemGetOperationRequestHandler :
         IDummyMainRepository repository)
     {
         OperationHandler = operationHandler;
-
         Repository = repository;
     }
 

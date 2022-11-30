@@ -3,6 +3,7 @@
 global using System.Globalization;
 global using System.Net;
 global using System.Net.Sockets;
+global using System.Text.Json.Serialization;
 global using System.Text.RegularExpressions;
 global using Makc2023.Backend.Core.App;
 global using Makc2023.Backend.Core.Converting;

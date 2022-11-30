@@ -1,7 +1,5 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-using Makc2023.Services.Sample.Data.Sql.Types.DummyOneToMany;
-
 namespace Makc2023.Services.Sample.Domains.DummyMain;
 
 /// <summary>

@@ -9,6 +9,8 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
 {
     #region Properties
 
+    private IMapperDbContextFactory DbContextFactory { get; init; }
+
     private MapperDbManager DbManager { get; init; }
 
     #endregion Properties
@@ -18,11 +20,16 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
     /// <summary>
     /// Конструктор.
     /// </summary>
+    /// <param name="dbContextFactory">Фабрика контекста базы данных.</param>
     /// <param name="dbManager">Менеджер базы данных.</param>
     /// <param name="mediator">Посредник.</param>
-    public DomainRepository(MapperDbManager dbManager, IMediator mediator)
+    public DomainRepository(
+        IMapperDbContextFactory dbContextFactory,
+        MapperDbManager dbManager,
+        IMediator mediator)
         : base(dbManager.DbContext, mediator)
     {
+        DbContextFactory = dbContextFactory;
         DbManager = dbManager;
     }
 
@@ -35,7 +42,7 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
     {
         DummyMainItemGetOperationOutput result = new();
 
-        using var dbContext = DbManager.DbContextFactory.CreateDbContext();
+        using var dbContext = DbContextFactory.CreateDbContext();
 
         var mapperDummyMain = await dbContext.DummyMain
             .Include(x => x.DummyOneToMany)
@@ -65,8 +72,8 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
     {
         DummyMainListGetOperationOutput result = new();
 
-        using var dbContext = DbManager.DbContextFactory.CreateDbContext();
-        using var dbContextForTotalCount = DbManager.DbContextFactory.CreateDbContext();
+        using var dbContext = DbContextFactory.CreateDbContext();
+        using var dbContextForTotalCount = DbContextFactory.CreateDbContext();
 
         var queryForItems = dbContext.DummyMain
             .Include(x => x.DummyOneToMany)

@@ -22,17 +22,18 @@ public class ClientMapperSetupAppModule : AppModule
             x.GetRequiredService<ILogger<ClientMapperDbContextFactory>>(),
             x.GetRequiredService<IOptionsMonitor<DbSetupOptions>>()));
 
-        services.AddTransient<MapperDbContext>(x => x.GetRequiredService<ClientMapperDbContext>());
+        services.AddScoped<MapperDbContext, ClientMapperDbContext>();
 
-        services.AddTransient<IMapperDbContextFactory>(x => new ClientMapperDbContextFactory(
-            x.GetRequiredService<IDbContextFactory<ClientMapperDbContext>>(),
-            x.GetRequiredService<IOptionsMonitor<DbSetupOptions>>()));
-
-        services.AddTransient(x => new MapperDbManager(
-            x.GetRequiredService<IMapperDbContextFactory>(),
+        services.AddScoped(x => new MapperDbManager(
             x.GetRequiredService<MapperDbContext>(),
             x.GetRequiredService<IMapperResource>()
             ));
+
+        services.AddScoped<IMapperDbManager, MapperDbManager>();
+
+        services.AddScoped<IMapperDbContextFactory>(x => new ClientMapperDbContextFactory(
+            x.GetRequiredService<IDbContextFactory<ClientMapperDbContext>>(),
+            x.GetRequiredService<IOptionsMonitor<DbSetupOptions>>()));
     }
 
     /// <inheritdoc/>
@@ -61,6 +62,7 @@ public class ClientMapperSetupAppModule : AppModule
                 typeof(DbSetupOptionsForSample),
                 typeof(IConfiguration),
                 typeof(ILogger),
+                typeof(IMapperDbManager),
                 typeof(IMapperResource),
             };
     }

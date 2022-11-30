@@ -28,7 +28,6 @@ public class DomainListGetOperationRequestHandler :
         IDummyMainRepository repository)
     {
         OperationHandler = operationHandler;
-
         Repository = repository;
     }
 
