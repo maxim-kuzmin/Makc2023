@@ -50,7 +50,7 @@ public class MapperMediatorTransactionBehavior<TRequest, TResponse> :
 
         try
         {
-            if (DbManager.HasTransaction)
+            if (DbManager.HasTransaction || !DbManager.IsUsed)
             {
                 return await next();
             }
@@ -83,7 +83,7 @@ public class MapperMediatorTransactionBehavior<TRequest, TResponse> :
                     transactionId = transaction.TransactionId;
                 }
 
-                await IntegrationService.PublishEventsThroughEventBusAsync(transactionId);
+                await IntegrationService.PublishEvents(transactionId);
             });
 
             return response;

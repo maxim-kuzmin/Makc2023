@@ -51,7 +51,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Backend.Domain.Sql
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.Data.Sql.Mappers.EF.Clients.SqlServer", "Makc2023.Services.Sample.Data.Sql.Mappers.EF.Clients.SqlServer\Makc2023.Services.Sample.Data.Sql.Mappers.EF.Clients.SqlServer.csproj", "{DC4CA452-997F-4E86-8754-A9465F58B903}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Makc2023.Services.Sample.Domains.DummyMain", "Makc2023.Services.Sample.Domains.DummyMain\Makc2023.Services.Sample.Domains.DummyMain.csproj", "{7162D967-4819-4593-A65A-006A30221C2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Makc2023.Services.Sample.Domains.DummyMain", "Makc2023.Services.Sample.Domains.DummyMain\Makc2023.Services.Sample.Domains.DummyMain.csproj", "{7162D967-4819-4593-A65A-006A30221C2B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{0D6109AF-BDC9-47F2-A630-B3A4D37C9222}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Makc2023.Components.Integration", "Makc2023.Components.Integration\Makc2023.Components.Integration.csproj", "{FC7CE37A-F2A4-4F97-B321-50684467DE76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Makc2023.Components.Integration.Clients.RabbitMQ", "Makc2023.Components.Integration.Clients.RabbitMQ\Makc2023.Components.Integration.Clients.RabbitMQ.csproj", "{7AD92029-0BA2-4898-A2B1-FFE44A0FC895}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{9242B0D9-0AAD-48B5-9578-B403556A13C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +131,14 @@ Global
 		{7162D967-4819-4593-A65A-006A30221C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7162D967-4819-4593-A65A-006A30221C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7162D967-4819-4593-A65A-006A30221C2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC7CE37A-F2A4-4F97-B321-50684467DE76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC7CE37A-F2A4-4F97-B321-50684467DE76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC7CE37A-F2A4-4F97-B321-50684467DE76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC7CE37A-F2A4-4F97-B321-50684467DE76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AD92029-0BA2-4898-A2B1-FFE44A0FC895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AD92029-0BA2-4898-A2B1-FFE44A0FC895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AD92029-0BA2-4898-A2B1-FFE44A0FC895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AD92029-0BA2-4898-A2B1-FFE44A0FC895}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -148,6 +164,9 @@ Global
 		{8ACCEBB3-9BB8-42EC-835A-6E1D9AE470C0} = {7A04E08A-6C67-4F82-8544-47B8EA8C1C18}
 		{DC4CA452-997F-4E86-8754-A9465F58B903} = {BAE95757-FC92-41EC-9D55-F73E695A9CC4}
 		{7162D967-4819-4593-A65A-006A30221C2B} = {BAE95757-FC92-41EC-9D55-F73E695A9CC4}
+		{FC7CE37A-F2A4-4F97-B321-50684467DE76} = {9242B0D9-0AAD-48B5-9578-B403556A13C1}
+		{7AD92029-0BA2-4898-A2B1-FFE44A0FC895} = {9242B0D9-0AAD-48B5-9578-B403556A13C1}
+		{9242B0D9-0AAD-48B5-9578-B403556A13C1} = {0D6109AF-BDC9-47F2-A630-B3A4D37C9222}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B139510-D0E2-4301-9C5D-1D82BAD0C2B1}

@@ -10,18 +10,11 @@ public interface IIntegrationService
     #region Methods
 
     /// <summary>
-    /// Опубликовать события через шину событий асинхронно.
+    /// Опубликовать события.
     /// </summary>
     /// <param name="transactionId">Идентификатор транзакции.</param>
-    /// <returns>Задача на опубликование событий.</returns>
-    Task PublishEventsThroughEventBusAsync(Guid transactionId);
-
-    /// <summary>
-    /// Добавить и сохранить событие асинхронно.
-    /// </summary>
-    /// <param name="evt">Событие.</param>
-    /// <returns>Задача на добавление и сохранение.</returns>
-    Task AddAndSaveEventAsync(IntegrationEvent evt);
+    /// <returns>Задача на публикацию событий.</returns>
+    Task PublishEvents(Guid transactionId);
 
     #endregion Methods
 }
