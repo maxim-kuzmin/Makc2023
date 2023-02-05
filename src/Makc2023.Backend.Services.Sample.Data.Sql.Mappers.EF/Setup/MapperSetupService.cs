@@ -55,7 +55,7 @@ public class MapperSetupService : ISetupService
 
         using var transaction = await dbContext.Database.BeginTransactionAsync();
 
-        bool isOk = await dbContext.DummyMain!.AnyAsync();
+        bool isOk = await dbContext.DummyMain.AnyAsync();
 
         if (!isOk)
         {

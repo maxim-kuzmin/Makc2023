@@ -8,6 +8,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="Npgsql" Version="7.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<ProjectReference Include="..\Makc2023.Backend.Common.Data.Sql\Makc2023.Backend.Common.Data.Sql.csproj" />
 	</ItemGroup>
 

@@ -1,6 +1,6 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Common.Data.Sql.Clients.SqlServer.Setup;
+namespace Makc2023.Backend.Common.Data.Sql.Clients.PostgreSql.Setup;
 
 /// <summary>
 /// Модуль настройки приложения клиента.
