@@ -4,14 +4,15 @@
 		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="MediatR" Version="11.0.0" />		
+		<PackageReference Include="MediatR" Version="11.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Makc2023.Backend.Common.Core\Makc2023.Backend.Common.Core.csproj" />
+		<ProjectReference Include="..\Makc2023.Backend.Common.Core\Makc2023.Backend.Common.Core.csproj" />
 	</ItemGroup>
-	
+
 </Project>
