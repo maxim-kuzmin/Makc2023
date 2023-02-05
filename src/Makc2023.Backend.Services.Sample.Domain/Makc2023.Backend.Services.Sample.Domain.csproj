@@ -1,14 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Makc2023.Backend.Common.Domain\Makc2023.Backend.Common.Domain.csproj" />
-    <ProjectReference Include="..\Makc2023.Backend.Services.Sample.Data.Sql\Makc2023.Backend.Services.Sample.Data.Sql.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Makc2023.Backend.Common.Domain\Makc2023.Backend.Common.Domain.csproj" />
+		<ProjectReference Include="..\Makc2023.Backend.Services.Sample.Data.Sql\Makc2023.Backend.Services.Sample.Data.Sql.csproj" />
+	</ItemGroup>
 
 </Project>
