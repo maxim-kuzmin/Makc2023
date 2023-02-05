@@ -121,7 +121,7 @@ update {cte} set
 				(
 					(
 						select
-							',' + CONVERT(varchar(max), {aliasForLink2}.{linkTableFieldNameForParentId})
+							'.' + CONVERT(varchar(max), {aliasForLink2}.{linkTableFieldNameForParentId})
 						from
 							{linkTableName} {aliasForLink2}
 						where
@@ -156,7 +156,7 @@ update {cte} set
 				(
 					(
 						select
-							',' + RIGHT('0000000000' + CONVERT(varchar(max), {aliasForTree}.{treeTableFieldNameForTreePosition}) + '.' + CONVERT(varchar(max), {aliasForLink2}.{linkTableFieldNameForParentId}), 10)
+							'.' + RIGHT('0000000000' + CONVERT(varchar(max), {aliasForTree}.{treeTableFieldNameForTreePosition}) + '-' + CONVERT(varchar(max), {aliasForLink2}.{linkTableFieldNameForParentId}), 10)
 						from
 							{linkTableName} {aliasForLink2}
 							inner join {treeTableName} {aliasForTree}
