@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Makc2023.Backend.Common.Domain.Sql.Mappers.EF\Makc2023.Backend.Common.Domain.Sql.Mappers.EF.csproj" />
+		<ProjectReference Include="..\Makc2023.Backend.Services.Sample.Data.Sql.Mappers.EF\Makc2023.Backend.Services.Sample.Data.Sql.Mappers.EF.csproj" />
+		<ProjectReference Include="..\Makc2023.Backend.Services.Sample.Domain\Makc2023.Backend.Services.Sample.Domain.csproj" />
+	</ItemGroup>
+
+</Project>
