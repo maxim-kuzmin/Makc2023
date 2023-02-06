@@ -6,6 +6,7 @@
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<VersionPrefix>1.0.3</VersionPrefix>
 		<AssemblyName>Makc2023.Backend.Common.Data.SQL.Clients.SqlServer</AssemblyName>
 		<RootNamespace>$(AssemblyName)</RootNamespace>		
 	</PropertyGroup>
