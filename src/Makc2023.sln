@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Apps.ConsoleApp", "Bac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Apps.WebApp", "Backend\Common\Core.Apps.WebApp\Core.Apps.WebApp.csproj", "{9359F76B-298D-4F01-8DCF-F55517296BB0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.SQL", "Backend\Common\Data.Sql\Data.SQL.csproj", "{BE2D3C5B-08A1-456A-9858-57EEA92242DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.SQL", "Backend\Common\Data.SQL\Data.SQL.csproj", "{BE2D3C5B-08A1-456A-9858-57EEA92242DE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.SQL.Clients.PostgreSQL", "Backend\Common\Data.SQL.Clients.PostgreSql\Data.SQL.Clients.PostgreSQL.csproj", "{A8C5B903-4A52-42D9-AE4C-F679848F198F}"
 EndProject
@@ -43,7 +43,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{BAE957
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App", "Backend\Services\Sample\App\App.csproj", "{41438686-E6DE-4104-B271-48697387556F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.SQL", "Backend\Services\Sample\Data.Sql\Data.SQL.csproj", "{7C81ED11-5196-4EF2-9C0B-08BC3E9F3D22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.SQL", "Backend\Services\Sample\Data.SQL\Data.SQL.csproj", "{7C81ED11-5196-4EF2-9C0B-08BC3E9F3D22}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.SQL.Clients.SqlServer", "Backend\Services\Sample\Data.SQL.Clients.SqlServer\Data.SQL.Clients.SqlServer.csproj", "{1C479008-C71C-4A87-83C1-A08A3949749B}"
 EndProject
