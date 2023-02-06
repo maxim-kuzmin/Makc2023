@@ -1,7 +1,5 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-using Microsoft.Extensions.DependencyInjection;
-
 namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup;
 
 /// <summary>
