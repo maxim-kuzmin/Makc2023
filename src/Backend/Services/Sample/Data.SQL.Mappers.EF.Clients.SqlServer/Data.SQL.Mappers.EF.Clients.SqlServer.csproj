@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<AssemblyName>Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer</AssemblyName>
+		<RootNamespace>$(AssemblyName)</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Data.SQL.Clients.SqlServer\Data.SQL.Clients.SqlServer.csproj" />
+		<ProjectReference Include="..\Data.SQL.Mappers.EF\Data.SQL.Mappers.EF.csproj" />
+	</ItemGroup>
+
+</Project>

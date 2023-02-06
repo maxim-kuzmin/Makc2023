@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<AssemblyName>Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF</AssemblyName>
+		<RootNamespace>$(AssemblyName)</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Common\Data.SQL.Mappers.EF\Data.SQL.Mappers.EF.csproj" />
+		<ProjectReference Include="..\Data.Sql\Data.SQL.csproj" />
+	</ItemGroup>
+
+</Project>
