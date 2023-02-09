@@ -16,16 +16,14 @@ public static class SetupExtension
     /// <param name="configuration">Конфигурация.</param>
     public static void AddAppModules(this IServiceCollection services, IConfiguration configuration)
     {
-        const string root = "Makc2023";
-
         services.AddAppModules(new AppModule[]
         {
-            new ModuleOfCommonCore(configuration.GetRequiredSection($"{root}:Common:Core")),
-            new ModuleOfCommonDataSQL(configuration.GetRequiredSection($"{root}:Common:Data:SQL")),
+            new ModuleOfCommonCore(configuration.GetRequiredSection("App:Common:Core")),
+            new ModuleOfCommonDataSQL(configuration.GetRequiredSection("App:Common:Data:SQL")),
             new ModuleOfCommonDataSQLClientsSqlServer(),
             new ModuleOfCommonDataSQLMappersEF(),
             new ModuleOfServiceDataSQLClientsSqlServer(),
-            new ModuleOfServiceDataSQL(configuration.GetRequiredSection($"{root}:Service:Data:SQL")),
+            new ModuleOfServiceDataSQL(configuration.GetRequiredSection("App:Service:Data:SQL")),
             new ModuleOfServiceDataSQLMappersEF(),
             new ModuleOfServiceDataSQLMappersEFClientsSqlServer(),
             new ModuleOfServiceDomainsDummyMain()

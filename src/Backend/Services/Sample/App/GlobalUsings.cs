@@ -1,6 +1,9 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
 global using Makc2023.Backend.Common.Core.App;
+global using Makc2023.Backend.Common.Core.Apps.WebApp;
+global using Makc2023.Backend.Common.Core.Apps.WebApp.Setup;
+global using Makc2023.Backend.Services.Sample.App.Setup;
 global using MediatR;
 global using Microsoft.Extensions.Localization;
 global using ModuleOfCommonCore = Makc2023.Backend.Common.Core.Setup.SetupAppModule;
