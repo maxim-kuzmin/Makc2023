@@ -10,13 +10,14 @@ namespace Makc2023.Backend.Common.Core.Apps.WebApp;
 /// </summary>
 public class WebAppHandler : AppHandler
 {
-    #region Protected methods
+    #region Constructors
 
-    /// <inheritdoc/>
-    protected sealed override Logger CreateLogger()
+    /// <summary>
+    /// Конструктор.
+    /// </summary>
+    public WebAppHandler() : base(LogManagerOfNLog.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger())
     {
-        return LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
     }
 
-    #endregion Protected methods
+    #endregion Constructors
 }

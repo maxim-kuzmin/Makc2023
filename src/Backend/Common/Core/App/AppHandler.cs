@@ -1,7 +1,5 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-using NLog;
-
 namespace Makc2023.Backend.Common.Core.App
 {
     /// <summary>
@@ -13,22 +11,18 @@ namespace Makc2023.Backend.Common.Core.App
 
         private bool _disposedValue;
 
+        private readonly ILoggerOfNLog _logger;
+
         #endregion Fields
-
-        #region Properties
-
-        private Logger Logger { get; set; }
-
-        #endregion Properties
 
         #region Constructors
 
         /// <summary>
         /// Конструктор.
         /// </summary>
-        public AppHandler()
+        public AppHandler(ILoggerOfNLog logger)
         {
-            Logger = CreateLogger();
+            _logger = logger;
         }
 
         #endregion Constructors
@@ -49,7 +43,7 @@ namespace Makc2023.Backend.Common.Core.App
         /// <param name="exception">Исключение.</param>
         public void OnError(Exception exception)
         {
-            Logger.Error(exception, "Stopped program because of exception");
+            _logger.Error(exception, "Stopped program because of exception");
         }
 
         /// <summary>
@@ -57,18 +51,12 @@ namespace Makc2023.Backend.Common.Core.App
         /// </summary>
         public void OnStart()
         {
-            Logger.Debug($"init main: {Environment.MachineName}");
+            _logger.Debug("Started program on the {MachineName} machine", Environment.MachineName);
         }
 
         #endregion Public methods
 
         #region Protected methods
-
-        /// <summary>
-        /// Создать регистратор.
-        /// </summary>
-        /// <returns>Регистратор.</returns>
-        protected abstract Logger CreateLogger();
 
         /// <inheritdoc/>
         protected virtual void Dispose(bool disposing)
@@ -77,7 +65,7 @@ namespace Makc2023.Backend.Common.Core.App
             {
                 if (disposing)
                 {
-                    LogManager.Shutdown();
+                    LogManagerOfNLog.Shutdown();
                 }
 
                 _disposedValue = true;

@@ -48,22 +48,6 @@ public abstract class AppModule
     #region Protected methods
 
     /// <summary>
-    /// Создать зависимости.
-    /// </summary>
-    /// <returns>Зависимости.</returns>
-    protected IEnumerable<AppModule> CreateDepedensies(params AppModule[] modules)
-    {
-        IEnumerable<AppModule> result = modules;
-
-        foreach (var module in modules)
-        {
-            result = result.Union(module.GetDependencies());
-        }
-
-        return result;
-    }
-
-    /// <summary>
     /// Получить импортированные типы.
     /// </summary>
     /// <returns>Импортированные типы.</returns>

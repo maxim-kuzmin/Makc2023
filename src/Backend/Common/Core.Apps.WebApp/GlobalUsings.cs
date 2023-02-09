@@ -3,3 +3,4 @@
 global using Makc2023.Backend.Common.Core.App;
 global using Microsoft.AspNetCore.Builder;
 global using Microsoft.Extensions.Logging;
+global using LogManagerOfNLog = NLog.LogManager;

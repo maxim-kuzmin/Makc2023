@@ -1,7 +1,5 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-using NLog;
-
 namespace Makc2023.Backend.Common.Core.Apps.ConsoleApp;
 
 /// <summary>
@@ -9,13 +7,14 @@ namespace Makc2023.Backend.Common.Core.Apps.ConsoleApp;
 /// </summary>
 public class ConsoleAppHandler : AppHandler
 {
-    #region Protected methods
+    #region Constructors
 
-    /// <inheritdoc/>
-    protected sealed override Logger CreateLogger()
+    /// <summary>
+    /// Конструктор.
+    /// </summary>
+    public ConsoleAppHandler() : base(LogManagerOfNLog.GetCurrentClassLogger())
     {
-        return LogManager.GetCurrentClassLogger();
     }
 
-    #endregion Protected methods
+    #endregion Constructors
 }
