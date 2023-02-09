@@ -15,8 +15,8 @@ public class SetupAppModule : AppModule
         services.AddLocalization(x => x.ConfigureLocalization());
 
         services.AddMediatR(
-            typeof(ModuleOfBackendDomain),
-            typeof(ModuleOfBackendDomainSqlMappersEF),
+            typeof(ModuleOfCommonDomain),
+            typeof(ModuleOfCommonDomainSqlMappersEF),
             typeof(ModuleOfServiceDomainsDummyMain));
     }
 

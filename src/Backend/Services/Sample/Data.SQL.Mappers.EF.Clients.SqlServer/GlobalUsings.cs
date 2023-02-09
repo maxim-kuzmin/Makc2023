@@ -25,6 +25,6 @@ global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Logging;
 global using Microsoft.Extensions.Options;
-global using DbSetupOptions = Makc2023.Backend.Common.Data.SQL.Setup.SetupOptions;
-global using DbSetupOptionsForSample = Makc2023.Backend.Services.Sample.Data.SQL.Setup.SetupOptions;
+global using SetupOptionsOfCommonDataSQL = Makc2023.Backend.Common.Data.SQL.Setup.SetupOptions;
+global using SetupOptionsOfServiceDataSQL = Makc2023.Backend.Services.Sample.Data.SQL.Setup.SetupOptions;
 
