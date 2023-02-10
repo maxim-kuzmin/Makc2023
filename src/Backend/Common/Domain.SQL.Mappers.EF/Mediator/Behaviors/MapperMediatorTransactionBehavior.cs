@@ -6,15 +6,15 @@ public class MapperMediatorTransactionBehavior<TRequest, TResponse> :
     IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>
 {
-    #region Properties
+    #region Fields
 
-    private IMapperDbManager DbManager { get; init; }
+    private readonly IMapperDbManager _dbManager;
 
-    private IIntegrationService IntegrationService { get; init; }
+    private readonly IIntegrationService _integrationService;
 
-    private ILogger Logger { get; init; }
+    private readonly ILogger _logger;
 
-    #endregion Properties
+    #endregion Fields
 
     #region Constructors
 
@@ -29,9 +29,9 @@ public class MapperMediatorTransactionBehavior<TRequest, TResponse> :
         IIntegrationService integrationService,
         ILogger<MapperMediatorTransactionBehavior<TRequest, TResponse>> logger)
     {
-        DbManager = dbManager;
-        IntegrationService = integrationService;
-        Logger = logger;
+        _dbManager = dbManager;
+        _integrationService = integrationService;
+        _logger = logger;
     }
 
     #endregion Constructors
@@ -50,47 +50,49 @@ public class MapperMediatorTransactionBehavior<TRequest, TResponse> :
 
         try
         {
-            if (DbManager.HasTransaction || !DbManager.IsUsed)
+            if (_dbManager.HasTransaction || !_dbManager.IsUsed)
             {
-                return await next();
+                return await next().ConfigureAwait(false);
             }
 
-            var strategy = DbManager.CreateExecutionStrategy();
+            var strategy = _dbManager.CreateExecutionStrategy();
 
-            await strategy.ExecuteAsync(async () =>
+            var taskForTransaction = strategy.ExecuteAsync(async () =>
             {
                 Guid transactionId;
 
-                await using var transaction = (await DbManager.BeginTransactionAsync())!;
+                await using var transaction = (await _dbManager.BeginTransactionAsync().ConfigureAwait(false))!;
 
-                using (Logger.BeginScope("TransactionContext {TransactionId}", transaction.TransactionId))
+                using (_logger.BeginScope("TransactionContext {TransactionId}", transaction.TransactionId))
                 {
-                    Logger.LogInformation(
+                    _logger.LogInformation(
                         "----- Begin transaction {TransactionId} for {CommandName} ({@Command})",
                         transaction.TransactionId,
                         typeName,
                         request);
 
-                    response = await next();
+                    response = await next().ConfigureAwait(false);
 
-                    Logger.LogInformation(
+                    _logger.LogInformation(
                         "----- Commit transaction {TransactionId} for {CommandName}",
                         transaction.TransactionId,
                         typeName);
 
-                    await DbManager.CommitTransactionAsync(transaction);
+                    await _dbManager.CommitTransactionAsync(transaction).ConfigureAwait(false);
 
                     transactionId = transaction.TransactionId;
                 }
 
-                await IntegrationService.PublishEvents(transactionId);
+                await _integrationService.PublishEvents(transactionId).ConfigureAwait(false);
             });
+
+            await taskForTransaction.ConfigureAwait(false);
 
             return response;
         }
         catch (Exception ex)
         {
-            Logger.LogError(ex, "ERROR Handling transaction for {CommandName} ({@Command})", typeName, request);
+            _logger.LogError(ex, "ERROR Handling transaction for {CommandName} ({@Command})", typeName, request);
 
             throw;
         }

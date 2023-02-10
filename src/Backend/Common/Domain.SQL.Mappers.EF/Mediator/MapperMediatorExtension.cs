@@ -25,7 +25,7 @@ static class MapperMediatorExtension
 
         foreach (var @event in events)
         {
-            await mediator.Publish(@event);
+            await mediator.Publish(@event).ConfigureAwait(false);
         }
     }
 

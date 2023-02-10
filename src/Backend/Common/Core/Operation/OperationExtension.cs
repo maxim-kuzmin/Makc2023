@@ -62,7 +62,7 @@ public static class OperationExtension
         Func<Task<OperationResult>> functionToGetOperationResultTask
         )
     {
-        var operationResult = await functionToGetOperationResultTask.Invoke();
+        var operationResult = await functionToGetOperationResultTask.Invoke().ConfigureAwait(false);
 
         operationResults.Add(operationResult);
     }
@@ -83,7 +83,7 @@ public static class OperationExtension
         Action<TOutput> actionToSetOutput
         )
     {
-        var operationResult = await functionToGetOperationResultTask.Invoke();
+        var operationResult = await functionToGetOperationResultTask.Invoke().ConfigureAwait(false);
 
         operationResults.Add(operationResult);
 

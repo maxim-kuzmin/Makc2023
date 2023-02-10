@@ -39,7 +39,7 @@ public class MediatorLoggingBehavior<TRequest, TResponse> :
             request.GetGenericTypeName(),
             request);
 
-        var response = await next();
+        var response = await next().ConfigureAwait(false);
         
         Logger.LogInformation(
             "----- Command {CommandName} handled - response: {@Response}",

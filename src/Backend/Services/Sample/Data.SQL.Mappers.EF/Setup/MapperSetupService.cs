@@ -45,7 +45,7 @@ public class MapperSetupService : ISetupService
     {
         using var dbContext = MapperDbFactory.CreateDbContext();
 
-        await dbContext.Database.MigrateAsync();
+        await dbContext.Database.MigrateAsync().ConfigureAwait(false);
     }
 
     /// <inheritdoc/>
@@ -53,24 +53,24 @@ public class MapperSetupService : ISetupService
     {
         using var dbContext = MapperDbFactory.CreateDbContext();
 
-        using var transaction = await dbContext.Database.BeginTransactionAsync();
+        using var transaction = await dbContext.Database.BeginTransactionAsync().ConfigureAwait(false);
 
-        bool isOk = await dbContext.DummyMain.AnyAsync();
+        bool isOk = await dbContext.DummyMain.AnyAsync().ConfigureAwait(false);
 
         if (!isOk)
         {
-            var dummyOneToManyList = await SeedTestDummyOneToManyList(dbContext);
+            var dummyOneToManyList = await SeedTestDummyOneToManyList(dbContext).ConfigureAwait(false);
 
-            var dummyMainList = await SeedTestDummyMainList(dbContext, dummyOneToManyList);
+            var dummyMainList = await SeedTestDummyMainList(dbContext, dummyOneToManyList).ConfigureAwait(false);
 
-            var dummyManyToManyList = await SeedTestDummyManyToManyList(dbContext);
+            var dummyManyToManyList = await SeedTestDummyManyToManyList(dbContext).ConfigureAwait(false);
 
-            await SeedTestDummyMainDummyManyToManyList(dbContext, dummyMainList, dummyManyToManyList);
+            await SeedTestDummyMainDummyManyToManyList(dbContext, dummyMainList, dummyManyToManyList).ConfigureAwait(false);
 
-            await SeedTestDummyTreeList(dbContext);
+            await SeedTestDummyTreeList(dbContext).ConfigureAwait(false);
         }
 
-        await transaction.CommitAsync();
+        await transaction.CommitAsync().ConfigureAwait(false);
     }
 
     #endregion Public methods
@@ -260,9 +260,9 @@ public class MapperSetupService : ISetupService
 
             dbContext.DummyTree!.Add(dummyTree);
 
-            await dbContext.SaveChangesAsync();
+            await dbContext.SaveChangesAsync().ConfigureAwait(false);
 
-            await SaveTestDummyTreeList(dbContext, dummyTreeList, indexes, dummyTree.Id);
+            await SaveTestDummyTreeList(dbContext, dummyTreeList, indexes, dummyTree.Id).ConfigureAwait(false);
 
             indexes.RemoveAt(indexes.Count - 1);
         }
@@ -278,7 +278,7 @@ public class MapperSetupService : ISetupService
 
         dbContext.DummyMain!.AddRange(result);
 
-        await dbContext.SaveChangesAsync();
+        await dbContext.SaveChangesAsync().ConfigureAwait(false);
 
         return result;
     }
@@ -304,7 +304,7 @@ public class MapperSetupService : ISetupService
 
         dbContext.AddRange(result);
 
-        await dbContext.SaveChangesAsync();
+        await dbContext.SaveChangesAsync().ConfigureAwait(false);
 
         return result;
     }
@@ -318,7 +318,7 @@ public class MapperSetupService : ISetupService
 
         dbContext.DummyManyToMany!.AddRange(result);
 
-        await dbContext.SaveChangesAsync();
+        await dbContext.SaveChangesAsync().ConfigureAwait(false);
 
         return result;
     }
@@ -332,7 +332,7 @@ public class MapperSetupService : ISetupService
 
         dbContext.DummyOneToMany!.AddRange(result);
 
-        await dbContext.SaveChangesAsync();
+        await dbContext.SaveChangesAsync().ConfigureAwait(false);
 
         return result;
     }
@@ -342,13 +342,13 @@ public class MapperSetupService : ISetupService
     {
         var result = new List<MapperDummyTreeTypeEntity>();
 
-        await SaveTestDummyTreeList(dbContext, result, new List<int>(), null);
+        await SaveTestDummyTreeList(dbContext, result, new List<int>(), null).ConfigureAwait(false);
 
         var queryTreeTriggerBuilder = CreateQueryTreeTriggerBuilder(TriggerCommandAction.None);
 
         string sql = queryTreeTriggerBuilder.GetResultSql();
 
-        await dbContext.Database.ExecuteSqlRawAsync(sql);
+        await dbContext.Database.ExecuteSqlRawAsync(sql).ConfigureAwait(false);
 
         return result;
     }

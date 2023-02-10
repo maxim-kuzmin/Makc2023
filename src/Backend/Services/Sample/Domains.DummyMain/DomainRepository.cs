@@ -46,12 +46,14 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
 
         using var dbContext = DbContextFactory.CreateDbContext();
 
-        var mapperDummyMain = await dbContext.DummyMain
+        var taskForItem = dbContext.DummyMain
             .Include(x => x.DummyOneToMany)
             .Include(x => x.DummyMainDummyManyToManyList)
             .Include(x => x.DummyManyToOneList)
             .ApplyFiltering(input)
             .SingleOrDefaultAsync();
+
+        var mapperDummyMain = await taskForItem.ConfigureAwait(false);
 
         if (mapperDummyMain != null)
         {
@@ -61,7 +63,7 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
 
             LoadDummyManyToOne(entity, mapperDummyMain);
 
-            await LoadDummyManyToMany(dbContext, entity, mapperDummyMain);            
+            await LoadDummyManyToMany(dbContext, entity, mapperDummyMain).ConfigureAwait(false);            
 
             result.Entity = entity;
         }
@@ -91,7 +93,7 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
         var taskForItems = queryForItems.ToArrayAsync();
         var taskForTotalCount = queryForTotalCount.CountAsync();
 
-        var mapperDummyMainList = await taskForItems;
+        var mapperDummyMainList = await taskForItems.ConfigureAwait(false);
 
         var itemLookup = mapperDummyMainList
             .Select(x => new DummyMainEntity(x))
@@ -103,11 +105,11 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
 
             LoadDummyManyToOne(itemLookup, mapperDummyMainList);
 
-            await LoadDummyManyToMany(dbContext, itemLookup, mapperDummyMainList);
+            await LoadDummyManyToMany(dbContext, itemLookup, mapperDummyMainList).ConfigureAwait(false);
         }
 
         result.Items = itemLookup.Values.ToArray();
-        result.TotalCount = await taskForTotalCount;
+        result.TotalCount = await taskForTotalCount.ConfigureAwait(false);
 
         return result;
     }
@@ -131,9 +133,11 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
 
             if (mapperDummyManyToManyIds.Any())
             {
-                var mapperDummyManyToManyList = await dbContext.DummyManyToMany
+                var taskForList = dbContext.DummyManyToMany
                     .Where(x => mapperDummyManyToManyIds.Contains(x.Id))
                     .ToArrayAsync();
+
+                var mapperDummyManyToManyList = await taskForList.ConfigureAwait(false);
 
                 foreach (var mapperDummyManyToMany in mapperDummyManyToManyList)
                 {
@@ -156,9 +160,11 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
 
         if (mapperDummyManyToManyIdsForLookup.Any())
         {
-            var mapperDummyManyToManyLookup = await dbContext.DummyManyToMany
+            var taskForLookup = dbContext.DummyManyToMany
                 .Where(x => mapperDummyManyToManyIdsForLookup.Contains(x.Id))
                 .ToDictionaryAsync(x => x.Id);
+
+            var mapperDummyManyToManyLookup = await taskForLookup.ConfigureAwait(false);
 
             if (mapperDummyManyToManyLookup.Any())
             {

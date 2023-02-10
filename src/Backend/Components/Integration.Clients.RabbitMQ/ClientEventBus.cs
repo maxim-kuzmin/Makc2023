@@ -218,7 +218,7 @@ public sealed class ClientEventBus : IEventBus, IDisposable
                 throw new InvalidOperationException($"Fake exception requested: \"{message}\"");
             }
 
-            await ProcessEvent(eventName, message);
+            await ProcessEvent(eventName, message).ConfigureAwait(false);
         }
         catch (Exception ex)
         {
@@ -310,7 +310,9 @@ public sealed class ClientEventBus : IEventBus, IDisposable
 
                     await Task.Yield();
 
-                    await ((IIntegrationDynamicEventHandler)handler).Handle(eventData);
+                    var taskForHandle = ((IIntegrationDynamicEventHandler)handler).Handle(eventData);
+
+                    await taskForHandle.ConfigureAwait(false);
                 }
                 else
                 {
@@ -354,7 +356,12 @@ public sealed class ClientEventBus : IEventBus, IDisposable
                         continue;
                     }
 
-                    await (Task)result;
+                    if (result is not Task taskForHandle)
+                    {
+                        continue;
+                    }
+
+                    await taskForHandle.ConfigureAwait(false);
                 }
             }
         }

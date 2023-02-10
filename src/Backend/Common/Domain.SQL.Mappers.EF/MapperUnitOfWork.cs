@@ -9,13 +9,13 @@ namespace Makc2023.Backend.Common.Data.SQL;
 /// </summary>
 public sealed class MapperUnitOfWork : IUnitOfWork
 {
-    #region Properties
+    #region Fields
 
-    private DbContext DbContext { get; init; }
+    private readonly DbContext _dbContext;
 
-    private IMediator Mediator { get; init; }
+    private readonly IMediator _mediator;
 
-    #endregion Properties    
+    #endregion Fields    
 
     #region Constructors
 
@@ -26,8 +26,8 @@ public sealed class MapperUnitOfWork : IUnitOfWork
     /// <param name="mediator">Посредник.</param>
     public MapperUnitOfWork(DbContext dbContext, IMediator mediator)
     {
-        DbContext = dbContext;
-        Mediator = mediator;
+        _dbContext = dbContext;
+        _mediator = mediator;
     }
 
     #endregion Constructors
@@ -37,21 +37,21 @@ public sealed class MapperUnitOfWork : IUnitOfWork
     /// <inheritdoc/>
     public void Dispose()
     {
-        DbContext.Dispose();
+        _dbContext.Dispose();
     }
 
     /// <inheritdoc/>
     public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
-        return DbContext.SaveChangesAsync(cancellationToken);
+        return _dbContext.SaveChangesAsync(cancellationToken);
     }
 
     /// <inheritdoc/>
     public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
     {
-        await Mediator.DispatchEventsAsync(DbContext);
+        await _mediator.DispatchEventsAsync(_dbContext).ConfigureAwait(false);
 
-        int count = await DbContext.SaveChangesAsync(cancellationToken);
+        int count = await _dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
 
         return count > 0;
     }

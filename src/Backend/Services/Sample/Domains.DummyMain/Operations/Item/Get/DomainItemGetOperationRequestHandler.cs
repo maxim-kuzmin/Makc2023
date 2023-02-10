@@ -44,7 +44,7 @@ public class DomainItemGetOperationRequestHandler :
         {
             OperationHandler.OnStart(request.Input, request.OperationCode);
 
-            var operationOutput = await Repository.GetItem(request.Input);
+            var operationOutput = await Repository.GetItem(request.Input).ConfigureAwait(false);
 
             OperationHandler.OnSuccess(operationOutput);
         }

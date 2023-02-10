@@ -11,7 +11,7 @@ public abstract class MapperDbManager<TDbContext> : IMapperDbManager
 {
     #region Properties
 
-    private IMapperResource Resource { get; init; }
+    protected IMapperResource Resource { get; init; }
 
     /// <summary>
     /// Контекст базы данных.
@@ -56,7 +56,7 @@ public abstract class MapperDbManager<TDbContext> : IMapperDbManager
             return null;
         }
 
-        Transaction = await DbContext.Database.BeginTransactionAsync(IsolationLevel.ReadCommitted);
+        Transaction = await DbContext.Database.BeginTransactionAsync(IsolationLevel.ReadCommitted).ConfigureAwait(false);
 
         return Transaction;
     }
@@ -76,9 +76,9 @@ public abstract class MapperDbManager<TDbContext> : IMapperDbManager
 
         try
         {
-            await DbContext.SaveChangesAsync();
+            await DbContext.SaveChangesAsync().ConfigureAwait(false);
 
-            await Transaction.CommitAsync();
+            await Transaction.CommitAsync().ConfigureAwait(false);
         }
         catch
         {
