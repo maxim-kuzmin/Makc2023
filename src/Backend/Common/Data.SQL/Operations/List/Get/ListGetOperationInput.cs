@@ -22,12 +22,12 @@ public abstract class ListGetOperationInput : OperationInput
     /// <summary>
     /// Поле сортировки.
     /// </summary>
-    public string? SortField { get; set; }
+    public string SortField { get; set; } = "";
 
     /// <summary>
     /// Направление сортировки.
     /// </summary>
-    public string? SortDirection { get; set; }
+    public string SortDirection { get; set; } = "";
 
     #endregion Properties
 

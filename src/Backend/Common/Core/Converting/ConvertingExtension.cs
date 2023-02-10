@@ -1,5 +1,7 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
+using System.IO;
+
 namespace Makc2023.Backend.Common.Core.Converting;
 
 /// <summary>
@@ -101,7 +103,16 @@ public static class ConvertingExtension
     /// <returns>Строковое представления даты или нуля.</returns>
     public static string FromDateNullableToString(this DateTime? input, IConvertingResource resource)
     {
-        return input.HasValue ? input.Value.FromDateToString(resource) : string.Empty;
+        return input.HasValue ? input.Value.FromDateToString(resource) : "";
+    }
+
+    /// <summary>
+    /// Преобразовать из предложений в текст.
+    /// </summary>
+    /// <returns>Текст, состоящий из предложений, разделённых точками.</returns>
+    public static string FromSentencesToText(this IEnumerable<string> parts)
+    {
+        return parts.Any() ? string.Join(". ", parts.Select(x => x.Trim().Trim('.'))) : "";
     }
 
     /// <summary>

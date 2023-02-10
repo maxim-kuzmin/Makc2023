@@ -12,17 +12,17 @@ public class DummyMainListGetOperationInput : ListGetOperationInput
     /// <summary>
     /// Идентификаторы.
     /// </summary>
-    public long[]? Ids { get; set; }
+    public long[] Ids { get; set; } = Array.Empty<long>();
 
     /// <summary>
     /// Строка идентификаторов.
     /// </summary>
-    public string? IdsString { get; set; }
+    public string IdsString { get; set; } = "";
 
     /// <summary>
     /// Имя.
     /// </summary>
-    public string? Name { get; set; }
+    public string Name { get; set; } = "";
 
     /// <summary>
     /// Идентификатор экземпляра сущности "Фиктивное отношение один ко многим".
@@ -32,17 +32,17 @@ public class DummyMainListGetOperationInput : ListGetOperationInput
     /// <summary>
     /// Идентификаторы экземпляров сущности "Фиктивное отношение один ко многим".
     /// </summary>
-    public long[]? DummyOneToManyIds { get; set; }
+    public long[] DummyOneToManyIds { get; set; } = Array.Empty<long>();
 
     /// <summary>
     /// Строка идентификаторов экземпляров сущности "Фиктивное отношение один ко многим".
     /// </summary>
-    public string? DummyOneToManyIdsString { get; set; }
+    public string DummyOneToManyIdsString { get; set; } = "";
 
     /// <summary>
     /// Имя экземпляра сущности "Фиктивное отношение один ко многим".
     /// </summary>
-    public string? DummyOneToManyName { get; set; }
+    public string DummyOneToManyName { get; set; } = "";
 
     #endregion Properties
 
@@ -63,18 +63,12 @@ public class DummyMainListGetOperationInput : ListGetOperationInput
             SortDirection = OperationOptions.SORT_DIRECTION_DESC;
         }
 
-        if (!string.IsNullOrWhiteSpace(IdsString) && (Ids == null || !Ids.Any()))
+        if (!string.IsNullOrWhiteSpace(IdsString) && !Ids.Any())
         {
             Ids = IdsString.FromStringToNumericInt64Array();
         }
 
-        if (!string.IsNullOrWhiteSpace(DummyOneToManyIdsString)
-            &&
-            (
-                DummyOneToManyIds == null
-                ||
-                !DummyOneToManyIds.Any()
-            ))
+        if (!string.IsNullOrWhiteSpace(DummyOneToManyIdsString) && !DummyOneToManyIds.Any())
         {
             DummyOneToManyIds = DummyOneToManyIdsString.FromStringToNumericInt64Array();
         }

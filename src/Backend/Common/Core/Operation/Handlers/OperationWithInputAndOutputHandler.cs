@@ -9,6 +9,8 @@ namespace Makc2023.Backend.Common.Core.Operation.Handlers;
 /// <typeparam name="TOperationOutput">Тип выходных данных операции.</typeparam>    
 public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutput> : OperationHandler,
     IOperationWithInputAndOutputHandler<TOperationInput, TOperationOutput>
+    where TOperationInput : class
+    where TOperationOutput : class
 {
     #region Properties
 
@@ -20,23 +22,23 @@ public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutpu
     /// <summary>
     /// Функция преобразования вывода операции.
     /// </summary>
-    protected Func<TOperationOutput, TOperationOutput?>? FunctionToTransformOperationOutput { get; set; }
+    protected Func<TOperationOutput, TOperationOutput>? FunctionToTransformOperationOutput { get; set; }
 
     /// <summary>
     /// Функция получения сообщений об успехах.
     /// </summary>
-    protected Func<TOperationInput, TOperationOutput?, IEnumerable<string>>? FunctionToGetSuccessMessages { get; set; }
+    protected Func<TOperationInput, TOperationOutput, IEnumerable<string>>? FunctionToGetSuccessMessages { get; set; }
 
     /// <summary>
     /// Функция получения сообщений о предупреждениях.
     /// </summary>
-    protected Func<TOperationInput, TOperationOutput?, IEnumerable<string>>? FunctionToGetWarningMessages { get; set; }
+    protected Func<TOperationInput, TOperationOutput, IEnumerable<string>>? FunctionToGetWarningMessages { get; set; }
 
     /// <inheritdoc/>
-    public TOperationInput? OperationInput { get; private set; }
+    public TOperationInput OperationInput { get; private set; } = null!;
 
     /// <inheritdoc/>
-    public OperationResultWithOutput<TOperationOutput>? OperationResult { get; private set; }
+    public OperationResultWithOutput<TOperationOutput> OperationResult { get; private set; } = null!;
 
     #endregion Properties
 
@@ -57,7 +59,7 @@ public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutpu
     #region Public methods
 
     /// <inheritdoc/>
-    public void OnStart(TOperationInput operationInput, string? operationCode = null)
+    public void OnStart(TOperationInput operationInput, string operationCode = "")
     {
         OperationInput = FunctionToTransformOperationInput != null
             ? FunctionToTransformOperationInput.Invoke(operationInput)
@@ -67,30 +69,27 @@ public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutpu
     }
 
     /// <inheritdoc/>
-    public void OnSuccess(TOperationOutput? operationOutput)
+    public void OnSuccess(TOperationOutput operationOutput)
     {
         InitOperationResult(true);
 
-        if (FunctionToTransformOperationOutput != null && operationOutput != null)
+        if (FunctionToTransformOperationOutput != null)
         {
             operationOutput = FunctionToTransformOperationOutput.Invoke(operationOutput);
         }
 
-        if (OperationResult != null && operationOutput != null)
-        {
-            OperationResult.Output = operationOutput;
-        }
+        OperationResult.Output = operationOutput;
 
         Func<IEnumerable<string>>? functionToGetSuccessMessages = null;
 
-        if (FunctionToGetSuccessMessages != null && OperationInput != null)
+        if (FunctionToGetSuccessMessages != null)
         {
             functionToGetSuccessMessages = () => FunctionToGetSuccessMessages.Invoke(OperationInput, operationOutput);
         }
 
         Func<IEnumerable<string>>? functionToGetWarningMessages = null;
 
-        if (FunctionToGetWarningMessages != null && OperationInput != null)
+        if (FunctionToGetWarningMessages != null)
         {
             functionToGetWarningMessages = () => FunctionToGetWarningMessages.Invoke(OperationInput, operationOutput);
         }
@@ -117,7 +116,7 @@ public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutpu
     }
 
     /// <inheritdoc/>
-    protected sealed override OperationResult? GetOperationResult()
+    protected sealed override OperationResult GetOperationResult()
     {
         return OperationResult;
     }
@@ -127,7 +126,7 @@ public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutpu
     {
         OperationResult = new OperationResultWithOutput<TOperationOutput>
         {
-            IsOk = isOk,                
+            IsOk = isOk,
         };
 
         if (!string.IsNullOrWhiteSpace(OperationCode))

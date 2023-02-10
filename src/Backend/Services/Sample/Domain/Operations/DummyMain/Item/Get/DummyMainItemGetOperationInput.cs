@@ -12,7 +12,7 @@ public class DummyMainItemGetOperationInput : ItemGetOperationInput
     /// <summary>
     /// Имя.
     /// </summary>
-    public string? Name { get; set; }
+    public string Name { get; set; } = "";
 
     #endregion Properties
 
@@ -25,7 +25,7 @@ public class DummyMainItemGetOperationInput : ItemGetOperationInput
 
         if (Id > 0)
         {
-            Name = null;
+            Name = "";
         }
     }
 
@@ -36,13 +36,13 @@ public class DummyMainItemGetOperationInput : ItemGetOperationInput
 
         if (result.Any())
         {
-            if (Name != null)
+            if (string.IsNullOrWhiteSpace(Name))
             {
-                result.Clear();
+                result.Add(nameof(Name));
             }
             else
             {
-                result.Add(nameof(Name));
+                result.Clear();
             }
         }
 

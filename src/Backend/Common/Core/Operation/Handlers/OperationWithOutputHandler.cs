@@ -7,6 +7,7 @@ namespace Makc2023.Backend.Common.Core.Operation.Handlers;
 /// </summary>
 /// <typeparam name="TOperationOutput">Тип выходных данных операции.</typeparam>    
 public class OperationWithOutputHandler<TOperationOutput> : OperationHandler, IOperationWithOutputHandler<TOperationOutput>
+    where TOperationOutput : class
 {
     #region Properties
 
@@ -26,7 +27,7 @@ public class OperationWithOutputHandler<TOperationOutput> : OperationHandler, IO
     protected Func<TOperationOutput, IEnumerable<string>>? FunctionToGetWarningMessages { get; set; }
 
     /// <inheritdoc/>
-    public OperationResultWithOutput<TOperationOutput>? OperationResult { get; private set; }
+    public OperationResultWithOutput<TOperationOutput> OperationResult { get; private set; } = null!;
 
     #endregion Properties
 
@@ -47,7 +48,7 @@ public class OperationWithOutputHandler<TOperationOutput> : OperationHandler, IO
     #region Public methods
 
     /// <inheritdoc/>
-    public void OnStart(string? operationCode = null)
+    public void OnStart(string operationCode = "")
     {
         DoOnStart(operationCode);
     }
@@ -103,7 +104,7 @@ public class OperationWithOutputHandler<TOperationOutput> : OperationHandler, IO
     }
 
     /// <inheritdoc/>
-    protected sealed override OperationResult? GetOperationResult()
+    protected sealed override OperationResult GetOperationResult()
     {
         return OperationResult;
     }

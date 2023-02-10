@@ -7,6 +7,7 @@ namespace Makc2023.Backend.Common.Core.Operation.Handlers;
 /// </summary>
 /// <typeparam name="TOperationInput">Тип входных данных операции.</typeparam>
 public class OperationWithInputHandler<TOperationInput> : OperationHandler, IOperationWithInputHandler<TOperationInput>
+    where TOperationInput : class
 {
     #region Properties
 
@@ -26,10 +27,10 @@ public class OperationWithInputHandler<TOperationInput> : OperationHandler, IOpe
     protected Func<TOperationInput, IEnumerable<string>>? FunctionToGetWarningMessages { get; set; }
 
     /// <inheritdoc/>
-    public TOperationInput? OperationInput { get; private set; }
+    public TOperationInput OperationInput { get; private set; } = null!;
 
     /// <inheritdoc/>
-    public OperationResult? OperationResult { get; private set; }
+    public OperationResult OperationResult { get; private set; } = null!;
 
     #endregion Properties
 
@@ -51,7 +52,7 @@ public class OperationWithInputHandler<TOperationInput> : OperationHandler, IOpe
     #region Public methods
 
     /// <inheritdoc/>
-    public void OnStart(TOperationInput operationInput, string? operationCode = null)
+    public void OnStart(TOperationInput operationInput, string operationCode = "")
     {
         OperationInput = FunctionToTransformOperationInput != null
             ? FunctionToTransformOperationInput.Invoke(operationInput)
@@ -101,7 +102,7 @@ public class OperationWithInputHandler<TOperationInput> : OperationHandler, IOpe
     }
 
     /// <inheritdoc/>
-    protected sealed override OperationResult? GetOperationResult()
+    protected sealed override OperationResult GetOperationResult()
     {
         return OperationResult;
     }

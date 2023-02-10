@@ -5,14 +5,6 @@ namespace Makc2023.Backend.Services.Sample.Domain.Operations.DummyMain.Item.Get;
 /// <summary>
 /// Выходные данные операции получения элемента "Фиктивное главное".
 /// </summary>
-public class DummyMainItemGetOperationOutput
+public class DummyMainItemGetOperationOutput : ItemGetOperationOutput<DummyMainEntity>
 {
-    #region Properties
-
-    /// <summary>
-    /// Сущность.
-    /// </summary>
-    public DummyMainEntity? Entity { get; set; }
-
-    #endregion Properties
 }

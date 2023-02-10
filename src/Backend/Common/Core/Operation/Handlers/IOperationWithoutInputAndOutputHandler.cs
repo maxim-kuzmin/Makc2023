@@ -12,7 +12,7 @@ public interface IOperationWithoutInputAndOutputHandler : IOperationHandler
     /// <summary>
     /// Результат выполнения операции.
     /// </summary>
-    OperationResult? OperationResult { get; }
+    OperationResult OperationResult { get; }
 
     #endregion Properties
 
@@ -22,7 +22,7 @@ public interface IOperationWithoutInputAndOutputHandler : IOperationHandler
     /// Обработать начало.
     /// </summary>
     /// <param name="operationCode">Код операции.</param>
-    void OnStart(string? operationCode = null);
+    void OnStart(string operationCode = "");
 
     /// <summary>
     /// Обработать успех.

@@ -4,9 +4,9 @@
 		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<VersionPrefix>1.0.4</VersionPrefix>
+		<VersionPrefix>1.0.6</VersionPrefix>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<AssemblyName>Makc2023.Backend.Common.Data.SQL.Clients.SqlServer</AssemblyName>
 		<RootNamespace>$(AssemblyName)</RootNamespace>		
 	</PropertyGroup>

@@ -9,13 +9,11 @@ namespace Makc2023.Backend.Services.Sample.Domains.DummyMain;
 /// </summary>
 public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRepository
 {
-    #region Properties
+    #region Fields
 
-    private IMapperDbContextFactory DbContextFactory { get; init; }
+    private readonly IMapperDbContextFactory _dbContextFactory;
 
-    private MapperDbManager DbManager { get; init; }
-
-    #endregion Properties
+    #endregion Fields
 
     #region Constructors
 
@@ -23,7 +21,6 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
     /// Конструктор.
     /// </summary>
     /// <param name="dbContextFactory">Фабрика контекста базы данных.</param>
-    /// <param name="dbManager">Менеджер базы данных.</param>
     /// <param name="mediator">Посредник.</param>
     public DomainRepository(
         IMapperDbContextFactory dbContextFactory,
@@ -31,8 +28,7 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
         IMediator mediator)
         : base(dbManager.DbContext, mediator)
     {
-        DbContextFactory = dbContextFactory;
-        DbManager = dbManager;
+        _dbContextFactory = dbContextFactory;
     }
 
     #endregion Constructors
@@ -44,16 +40,16 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
     {
         DummyMainItemGetOperationOutput result = new();
 
-        using var dbContext = DbContextFactory.CreateDbContext();
+        using var dbContext = _dbContextFactory.CreateDbContext();
 
-        var taskForItem = dbContext.DummyMain
+        var taskForEntity = dbContext.DummyMain
             .Include(x => x.DummyOneToMany)
             .Include(x => x.DummyMainDummyManyToManyList)
             .Include(x => x.DummyManyToOneList)
             .ApplyFiltering(input)
             .SingleOrDefaultAsync();
 
-        var mapperDummyMain = await taskForItem.ConfigureAwait(false);
+        var mapperDummyMain = await taskForEntity.ConfigureAwait(false);
 
         if (mapperDummyMain != null)
         {
@@ -67,6 +63,10 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
 
             result.Entity = entity;
         }
+        else
+        {
+            result.IsEntityNotFound = true;
+        }
 
         return result;
     }
@@ -76,8 +76,8 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
     {
         DummyMainListGetOperationOutput result = new();
 
-        using var dbContext = DbContextFactory.CreateDbContext();
-        using var dbContextForTotalCount = DbContextFactory.CreateDbContext();
+        using var dbContext = _dbContextFactory.CreateDbContext();
+        using var dbContextForTotalCount = _dbContextFactory.CreateDbContext();
 
         var queryForItems = dbContext.DummyMain
             .Include(x => x.DummyOneToMany)

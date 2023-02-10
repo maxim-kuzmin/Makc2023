@@ -35,4 +35,35 @@ public class OperationResult
     public HashSet<string> WarningMessages { get; } = new HashSet<string>();
 
     #endregion Properties
+
+    #region Public methods
+
+    /// <summary>
+    /// Создать сообщение об ошибке.
+    /// </summary>
+    /// <returns>Сообщение.</returns>
+    public string CreateErrorMessage()
+    {
+        return ErrorMessages.FromSentencesToText();
+    }
+
+    /// <summary>
+    /// Создать сообщение об успехе.
+    /// </summary>
+    /// <returns>Сообщение.</returns>
+    public string CreateSuccessMessage()
+    {
+        return SuccessMessages.FromSentencesToText();
+    }
+
+    /// <summary>
+    /// Создать сообщение о предупреждении.
+    /// </summary>
+    /// <returns>Сообщение.</returns>
+    public string CreateWarningMessage()
+    {
+        return WarningMessages.FromSentencesToText();
+    }
+
+    #endregion Public methods
 }

@@ -32,10 +32,7 @@ public class DomainListGetOperationHandler :
 
     private DummyMainListGetOperationInput TransformOperationInput(DummyMainListGetOperationInput input)
     {
-        if (input == null)
-        {
-            input = new DummyMainListGetOperationInput();
-        }
+        input ??= new DummyMainListGetOperationInput();
 
         input.Normalize();
 

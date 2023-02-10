@@ -8,13 +8,13 @@ namespace Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get
 public class DomainListGetOperationRequestHandler :
     IRequestHandler<DomainListGetOperationRequest, DomainListGetOperationResponse>
 {
-    #region Properties
+    #region Fields
 
-    private IDummyMainItemGetOperationHandler OperationHandler { get; init; }
+    private readonly IDummyMainItemGetOperationHandler _operationHandler;
 
-    private IDummyMainRepository Repository { get; init; }
+    private readonly IDummyMainRepository _repository;
 
-    #endregion Properties
+    #endregion Fields
 
     #region Constructors
 
@@ -27,8 +27,8 @@ public class DomainListGetOperationRequestHandler :
         IDummyMainItemGetOperationHandler operationHandler,
         IDummyMainRepository repository)
     {
-        OperationHandler = operationHandler;
-        Repository = repository;
+        _operationHandler = operationHandler;
+        _repository = repository;
     }
 
     #endregion Constructors
@@ -42,18 +42,18 @@ public class DomainListGetOperationRequestHandler :
     {
         try
         {
-            OperationHandler.OnStart(request.Input, request.OperationCode);
+            _operationHandler.OnStart(request.Input, request.OperationCode);
 
-            var operationOutput = await Repository.GetItem(request.Input).ConfigureAwait(false);
+            var operationOutput = await _repository.GetItem(request.Input).ConfigureAwait(false);
 
-            OperationHandler.OnSuccess(operationOutput);
+            _operationHandler.OnSuccess(operationOutput);
         }
         catch (Exception ex)
         {
-            OperationHandler.OnError(ex);
+            _operationHandler.OnError(ex);
         }
 
-        return new DomainListGetOperationResponse(OperationHandler.OperationResult);
+        return new DomainListGetOperationResponse(_operationHandler.OperationResult);
     }
 
     #endregion Public methods

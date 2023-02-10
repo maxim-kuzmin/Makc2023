@@ -13,12 +13,12 @@ public interface IOperationWithInputHandler<TOperationInput> : IOperationHandler
     /// <summary>
     /// Входные данные операции.
     /// </summary>
-    TOperationInput? OperationInput { get; }
+    TOperationInput OperationInput { get; }
 
     /// <summary>
     /// Результат выполнения операции.
     /// </summary>
-    OperationResult? OperationResult { get; }
+    OperationResult OperationResult { get; }
 
     #endregion Properties
 
@@ -29,7 +29,7 @@ public interface IOperationWithInputHandler<TOperationInput> : IOperationHandler
     /// </summary>
     /// <param name="operationInput">Входные данные операции.</param>
     /// <param name="operationCode">Код операции.</param>
-    void OnStart(TOperationInput operationInput, string? operationCode = null);
+    void OnStart(TOperationInput operationInput, string operationCode = "");
 
     /// <summary>
     /// Обработать успех.

@@ -1,7 +1,5 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-using Makc2023.Backend.Common.Core.Exceptions;
-
 namespace Makc2023.Backend.Common.Core.Operation;
 
 /// <summary>
@@ -9,11 +7,15 @@ namespace Makc2023.Backend.Common.Core.Operation;
 /// </summary>
 public abstract class OperationHandler : IOperationHandler
 {
+    #region Fields
+
+    private readonly string? _operationName;
+
+    #endregion Fields
+
     #region Properties
 
-    private string? OperationName { get; set; }
-
-    private string? Title { get; set; }
+    private string Title { get; set; } = "";
 
     /// <summary>
     /// Ресурс операции.
@@ -33,12 +35,12 @@ public abstract class OperationHandler : IOperationHandler
     /// <summary>
     /// Код операции.
     /// </summary>
-    protected string? OperationCode { get; private set; }
+    protected string OperationCode { get; private set; } = "";
 
     /// <summary>
     /// Параметры настройки.
     /// </summary>
-    protected IOptionsMonitor<SetupOptions> SetupOptions { get; private set; }
+    protected IOptionsMonitor<SetupOptions> SetupOptions { get; init; }
 
     #endregion Properties
 
@@ -57,7 +59,7 @@ public abstract class OperationHandler : IOperationHandler
         ILogger logger,
         IOptionsMonitor<SetupOptions> setupOptions)
     {
-        OperationName = operationName;
+        _operationName = operationName;
         OperationResource = operationResource;
         Logger = logger;
         SetupOptions = setupOptions;
@@ -70,10 +72,7 @@ public abstract class OperationHandler : IOperationHandler
     /// <inheritdoc/>
     public void OnError(Exception? exception = null)
     {
-        if (exception != null)
-        {
-            InitOperationResult(false);
-        }
+        InitOperationResult(false);
 
         string errorMessage;
 
@@ -83,17 +82,16 @@ public abstract class OperationHandler : IOperationHandler
 
         if (errorMessages != null && errorMessages.Any())
         {
-            operationResult?.ErrorMessages.UnionWith(errorMessages);
+            operationResult.ErrorMessages.UnionWith(errorMessages);
 
-            errorMessage = string.Join(". ", errorMessages).Replace("!.", "!").Replace("?.", "?");
+            errorMessage = errorMessages.FromSentencesToText();
         }
         else
         {
             errorMessage = OperationResource.GetErrorMessageForDefault();
 
-            operationResult?.ErrorMessages.Add(errorMessage);
+            operationResult.ErrorMessages.Add(errorMessage);
         }
-
 
         if (Logger != null)
         {
@@ -116,7 +114,7 @@ public abstract class OperationHandler : IOperationHandler
     /// Сделать в начале операции.
     /// </summary>
     /// <param name="operationCode">Код операции.</param>
-    protected virtual void DoOnStart(string? operationCode)
+    protected virtual void DoOnStart(string operationCode)
     {
         OperationCode = string.IsNullOrWhiteSpace(operationCode) ? OperationHelper.CreateOperationCode() : operationCode;
 
@@ -127,7 +125,7 @@ public abstract class OperationHandler : IOperationHandler
             OperationCode = operationCode;
         }
 
-        Title = $"{OperationName}. {titleForOperationCode}: {OperationCode}. ";
+        Title = $"{_operationName}. {titleForOperationCode}: {OperationCode}. ";
 
         var currentSetupOptions = SetupOptions.CurrentValue;
 
@@ -149,7 +147,7 @@ public abstract class OperationHandler : IOperationHandler
     {
         var operationResult = GetOperationResult();
 
-        if (operationResult != null && operationResult.IsOk)
+        if (operationResult.IsOk)
         {
             if (functionToGetSuccessMessages != null)
             {
@@ -194,7 +192,7 @@ public abstract class OperationHandler : IOperationHandler
     /// Получить результат выполнения операции.
     /// </summary>
     /// <returns>Результат выполнения операции.</returns>
-    protected abstract OperationResult? GetOperationResult();
+    protected abstract OperationResult GetOperationResult();
 
     /// <summary>
     /// Инициализировать результат операции.
@@ -263,7 +261,7 @@ public abstract class OperationHandler : IOperationHandler
 
             string titleForSuccess = OperationResource.GetTitleForSuccess();
             string titleForResult = OperationResource.GetTitleForResult();
-            string? valueForResult = operationResult?.SerializeToJson(JsonSerializationOptions.ForLogger);
+            string valueForResult = operationResult.SerializeToJson(JsonSerializationOptions.ForLogger);
 
             Logger.LogDebug(
                 "{Title}{titleForSuccess}. {titleForResult}: {valueForResult}",

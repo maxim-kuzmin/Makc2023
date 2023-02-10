@@ -4,8 +4,8 @@
 		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<VersionPrefix>1.0.4</VersionPrefix>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<VersionPrefix>1.0.6</VersionPrefix>		
 		<AssemblyName>Makc2023.Backend.Common.Data.SQL</AssemblyName>
 		<RootNamespace>$(AssemblyName)</RootNamespace>
 	</PropertyGroup>
