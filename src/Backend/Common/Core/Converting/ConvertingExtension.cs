@@ -109,10 +109,14 @@ public static class ConvertingExtension
     /// <summary>
     /// Преобразовать из предложений в текст.
     /// </summary>
-    /// <returns>Текст, состоящий из предложений, разделённых точками.</returns>
+    /// <returns>Текст, состоящий из предложений.</returns>
     public static string FromSentencesToText(this IEnumerable<string> parts)
     {
-        return parts.Any() ? string.Join(". ", parts.Select(x => x.Trim().Trim('.'))) : "";
+        return parts.Any() 
+            ? string.Join(". ", parts.Select(x => x.Trim().Trim('.', ',', ';').Trim()))
+                .Replace("!.", "!")
+                .Replace("?.", "?")
+            : "";
     }
 
     /// <summary>
@@ -151,7 +155,7 @@ public static class ConvertingExtension
     }
 
     /// <summary>
-    /// Преобразовать из строки в 32-х разрядное целое число.
+    /// Преобразовать из строки в 32-битное целое число.
     /// </summary>
     /// <param name="input">Строка.</param>
     /// <returns>Целое число.</returns>
@@ -161,7 +165,7 @@ public static class ConvertingExtension
     }
 
     /// <summary>
-    /// Преобразовать из строки в 32-х разрядное целое число или NULL.
+    /// Преобразовать из строки в 32-битное целое число или NULL.
     /// </summary>
     /// <param name="input">Строка.</param>
     /// <returns>Целое число или NULL.</returns>
@@ -171,7 +175,7 @@ public static class ConvertingExtension
     }
 
     /// <summary>
-    /// Преобразовать из строки в 64-х разрядное целое число.
+    /// Преобразовать из строки в 64-битное целое число.
     /// </summary>
     /// <param name="input">Строка.</param>
     /// <returns>Целое число.</returns>
@@ -181,7 +185,7 @@ public static class ConvertingExtension
     }
 
     /// <summary>
-    /// Преобразовать из строки в 64-х разрядное целое число или NULL.
+    /// Преобразовать из строки в 64-битное целое число или NULL.
     /// </summary>
     /// <param name="input">Строка.</param>
     /// <returns>Целое число или NULL.</returns>

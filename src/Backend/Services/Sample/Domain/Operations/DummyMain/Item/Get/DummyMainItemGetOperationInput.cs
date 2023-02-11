@@ -5,7 +5,7 @@ namespace Makc2023.Backend.Services.Sample.Domain.Operations.DummyMain.Item.Get;
 /// <summary>
 /// Входные данные операции получения элемента "Фиктивное главное".
 /// </summary>
-public class DummyMainItemGetOperationInput : ItemGetOperationInput
+public class DummyMainItemGetOperationInput : ItemWithInt64IdGetOperationInput
 {
     #region Properties
 
@@ -23,7 +23,7 @@ public class DummyMainItemGetOperationInput : ItemGetOperationInput
     {
         base.Normalize();
 
-        if (Id > 0)
+        if (Id > 0L)
         {
             Name = "";
         }

@@ -5,21 +5,21 @@ namespace Makc2023.Backend.Common.Data.SQL.Operations.Item.Get;
 /// <summary>
 /// Выходные данные операции получения элемента.
 /// </summary>
-/// <typeparam name="TEntity">Тип сущности.</typeparam>
-public class ItemGetOperationOutput<TEntity>
-    where TEntity : class
+/// <typeparam name="TItem">Элемент.</typeparam>
+public class ItemGetOperationOutput<TItem>
+   where TItem : class
 {
     #region Properties
 
     /// <summary>
-    /// Сущность.
+    /// Элемент.
     /// </summary>
-    public TEntity Entity { get; set; } = null!;
+    public TItem Item { get; set; } = null!;
 
     /// <summary>
-    /// Признак того, что сущность не найдена.
+    /// Признак того, что элемент не найден.
     /// </summary>
-    public bool IsEntityNotFound { get; set; }
+    public bool IsItemNotFound { get; set; }
 
     #endregion Properties
 }

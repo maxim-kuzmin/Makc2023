@@ -67,22 +67,22 @@ public class DummyMainTypeEntity
     public decimal? PropDecimalNullable { get; set; }
 
     /// <summary>
-    /// Свойство, содержащее целое 32-разрядное число.
+    /// Свойство, содержащее 32-битное целое число.
     /// </summary>
     public int PropInt32 { get; set; }
 
     /// <summary>
-    /// Свойство, содержащее целое 32-разрядное число или NULL.
+    /// Свойство, содержащее 32-битное целое число или NULL.
     /// </summary>
     public int? PropInt32Nullable { get; set; }
 
     /// <summary>
-    /// Свойство, содержащее целое 64-разрядное число.
+    /// Свойство, содержащее 64-битное целое число.
     /// </summary>
     public long PropInt64 { get; set; }
 
     /// <summary>
-    /// Свойство, содержащее целое 64-разрядное число или NULL.
+    /// Свойство, содержащее 64-битное целое число или NULL.
     /// </summary>
     public long? PropInt64Nullable { get; set; }
 

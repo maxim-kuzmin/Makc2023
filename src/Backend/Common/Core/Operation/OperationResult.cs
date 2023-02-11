@@ -24,16 +24,6 @@ public class OperationResult
     /// </summary>
     public string OperationCode { get; set; } = OperationHelper.CreateOperationCode();
 
-    /// <summary>
-    /// Сообщения об успехах.
-    /// </summary>
-    public HashSet<string> SuccessMessages { get; } = new HashSet<string>();
-
-    /// <summary>
-    /// Сообщения о предупреждениях.
-    /// </summary>
-    public HashSet<string> WarningMessages { get; } = new HashSet<string>();
-
     #endregion Properties
 
     #region Public methods
@@ -45,24 +35,6 @@ public class OperationResult
     public string CreateErrorMessage()
     {
         return ErrorMessages.FromSentencesToText();
-    }
-
-    /// <summary>
-    /// Создать сообщение об успехе.
-    /// </summary>
-    /// <returns>Сообщение.</returns>
-    public string CreateSuccessMessage()
-    {
-        return SuccessMessages.FromSentencesToText();
-    }
-
-    /// <summary>
-    /// Создать сообщение о предупреждении.
-    /// </summary>
-    /// <returns>Сообщение.</returns>
-    public string CreateWarningMessage()
-    {
-        return WarningMessages.FromSentencesToText();
     }
 
     #endregion Public methods

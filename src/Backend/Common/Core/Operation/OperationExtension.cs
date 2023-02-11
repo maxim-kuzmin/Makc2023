@@ -111,8 +111,6 @@ public static class OperationExtension
             isOk = isOk && operationResultToLoad.IsOk;
 
             operationResult.ErrorMessages.UnionWith(operationResultToLoad.ErrorMessages);
-            operationResult.SuccessMessages.UnionWith(operationResultToLoad.SuccessMessages);
-            operationResult.WarningMessages.UnionWith(operationResultToLoad.WarningMessages);
         }
 
         operationResult.IsOk = isOk;

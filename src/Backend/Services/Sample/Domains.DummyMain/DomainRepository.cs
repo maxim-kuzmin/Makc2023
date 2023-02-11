@@ -42,30 +42,30 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
 
         using var dbContext = _dbContextFactory.CreateDbContext();
 
-        var taskForEntity = dbContext.DummyMain
+        var taskForItem = dbContext.DummyMain
             .Include(x => x.DummyOneToMany)
             .Include(x => x.DummyMainDummyManyToManyList)
             .Include(x => x.DummyManyToOneList)
             .ApplyFiltering(input)
             .SingleOrDefaultAsync();
 
-        var mapperDummyMain = await taskForEntity.ConfigureAwait(false);
+        var mapperDummyMain = await taskForItem.ConfigureAwait(false);
 
         if (mapperDummyMain != null)
         {
-            var entity = new DummyMainEntity(mapperDummyMain);
+            var item = new DummyMainEntity(mapperDummyMain);
 
-            LoadDummyOneToMany(entity, mapperDummyMain);
+            LoadDummyOneToMany(item, mapperDummyMain);
 
-            LoadDummyManyToOne(entity, mapperDummyMain);
+            LoadDummyManyToOne(item, mapperDummyMain);
 
-            await LoadDummyManyToMany(dbContext, entity, mapperDummyMain).ConfigureAwait(false);            
+            await LoadDummyManyToMany(dbContext, item, mapperDummyMain).ConfigureAwait(false);            
 
-            result.Entity = entity;
+            result.Item = item;
         }
         else
         {
-            result.IsEntityNotFound = true;
+            result.IsItemNotFound = true;
         }
 
         return result;
@@ -120,7 +120,7 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
 
     private static async Task LoadDummyManyToMany(
         MapperDbContext dbContext,
-        DummyMainEntity entity,
+        DummyMainEntity item,
         MapperDummyMainTypeEntity mapperDummyMain)
     {
         var mapperDummyMainDummyManyToManyList = mapperDummyMain.DummyMainDummyManyToManyList;
@@ -141,7 +141,7 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
 
                 foreach (var mapperDummyManyToMany in mapperDummyManyToManyList)
                 {
-                    entity.AddDummyManyToMany(mapperDummyManyToMany);
+                    item.AddDummyManyToMany(mapperDummyManyToMany);
                 }
             }
         }
@@ -193,7 +193,7 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
         }
     }
 
-    private static void LoadDummyManyToOne(DummyMainEntity entity, MapperDummyMainTypeEntity mapperDummyMain)
+    private static void LoadDummyManyToOne(DummyMainEntity item, MapperDummyMainTypeEntity mapperDummyMain)
     {
         var mapperDummyManyToOneList = mapperDummyMain.DummyManyToOneList;
 
@@ -201,7 +201,7 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
         {
             foreach (var mapperDummyManyToOne in mapperDummyManyToOneList)
             {
-                entity.AddDummyManyToOne(mapperDummyManyToOne);
+                item.AddDummyManyToOne(mapperDummyManyToOne);
             }
         }
     }
@@ -219,13 +219,13 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
         }
     }
 
-    private static void LoadDummyOneToMany(DummyMainEntity entity, MapperDummyMainTypeEntity mapperDummyMain)
+    private static void LoadDummyOneToMany(DummyMainEntity item, MapperDummyMainTypeEntity mapperDummyMain)
     {
         var mapperDummyOneToMany = mapperDummyMain.DummyOneToMany;
 
         if (mapperDummyOneToMany != null)
         {
-            entity.DummyOneToMany = new DummyOneToManyEntity(mapperDummyOneToMany);
+            item.DummyOneToMany = new DummyOneToManyEntity(mapperDummyOneToMany);
         }
     }
 

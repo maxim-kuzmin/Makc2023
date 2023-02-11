@@ -16,16 +16,6 @@ public class OperationWithInputHandler<TOperationInput> : OperationHandler, IOpe
     /// </summary>
     protected Func<TOperationInput, TOperationInput>? FunctionToTransformOperationInput { get; set; }
 
-    /// <summary>
-    /// Функция получения сообщений об успехах.
-    /// </summary>
-    protected Func<TOperationInput, IEnumerable<string>>? FunctionToGetSuccessMessages { get; set; }
-
-    /// <summary>
-    /// Функция получения сообщений о предупреждениях.
-    /// </summary>
-    protected Func<TOperationInput, IEnumerable<string>>? FunctionToGetWarningMessages { get; set; }
-
     /// <inheritdoc/>
     public TOperationInput OperationInput { get; private set; } = null!;
 
@@ -66,21 +56,7 @@ public class OperationWithInputHandler<TOperationInput> : OperationHandler, IOpe
     {
         InitOperationResult(true);
 
-        Func<IEnumerable<string>>? functionToGetSuccessMessages = null;
-
-        if (FunctionToGetSuccessMessages != null && OperationInput != null)
-        {
-            functionToGetSuccessMessages = () => FunctionToGetSuccessMessages.Invoke(OperationInput);
-        }
-
-        Func<IEnumerable<string>>? functionToGetWarningMessages = null;
-
-        if (FunctionToGetWarningMessages != null && OperationInput != null)
-        {
-            functionToGetWarningMessages = () => FunctionToGetWarningMessages.Invoke(OperationInput);
-        }
-
-        DoOnSuccess(functionToGetSuccessMessages, functionToGetWarningMessages);
+        DoOnSuccess();
     }
 
     /// <inheritdoc/>
@@ -88,7 +64,7 @@ public class OperationWithInputHandler<TOperationInput> : OperationHandler, IOpe
     {
         OperationResult = operationResult;
 
-        DoOnSuccess(null, null);
+        DoOnSuccess();
     }
 
     #endregion Public methods

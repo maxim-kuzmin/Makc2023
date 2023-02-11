@@ -9,16 +9,6 @@ public class OperationWithoutInputAndOutputHandler : OperationHandler, IOperatio
 {
     #region Properties
 
-    /// <summary>
-    /// Функция получения сообщений об успехах.
-    /// </summary>
-    protected Func<IEnumerable<string>>? FunctionToGetSuccessMessages { get; set; }
-
-    /// <summary>
-    /// Функция получения сообщений о предупреждениях.
-    /// </summary>
-    protected Func<IEnumerable<string>>? FunctionToGetWarningMessages { get; set; }
-
     /// <inheritdoc/>
     public OperationResult OperationResult { get; private set; } = null!;
 
@@ -51,7 +41,7 @@ public class OperationWithoutInputAndOutputHandler : OperationHandler, IOperatio
     {
         InitOperationResult(true);
 
-        DoOnSuccess(FunctionToGetSuccessMessages, FunctionToGetWarningMessages);
+        DoOnSuccess();
     }
 
     /// <inheritdoc/>
@@ -59,7 +49,7 @@ public class OperationWithoutInputAndOutputHandler : OperationHandler, IOperatio
     {
         OperationResult = operationResult;
 
-        DoOnSuccess(null, null);
+        DoOnSuccess();
     }
 
     #endregion Public methods

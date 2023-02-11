@@ -56,9 +56,9 @@ public class DomainItemGetOperationHandler :
 
     private DummyMainItemGetOperationOutput TransformOperationOutput(DummyMainItemGetOperationOutput output)
     {
-        if (output.IsEntityNotFound)
+        if (output.IsItemNotFound)
         {
-            output.Entity = new DummyMainEntity(new DummyMainTypeEntity());
+            output.Item = new DummyMainEntity(new DummyMainTypeEntity());
 
             throw new LocalizedException(_domainResource.GetErrorMessageForEntityNotFound());
         }

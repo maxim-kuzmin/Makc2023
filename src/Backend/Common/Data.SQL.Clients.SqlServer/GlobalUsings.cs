@@ -6,7 +6,6 @@ global using System.Data.SqlClient;
 global using System.Runtime.InteropServices;
 global using System.Text;
 global using Makc2023.Backend.Common.Core.App;
-global using Makc2023.Backend.Common.Data.SQL;
 global using Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.Commands.Identity.Reseed;
 global using Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.Commands.Tree.Calculate;
 global using Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.Commands.Tree.Trigger;

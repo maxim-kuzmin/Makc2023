@@ -138,37 +138,12 @@ public abstract class OperationHandler : IOperationHandler
     /// <summary>
     /// Сделать в случае успешного выполнения операции.
     /// </summary>
-    /// <param name="functionToGetSuccessMessages">Функция получения сообщений об успехах.</param>
-    /// <param name="functionToGetWarningMessages">Функция получения сообщений о предупреждениях.</param>
-    protected void DoOnSuccess(
-        Func<IEnumerable<string>>? functionToGetSuccessMessages,
-        Func<IEnumerable<string>>? functionToGetWarningMessages
-        )
+    protected void DoOnSuccess()
     {
         var operationResult = GetOperationResult();
 
         if (operationResult.IsOk)
         {
-            if (functionToGetSuccessMessages != null)
-            {
-                var messages = functionToGetSuccessMessages();
-
-                if (messages != null && messages.Any())
-                {
-                    operationResult.SuccessMessages.UnionWith(messages);
-                }
-            }
-
-            if (functionToGetWarningMessages != null)
-            {
-                var messages = functionToGetWarningMessages();
-
-                if (messages != null && messages.Any())
-                {
-                    operationResult.WarningMessages.UnionWith(messages);
-                }
-            }
-
             var currentSetupOptions = SetupOptions.CurrentValue;
 
             if (currentSetupOptions.LogLevel == LogLevel.Debug)

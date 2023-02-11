@@ -24,16 +24,6 @@ public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutpu
     /// </summary>
     protected Func<TOperationOutput, TOperationOutput>? FunctionToTransformOperationOutput { get; set; }
 
-    /// <summary>
-    /// Функция получения сообщений об успехах.
-    /// </summary>
-    protected Func<TOperationInput, TOperationOutput, IEnumerable<string>>? FunctionToGetSuccessMessages { get; set; }
-
-    /// <summary>
-    /// Функция получения сообщений о предупреждениях.
-    /// </summary>
-    protected Func<TOperationInput, TOperationOutput, IEnumerable<string>>? FunctionToGetWarningMessages { get; set; }
-
     /// <inheritdoc/>
     public TOperationInput OperationInput { get; private set; } = null!;
 
@@ -80,21 +70,7 @@ public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutpu
 
         OperationResult.Output = operationOutput;
 
-        Func<IEnumerable<string>>? functionToGetSuccessMessages = null;
-
-        if (FunctionToGetSuccessMessages != null)
-        {
-            functionToGetSuccessMessages = () => FunctionToGetSuccessMessages.Invoke(OperationInput, operationOutput);
-        }
-
-        Func<IEnumerable<string>>? functionToGetWarningMessages = null;
-
-        if (FunctionToGetWarningMessages != null)
-        {
-            functionToGetWarningMessages = () => FunctionToGetWarningMessages.Invoke(OperationInput, operationOutput);
-        }
-
-        DoOnSuccess(functionToGetSuccessMessages, functionToGetWarningMessages);
+        DoOnSuccess();
     }
 
     /// <inheritdoc/>
@@ -102,7 +78,7 @@ public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutpu
     {
         OperationResult = operationResult;
 
-        DoOnSuccess(null, null);
+        DoOnSuccess();
     }
 
     #endregion Public methods

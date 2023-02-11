@@ -3,9 +3,9 @@
 namespace Makc2023.Backend.Common.Data.SQL.Operations.Item.Get;
 
 /// <summary>
-/// Входные данные операции получения элемента.
+/// Входные данные операции получения элемента с 64-битным целочисленным идентификатором.
 /// </summary>
-public class ItemGetOperationInput : OperationInput
+public class ItemWithInt64IdGetOperationInput : OperationInput
 {
     #region Properties
 
@@ -25,7 +25,7 @@ public class ItemGetOperationInput : OperationInput
     {
         if (Id < 0)
         {
-            Id = 0;
+            Id = 0L;
         }
     }
 
@@ -34,7 +34,7 @@ public class ItemGetOperationInput : OperationInput
     {
         var result = base.GetInvalidProperties();
 
-        if (Id < 1)
+        if (Id < 1L)
         {
             result.Add(nameof(Id));
         }

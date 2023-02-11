@@ -14,17 +14,7 @@ public class OperationWithOutputHandler<TOperationOutput> : OperationHandler, IO
     /// <summary>
     /// Функция преобразования вывода операции.
     /// </summary>
-    protected Func<TOperationOutput, TOperationOutput?>? FunctionToTransformOperationOutput { get; set; }
-
-    /// <summary>
-    /// Функция получения сообщений об успехах.
-    /// </summary>
-    protected Func<TOperationOutput, IEnumerable<string>>? FunctionToGetSuccessMessages { get; set; }
-
-    /// <summary>
-    /// Функция получения сообщений о предупреждениях.
-    /// </summary>
-    protected Func<TOperationOutput, IEnumerable<string>>? FunctionToGetWarningMessages { get; set; }
+    protected Func<TOperationOutput, TOperationOutput>? FunctionToTransformOperationOutput { get; set; }
 
     /// <inheritdoc/>
     public OperationResultWithOutput<TOperationOutput> OperationResult { get; private set; } = null!;
@@ -54,35 +44,18 @@ public class OperationWithOutputHandler<TOperationOutput> : OperationHandler, IO
     }
 
     /// <inheritdoc/>
-    public void OnSuccess(TOperationOutput? operationOutput)
+    public void OnSuccess(TOperationOutput operationOutput)
     {
         InitOperationResult(true);
 
-        if (FunctionToTransformOperationOutput != null && operationOutput != null)
+        if (FunctionToTransformOperationOutput != null)
         {
             operationOutput = FunctionToTransformOperationOutput.Invoke(operationOutput);
         }
 
-        if (OperationResult != null && operationOutput != null)
-        {
-            OperationResult.Output = operationOutput;
-        }
+        OperationResult.Output = operationOutput;
 
-        Func<IEnumerable<string>>? functionToGetSuccessMessages = null;
-
-        if (FunctionToGetSuccessMessages != null && operationOutput != null)
-        {
-            functionToGetSuccessMessages = () => FunctionToGetSuccessMessages.Invoke(operationOutput);
-        }
-
-        Func<IEnumerable<string>>? functionToGetWarningMessages = null;
-
-        if (FunctionToGetWarningMessages != null && operationOutput != null)
-        {
-            functionToGetWarningMessages = () => FunctionToGetWarningMessages.Invoke(operationOutput);
-        }
-
-        DoOnSuccess(functionToGetSuccessMessages, functionToGetWarningMessages);
+        DoOnSuccess();
     }
 
     /// <inheritdoc/>
@@ -90,7 +63,7 @@ public class OperationWithOutputHandler<TOperationOutput> : OperationHandler, IO
     {
         OperationResult = operationResult;
 
-        DoOnSuccess(null, null);
+        DoOnSuccess();
     }
 
     #endregion Public methods

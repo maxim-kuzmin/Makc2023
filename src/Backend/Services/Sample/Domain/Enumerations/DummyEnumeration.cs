@@ -54,7 +54,7 @@ public class DummyEnumeration : Enumeration
     /// </summary>
     /// <param name="name">Имя.</param>
     /// <returns>Элемент перечисления.</returns>
-    /// <exception cref="DomainException">Выбрасывается в случае, если элемент не найден.</exception>
+    /// <exception cref="LocalizedException">Выбрасывается в случае, если элемент не найден.</exception>
     public static DummyEnumeration GetById(int id)
     {
         var result = GetList().SingleOrDefault(x => x.Id == id);
@@ -63,7 +63,7 @@ public class DummyEnumeration : Enumeration
         {
             string possibleIds = string.Join(",", GetList().Select(x => x.Id));
 
-            throw new DomainException($"Possible identifiers for {nameof(DummyEnumeration)}: {possibleIds}"); //makc//!!!//Localization//
+            throw new LocalizedException($"Possible identifiers for {nameof(DummyEnumeration)}: {possibleIds}"); //makc//!!!//Localization//
         }
 
         return result;
@@ -74,7 +74,7 @@ public class DummyEnumeration : Enumeration
     /// </summary>
     /// <param name="name">Имя.</param>
     /// <returns>Элемент перечисления.</returns>
-    /// <exception cref="DomainException">Выбрасывается в случае, если элемент не найден.</exception>
+    /// <exception cref="LocalizedException">Выбрасывается в случае, если элемент не найден.</exception>
     public static DummyEnumeration GetByName(string name)
     {
         var result = GetList().SingleOrDefault(x => string.Equals(
@@ -86,7 +86,7 @@ public class DummyEnumeration : Enumeration
         {
             string possibleNames = string.Join(",", GetList().Select(x => x.Name));
 
-            throw new DomainException($"Possible names for {nameof(DummyEnumeration)}: {possibleNames}"); //makc//!!!//Localization//
+            throw new LocalizedException($"Possible names for {nameof(DummyEnumeration)}: {possibleNames}"); //makc//!!!//Localization//
         }
 
         return result;
