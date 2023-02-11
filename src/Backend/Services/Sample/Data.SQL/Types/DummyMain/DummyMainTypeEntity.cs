@@ -19,7 +19,7 @@ public class DummyMainTypeEntity
     /// <summary>
     /// Имя.
     /// </summary>
-    public string? Name { get; set; }
+    public string Name { get; set; } = "";
 
     /// <summary>
     /// Идентификатор экземпляра сущности "Фиктивное отношение один ко многим".
@@ -89,7 +89,7 @@ public class DummyMainTypeEntity
     /// <summary>
     /// Свойство, содержащее строку.
     /// </summary>
-    public string? PropString { get; set; }
+    public string PropString { get; set; } = "";
 
     /// <summary>
     /// Свойство, содержащее строку или NULL.

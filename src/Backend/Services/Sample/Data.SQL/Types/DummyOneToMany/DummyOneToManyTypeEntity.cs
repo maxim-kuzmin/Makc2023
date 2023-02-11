@@ -23,7 +23,7 @@ public class DummyOneToManyTypeEntity
     /// <summary>
     /// Имя.
     /// </summary>
-    public string? Name { get; set; }
+    public string Name { get; set; } = "";
 
     #endregion Properties
 }

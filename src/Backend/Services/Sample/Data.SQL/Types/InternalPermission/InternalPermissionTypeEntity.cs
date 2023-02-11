@@ -19,7 +19,7 @@ public class InternalPermissionTypeEntity
     /// <summary>
     /// Имя.
     /// </summary>
-    public string? Name { get; set; }
+    public string Name { get; set; } = "";
 
     /// <summary>
     /// Идентификатор экземпляра сущности "Внутренний домен".

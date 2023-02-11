@@ -19,12 +19,12 @@ public class UserTypeEntity
     /// <summary>
     /// Имя.
     /// </summary>
-    public string? Name { get; set; }
+    public string Name { get; set; } = "";
 
     /// <summary>
     /// Адрес электронной почты.
     /// </summary>
-    public string? Email { get; set; }
+    public string Email { get; set; } = "";
 
     /// <summary>
     /// Признак блокировки.

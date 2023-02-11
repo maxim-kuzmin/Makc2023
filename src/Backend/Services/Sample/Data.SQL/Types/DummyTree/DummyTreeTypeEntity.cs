@@ -19,7 +19,7 @@ public class DummyTreeTypeEntity
     /// <summary>
     /// Имя.
     /// </summary>
-    public string? Name { get; set; }
+    public string Name { get; set; } = "";
 
     /// <summary>
     /// Идентификатор родителя.
@@ -44,7 +44,7 @@ public class DummyTreeTypeEntity
     /// <summary>
     /// Путь в дереве.
     /// </summary>
-    public string? TreePath { get; set; }
+    public string TreePath { get; set; } = "";
 
     /// <summary>
     /// Позиция в дереве.
@@ -54,7 +54,7 @@ public class DummyTreeTypeEntity
     /// <summary>
     /// Сортировка в дереве.
     /// </summary>
-    public string? TreeSort { get; set; }
+    public string TreeSort { get; set; } = "";
 
     #endregion Properties
 }

@@ -19,7 +19,7 @@ public class InternalDomainTypeEntity
     /// <summary>
     /// Имя.
     /// </summary>
-    public string? Name { get; set; }
+    public string Name { get; set; } = "";
 
     #endregion Properties
 }
