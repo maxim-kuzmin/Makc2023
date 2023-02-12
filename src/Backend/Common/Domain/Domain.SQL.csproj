@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<VersionPrefix>1.0.7</VersionPrefix>
+		<AssemblyName>Makc2023.Backend.Common.Domain.SQL</AssemblyName>
+		<RootNamespace>$(AssemblyName)</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MediatR" Version="11.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Core\Core.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -5,7 +5,9 @@ namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyOneToM
 /// <summary>
 /// Конфигурация типа "Фиктивное отношение один ко многим" сопоставителя.
 /// </summary>
-public class MapperDummyOneToManyTypeConfiguration : MapperTypeConfiguration<MapperDummyOneToManyTypeEntity>
+/// <typeparam name="TEntity">Тип сущности.</typeparam>
+public class MapperDummyOneToManyTypeConfiguration<TEntity> : MapperTypeConfiguration<TEntity>
+    where TEntity : DummyOneToManyTypeEntity
 {
     #region Constructors
 
@@ -20,13 +22,13 @@ public class MapperDummyOneToManyTypeConfiguration : MapperTypeConfiguration<Map
     #region Public methods
 
     /// <inheritdoc/>
-    public sealed override void Configure(EntityTypeBuilder<MapperDummyOneToManyTypeEntity> builder)
+    public override void Configure(EntityTypeBuilder<TEntity> builder)
     {
         var options = TypesOptions.DummyOneToMany;
 
         if (options is null)
         {
-            throw new NullVariableException<MapperDummyOneToManyTypeConfiguration>(nameof(options));
+            throw new NullVariableException<MapperDummyOneToManyTypeConfiguration<TEntity>>(nameof(options));
         }
 
         builder.ToTable(options.DbTable, options.DbSchema);

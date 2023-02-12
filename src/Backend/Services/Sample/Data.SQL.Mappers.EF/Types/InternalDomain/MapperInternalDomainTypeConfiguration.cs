@@ -5,7 +5,9 @@ namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.InternalDom
 /// <summary>
 /// Конфигурация типа "Внутренний домен" сопоставителя.
 /// </summary>
-public class MapperInternalDomainTypeConfiguration : MapperTypeConfiguration<MapperInternalDomainTypeEntity>
+/// <typeparam name="TEntity">Тип сущности.</typeparam>
+public class MapperInternalDomainTypeConfiguration<TEntity> : MapperTypeConfiguration<TEntity>
+    where TEntity : InternalDomainTypeEntity
 {
     #region Constructors
 
@@ -20,13 +22,13 @@ public class MapperInternalDomainTypeConfiguration : MapperTypeConfiguration<Map
     #region Public methods
 
     /// <inheritdoc/>
-    public sealed override void Configure(EntityTypeBuilder<MapperInternalDomainTypeEntity> builder)
+    public override void Configure(EntityTypeBuilder<TEntity> builder)
     {
         var options = TypesOptions.InternalDomain;
 
         if (options is null)
         {
-            throw new NullVariableException<MapperInternalDomainTypeConfiguration>(nameof(options));
+            throw new NullVariableException<MapperInternalDomainTypeConfiguration<TEntity>>(nameof(options));
         }
 
         builder.ToTable(options.DbTable, options.DbSchema);

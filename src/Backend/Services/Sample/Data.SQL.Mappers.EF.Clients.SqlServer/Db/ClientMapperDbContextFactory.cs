@@ -7,7 +7,9 @@ namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer
 /// dotnet ef migrations add InitialCreate --configuration Debug -- "строка подключения к базе данных"
 /// dotnet ef database update --configuration Debug -- "строка подключения к базе данных"
 /// </summary>
-public class ClientMapperDbContextFactory : IMapperDbContextFactory, IDesignTimeDbContextFactory<ClientMapperDbContext>
+public class ClientMapperDbContextFactory :
+    IClientMapperDbContextFactory,
+    IDesignTimeDbContextFactory<ClientMapperDbContext>
 {
     #region Properties
 
@@ -102,7 +104,7 @@ public class ClientMapperDbContextFactory : IMapperDbContextFactory, IDesignTime
     }
 
     /// <inheritdoc/>
-    MapperDbContext IMapperDbContextFactory.CreateDbContext()
+    public ClientMapperDbContext CreateDbContext()
     {
         if (DbContextFactory is null)
         {
@@ -127,24 +129,3 @@ public class ClientMapperDbContextFactory : IMapperDbContextFactory, IDesignTime
 
     #endregion Public methods
 }
-
-///// <summary>
-///// Фабрика контекста базы данных сопоставителя клиента.
-///// </summary>
-//public class ClientMapperDbContextFactory : IDesignTimeDbContextFactory<ClientMapperDbContext>
-//{
-
-//    /// <inheritdoc/>
-//    public ClientMapperDbContext CreateDbContext(string[] args)
-//    {
-//        var config = AppHelper.CreateConfiguration();
-
-//        var optionsBuilder = new DbContextOptionsBuilder<ClientMapperDbContext>();
-
-//        optionsBuilder.UseSqlServer(
-//            config["ConnectionString"],
-//            sqlServerOptionsAction: o => o.MigrationsAssembly(Assembly.GetExecutingAssembly().GetName().Name));
-
-//        return new ClientMapperDbContext(optionsBuilder.Options);
-//    }
-//}

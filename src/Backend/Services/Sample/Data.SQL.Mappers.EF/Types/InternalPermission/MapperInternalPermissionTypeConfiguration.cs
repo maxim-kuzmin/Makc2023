@@ -5,7 +5,9 @@ namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.InternalPer
 /// <summary>
 /// Конфигурация типа "Внутреннее разрешение" сопоставителя.
 /// </summary>
-public class MapperInternalPermissionTypeConfiguration : MapperTypeConfiguration<MapperInternalPermissionTypeEntity>
+/// <typeparam name="TEntity">Тип сущности.</typeparam>
+public class MapperInternalPermissionTypeConfiguration<TEntity> : MapperTypeConfiguration<TEntity>
+    where TEntity : InternalPermissionTypeEntity
 {
     #region Constructors
 
@@ -20,13 +22,13 @@ public class MapperInternalPermissionTypeConfiguration : MapperTypeConfiguration
     #region Public methods
 
     /// <inheritdoc/>
-    public sealed override void Configure(EntityTypeBuilder<MapperInternalPermissionTypeEntity> builder)
+    public override void Configure(EntityTypeBuilder<TEntity> builder)
     {
         var options = TypesOptions.InternalPermission;
 
         if (options is null)
         {
-            throw new NullVariableException<MapperInternalPermissionTypeConfiguration>(nameof(options));
+            throw new NullVariableException<MapperInternalPermissionTypeConfiguration<TEntity>>(nameof(options));
         }
 
         builder.ToTable(options.DbTable, options.DbSchema);
@@ -49,11 +51,6 @@ public class MapperInternalPermissionTypeConfiguration : MapperTypeConfiguration
 
         builder.HasIndex(x => x.Name).IsUnique().HasDatabaseName(options.DbUniqueIndexForName);
         builder.HasIndex(x => x.InternalDomainId).HasDatabaseName(options.DbIndexForInternalDomainId);
-
-        builder.HasOne(x => x.InternalDomain)
-            .WithMany(x => x.InternalPermissionList)
-            .HasForeignKey(x => x.InternalDomainId)
-            .HasConstraintName(options.DbForeignKeyToInternalDomain);
     }
 
     #endregion Public methods

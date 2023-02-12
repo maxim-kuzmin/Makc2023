@@ -5,7 +5,9 @@ namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.User;
 /// <summary>
 /// Конфигурация типа "Пользователь" сопоставителя.
 /// </summary>
-public class MapperUserTypeConfiguration : MapperTypeConfiguration<MapperUserTypeEntity>
+/// <typeparam name="TEntity">Тип сущности.</typeparam>
+public class MapperUserTypeConfiguration<TEntity> : MapperTypeConfiguration<TEntity>
+    where TEntity : UserTypeEntity
 {
     #region Constructors
 
@@ -20,13 +22,13 @@ public class MapperUserTypeConfiguration : MapperTypeConfiguration<MapperUserTyp
     #region Public methods
 
     /// <inheritdoc/>
-    public sealed override void Configure(EntityTypeBuilder<MapperUserTypeEntity> builder)
+    public override void Configure(EntityTypeBuilder<TEntity> builder)
     {
         var options = TypesOptions.User;
 
         if (options is null)
         {
-            throw new NullVariableException<MapperUserTypeConfiguration>(nameof(options));
+            throw new NullVariableException<MapperUserTypeConfiguration<TEntity>>(nameof(options));
         }
 
         builder.ToTable(options.DbTable, options.DbSchema);

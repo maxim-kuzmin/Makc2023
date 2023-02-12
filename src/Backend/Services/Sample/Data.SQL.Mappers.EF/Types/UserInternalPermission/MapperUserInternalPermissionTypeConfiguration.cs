@@ -5,7 +5,9 @@ namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.UserInterna
 /// <summary>
 /// Конфигурация типа "Внутреннее разрешение пользователя" сопоставителя.
 /// </summary>
-public class MapperUserInternalPermissionTypeConfiguration : MapperTypeConfiguration<MapperUserInternalPermissionTypeEntity>
+/// <typeparam name="TEntity">Тип сущности.</typeparam>
+public class MapperUserInternalPermissionTypeConfiguration<TEntity> : MapperTypeConfiguration<TEntity>
+    where TEntity : UserInternalPermissionTypeEntity
 {
     #region Constructors
 
@@ -20,13 +22,13 @@ public class MapperUserInternalPermissionTypeConfiguration : MapperTypeConfigura
     #region Public methods
 
     /// <inheritdoc/>
-    public sealed override void Configure(EntityTypeBuilder<MapperUserInternalPermissionTypeEntity> builder)
+    public override void Configure(EntityTypeBuilder<TEntity> builder)
     {
         var options = TypesOptions.UserInternalPermission;
 
         if (options is null)
         {
-            throw new NullVariableException<MapperUserInternalPermissionTypeConfiguration>(nameof(options));
+            throw new NullVariableException<MapperUserInternalPermissionTypeConfiguration<TEntity>>(nameof(options));
         }
 
         builder.ToTable(options.DbTable, options.DbSchema);
@@ -42,16 +44,6 @@ public class MapperUserInternalPermissionTypeConfiguration : MapperTypeConfigura
             .HasColumnName(options.DbColumnForInternalPermissionId);
 
         builder.HasIndex(x => x.InternalPermissionId).HasDatabaseName(options.DbIndexForInternalPermissionId);
-
-        builder.HasOne(x => x.User)
-            .WithMany(x => x.UserInternalPermissionList)
-            .HasForeignKey(x => x.UserId)
-            .HasConstraintName(options.DbForeignKeyToUser);
-
-        builder.HasOne(x => x.InternalPermission)
-            .WithMany(x => x.UserInternalPermissionList)
-            .HasForeignKey(x => x.InternalPermissionId)
-            .HasConstraintName(options.DbForeignKeyToInternalPermission);
     }
 
     #endregion Public methods

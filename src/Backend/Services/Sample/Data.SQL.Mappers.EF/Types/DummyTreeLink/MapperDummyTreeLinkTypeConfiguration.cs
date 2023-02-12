@@ -5,7 +5,9 @@ namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyTreeLi
 /// <summary>
 /// Конфигурация типа "Связь фиктивного дерева" сопоставителя.
 /// </summary>
-public class MapperDummyTreeLinkTypeConfiguration : MapperTypeConfiguration<MapperDummyTreeLinkTypeEntity>
+/// <typeparam name="TEntity">Тип сущности.</typeparam>
+public class MapperDummyTreeLinkTypeConfiguration<TEntity> : MapperTypeConfiguration<TEntity>
+    where TEntity : DummyTreeLinkTypeEntity
 {
     #region Constructors
 
@@ -20,13 +22,13 @@ public class MapperDummyTreeLinkTypeConfiguration : MapperTypeConfiguration<Mapp
     #region Public methods
 
     /// <inheritdoc/>
-    public sealed override void Configure(EntityTypeBuilder<MapperDummyTreeLinkTypeEntity> builder)
+    public override void Configure(EntityTypeBuilder<TEntity> builder)
     {
         var options = TypesOptions.DummyTreeLink;
 
         if (options is null)
         {
-            throw new NullVariableException<MapperDummyTreeLinkTypeConfiguration>(nameof(options));
+            throw new NullVariableException<MapperDummyTreeLinkTypeConfiguration<TEntity>>(nameof(options));
         }
 
         builder.ToTable(options.DbTable, options.DbSchema);
@@ -40,11 +42,6 @@ public class MapperDummyTreeLinkTypeConfiguration : MapperTypeConfiguration<Mapp
         builder.Property(x => x.ParentId)
             .IsRequired()
             .HasColumnName(options.DbColumnForParentId);
-
-        builder.HasOne(x => x.DummyTreeById)
-            .WithMany(x => x.DummyTreeLinkByIdList)
-            .HasForeignKey(x => x.Id)
-            .HasConstraintName(options.DbForeignKeyToDummyTree);
     }
 
     #endregion Public methods

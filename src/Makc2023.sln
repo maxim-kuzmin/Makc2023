@@ -41,7 +41,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{42
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{BAE95757-FC92-41EC-9D55-F73E695A9CC4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App", "Backend\Services\Sample\App\App.csproj", "{41438686-E6DE-4104-B271-48697387556F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.SQL.Mappers.EF.Clients.SqlServer", "Backend\Services\Sample\App.SQL.Mappers.EF.Clients.SqlServer\App.SQL.Mappers.EF.Clients.SqlServer.csproj", "{41438686-E6DE-4104-B271-48697387556F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.SQL", "Backend\Services\Sample\Data.SQL\Data.SQL.csproj", "{7C81ED11-5196-4EF2-9C0B-08BC3E9F3D22}"
 EndProject
@@ -51,9 +51,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.SQL.Mappers.EF", "Back
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.SQL.Mappers.EF.Clients.SqlServer", "Backend\Services\Sample\Data.SQL.Mappers.EF.Clients.SqlServer\Data.SQL.Mappers.EF.Clients.SqlServer.csproj", "{DC4CA452-997F-4E86-8754-A9465F58B903}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Backend\Services\Sample\Domain\Domain.csproj", "{D66BCD9F-E84E-48C8-A4BA-D263E932A530}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.SQL", "Backend\Services\Sample\Domain.SQL\Domain.SQL.csproj", "{D66BCD9F-E84E-48C8-A4BA-D263E932A530}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domains.DummyMain", "Backend\Services\Sample\Domains.DummyMain\Domains.DummyMain.csproj", "{7162D967-4819-4593-A65A-006A30221C2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer", "Backend\Services\Sample\Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer\Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.csproj", "{7162D967-4819-4593-A65A-006A30221C2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

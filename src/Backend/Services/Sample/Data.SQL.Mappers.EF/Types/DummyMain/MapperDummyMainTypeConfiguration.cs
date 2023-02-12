@@ -5,7 +5,9 @@ namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyMain;
 /// <summary>
 /// Конфигурация типа "Фиктивное главное" сопоставителя.
 /// </summary>
-public class MapperDummyMainTypeConfiguration : MapperTypeConfiguration<MapperDummyMainTypeEntity>
+/// <typeparam name="TEntity">Тип сущности.</typeparam>
+public class MapperDummyMainTypeConfiguration<TEntity> : MapperTypeConfiguration<TEntity>
+    where TEntity: DummyMainTypeEntity
 {
     #region Constructors
 
@@ -20,13 +22,13 @@ public class MapperDummyMainTypeConfiguration : MapperTypeConfiguration<MapperDu
     #region Public methods
 
     /// <inheritdoc/>
-    public sealed override void Configure(EntityTypeBuilder<MapperDummyMainTypeEntity> builder)
+    public override void Configure(EntityTypeBuilder<TEntity> builder)
     {
         var options = TypesOptions.DummyMain;
 
         if (options is null)
         {
-            throw new NullVariableException<MapperDummyMainTypeConfiguration>(nameof(options));
+            throw new NullVariableException<MapperDummyMainTypeConfiguration<TEntity>>(nameof(options));
         }
 
         builder.ToTable(options.DbTable, options.DbSchema);
@@ -100,11 +102,6 @@ public class MapperDummyMainTypeConfiguration : MapperTypeConfiguration<MapperDu
 
         builder.HasIndex(x => x.Name).IsUnique().HasDatabaseName(options.DbUniqueIndexForName);
         builder.HasIndex(x => x.DummyOneToManyId).HasDatabaseName(options.DbIndexForDummyOneToManyId);
-
-        builder.HasOne(x => x.DummyOneToMany)
-            .WithMany(x => x.DummyMainList)
-            .HasForeignKey(x => x.DummyOneToManyId)
-            .HasConstraintName(options.DbForeignKeyToDummyOneToMany);
     }
 
     #endregion Public methods

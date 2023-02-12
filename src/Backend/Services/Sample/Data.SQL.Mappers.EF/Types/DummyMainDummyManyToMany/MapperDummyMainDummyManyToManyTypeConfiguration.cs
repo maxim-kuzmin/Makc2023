@@ -5,7 +5,9 @@ namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyMainDu
 /// <summary>
 /// Конфигурация типа "Фиктивное отношение многие ко многим фиктивного главного" сопоставителя.
 /// </summary>
-public class MapperDummyMainDummyManyToManyTypeConfiguration : MapperTypeConfiguration<MapperDummyMainDummyManyToManyTypeEntity>
+/// <typeparam name="TEntity">Тип сущности.</typeparam>
+public class MapperDummyMainDummyManyToManyTypeConfiguration<TEntity> : MapperTypeConfiguration<TEntity>
+    where TEntity : DummyMainDummyManyToManyTypeEntity
 {
     #region Constructors
 
@@ -20,13 +22,13 @@ public class MapperDummyMainDummyManyToManyTypeConfiguration : MapperTypeConfigu
     #region Public methods
 
     /// <inheritdoc/>
-    public sealed override void Configure(EntityTypeBuilder<MapperDummyMainDummyManyToManyTypeEntity> builder)
+    public override void Configure(EntityTypeBuilder<TEntity> builder)
     {
         var options = TypesOptions.DummyMainDummyManyToMany;
 
         if (options is null)
         {
-            throw new NullVariableException<MapperDummyMainDummyManyToManyTypeConfiguration>(nameof(options));
+            throw new NullVariableException<MapperDummyMainDummyManyToManyTypeConfiguration<TEntity>>(nameof(options));
         }
 
         builder.ToTable(options.DbTable, options.DbSchema);
@@ -42,16 +44,6 @@ public class MapperDummyMainDummyManyToManyTypeConfiguration : MapperTypeConfigu
             .HasColumnName(options.DbColumnForDummyManyToManyId);
 
         builder.HasIndex(x => x.DummyManyToManyId).HasDatabaseName(options.DbIndexForDummyManyToManyId);
-
-        builder.HasOne(x => x.DummyMain)
-            .WithMany(x => x.DummyMainDummyManyToManyList)
-            .HasForeignKey(x => x.DummyMainId)
-            .HasConstraintName(options.DbForeignKeyToDummyMain);
-
-        builder.HasOne(x => x.DummyManyToMany)
-            .WithMany(x => x.DummyMainDummyManyToManyList)
-            .HasForeignKey(x => x.DummyManyToManyId)
-            .HasConstraintName(options.DbForeignKeyToDummyManyToMany);
     }
 
     #endregion Public methods

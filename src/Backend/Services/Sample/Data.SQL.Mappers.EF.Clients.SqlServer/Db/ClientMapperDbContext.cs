@@ -5,8 +5,67 @@ namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer
 /// <summary>
 /// Контекст базы данных сопоставителя клиента.
 /// </summary>
-public class ClientMapperDbContext : MapperDbContext
+public class ClientMapperDbContext : DbContext
 {
+    #region Properties        
+
+    /// <summary>
+    /// Тип "Фиктивное главное".
+    /// </summary>
+    public DbSet<ClientMapperDummyMainTypeEntity> DummyMain { get; set; }
+
+    /// <summary>
+    /// Тип "Фиктивное отношение многие ко многим".
+    /// </summary>
+    public DbSet<ClientMapperDummyManyToManyTypeEntity> DummyManyToMany { get; set; }
+
+    /// <summary>
+    /// Тип "Фиктивное отношение многие к одному".
+    /// </summary>
+    public DbSet<ClientMapperDummyManyToManyTypeEntity> DummyManyToOne { get; set; }
+
+    /// <summary>
+    /// Тип "Фиктивное отношение многие ко многим фиктивного главного".
+    /// </summary>
+    public DbSet<ClientMapperDummyMainDummyManyToManyTypeEntity> DummyMainDummyManyToMany { get; set; }
+
+    /// <summary>
+    /// Тип "Фиктивное отношение один ко многим".
+    /// </summary>
+    public DbSet<ClientMapperDummyOneToManyTypeEntity> DummyOneToMany { get; set; }
+
+    /// <summary>
+    /// Тип "Фиктивное дерево".
+    /// </summary>
+    public DbSet<ClientMapperDummyTreeTypeEntity> DummyTree { get; set; }
+
+    /// <summary>
+    /// Тип "Связь фиктивного дерева".
+    /// </summary>
+    public DbSet<ClientMapperDummyTreeLinkTypeEntity> DummyTreeLink { get; set; }
+
+    /// <summary>
+    /// Тип "Внутренний домен".
+    /// </summary>
+    public DbSet<ClientMapperInternalDomainTypeEntity> InternalDomain { get; set; }
+
+    /// <summary>
+    /// Тип "Внутреннее разрешение".
+    /// </summary>
+    public DbSet<ClientMapperInternalPermissionTypeEntity> InternalPermission { get; set; }
+
+    /// <summary>
+    /// Тип "Пользователь".
+    /// </summary>
+    public DbSet<ClientMapperUserTypeEntity> User { get; set; }
+
+    /// <summary>
+    /// Тип "Внутреннее разрешение пользователя".
+    /// </summary>
+    public DbSet<ClientMapperUserInternalPermissionTypeEntity> UserInternalPermission { get; set; }
+
+    #endregion Properties
+
     #region Constructors
 
     /// <inheritdoc/>
@@ -26,17 +85,17 @@ public class ClientMapperDbContext : MapperDbContext
 
         var typesOptions = ClientTypesOptions.Instance;
 
-        modelBuilder.ApplyConfiguration(new MapperDummyMainTypeConfiguration(typesOptions));
-        modelBuilder.ApplyConfiguration(new MapperDummyManyToManyTypeConfiguration(typesOptions));
-        modelBuilder.ApplyConfiguration(new MapperDummyManyToOneTypeConfiguration(typesOptions));
-        modelBuilder.ApplyConfiguration(new MapperDummyMainDummyManyToManyTypeConfiguration(typesOptions));
-        modelBuilder.ApplyConfiguration(new MapperDummyOneToManyTypeConfiguration(typesOptions));
-        modelBuilder.ApplyConfiguration(new MapperDummyTreeTypeConfiguration(typesOptions));
-        modelBuilder.ApplyConfiguration(new MapperDummyTreeLinkTypeConfiguration(typesOptions));        
-        modelBuilder.ApplyConfiguration(new MapperInternalDomainTypeConfiguration(typesOptions));
-        modelBuilder.ApplyConfiguration(new MapperInternalPermissionTypeConfiguration(typesOptions));
-        modelBuilder.ApplyConfiguration(new MapperUserTypeConfiguration(typesOptions));
-        modelBuilder.ApplyConfiguration(new MapperUserInternalPermissionTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new ClientMapperDummyMainTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new ClientMapperDummyManyToManyTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new ClientMapperDummyManyToOneTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new ClientMapperDummyMainDummyManyToManyTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new ClientMapperDummyOneToManyTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new ClientMapperDummyTreeTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new ClientMapperDummyTreeLinkTypeConfiguration(typesOptions));        
+        modelBuilder.ApplyConfiguration(new ClientMapperInternalDomainTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new ClientMapperInternalPermissionTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new ClientMapperUserTypeConfiguration(typesOptions));
+        modelBuilder.ApplyConfiguration(new ClientMapperUserInternalPermissionTypeConfiguration(typesOptions));
     }
 
     #endregion Protected methods
