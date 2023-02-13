@@ -4,6 +4,7 @@ global using Makc2023.Backend.Common.Core.App;
 global using Makc2023.Backend.Common.Core.Apps.WebApp;
 global using Makc2023.Backend.Common.Core.Apps.WebApp.Setup;
 global using Makc2023.Backend.Services.Sample.App.SQL.Mappers.EF.Clients.SqlServer.Setup;
+global using Makc2023.Backend.Services.Sample.Data.SQL.Setup;
 global using MediatR;
 global using Microsoft.Extensions.Localization;
 global using ModuleOfCommonCore = Makc2023.Backend.Common.Core.Setup.SetupAppModule;
