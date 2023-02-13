@@ -79,7 +79,7 @@ public class TypeOptions
     /// <returns>Имя внешнего ключа в базе данных.</returns>
     protected string CreateDbForeignKeyName(params string[] parts)
     {
-        return CreateName(Defaults.DbForeignKeyPrefix, parts);
+        return CreateName(Defaults.DbForeignKeyPrefix, null, parts);
     }
 
     /// <summary>
@@ -89,7 +89,7 @@ public class TypeOptions
     /// <returns>Имя индекса в базе данных.</returns>
     protected string CreateDbIndexName(params string[] parts)
     {
-        return CreateName(Defaults.DbIndexPrefix, parts);
+        return CreateName(Defaults.DbIndexPrefix, null, parts);
     }
 
     /// <summary>
@@ -99,7 +99,7 @@ public class TypeOptions
     /// <returns>Имя первичного ключа в базе данных.</returns>
     protected string CreateDbPrimaryKeyName(params string[] parts)
     {
-        return CreateName(Defaults.DbPrimaryKeyPrefix, parts);
+        return CreateName(Defaults.DbPrimaryKeyPrefix, null, parts);
     }
 
     /// <summary>
@@ -109,7 +109,17 @@ public class TypeOptions
     /// <returns>Имя схемы в базе данных.</returns>
     protected string CreateDbSchemaName(params string[] parts)
     {
-        return parts.Length > 0 ? CreateName(null, parts) : Defaults.DbSchema;
+        return parts.Length > 0 ? CreateName(null, null, parts) : Defaults.DbSchema;
+    }
+
+    /// <summary>
+    /// Создать имя последовательности в базе данных.
+    /// </summary>
+    /// <param name="parts">Части имени.</param>
+    /// <returns>Имя последовательности в базе данных.</returns>
+    protected string CreateDbSequenceName(params string[] parts)
+    {
+        return CreateName(null, Defaults.DbSequenceSuffix, parts);
     }
 
     /// <summary>
@@ -119,14 +129,14 @@ public class TypeOptions
     /// <returns>Имя уникального индекса в базе данных.</returns>
     protected string CreateDbUniqueIndexName(params string[] parts)
     {
-        return CreateName(Defaults.DbUniqueIndexPrefix, parts);
+        return CreateName(Defaults.DbUniqueIndexPrefix, null, parts);
     }
 
     #endregion Protected methods
 
     #region Private methods
 
-    private string CreateName(string? prefix, params string[] parts)
+    private string CreateName(string? prefix, string? suffix, params string[] parts)
     {
         bool isNullOrEmptyNamePartsSeparator = string.IsNullOrEmpty(Defaults.NamePartsSeparator);
 
@@ -139,6 +149,13 @@ public class TypeOptions
             result = isNullOrEmptyNamePartsSeparator
                 ? string.Concat(prefix, result)
                 : string.Concat(prefix, Defaults.NamePartsSeparator, result);
+        }
+
+        if (!string.IsNullOrWhiteSpace(suffix))
+        {
+            result = isNullOrEmptyNamePartsSeparator
+                ? string.Concat(result, suffix)
+                : string.Concat(result, Defaults.NamePartsSeparator, suffix);
         }
 
         return result;

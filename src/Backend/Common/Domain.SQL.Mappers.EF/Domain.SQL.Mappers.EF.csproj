@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<VersionPrefix>1.0.7</VersionPrefix>
+		<VersionPrefix>1.0.9</VersionPrefix>
 		<AssemblyName>Makc2023.Backend.Common.Domain.SQL.Mappers.EF</AssemblyName>
 		<RootNamespace>$(AssemblyName)</RootNamespace>
 	</PropertyGroup>

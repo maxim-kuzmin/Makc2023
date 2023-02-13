@@ -80,6 +80,11 @@ public interface IDefaults
     string DbSchema { get; }
 
     /// <summary>
+    /// Суффикс последовательности в базе данных.
+    /// </summary>
+    string DbSequenceSuffix { get; }
+
+    /// <summary>
     /// Префикс уникального индекса в базе данных.
     /// </summary>
     string DbUniqueIndexPrefix { get; }

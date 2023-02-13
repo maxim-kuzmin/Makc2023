@@ -52,6 +52,9 @@ public class ClientDefaults : IDefaults
     public string DbSchema => "dbo";
 
     /// <inheritdoc/>
+    public string DbSequenceSuffix => "SEQ";
+
+    /// <inheritdoc/>
     public string DbUniqueIndexPrefix => "UX";
 
     /// <inheritdoc/>

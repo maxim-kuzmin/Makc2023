@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<VersionPrefix>1.0.7</VersionPrefix>
+		<VersionPrefix>1.0.9</VersionPrefix>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<AssemblyName>Makc2023.Backend.Common.Data.SQL.Clients.SqlServer</AssemblyName>
 		<RootNamespace>$(AssemblyName)</RootNamespace>		
