@@ -4,7 +4,7 @@ echo Migrations remove start
 
 cd ..
 
-dotnet ef migrations remove --configuration Debug
+dotnet ef migrations remove -- "Data Source=localhost;Initial Catalog=Sample;Integrated Security=False;User Id=sa;Password=Admin(2019);"
 
 cd @
 

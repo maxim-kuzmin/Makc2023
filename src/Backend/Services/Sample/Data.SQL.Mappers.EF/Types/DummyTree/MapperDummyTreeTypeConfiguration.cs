@@ -82,13 +82,12 @@ public class MapperDummyTreeTypeConfiguration<TEntity> : MapperTypeConfiguration
             .HasDefaultValue(string.Empty)
             .HasColumnName(options.DbColumnForTreeSort);
 
-        builder.HasIndex(x => x.Name).HasDatabaseName(options.DbIndexForName);
+        builder.HasIndex(x => new { x.Name, x.ParentId })
+            .IsUnique()
+            .HasDatabaseName(options.DbUniqueIndexForNameAndParentId);
+
         builder.HasIndex(x => x.ParentId).HasDatabaseName(options.DbIndexForParentId);
         builder.HasIndex(x => x.TreeSort).HasDatabaseName(options.DbIndexForTreeSort);
-
-        builder.HasIndex(x => new { x.ParentId, x.Name })
-            .IsUnique()
-            .HasDatabaseName(options.DbUniqueIndexForParentIdAndName);
     }
 
     #endregion Public methods

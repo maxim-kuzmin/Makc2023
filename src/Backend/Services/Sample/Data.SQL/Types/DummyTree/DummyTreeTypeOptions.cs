@@ -60,11 +60,6 @@ public class DummyTreeTypeOptions : TypeOptions
     public string? DbForeignKeyToDummyTreeParent { get; set; }
 
     /// <summary>
-    /// Индекс в базе данных для поля "Name".
-    /// </summary>
-    public string? DbIndexForName { get; set; }
-
-    /// <summary>
     /// Индекс в базе данных для поля "ParentId".
     /// </summary>
     public string? DbIndexForParentId { get; set; }
@@ -95,9 +90,9 @@ public class DummyTreeTypeOptions : TypeOptions
     public string? DbPrimaryKey { get; set; }
 
     /// <summary>
-    /// Индекс в базе данных для полей "ParentId" и "Name".
+    /// Индекс в базе данных для полей "Name" и "ParentId".
     /// </summary>
-    public string? DbUniqueIndexForParentIdAndName { get; set; }
+    public string? DbUniqueIndexForNameAndParentId { get; set; }
 
     #endregion Properties
 
@@ -157,8 +152,6 @@ public class DummyTreeTypeOptions : TypeOptions
 
         DbForeignKeyToDummyTreeParent = CreateDbForeignKeyName(DbTable, DbTable, DbColumnForParentId);
 
-        DbIndexForName = CreateDbIndexName(DbTable, DbColumnForName);
-
         DbIndexForParentId = CreateDbIndexName(DbTable, DbColumnForParentId);
 
         DbIndexForTreeSort = CreateDbIndexName(DbTable, DbColumnForTreeSort);
@@ -171,10 +164,10 @@ public class DummyTreeTypeOptions : TypeOptions
 
         DbPrimaryKey = CreateDbPrimaryKeyName(DbTable);
 
-        DbUniqueIndexForParentIdAndName = CreateDbUniqueIndexName(
+        DbUniqueIndexForNameAndParentId = CreateDbUniqueIndexName(
             DbTable,
-            DbColumnForParentId,
-            DbColumnForName);
+            DbColumnForName,
+            DbColumnForParentId);
     }
 
     #endregion Constructors

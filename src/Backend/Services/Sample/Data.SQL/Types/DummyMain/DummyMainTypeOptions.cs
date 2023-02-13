@@ -115,9 +115,9 @@ public class DummyMainTypeOptions : TypeOptions
     public string? DbPrimaryKey { get; set; }
 
     /// <summary>
-    /// Уникальный индекс в базе данных для поля "Name".
+    /// Уникальный индекс в базе данных для полей "Name" и "DummyOneToManyId".
     /// </summary>
-    public string? DbUniqueIndexForName { get; set; }
+    public string? DbUniqueIndexForNameAndDummyOneToManyId { get; set; }
 
     #endregion Properties
 
@@ -168,7 +168,7 @@ public class DummyMainTypeOptions : TypeOptions
 
         DbPrimaryKey = CreateDbPrimaryKeyName(DbTable);
 
-        DbUniqueIndexForName = CreateDbUniqueIndexName(DbTable, DbColumnForName);
+        DbUniqueIndexForNameAndDummyOneToManyId = CreateDbUniqueIndexName(DbTable, DbColumnForName, DbColumnForDummyOneToManyId);
     }
 
     #endregion Constructors

@@ -50,7 +50,6 @@ public class ClientMapperDbContextFactory :
     /// </summary>
     /// <param name="builder">Построитель.</param>        
     /// <param name="connectionString">Строка подключения.</param>
-    /// <param name="settingOptions">Параметры настройки.</param>
     /// <param name="logger">Регистратор.</param>
     /// <param name="dbSetupOptions">Параметры настройки базы данных.</param>
     public static void Configure(

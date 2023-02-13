@@ -12,57 +12,57 @@ public abstract class TypesOptions
     /// <summary>
     /// Сущность "Фиктивное главное".
     /// </summary>
-    public DummyMainTypeOptions DummyMain { get; protected set; } = null!;
+    public DummyMainTypeOptions DummyMain { get; init; } = null!;
 
     /// <summary>
     /// Сущность "Фиктивное отношение многие ко многим фиктивного главного".
     /// </summary>
-    public DummyMainDummyManyToManyTypeOptions DummyMainDummyManyToMany { get; protected set; } = null!;
+    public DummyMainDummyManyToManyTypeOptions DummyMainDummyManyToMany { get; init; } = null!;
 
     /// <summary>
     /// Сущность "Фиктивное отношение многие ко многим".
     /// </summary>
-    public DummyManyToManyTypeOptions DummyManyToMany { get; protected set; } = null!;
+    public DummyManyToManyTypeOptions DummyManyToMany { get; init; } = null!;
 
     /// <summary>
     /// Сущность "Фиктивное отношение многие ко одному".
     /// </summary>
-    public DummyManyToOneTypeOptions DummyManyToOne { get; protected set; } = null!;
+    public DummyManyToOneTypeOptions DummyManyToOne { get; init; } = null!;
 
     /// <summary>
     /// Сущность "Фиктивное отношение один ко многим".
     /// </summary>
-    public DummyOneToManyTypeOptions DummyOneToMany { get; protected set; } = null!;
+    public DummyOneToManyTypeOptions DummyOneToMany { get; init; } = null!;
 
     /// <summary>
     /// Сущность "Фиктивное дерево".
     /// </summary>
-    public DummyTreeTypeOptions DummyTree { get; protected set; } = null!;
+    public DummyTreeTypeOptions DummyTree { get; init; } = null!;
 
     /// <summary>
     /// Сущность "Связь фиктивного дерева".
     /// </summary>
-    public DummyTreeLinkTypeOptions DummyTreeLink { get; protected set; } = null!;
+    public DummyTreeLinkTypeOptions DummyTreeLink { get; init; } = null!;
 
     /// <summary>
     /// Сущность "Внутренний домен".
     /// </summary>
-    public InternalDomainTypeOptions InternalDomain { get; protected set; } = null!;
+    public InternalDomainTypeOptions InternalDomain { get; init; } = null!;
 
     /// <summary>
     /// Сущность "Внутреннее разрешение".
     /// </summary>
-    public InternalPermissionTypeOptions InternalPermission { get; protected set; } = null!;
+    public InternalPermissionTypeOptions InternalPermission { get; init; } = null!;
 
     /// <summary>
     /// Сущность "Пользователь".
     /// </summary>
-    public UserTypeOptions User { get; protected set; } = null!;
+    public UserTypeOptions User { get; init; } = null!;
 
     /// <summary>
     /// Сущность "Внутреннее разрешение пользователя".
     /// </summary>
-    public UserInternalPermissionTypeOptions UserInternalPermission { get; protected set; } = null!;
+    public UserInternalPermissionTypeOptions UserInternalPermission { get; init; } = null!;
 
     #endregion Properties
 }

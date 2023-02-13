@@ -100,7 +100,10 @@ public class MapperDummyMainTypeConfiguration<TEntity> : MapperTypeConfiguration
             .IsUnicode()
             .HasColumnName(options.DbColumnForPropStringNullable);
 
-        builder.HasIndex(x => x.Name).IsUnique().HasDatabaseName(options.DbUniqueIndexForName);
+        builder.HasIndex(x => new { x.Name, x.DummyOneToManyId })
+            .IsUnique()
+            .HasDatabaseName(options.DbUniqueIndexForNameAndDummyOneToManyId);
+
         builder.HasIndex(x => x.DummyOneToManyId).HasDatabaseName(options.DbIndexForDummyOneToManyId);
     }
 
