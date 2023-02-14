@@ -13,6 +13,7 @@ global using ModuleOfCommonDataSQLMappersEF = Makc2023.Backend.Common.Data.SQL.M
 global using ModuleOfCommonDataSQL = Makc2023.Backend.Common.Data.SQL.Setup.SetupAppModule;
 global using ModuleOfCommonDomain = Makc2023.Backend.Common.Domain.Setup.SetupAppModule;
 global using ModuleOfCommonDomainSqlMappersEF = Makc2023.Backend.Common.Domain.SQL.Mappers.EF.Setup.MapperSetupAppModule;
+global using ModuleOfServiceApp = Makc2023.Backend.Services.Sample.App.SQL.Mappers.EF.Clients.SqlServer.Setup.SetupAppModule;
 global using ModuleOfServiceDataSQLClientsSqlServer = Makc2023.Backend.Services.Sample.Data.SQL.Clients.SqlServer.Setup.ClientSetupAppModule;
 global using ModuleOfServiceDataSQLMappersEFClientsSqlServer = Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupAppModule;
 global using ModuleOfServiceDataSQL = Makc2023.Backend.Services.Sample.Data.SQL.Setup.SetupAppModule;

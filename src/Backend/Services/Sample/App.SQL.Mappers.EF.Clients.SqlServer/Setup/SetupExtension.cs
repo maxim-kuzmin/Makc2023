@@ -13,7 +13,8 @@ public static class SetupExtension
     /// Добавить модули приложения.
     /// </summary>
     /// <param name="appBuilder">Построитель приложения.</param>
-    public static void AddAppModules(this WebApplicationBuilder appBuilder)
+    /// <param name="appEnvironment">Окружение приложения.</param>
+    public static void AddAppModules(this WebApplicationBuilder appBuilder, IAppEnvironment appEnvironment)
     {
         var configuration = appBuilder.Configuration;
 
@@ -23,24 +24,25 @@ public static class SetupExtension
             new ModuleOfCommonDataSQL(configuration.GetRequiredSection("App:Common:Data:SQL")),
             new ModuleOfCommonDataSQLClientsSqlServer(),
             new ModuleOfCommonDataSQLMappersEF(),
+            new ModuleOfServiceApp(appEnvironment),
             new ModuleOfServiceDataSQLClientsSqlServer(),
             new ModuleOfServiceDataSQL(configuration.GetRequiredSection("App:Service:Data:SQL")),
             new ModuleOfServiceDataSQLMappersEFClientsSqlServer(),
             new ModuleOfServiceDomainsDummyMain()
-        });
+        }); ;
     }
 
     /// <summary>
     /// Использовать модули приложения.
     /// </summary>
     /// <param name="app">Приложение.</param>
-    /// <param name="appHandler">Обработчик приложения.</param>
+    /// <param name="appEnvironment">Окружение приложения.</param>
     /// <returns>Задача на использование.</returns>
-    public static async Task UseAppModules(this WebApplication app, AppHandler appHandler)
+    public static async Task UseAppModules(this WebApplication app, IAppEnvironment appEnvironment)
     {
-        app.UseRequestLocalization(x => x.SetDefaultCulture(appHandler.CurrentLanguage)
-            .AddSupportedCultures(appHandler.AvailableLanguages)
-            .AddSupportedUICultures(appHandler.AvailableLanguages));
+        app.UseRequestLocalization(x => x.SetDefaultCulture(appEnvironment.DefaultCulture)
+            .AddSupportedCultures(appEnvironment.SupportedCultures)
+            .AddSupportedUICultures(appEnvironment.SupportedCultures));
 
         var setupService = app.Services.GetRequiredService<ISetupService>();
 

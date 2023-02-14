@@ -2,15 +2,17 @@
 
 using var appHandler = new WebAppHandler();
 
-appHandler.OnStart();
-
 try
 {
+    var appEnvironment = new AppEnvironment();
+
+    appHandler.OnStart(appEnvironment);
+
     var appBuilder = WebApplication.CreateBuilder(args);
 
     appBuilder.Configure();
 
-    appBuilder.AddAppModules();
+    appBuilder.AddAppModules(appEnvironment);
 
     // Add services to the container.
 
@@ -21,7 +23,7 @@ try
 
     var app = appBuilder.Build();
 
-    await app.UseAppModules(appHandler).ConfigureAwait(false);
+    await app.UseAppModules(appEnvironment).ConfigureAwait(false);
 
     // Configure the HTTP request pipeline.
     if (app.Environment.IsDevelopment())

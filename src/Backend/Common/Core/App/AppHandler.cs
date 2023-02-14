@@ -15,14 +15,6 @@ namespace Makc2023.Backend.Common.Core.App
 
         #endregion Fields
 
-        #region Properties
-
-        public string[] AvailableLanguages { get; } = new[] { "ru", "en" };
-
-        public string CurrentLanguage { get; init; }
-
-        #endregion Properties
-
         #region Constructors
 
         /// <summary>
@@ -31,14 +23,6 @@ namespace Makc2023.Backend.Common.Core.App
         public AppHandler(ILoggerOfNLog logger)
         {
             _logger = logger;
-
-            string? language = Environment.GetEnvironmentVariable("App__Language");
-
-            CurrentLanguage = !string.IsNullOrWhiteSpace(language) && AvailableLanguages.Contains(language)
-                ? language
-                : AvailableLanguages[0];
-
-            CultureInfo.CurrentCulture = CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo(CurrentLanguage);
         }
 
         #endregion Constructors
@@ -59,15 +43,20 @@ namespace Makc2023.Backend.Common.Core.App
         /// <param name="exception">Исключение.</param>
         public void OnError(Exception exception)
         {
-            _logger.Error(exception, "Stopped program because of exception");
+            _logger.Error(exception, nameof(OnError));
         }
 
         /// <summary>
         /// Обработать начало.
         /// </summary>
-        public void OnStart()
+        /// <param name="appEnvironment">Окружение приложения.</param>
+        public void OnStart(IAppEnvironment appEnvironment)
         {
-            _logger.Debug("Started program on the {MachineName} machine", Environment.MachineName);
+            CultureInfo.CurrentCulture =
+                CultureInfo.CurrentUICulture =
+                    CultureInfo.GetCultureInfo(appEnvironment.DefaultCulture);
+
+            _logger.Debug($$"""{{nameof(OnStart)}}: {MachineName}""", Environment.MachineName);
         }
 
         #endregion Public methods
