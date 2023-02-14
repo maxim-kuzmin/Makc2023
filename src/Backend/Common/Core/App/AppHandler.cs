@@ -15,6 +15,14 @@ namespace Makc2023.Backend.Common.Core.App
 
         #endregion Fields
 
+        #region Properties
+
+        public string[] AvailableLanguages { get; } = new[] { "ru", "en" };
+
+        public string CurrentLanguage { get; init; }
+
+        #endregion Properties
+
         #region Constructors
 
         /// <summary>
@@ -23,6 +31,14 @@ namespace Makc2023.Backend.Common.Core.App
         public AppHandler(ILoggerOfNLog logger)
         {
             _logger = logger;
+
+            string? language = Environment.GetEnvironmentVariable("App__Language");
+
+            CurrentLanguage = !string.IsNullOrWhiteSpace(language) && AvailableLanguages.Contains(language)
+                ? language
+                : AvailableLanguages[0];
+
+            CultureInfo.CurrentCulture = CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo(CurrentLanguage);
         }
 
         #endregion Constructors

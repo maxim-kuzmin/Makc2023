@@ -6,20 +6,22 @@ appHandler.OnStart();
 
 try
 {
-    var builder = WebApplication.CreateBuilder(args);
+    var appBuilder = WebApplication.CreateBuilder(args);
 
-    builder.Configure();
+    appBuilder.Configure();
 
-    builder.Services.AddAppModules(builder.Configuration);
+    appBuilder.AddAppModules();
 
     // Add services to the container.
 
-    builder.Services.AddControllers();
+    appBuilder.Services.AddControllers();
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-    builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen();
+    appBuilder.Services.AddEndpointsApiExplorer();
+    appBuilder.Services.AddSwaggerGen();
 
-    var app = builder.Build();
+    var app = appBuilder.Build();
+
+    await app.UseAppModules(appHandler).ConfigureAwait(false);
 
     // Configure the HTTP request pipeline.
     if (app.Environment.IsDevelopment())
