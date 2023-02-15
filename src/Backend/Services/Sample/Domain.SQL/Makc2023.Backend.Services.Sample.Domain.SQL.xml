@@ -1,0 +1,397 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Makc2023.Backend.Services.Sample.Domain.SQL</name>
+    </assembly>
+    <members>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyMainEntity">
+            <summary>
+            Сущность "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyMainEntity.Data">
+            <summary>
+            Данные.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyMainEntity.DummyManyToManyList">
+            <summary>
+            Список элементов сущности "Фиктивное отношение многие ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyMainEntity.DummyManyToOneList">
+            <summary>
+            Список элементов сущности "Фиктивное отношение многие к одному".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyMainEntity.DummyOneToMany">
+            <summary>
+            Экземпляр сущности "Фиктивное отношение один ко многим".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyMainEntity.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="data">Данные.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyMainEntity.AddDummyManyToMany(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeEntity)">
+            <summary>
+            Добавить экземпляр сущности "Фиктивное отношение многие ко многим".
+            </summary>
+            <param name="data">Данные.</param>
+            <returns>Добавленный экземпляр.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyMainEntity.AddDummyManyToOne(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeEntity)">
+            <summary>
+            Добавить экземпляр сущности "Фиктивное отношение многие к одному".
+            </summary>
+            <param name="data">Данные.</param>
+            <returns>Добавленный экземпляр.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyMainEntity.GetId">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyManyToManyEntity">
+            <summary>
+            Сущность "Фиктивное отношение многие ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyManyToManyEntity.Data">
+            <summary>
+            Данные.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyManyToManyEntity.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeEntity)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="data">Данные.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyManyToManyEntity.GetId">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyManyToOneEntity">
+            <summary>
+            Сущность "Фиктивное отношение многие к одному".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyManyToOneEntity.Data">
+            <summary>
+            Данные.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyManyToOneEntity.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeEntity)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="data">Данные.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyManyToOneEntity.GetId">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyOneToManyEntity">
+            <summary>
+            Сущность "Фиктивное отношение один ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyOneToManyEntity.Data">
+            <summary>
+            Данные.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyOneToManyEntity.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeEntity)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="data">Данные.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyOneToManyEntity.GetId">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyTreeEntity">
+            <summary>
+            Сущность "Фиктивное дерево".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyTreeEntity.Data">
+            <summary>
+            Данные.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyTreeEntity.DummyTreeChildList">
+            <summary>
+            Список дочерних экземпляров сущности "Фиктивное дерево".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyTreeEntity.DummyTreeParent">
+            <summary>
+            Родительский экземпляр сущности "Фиктивное дерево".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyTreeEntity.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeEntity)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="data">Данные.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyTreeEntity.AddDummyChildTree(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeEntity)">
+            <summary>
+            Добавить дочерний экземпляр сущности "Фиктивное дерево".
+            </summary>
+            <param name="data">Данные.</param>
+            <returns>Добавленный экземпляр.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.DummyTreeEntity.GetId">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.InternalDomainEntity">
+            <summary>
+            Сущность "Внутренний домен".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.InternalDomainEntity.Data">
+            <summary>
+            Данные.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.InternalDomainEntity.InternalPermissionList">
+            <summary>
+            Список экземпляров сущности "Внутреннее разрешение".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.InternalDomainEntity.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeEntity)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="data">Данные.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.InternalDomainEntity.AddInternalPermission(Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeEntity)">
+            <summary>
+            Добавить экземпляр сущности "Фиктивное отношение многие к одному".
+            </summary>
+            <param name="data">Данные.</param>
+            <returns>Добавленный экземпляр.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.InternalDomainEntity.GetId">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.InternalPermissionEntity">
+            <summary>
+            Сущность "Внутреннее разрешение".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.InternalPermissionEntity.Data">
+            <summary>
+            Данные.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.InternalPermissionEntity.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeEntity)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="data">Данные.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.InternalPermissionEntity.GetId">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.UserEntity">
+            <summary>
+            Сущность "Пользователь".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.UserEntity.Data">
+            <summary>
+            Данные.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.UserEntity.InternalPermissionList">
+            <summary>
+            Список экземпляров сущности "Внутреннее разрешение".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.UserEntity.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeEntity)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="data">Данные.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Entities.UserEntity.GetId">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Enumerations.DummyEnumeration">
+            <summary>
+            Фиктивное перечисление.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Services.Sample.Domain.SQL.Enumerations.DummyEnumeration.Value1">
+            <summary>
+            Значение 1.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Services.Sample.Domain.SQL.Enumerations.DummyEnumeration.Value2">
+            <summary>
+            Зеачение 2.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Services.Sample.Domain.SQL.Enumerations.DummyEnumeration.Value3">
+            <summary>
+            Значение 3.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Enumerations.DummyEnumeration.#ctor(System.Int32,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Enumerations.DummyEnumeration.GetList">
+            <summary>
+            Получить список элементов перечисления.
+            </summary>
+            <returns>Список элементов перечисления.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Enumerations.DummyEnumeration.GetById(System.Int32)">
+            <summary>
+            Получить элемент перечисления по идентификатору.
+            </summary>
+            <param name="id">Идентификатор.</param>
+            <returns>Элемент перечисления.</returns>
+            <exception cref="T:Makc2023.Backend.Common.Core.Exceptions.LocalizedException">Выбрасывается в случае, если элемент не найден.</exception>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Enumerations.DummyEnumeration.GetByName(System.String)">
+            <summary>
+            Получить элемент перечисления по имени.
+            </summary>
+            <param name="name">Имя.</param>
+            <returns>Элемент перечисления.</returns>
+            <exception cref="T:Makc2023.Backend.Common.Core.Exceptions.LocalizedException">Выбрасывается в случае, если элемент не найден.</exception>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput">
+            <summary>
+            Входные данные операции получения элемента "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput.Name">
+            <summary>
+            Имя.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput.Normalize">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput.GetInvalidProperties">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationOutput">
+            <summary>
+            Выходные данные операции получения элемента "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.IDummyMainItemGetOperationHandler">
+            <summary>
+            Интерфейс обработчика операции получения элемента "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationInput">
+            <summary>
+            Входные данные операции получения списка "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationInput.Ids">
+            <summary>
+            Идентификаторы.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationInput.IdsString">
+            <summary>
+            Строка идентификаторов.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationInput.Name">
+            <summary>
+            Имя.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationInput.DummyOneToManyId">
+            <summary>
+            Идентификатор экземпляра сущности "Фиктивное отношение один ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationInput.DummyOneToManyIds">
+            <summary>
+            Идентификаторы экземпляров сущности "Фиктивное отношение один ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationInput.DummyOneToManyIdsString">
+            <summary>
+            Строка идентификаторов экземпляров сущности "Фиктивное отношение один ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationInput.DummyOneToManyName">
+            <summary>
+            Имя экземпляра сущности "Фиктивное отношение один ко многим".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationInput.Normalize">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationOutput">
+            <summary>
+            Выходные данные операции получения списка "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.IDummyMainListGetOperationHandler">
+            <summary>
+            Интерфейс обработчика операции получения списка "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Repositories.IDummyMainRepository">
+            <summary>
+            Интерфейс репозитория "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Repositories.IDummyMainRepository.GetItem(Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput)">
+            <summary>
+            Получить элемент.
+            </summary>
+            <param name="input">Входные данные.</param>
+            <returns>Задача на получение элемента.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Repositories.IDummyMainRepository.GetList(Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationInput)">
+            <summary>
+            Получить список.
+            </summary>
+            <param name="input">Входные данные.</param>
+            <returns>Задача на получение списка.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.ValueObjects.DummyValueObject">
+            <summary>
+            Фиктивный объект-значение.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.ValueObjects.DummyValueObject.Prop1">
+            <summary>
+            Свойство 1.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.ValueObjects.DummyValueObject.Prop2">
+            <summary>
+            Свойство 2.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.ValueObjects.DummyValueObject.Prop3">
+            <summary>
+            Свойство 3.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.ValueObjects.DummyValueObject.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="prop1">Свойство 1.</param>
+            <param name="prop2">Свойство 2.</param>
+            <param name="prop3">Свойство 3.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.ValueObjects.DummyValueObject.GetEqualityComponents">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

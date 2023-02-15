@@ -1,0 +1,667 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer</name>
+    </assembly>
+    <members>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext">
+            <summary>
+            Контекст базы данных сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext.DummyMain">
+            <summary>
+            Тип "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext.DummyManyToMany">
+            <summary>
+            Тип "Фиктивное отношение многие ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext.DummyManyToOne">
+            <summary>
+            Тип "Фиктивное отношение многие к одному".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext.DummyMainDummyManyToMany">
+            <summary>
+            Тип "Фиктивное отношение многие ко многим фиктивного главного".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext.DummyOneToMany">
+            <summary>
+            Тип "Фиктивное отношение один ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext.DummyTree">
+            <summary>
+            Тип "Фиктивное дерево".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext.DummyTreeLink">
+            <summary>
+            Тип "Связь фиктивного дерева".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext.InternalDomain">
+            <summary>
+            Тип "Внутренний домен".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext.InternalPermission">
+            <summary>
+            Тип "Внутреннее разрешение".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext.User">
+            <summary>
+            Тип "Пользователь".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext.UserInternalPermission">
+            <summary>
+            Тип "Внутреннее разрешение пользователя".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContextFactory">
+            <summary>
+            Фабрика контекста базы данных сопоставителя клиента. Предназначена для выполнения команд dotnet ef, например:
+            dotnet ef migrations add InitialCreate --configuration Debug -- "строка подключения к базе данных"
+            dotnet ef database update --configuration Debug -- "строка подключения к базе данных"
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContextFactory.#ctor">
+            <summary>
+            Конструктор, необходимый для создания экземпляра, используемого в командах dotnet ef.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContextFactory.#ctor(Microsoft.EntityFrameworkCore.IDbContextFactory{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext},Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Data.SQL.Setup.SetupOptions})">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="dbContextFactory">Фабрика базы данных.</param>
+            <param name="dbSetupOptions">Параметры настройки базы данных.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContextFactory.Configure(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,System.String,Microsoft.Extensions.Logging.ILogger{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContextFactory},Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Data.SQL.Setup.SetupOptions})">
+            <summary>
+            Настроить.
+            </summary>
+            <param name="builder">Построитель.</param>        
+            <param name="connectionString">Строка подключения.</param>
+            <param name="logger">Регистратор.</param>
+            <param name="dbSetupOptions">Параметры настройки базы данных.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContextFactory.CreateDbContext(System.String[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContextFactory.CreateDbContext">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbManager">
+            <summary>
+            Менеджер базы данных сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbManager.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext,Makc2023.Backend.Common.Data.SQL.Mappers.EF.IMapperResource)">
+            <summary>
+            Контсруктор.
+            </summary>
+            <param name="dbContext">Контекст базы данных.</param>
+            <param name="resource">Ресурс.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.IClientMapperDbContextFactory">
+            <summary>
+            Интерфейс фабрики контекста базы данных сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupAppModule">
+            <summary>
+            Модуль настройки приложения сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupAppModule.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupAppModule.GetExports">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupAppModule.GetImports">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupService">
+            <summary>
+            Сервис настройки сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupService.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.IClientMapperDbContextFactory,Makc2023.Backend.Common.Data.SQL.IProvider,Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="dbContextFactory">Фабрика контекста базы данных.</param>
+            <param name="provider">Поставщик.</param>
+            <param name="typesOptions">Параметры сущностей.</param>            
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupService.CheckIfAnyDummyMainNotFound(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupService.CreateDbContext">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupService.GetTestDummyMainIds">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupService.GetTestDummyManyToManyIds">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupService.GetTestDummyOneToManyIds">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupService.SeedTestDummyManyToManyList(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupService.SeedTestDummyOneToManyList(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupService.SeedTestDummyMainDummyManyToManyList(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext,System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.Int64})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupService.SeedTestDummyTreeList(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupService.SeedTestDummyMainList(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext,System.Collections.Generic.IEnumerable{System.Int64})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMainDummyManyToMany.ClientMapperDummyMainDummyManyToManyTypeConfiguration">
+            <summary>
+            Конфигурация типа "Фиктивное отношение многие ко многим фиктивного главного" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMainDummyManyToMany.ClientMapperDummyMainDummyManyToManyTypeConfiguration.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMainDummyManyToMany.ClientMapperDummyMainDummyManyToManyTypeConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMainDummyManyToMany.ClientMapperDummyMainDummyManyToManyTypeEntity})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMainDummyManyToMany.ClientMapperDummyMainDummyManyToManyTypeEntity">
+            <summary>
+            Сущность типа "Фиктивное отношение многие ко многим фиктивного главного" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMainDummyManyToMany.ClientMapperDummyMainDummyManyToManyTypeEntity.DummyMain">
+            <summary>
+            Экземпляр сущности "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMainDummyManyToMany.ClientMapperDummyMainDummyManyToManyTypeEntity.DummyManyToMany">
+            <summary>
+            Экземпляр сущности "Фиктивное отношение многие ко многим".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMainDummyManyToMany.ClientMapperDummyMainDummyManyToManyTypeExtension">
+            <summary>
+            Расширение типа "Фиктивное отношение многие ко многим фиктивного главного" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMainDummyManyToMany.ClientMapperDummyMainDummyManyToManyTypeExtension.ToMapperEntity(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMainDummyManyToMany.DummyMainDummyManyToManyTypeEntity)">
+            <summary>
+            Преобразовать в сущность сопоставителя клиента.
+            </summary>
+            <param name="entity">Сущность.</param>
+            <returns>Сущность сопоставителя клиента.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMainDummyManyToMany.ClientMapperDummyMainDummyManyToManyTypeExtension.ToEntity(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMainDummyManyToMany.ClientMapperDummyMainDummyManyToManyTypeEntity)">
+            <summary>
+            Преобразовать в сущность.
+            </summary>
+            <param name="mapperEntity">Сущность сопоставителя клиента.</param>
+            <returns>Сущность.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeConfiguration">
+            <summary>
+            Конфигурация типа "Фиктивное главное" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeConfiguration.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity">
+            <summary>
+            Сущность типа "Фиктивное главное" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity.DummyMainDummyManyToManyList">
+            <summary>
+            Список экземпляров сущности "Фиктивное отношение многие ко многим фиктивного главного".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity.DummyManyToOneList">
+            <summary>
+            Список экземпляров сущности "Фиктивное отношение многие к одному".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity.DummyOneToMany">
+            <summary>
+            Экземпляр сущности "Фиктивное отношение один ко многим".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeExtension">
+            <summary>
+            Расширение типа "Фиктивное главное" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeExtension.ToMapperEntity(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity)">
+            <summary>
+            Преобразовать в сущность сопоставителя клиента.
+            </summary>
+            <param name="entity">Сущность.</param>
+            <returns>Сущность сопоставителя клиента.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeExtension.ToEntity(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity)">
+            <summary>
+            Преобразовать в сущность.
+            </summary>
+            <param name="mapperEntity">Сущность сопоставителя клиента.</param>
+            <returns>Сущность.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToMany.ClientMapperDummyManyToManyTypeConfiguration">
+            <summary>
+            Конфигурация типа "Фиктивное отношение многие ко многим" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToMany.ClientMapperDummyManyToManyTypeConfiguration.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToMany.ClientMapperDummyManyToManyTypeConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToMany.ClientMapperDummyManyToManyTypeEntity})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToMany.ClientMapperDummyManyToManyTypeEntity">
+            <summary>
+            Сущность типа "Фиктивное отношение многие ко многим" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToMany.ClientMapperDummyManyToManyTypeEntity.DummyMainDummyManyToManyList">
+            <summary>
+            Список экземпляров сущности "Фиктивное отношение многие ко многим фиктивного главного".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToMany.ClientMapperDummyManyToManyTypeExtension">
+            <summary>
+            Расширение типа "Фиктивное отношение многие ко многим" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToMany.ClientMapperDummyManyToManyTypeExtension.ToMapperEntity(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeEntity)">
+            <summary>
+            Преобразовать в сущность сопоставителя клиента.
+            </summary>
+            <param name="entity">Сущность.</param>
+            <returns>Сущность сопоставителя клиента.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToMany.ClientMapperDummyManyToManyTypeExtension.ToEntity(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToMany.ClientMapperDummyManyToManyTypeEntity)">
+            <summary>
+            Преобразовать в сущность.
+            </summary>
+            <param name="mapperEntity">Сущность сопоставителя клиента.</param>
+            <returns>Сущность.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToOne.ClientMapperDummyManyToOneTypeConfiguration">
+            <summary>
+            Конфигурация типа "Фиктивное отношение многие к одному" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToOne.ClientMapperDummyManyToOneTypeConfiguration.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToOne.ClientMapperDummyManyToOneTypeConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToOne.ClientMapperDummyManyToOneTypeEntity})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToOne.ClientMapperDummyManyToOneTypeEntity">
+            <summary>
+            Сущность типа "Фиктивное отношение многие к одному" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToOne.ClientMapperDummyManyToOneTypeEntity.DummyMain">
+            <summary>
+            Экземпляр сущности "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToOne.ClientMapperDummyManyToOneTypeExtension">
+            <summary>
+            Расширение типа "Фиктивное главное" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToOne.ClientMapperDummyManyToOneTypeExtension.ToMapperEntity(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeEntity)">
+            <summary>
+            Преобразовать в сущность сопоставителя клиента.
+            </summary>
+            <param name="entity">Сущность.</param>
+            <returns>Сущность сопоставителя клиента.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToOne.ClientMapperDummyManyToOneTypeExtension.ToEntity(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToOne.ClientMapperDummyManyToOneTypeEntity)">
+            <summary>
+            Преобразовать в сущность.
+            </summary>
+            <param name="mapperEntity">Сущность сопоставителя клиента.</param>
+            <returns>Сущность.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyOneToMany.ClientMapperDummyOneToManyTypeConfiguration">
+            <summary>
+            Конфигурация типа "Фиктивное отношение один ко многим" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyOneToMany.ClientMapperDummyOneToManyTypeConfiguration.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyOneToMany.ClientMapperDummyOneToManyTypeConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyOneToMany.ClientMapperDummyOneToManyTypeEntity})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyOneToMany.ClientMapperDummyOneToManyTypeEntity">
+            <summary>
+            Сущность типа "Фиктивное отношение один ко многим" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyOneToMany.ClientMapperDummyOneToManyTypeEntity.DummyMainList">
+            <summary>
+            Список экземпляров сущности "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyOneToMany.ClientMapperDummyOneToManyTypeExtension">
+            <summary>
+            Расширение сущности "Фиктивное отношение один ко многим" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyOneToMany.ClientMapperDummyOneToManyTypeExtension.ToMapperEntity(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeEntity)">
+            <summary>
+            Преобразовать в сущность сопоставителя клиента.
+            </summary>
+            <param name="entity">Сущность.</param>
+            <returns>Сущность сопоставителя клиента.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyOneToMany.ClientMapperDummyOneToManyTypeExtension.ToEntity(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyOneToMany.ClientMapperDummyOneToManyTypeEntity)">
+            <summary>
+            Преобразовать в сущность.
+            </summary>
+            <param name="mapperEntity">Сущность сопоставителя клиента.</param>
+            <returns>Сущность.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTreeLink.ClientMapperDummyTreeLinkTypeConfiguration">
+            <summary>
+            Конфигурация типа "Связь фиктивного дерева" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTreeLink.ClientMapperDummyTreeLinkTypeConfiguration.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTreeLink.ClientMapperDummyTreeLinkTypeConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTreeLink.ClientMapperDummyTreeLinkTypeEntity})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTreeLink.ClientMapperDummyTreeLinkTypeEntity">
+            <summary>
+            Сущность типа "Связь фиктивного дерева" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTreeLink.ClientMapperDummyTreeLinkTypeEntity.DummyTreeById">
+            <summary>
+             Экземпляр сущности "Фиктивное дерево" по идентификатору.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTreeLink.ClientMapperDummyTreeLinkTypeEntity.DummyTreeByParentId">
+            <summary>
+             Экземпляр сущности "Фиктивное дерево" по идентификатору родителя.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTreeLink.ClientMapperDummyTreeLinkTypeExtension">
+            <summary>
+            Расширение сущности "Связь фиктивного дерева" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTreeLink.ClientMapperDummyTreeLinkTypeExtension.ToMapperEntity(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTreeLink.DummyTreeLinkTypeEntity)">
+            <summary>
+            Преобразовать в сущность сопоставителя клиента.
+            </summary>
+            <param name="entity">Сущность.</param>
+            <returns>Сущность сопоставителя клиента.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTreeLink.ClientMapperDummyTreeLinkTypeExtension.ToEntity(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTreeLink.ClientMapperDummyTreeLinkTypeEntity)">
+            <summary>
+            Преобразовать в сущность.
+            </summary>
+            <param name="mapperEntity">Сущность сопоставителя клиента.</param>
+            <returns>Сущность.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTree.ClientMapperDummyTreeTypeConfiguration">
+            <summary>
+            Конфигурация типа "Фиктивное дерево" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTree.ClientMapperDummyTreeTypeConfiguration.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTree.ClientMapperDummyTreeTypeConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTree.ClientMapperDummyTreeTypeEntity})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTree.ClientMapperDummyTreeTypeEntity">
+            <summary>
+            Сущность типа "Фиктивное дерево" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTree.ClientMapperDummyTreeTypeEntity.DummyTreeChildList">
+            <summary>
+            Список дочерних экземпляров сущности "Фиктивное дерево".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTree.ClientMapperDummyTreeTypeEntity.DummyTreeLinkByIdList">
+            <summary>
+            Список экземпляров сущности "Связь фиктивного дерева" по идентификатору.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTree.ClientMapperDummyTreeTypeEntity.DummyTreeLinkByParentIdList">
+            <summary>
+            Список экземпляров сущности "Связь фиктивного дерева" по идентификатору родителя.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTree.ClientMapperDummyTreeTypeEntity.DummyTreeParent">
+            <summary>
+            Родительский экземпляр сущности "Фиктивное дерево".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTree.ClientMapperDummyTreeTypeExtension">
+            <summary>
+            Расширение сущности "Фиктивное дерево" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTree.ClientMapperDummyTreeTypeExtension.ToMapperEntity(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeEntity)">
+            <summary>
+            Преобразовать в сущность сопоставителя клиента.
+            </summary>
+            <param name="entity">Сущность.</param>
+            <returns>Сущность сопоставителя клиента.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTree.ClientMapperDummyTreeTypeExtension.ToEntity(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTree.ClientMapperDummyTreeTypeEntity)">
+            <summary>
+            Преобразовать в сущность.
+            </summary>
+            <param name="mapperEntity">Сущность сопоставителя клиента.</param>
+            <returns>Сущность.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalDomain.ClientMapperInternalDomainTypeConfiguration">
+            <summary>
+            Конфигурация типа "Внутренний домен" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalDomain.ClientMapperInternalDomainTypeConfiguration.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalDomain.ClientMapperInternalDomainTypeConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalDomain.ClientMapperInternalDomainTypeEntity})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalDomain.ClientMapperInternalDomainTypeEntity">
+            <summary>
+            Сущность типа "Внутренний домен" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalDomain.ClientMapperInternalDomainTypeEntity.InternalPermissionList">
+            <summary>
+            Список экземпляров сущности "Внутреннее разрешение".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalDomain.ClientMapperInternalDomainTypeExtension">
+            <summary>
+            Расширение сущности "Внутренний домен" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalDomain.ClientMapperInternalDomainTypeExtension.ToMapperEntity(Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeEntity)">
+            <summary>
+            Преобразовать в сущность сопоставителя клиента.
+            </summary>
+            <param name="entity">Сущность.</param>
+            <returns>Сущность сопоставителя клиента.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalDomain.ClientMapperInternalDomainTypeExtension.ToEntity(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalDomain.ClientMapperInternalDomainTypeEntity)">
+            <summary>
+            Преобразовать в сущность.
+            </summary>
+            <param name="mapperEntity">Сущность сопоставителя клиента.</param>
+            <returns>Сущность.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalPermission.ClientMapperInternalPermissionTypeConfiguration">
+            <summary>
+            Конфигурация типа "Внутреннее разрешение" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalPermission.ClientMapperInternalPermissionTypeConfiguration.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalPermission.ClientMapperInternalPermissionTypeConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalPermission.ClientMapperInternalPermissionTypeEntity})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalPermission.ClientMapperInternalPermissionTypeEntity">
+            <summary>
+            Сущность типа "Внутреннее разрешение" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalPermission.ClientMapperInternalPermissionTypeEntity.InternalDomain">
+            <summary>
+            Экземпляр сущности "Внутренний домен".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalPermission.ClientMapperInternalPermissionTypeEntity.UserInternalPermissionList">
+            <summary>
+            Список экземпляров сущности "Внутреннее разрешение пользователя".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalPermission.ClientMapperInternalPermissionTypeExtension">
+            <summary>
+            Расширение типа "Внутреннее разрешение" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalPermission.ClientMapperInternalPermissionTypeExtension.ToMapperEntity(Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeEntity)">
+            <summary>
+            Преобразовать в сущность сопоставителя клиента.
+            </summary>
+            <param name="entity">Сущность.</param>
+            <returns>Сущность сопоставителя клиента.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalPermission.ClientMapperInternalPermissionTypeExtension.ToEntity(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalPermission.ClientMapperInternalPermissionTypeEntity)">
+            <summary>
+            Преобразовать в сущность.
+            </summary>
+            <param name="mapperEntity">Сущность сопоставителя клиента.</param>
+            <returns>Сущность.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.UserInternalPermission.ClientMapperUserInternalPermissionTypeConfiguration">
+            <summary>
+            Конфигурация типа "Внутреннее разрешение пользователя" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.UserInternalPermission.ClientMapperUserInternalPermissionTypeConfiguration.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.UserInternalPermission.ClientMapperUserInternalPermissionTypeConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.UserInternalPermission.ClientMapperUserInternalPermissionTypeEntity})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.UserInternalPermission.ClientMapperUserInternalPermissionTypeEntity">
+            <summary>
+            Сущность типа "Внутреннее разрешение пользователя" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.UserInternalPermission.ClientMapperUserInternalPermissionTypeEntity.User">
+            <summary>
+            Экземпляр сущности "Пользователь".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.UserInternalPermission.ClientMapperUserInternalPermissionTypeEntity.InternalPermission">
+            <summary>
+            Экземпляр сущности "Внутреннее разрешение".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.UserInternalPermission.ClientMapperUserInternalPermissionTypeExtension">
+            <summary>
+            Расширение типа "Внутреннее разрешение пользователя" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.UserInternalPermission.ClientMapperUserInternalPermissionTypeExtension.ToMapperEntity(Makc2023.Backend.Services.Sample.Data.SQL.Types.UserInternalPermission.UserInternalPermissionTypeEntity)">
+            <summary>
+            Преобразовать в сущность сопоставителя клиента.
+            </summary>
+            <param name="entity">Сущность.</param>
+            <returns>Сущность сопоставителя клиента.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.UserInternalPermission.ClientMapperUserInternalPermissionTypeExtension.ToEntity(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.UserInternalPermission.ClientMapperUserInternalPermissionTypeEntity)">
+            <summary>
+            Преобразовать в сущность.
+            </summary>
+            <param name="mapperEntity">Сущность сопоставителя клиента.</param>
+            <returns>Сущность.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.User.ClientMapperUserTypeConfiguration">
+            <summary>
+            Конфигурация типа "Пользователь" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.User.ClientMapperUserTypeConfiguration.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.User.ClientMapperUserTypeConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.User.ClientMapperUserTypeEntity})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.User.ClientMapperUserTypeEntity">
+            <summary>
+            Сущность типа "Пользователь" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.User.ClientMapperUserTypeEntity.UserInternalPermissionList">
+            <summary>
+            Список экземпляров сущности "Внутреннее разрешение пользователя".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.User.ClientMapperUserTypeExtension">
+            <summary>
+            Расширение типа "Пользователь" сопоставителя клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.User.ClientMapperUserTypeExtension.ToMapperEntity(Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeEntity)">
+            <summary>
+            Преобразовать в сущность сопоставителя клиента.
+            </summary>
+            <param name="entity">Сущность.</param>
+            <returns>Сущность сопоставителя клиента.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.User.ClientMapperUserTypeExtension.ToEntity(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.User.ClientMapperUserTypeEntity)">
+            <summary>
+            Преобразовать в сущность.
+            </summary>
+            <param name="mapperEntity">Сущность сопоставителя клиента.</param>
+            <returns>Сущность.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,654 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Makc2023.Backend.Common.Data.SQL</name>
+    </assembly>
+    <members>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Commands.Identity.Reseed.IdentityReseedCommandBuilder">
+            <summary>
+            Построитель команды на повторное заполнение идентичности.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Identity.Reseed.IdentityReseedCommandBuilder.Inputs">
+            <summary>
+            Таблицы.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Commands.Identity.Reseed.IdentityReseedCommandBuilder.GetResultSql">
+            <summary>
+            Получить результирующий SQL.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Commands.Identity.Reseed.IdentityReseedCommandInput">
+            <summary>
+            Ввод команды на повторное заполнение идентичности.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Identity.Reseed.IdentityReseedCommandInput.Columns">
+            <summary>
+            Имена столбцов.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Identity.Reseed.IdentityReseedCommandInput.Table">
+            <summary>
+            Имя таблицы.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Identity.Reseed.IdentityReseedCommandInput.Schema">
+            <summary>
+            Схема.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Commands.Identity.Reseed.IdentityReseedCommandInput.#ctor(System.String,System.String,System.String[])">
+            <summary>
+            Получить результирующий SQL.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Commands.Tree.Calculate.TreeCalculateCommandBuilder">
+            <summary>
+            Построитель команды на вычисление дерева.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Commands.Tree.Calculate.TreeCalculateCommandBuilder.#ctor">
+            <summary>
+            Конструктор.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder">
+            <summary>
+            Построитель команды дерева.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder.LinkTableFieldNameForId">
+            <summary>
+            Имя поля таблицы связи для идентификатора родителя.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder.LinkTableFieldNameForParentId">
+            <summary>
+            Имя поля таблицы связи для идентификатора родителя.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder.LinkTableNameWithoutSchema">
+            <summary>
+            Имя таблицы связи без схемы.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder.LinkTableSchema">
+            <summary>
+            Схема таблицы связи.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder.Parameters">
+            <summary>
+            Параметры.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder.Prefix">
+            <summary>
+            Префикс.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder.SqlForIdsSelectQuery">
+            <summary>
+            SQL для запроса выборки идентификаторов.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder.TreeTableFieldNameForId">
+            <summary>
+            Имя поля таблицы дерева для идентификатора.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder.TreeTableFieldNameForParentId">
+            <summary>
+            Имя поля таблицы дерева для идентификатора родителя.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder.TreeTableFieldNameForTreeChildCount">
+            <summary>
+            Имя поля таблицы дерева для числа детей узла в дереве.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder.TreeTableFieldNameForTreeDescendantCount">
+            <summary>
+            Имя поля таблицы дерева для числа потомков узла в дереве.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder.TreeTableFieldNameForTreeLevel">
+            <summary>
+            Имя поля таблицы дерева для уровня узла в дереве.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder.TreeTableFieldNameForTreePath">
+            <summary>
+            Имя поля таблицы дерева для пути узла в дереве.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder.TreeTableFieldNameForTreePosition">
+            <summary>
+            Имя поля таблицы дерева для позиции узла в дереве.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder.TreeTableFieldNameForTreeSort">
+            <summary>
+            Имя поля таблицы дерева для сортировки узла в дереве.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder.TreeTableNameWithoutSchema">
+            <summary>
+            Имя таблицы дерева без схемы.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder.TreeTableSchema">
+            <summary>
+            Схема таблицы дерева.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandBuilder.GetResultSql">
+            <summary>
+            Получить результирующий SQL.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandExtension">
+            <summary>
+            Расширение команды дерева.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandExtension.FromInt64ToTreePath(System.Int64,System.String)">
+            <summary>
+            Преобразовать из 64-битное целого числа в путь в дереве.
+            </summary>
+            <param name="value">Значение.</param>
+            <param name="parentTreePath">Путь родителя в дереве.</param>
+            <returns>Путь в дереве.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandParameters">
+            <summary>
+            Параметры команды дерева.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandParameters.Ids">
+            <summary>
+            Идентификаторы.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Commands.Tree.Trigger.TreeTriggerCommandBuilder">
+            <summary>
+            Построитель команды на срабатывание триггера дерева.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Commands.Tree.Trigger.TreeTriggerCommandBuilder.Action">
+            <summary>
+            Действие.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Commands.Tree.Trigger.TreeTriggerCommandBuilder.#ctor">
+            <summary>
+            Конструктор.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Commands.Trigger.TriggerCommandAction">
+            <summary>
+            Действие команды на срабатывание триггера.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Commands.Trigger.TriggerCommandAction.None">
+            <summary>
+            Отсутствует.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Commands.Trigger.TriggerCommandAction.Delete">
+            <summary>
+            Удаление.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Commands.Trigger.TriggerCommandAction.Insert">
+            <summary>
+            Вставка.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Commands.Trigger.TriggerCommandAction.Update">
+            <summary>
+            Обновление.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.IDefaults">
+            <summary>
+            Интерфейс значений по умолчанию.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.IDefaults.DbColumnForId">
+            <summary>
+            Колонка в базе данных для поля "Id".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.IDefaults.DbColumnForName">
+            <summary>
+            Колонка в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.IDefaults.DbColumnForParentId">
+            <summary>
+            Колонка в базе данных для поля "ParentId".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.IDefaults.DbColumnForTreeChildCount">
+            <summary>
+            Колонка в базе данных для поля "TreeChildCount".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.IDefaults.DbColumnForTreeDescendantCount">
+            <summary>
+            Колонка в базе данных для поля "TreeDescendantCount".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.IDefaults.DbColumnForTreeLevel">
+            <summary>
+            Колонка в базе данных для поля "TreeLevel".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.IDefaults.DbColumnForTreePath">
+            <summary>
+            Колонка в базе данных для поля "TreePath".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.IDefaults.DbColumnForTreePosition">
+            <summary>
+            Колонка в базе данных для поля "TreePosition".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.IDefaults.DbColumnForTreeSort">
+            <summary>
+            Колонка в базе данных для поля "TreeSort".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.IDefaults.DbColumnPartsSeparator">
+            <summary>
+            Разделитель частей имени колонки в базе данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.IDefaults.DbForeignKeyPrefix">
+            <summary>
+            Префикс внешнего ключа в базе данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.IDefaults.DbIndexPrefix">
+            <summary>
+            Префикс индекса в базе данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.IDefaults.DbPrimaryKeyPrefix">
+            <summary>
+            Префикс первичного ключа в базе данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.IDefaults.DbSchema">
+            <summary>
+            Схема в базе данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.IDefaults.DbSequenceSuffix">
+            <summary>
+            Суффикс последовательности в базе данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.IDefaults.DbUniqueIndexPrefix">
+            <summary>
+            Префикс уникального индекса в базе данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.IDefaults.FullNamePartsSeparator">
+            <summary>
+            Разделитель частей полного имени.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.IDefaults.NamePartsSeparator">
+            <summary>
+            Разделитель частей имени.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.IProvider">
+            <summary>
+            Интерфейс поставщика.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.IProvider.CreateDbParameter(System.String,System.Object)">
+            <summary>
+            Создать параметр команды базы данных.
+            </summary>
+            <param name="name">Имя параметра.</param>
+            <param name="value">Значение параметра.</param>
+            <returns>Параметр команды базы данных.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.IProvider.CreateDbCommand(System.Data.Common.DbConnection,System.Data.Common.DbParameter[])">
+            <summary>
+            Создать команду базы данных.
+            </summary>
+            <param name="connection">Подключение к базе данных.</param>
+            <param name="parameters">Параметры команды.</param>
+            <returns>Команда базы данных.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.IProvider.CreateDbConnection(System.String,System.Func{System.String,System.String})">
+            <summary>
+            Создать подключение к базе данных.
+            </summary>
+            <param name="connectionString">Строка подключения к базе данных.</param>
+            <param name="transformConnectionString">Функция преобразования строки подключения.</param>
+            <returns>Подключение к базе данных.</returns>        
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.IProvider.CreateQueryIdentityReseedBuilder">
+            <summary>
+            Создать построитель запроса перезаполнения идентичности.
+            </summary>
+            <returns>Построитель команды.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.IProvider.CreateQueryTreeCalculateBuilder">
+            <summary>
+            Создать построитель запроса вычисления дерева.
+            </summary>
+            <returns>Построитель команды.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.IProvider.CreateQueryTreeTriggerBuilder">
+            <summary>
+            Создать построитель запроса триггера дерева.
+            </summary>
+            <returns>Построитель команды.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemGetOperationOutput`1">
+            <summary>
+            Выходные данные операции получения элемента.
+            </summary>
+            <typeparam name="TItem">Элемент.</typeparam>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemGetOperationOutput`1.Item">
+            <summary>
+            Элемент.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemGetOperationOutput`1.IsItemNotFound">
+            <summary>
+            Признак того, что элемент не найден.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemWithInt32IdGetOperationInput">
+            <summary>
+            Входные данные операции получения элемента с 32-битным целочисленным идентификатором.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemWithInt32IdGetOperationInput.Id">
+            <summary>
+            Идентификатор.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemWithInt32IdGetOperationInput.Normalize">
+            <summary>
+            Нормализовать.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemWithInt32IdGetOperationInput.GetInvalidProperties">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemWithInt64IdGetOperationInput">
+            <summary>
+            Входные данные операции получения элемента с 64-битным целочисленным идентификатором.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemWithInt64IdGetOperationInput.Id">
+            <summary>
+            Идентификатор.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemWithInt64IdGetOperationInput.Normalize">
+            <summary>
+            Нормализовать.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemWithInt64IdGetOperationInput.GetInvalidProperties">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Operations.List.Get.ListGetOperationExtension">
+            <summary>
+            Расширение операции получения списка.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Operations.List.Get.ListGetOperationExtension.ApplyPagination``1(System.Linq.IQueryable{``0},Makc2023.Backend.Common.Data.SQL.Operations.List.Get.ListGetOperationInput)">
+            <summary>
+            Применить разбиение на страницы.
+            </summary>
+            <typeparam name="T">Тип запрашиваемых данных.</typeparam>
+            <param name="query">Запрос.</param>
+            <param name="input">Входные данные.</param>
+            <returns>Запрос страницы.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Operations.List.Get.ListGetOperationInput">
+            <summary>
+            Входные данные операции получения списка.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Operations.List.Get.ListGetOperationInput.PageNumber">
+            <summary>
+            Номер страницы.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Operations.List.Get.ListGetOperationInput.PageSize">
+            <summary>
+            Размер страницы.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Operations.List.Get.ListGetOperationInput.SortField">
+            <summary>
+            Поле сортировки.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Operations.List.Get.ListGetOperationInput.SortDirection">
+            <summary>
+            Направление сортировки.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Operations.List.Get.ListGetOperationInput.GetInvalidProperties">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Operations.List.Get.ListGetOperationInput.Normalize">
+            <summary>
+            Нормализовать.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Operations.List.Get.ListGetOperationOutput`1">
+            <summary>
+            Выходные данные операции получения списка.
+            </summary>
+            <typeparam name="TItem">Тип элемента.</typeparam>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Operations.List.Get.ListGetOperationOutput`1.Items">
+            <summary>
+            Элементы.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Operations.List.Get.ListGetOperationOutput`1.TotalCount">
+            <summary>
+            Общее число элементов.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Operations.Tree.Node.Get.TreeNodeGetOperationAxis">
+            <summary>
+            Ось операции получения узла дерева.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Operations.Tree.Node.Get.TreeNodeGetOperationAxis.Self">
+            <summary>
+            Сам.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Operations.Tree.Node.Get.TreeNodeGetOperationAxis.Parent">
+            <summary>
+            Родитель.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Operations.Tree.Path.Get.TreePathGetOperationAxis">
+            <summary>
+            Ось операции получения ветви дерева.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Operations.Tree.Path.Get.TreePathGetOperationAxis.None">
+            <summary>
+            Отсутствует.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Operations.Tree.Path.Get.TreePathGetOperationAxis.All">
+            <summary>
+            Все.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Operations.Tree.Path.Get.TreePathGetOperationAxis.Ancestor">
+            <summary>
+            Предок.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Operations.Tree.Path.Get.TreePathGetOperationAxis.AncestorOrSelf">
+            <summary>
+            Предок или корневой узел.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Operations.Tree.Path.Get.TreePathGetOperationAxis.Child">
+            <summary>
+            Ребёнок.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Operations.Tree.Path.Get.TreePathGetOperationAxis.ChildOrSelf">
+            <summary>
+            Ребёнок или корневой узел.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Operations.Tree.Path.Get.TreePathGetOperationAxis.Descendant">
+            <summary>
+            Потомок.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Operations.Tree.Path.Get.TreePathGetOperationAxis.DescendantOrSelf">
+            <summary>
+            Потомок или корневой узел.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Operations.Tree.Path.Get.TreePathGetOperationAxis.ParentOrSelf">
+            <summary>
+            Родитель или корневой узел.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Setup.SetupAppModule">
+            <summary>
+            Модуль настройки приложения.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Setup.SetupAppModule.#ctor(Microsoft.Extensions.Configuration.IConfigurationSection)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="configurationSection">Раздел конфигурации.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Setup.SetupAppModule.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Setup.SetupAppModule.GetExports">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Setup.SetupOptions">
+            <summary>
+            Параметры настройки.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Setup.SetupOptions.DbCommandTimeout">
+            <summary>
+            Таймаут команд базы данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Setup.SetupOptions.LogLevel">
+            <summary>
+            Уровень логирования.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.TypeOptions">
+            <summary>
+            Параметры типа.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.TypeOptions.DbTable">
+            <summary>
+            Таблица в базе данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.TypeOptions.DbSchema">
+            <summary>
+            Схема в базе данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.TypeOptions.DbTableWithSchema">
+            <summary>
+            Таблица со схемой в базе данных.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.TypeOptions.#ctor(Makc2023.Backend.Common.Data.SQL.IDefaults,System.String,System.String)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="defaults">Значения по умолчанию.</param>
+            <param name="dbTable">Таблица в базе данных.</param>
+            <param name="dbSchema">Схема в базе данных.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.TypeOptions.CreateFullName(System.String[])">
+            <summary>
+            Создать полное имя.
+            </summary>
+            <param name="parts">Части имени.</param>
+            <returns>Полное имя.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.TypeOptions.CreateDbColumnName(System.String[])">
+            <summary>
+            Создать имя колонки в базе данных.
+            </summary>
+            <param name="parts">Части имени.</param>
+            <returns>Имя колонки в базе данных.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.TypeOptions.CreateDbForeignKeyName(System.String[])">
+            <summary>
+            Создать имя внешнего ключа в базе данных.
+            </summary>
+            <param name="parts">Части имени.</param>
+            <returns>Имя внешнего ключа в базе данных.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.TypeOptions.CreateDbIndexName(System.String[])">
+            <summary>
+            Создать имя индекса в базе данных.
+            </summary>
+            <param name="parts">Части имени.</param>
+            <returns>Имя индекса в базе данных.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.TypeOptions.CreateDbPrimaryKeyName(System.String[])">
+            <summary>
+            Создать имя первичного ключа в базе данных.
+            </summary>
+            <param name="parts">Части имени.</param>
+            <returns>Имя первичного ключа в базе данных.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.TypeOptions.CreateDbSchemaName(System.String[])">
+            <summary>
+            Создать имя схемы в базе данных.
+            </summary>
+            <param name="parts">Части имени.</param>
+            <returns>Имя схемы в базе данных.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.TypeOptions.CreateDbSequenceName(System.String[])">
+            <summary>
+            Создать имя последовательности в базе данных.
+            </summary>
+            <param name="parts">Части имени.</param>
+            <returns>Имя последовательности в базе данных.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.TypeOptions.CreateDbUniqueIndexName(System.String[])">
+            <summary>
+            Создать имя уникального индекса в базе данных.
+            </summary>
+            <param name="parts">Части имени.</param>
+            <returns>Имя уникального индекса в базе данных.</returns>
+        </member>
+    </members>
+</doc>

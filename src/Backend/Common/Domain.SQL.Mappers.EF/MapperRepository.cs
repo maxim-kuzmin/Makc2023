@@ -2,7 +2,11 @@
 
 namespace Makc2023.Backend.Common.Domain.SQL.Mappers.EF;
 
-public abstract class MapperRepository<T> : IRepository<T> where T : IAggregateRoot
+/// <summary>
+/// Репозиторий сопоставителя.
+/// </summary>
+/// <typeparam name="TEntity">Тип сущности.</typeparam>
+public abstract class MapperRepository<TEntity> : IRepository<TEntity> where TEntity : IAggregateRoot
 {
     #region Properties
 

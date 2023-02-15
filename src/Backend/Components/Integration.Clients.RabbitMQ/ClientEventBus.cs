@@ -9,7 +9,14 @@ public sealed class ClientEventBus : IEventBus, IDisposable
 {
     #region Constants
 
+    /// <summary>
+    /// Имя брокера.
+    /// </summary>
     public const string BROKER_NAME = "Makc2003_event_bus";
+
+    /// <summary>
+    /// Имя области видимости для Autofac.
+    /// </summary>
     public const string AUTOFAC_SCOPE_NAME = "Makc2003_event_bus";
 
     #endregion Constants

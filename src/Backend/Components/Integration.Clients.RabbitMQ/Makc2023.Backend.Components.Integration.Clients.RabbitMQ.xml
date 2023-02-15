@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Makc2023.Backend.Components.Integration.Clients.RabbitMQ</name>
+    </assembly>
+    <members>
+        <member name="T:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientDefaultConnection">
+            <summary>
+            Подключение по умолчанию клиента.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientDefaultConnection.Disposed">
+            <summary>
+            Признак того, что подключение закрыто.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientDefaultConnection.IsConnected">
+            <summary>
+            Признак того, что подключение установлено.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientDefaultConnection.#ctor(RabbitMQ.Client.IConnectionFactory,Microsoft.Extensions.Logging.ILogger{Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientDefaultConnection},System.Int32)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="connectionFactory">Фабрика подключений.</param>
+            <param name="logger">Регистратор.</param>
+            <param name="retryCount">Количество повторений попыток создания подключения в случае неудачи.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientDefaultConnection.CreateModel">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientDefaultConnection.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientDefaultConnection.TryConnect">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientEventBus">
+            <summary>
+            Шина событий клиента.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientEventBus.BROKER_NAME">
+            <summary>
+            Имя брокера.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientEventBus.AUTOFAC_SCOPE_NAME">
+            <summary>
+            Имя области видимости для Autofac.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientEventBus.#ctor(Makc2023.Backend.Components.Integration.Clients.RabbitMQ.IClientConnection,Microsoft.Extensions.Logging.ILogger{Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientEventBus},System.IServiceProvider,Makc2023.Backend.Components.Integration.IEventBusSubscriptionsManager,System.String,System.Int32)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="connection">Подключение.</param>
+            <param name="logger">Регистратор.</param>
+            <param name="serviceProvider">Поставщик сервисов.</param>
+            <param name="subsManager">Менеджер подписок шины событий.</param>
+            <param name="queueName">Имя очереди.</param>
+            <param name="retryCount">Количество повторов отправки событий в шину в случае неудачи.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientEventBus.Publish(Makc2023.Backend.Common.Core.Integration.IntegrationEvent)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientEventBus.SubscribeDynamic``1(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientEventBus.Subscribe``2">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientEventBus.Unsubscribe``2">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientEventBus.UnsubscribeDynamic``1(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.ClientEventBus.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.IClientConnection">
+            <summary>
+            Интерфейс подключения клиента.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.IClientConnection.IsConnected">
+            <summary>
+            Признак того, что клиент подключен.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.IClientConnection.TryConnect">
+            <summary>
+            Попробовать подключиться.
+            </summary>
+            <returns>Признак того, что клиент подключен.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Components.Integration.Clients.RabbitMQ.IClientConnection.CreateModel">
+            <summary>
+            Создать модель.
+            </summary>
+            <returns>Модель.</returns>
+        </member>
+    </members>
+</doc>

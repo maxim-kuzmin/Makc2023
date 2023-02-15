@@ -1,0 +1,1221 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Makc2023.Backend.Services.Sample.Data.SQL</name>
+    </assembly>
+    <members>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Setup.ISetupService">
+            <summary>
+            Интерфейс сервиса настройки.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Setup.ISetupService.MigrateDatabase">
+            <summary>
+            Мигрировать базу данных.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Setup.ISetupService.SeedTestData">
+            <summary>
+            Засеять тестовые данные.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Setup.SetupAppModule">
+            <summary>
+            Модуль настройки приложения.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Setup.SetupAppModule.#ctor(Microsoft.Extensions.Configuration.IConfigurationSection)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="configurationSection">Раздел конфигурации.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Setup.SetupAppModule.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Setup.SetupAppModule.GetExports">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Setup.SetupOptions">
+            <summary>
+            Параметры настройки.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Setup.SetupOptions.ConnectionStringName">
+            <summary>
+            Имя строки подключения.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions">
+            <summary>
+            Параметры типов.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions.DummyMain">
+            <summary>
+            Сущность "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions.DummyMainDummyManyToMany">
+            <summary>
+            Сущность "Фиктивное отношение многие ко многим фиктивного главного".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions.DummyManyToMany">
+            <summary>
+            Сущность "Фиктивное отношение многие ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions.DummyManyToOne">
+            <summary>
+            Сущность "Фиктивное отношение многие ко одному".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions.DummyOneToMany">
+            <summary>
+            Сущность "Фиктивное отношение один ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions.DummyTree">
+            <summary>
+            Сущность "Фиктивное дерево".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions.DummyTreeLink">
+            <summary>
+            Сущность "Связь фиктивного дерева".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions.InternalDomain">
+            <summary>
+            Сущность "Внутренний домен".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions.InternalPermission">
+            <summary>
+            Сущность "Внутреннее разрешение".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions.User">
+            <summary>
+            Сущность "Пользователь".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions.UserInternalPermission">
+            <summary>
+            Сущность "Внутреннее разрешение пользователя".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMainDummyManyToMany.DummyMainDummyManyToManyTypeEntity">
+            <summary>
+            Сущность типа "Фиктивное отношение многие ко многим фиктивного главного".
+            
+            Служит для соединения экземпляров сущностей "Фиктивное главное" и
+            "Фиктивное отношение многие ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMainDummyManyToMany.DummyMainDummyManyToManyTypeEntity.DummyMainId">
+            <summary>
+            Идентификатор экземпляра сущности "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMainDummyManyToMany.DummyMainDummyManyToManyTypeEntity.DummyManyToManyId">
+            <summary>
+            Идентификатор экземпляра сущности "Фиктивное отношение многие ко многим".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMainDummyManyToMany.DummyMainDummyManyToManyTypeLoader">
+            <summary>
+            Загрузчик типа "Фиктивное отношение многие ко многим фиктивного главного".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMainDummyManyToMany.DummyMainDummyManyToManyTypeLoader.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMainDummyManyToMany.DummyMainDummyManyToManyTypeEntity)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMainDummyManyToMany.DummyMainDummyManyToManyTypeLoader.Load(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMainDummyManyToMany.DummyMainDummyManyToManyTypeEntity,System.Collections.Generic.HashSet{System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMainDummyManyToMany.DummyMainDummyManyToManyTypeLoader.CreateAllPropertiesToLoad">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMainDummyManyToMany.DummyMainDummyManyToManyTypeOptions">
+            <summary>
+            Параметры типа "Фиктивное отношение многие ко многим фиктивного главного".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMainDummyManyToMany.DummyMainDummyManyToManyTypeOptions.DbColumnForDummyMainId">
+            <summary>
+            Колонка в базе данных для поля "DummyMainId".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMainDummyManyToMany.DummyMainDummyManyToManyTypeOptions.DbColumnForDummyManyToManyId">
+            <summary>
+            Колонка в базе данных для поля "DummyManyToManyId".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMainDummyManyToMany.DummyMainDummyManyToManyTypeOptions.DbForeignKeyToDummyMain">
+            <summary>
+            Внешний ключ в базе данных к типу "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMainDummyManyToMany.DummyMainDummyManyToManyTypeOptions.DbForeignKeyToDummyManyToMany">
+            <summary>
+            Внешний ключ в базе данных к типу "Фиктивное отношение многие ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMainDummyManyToMany.DummyMainDummyManyToManyTypeOptions.DbIndexForDummyManyToManyId">
+            <summary>
+            Индекс в базе данных для поля "DummyManyToManyId".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMainDummyManyToMany.DummyMainDummyManyToManyTypeOptions.DbPrimaryKey">
+            <summary>
+            Первичный ключ в базе данных.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMainDummyManyToMany.DummyMainDummyManyToManyTypeOptions.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions,Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeOptions,Makc2023.Backend.Common.Data.SQL.IDefaults,System.String,System.String)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="dummyMainTypeOptions">Параметры типа "Фиктивное главное".</param>
+            <param name="dummyManyToManyTypeOptions">Параметры типа "Фиктивное отношение многие ко многим".</param>
+            <param name="defaults">Значения по умолчанию.</param>
+            <param name="dbTable">Таблица в базе данных.</param>
+            <param name="dbSchema">Схема в базе данных.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity">
+            <summary>
+            Сущность типа "Фиктивное главное".
+            
+            Содержит в себе свойства наиболее распространённых типов данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity.Id">
+            <summary>
+            Идентификатор.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity.Name">
+            <summary>
+            Имя.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity.DummyOneToManyId">
+            <summary>
+            Идентификатор экземпляра сущности "Фиктивное отношение один ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity.PropBoolean">
+            <summary>
+            Свойство, содержащее логическое значение.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity.PropBooleanNullable">
+            <summary>
+            Свойство, содержащее логическое значение или NULL.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity.PropDate">
+            <summary>
+            Свойство, содержащее дату.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity.PropDateNullable">
+            <summary>
+            Свойство, содержащее дату или NULL.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity.PropDateTime">
+            <summary>
+            Свойство, содержащее дату и время с часовым поясом.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity.PropDateTimeNullable">
+            <summary>
+            Свойство, содержащее дату и время с часовым поясом или NULL.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity.PropDecimal">
+            <summary>
+            Свойство, содержащее десятичную дробь.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity.PropDecimalNullable">
+            <summary>
+            Свойство, содержащее десятичную дробь или NULL.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity.PropInt32">
+            <summary>
+            Свойство, содержащее 32-битное целое число.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity.PropInt32Nullable">
+            <summary>
+            Свойство, содержащее 32-битное целое число или NULL.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity.PropInt64">
+            <summary>
+            Свойство, содержащее 64-битное целое число.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity.PropInt64Nullable">
+            <summary>
+            Свойство, содержащее 64-битное целое число или NULL.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity.PropString">
+            <summary>
+            Свойство, содержащее строку.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity.PropStringNullable">
+            <summary>
+            Свойство, содержащее строку или NULL.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeLoader">
+            <summary>
+            Загрузчик типа "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeLoader.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeLoader.Load(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity,System.Collections.Generic.HashSet{System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeLoader.CreateAllPropertiesToLoad">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions">
+            <summary>
+            Параметры типа "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbColumnForId">
+            <summary>
+            Колонка в базе данных для поля "Id".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbColumnForName">
+            <summary>
+            Колонка в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbColumnForDummyOneToManyId">
+            <summary>
+            Колонка в базе данных для поля "DummyOneToManyId".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbColumnForPropBoolean">
+            <summary>
+            Колонка в базе данных для поля "PropBoolean".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbColumnForPropBooleanNullable">
+            <summary>
+            Колонка в базе данных для поля "PropBooleanNullable".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbColumnForPropDate">
+            <summary>
+            Колонка в базе данных для поля "PropDate".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbColumnForPropDateNullable">
+            <summary>
+            Колонка в базе данных для поля "PropDateNullable".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbColumnForPropDateTime">
+            <summary>
+            Колонка в базе данных для поля "PropDateTime".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbColumnForPropDateTimeNullable">
+            <summary>
+            Колонка в базе данных для поля "PropDateTimeNullable".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbColumnForPropDecimal">
+            <summary>
+            Колонка в базе данных для поля "PropDecimal".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbColumnForPropDecimalNullable">
+            <summary>
+            Колонка в базе данных для поля "PropDecimalNullable".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbColumnForPropInt32">
+            <summary>
+            Колонка в базе данных для поля "PropInt32".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbColumnForPropInt32Nullable">
+            <summary>
+            Колонка в базе данных для поля "PropInt32Nullable".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbColumnForPropInt64">
+            <summary>
+            Колонка в базе данных для поля "PropInt64".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbColumnForPropInt64Nullable">
+            <summary>
+            Колонка в базе данных для поля "PropInt64Nullable".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbColumnForPropString">
+            <summary>
+            Колонка в базе данных для поля "PropString".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbColumnForPropStringNullable">
+            <summary>
+            Колонка в базе данных для поля "PropStringNullable".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbForeignKeyToDummyOneToMany">
+            <summary>
+            Внешний ключ в базе данных к типу "Фиктивное отношение один ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbIndexForDummyOneToManyId">
+            <summary>
+            Индекс в базе данных для поля "DummyOneToManyId".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbMaxLengthForName">
+            <summary>
+            Максимальная длина в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbPrimaryKey">
+            <summary>
+            Первичный ключ в базе данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.DbUniqueIndexForNameAndDummyOneToManyId">
+            <summary>
+            Уникальный индекс в базе данных для полей "Name" и "DummyOneToManyId".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeOptions,Makc2023.Backend.Common.Data.SQL.IDefaults,System.String,System.String)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="dummyOneToManyTypeOptions">Параметры типа "Фиктивное отношение один ко многим".</param>
+            <param name="defaults">Значения по умолчанию.</param>
+            <param name="dbTable">Таблица в базе данных.</param>
+            <param name="dbSchema">Схема в базе данных.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeEntity">
+            <summary>
+            Сущность типа "Фиктивное отношение многие ко многим".
+            
+            Служит для демонстрации связи многих экземпляров одной сущности
+            со многими экземплярами другой сущности.
+            
+            Многие экземпляры сущности "Фиктивное отношение многие ко многим"
+            связаны со многими экземплярами сущности "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeEntity.Id">
+            <summary>
+            Идентификатор.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeEntity.Name">
+            <summary>
+            Имя.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeLoader">
+            <summary>
+            Загрузчик типа "Фиктивное отношение многие ко многим".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeLoader.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeEntity)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeLoader.Load(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeEntity,System.Collections.Generic.HashSet{System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeLoader.CreateAllPropertiesToLoad">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeOptions">
+            <summary>
+            Параметры типа "Фиктивное отношение многие ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeOptions.DbColumnForId">
+            <summary>
+            Колонка в базе данных для поля "Id".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeOptions.DbColumnForName">
+            <summary>
+            Колонка в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeOptions.DbMaxLengthForName">
+            <summary>
+            Максимальная длина в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeOptions.DbPrimaryKey">
+            <summary>
+            Первичный ключ в базе данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeOptions.DbUniqueIndexForName">
+            <summary>
+            Уникальный индекс в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany.DummyManyToManyTypeOptions.#ctor(Makc2023.Backend.Common.Data.SQL.IDefaults,System.String,System.String)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="defaults">Значения по умолчанию.</param>
+            <param name="dbTable">Таблица в базе данных.</param>
+            <param name="dbSchema">Схема в базе данных.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeEntity">
+            <summary>
+            Сущность типа "Фиктивное отношение многие к одному".
+            
+            Служит для демонстрации связи многих экземпляров одной сущности
+            со одним экземпляром другой сущности.
+            
+            Многие экземпляры сущности "Фиктивное отношение многие к одному"
+            связаны с одним экземпляром сущности "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeEntity.Id">
+            <summary>
+            Идентификатор.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeEntity.Name">
+            <summary>
+            Имя.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeEntity.DummyMainId">
+            <summary>
+            Идентификатор экземпляра сущности "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeLoader">
+            <summary>
+            Загрузчик типа "Фиктивное отношение многие к одному".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeLoader.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeEntity)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeLoader.Load(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeEntity,System.Collections.Generic.HashSet{System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeLoader.CreateAllPropertiesToLoad">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeOptions">
+            <summary>
+            Параметры типа "Фиктивное отношение многие к одному".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeOptions.DbColumnForId">
+            <summary>
+            Колонка в базе данных для поля "Id".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeOptions.DbColumnForName">
+            <summary>
+            Колонка в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeOptions.DbColumnForDummyMainId">
+            <summary>
+            Колонка в базе данных для поля "DummyMainId".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeOptions.DbForeignKeyToDummyMain">
+            <summary>
+            Внешний ключ в базе данных к типу "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeOptions.DbIndexForDummyMainId">
+            <summary>
+            Индекс в базе данных для поля "DummyMainId".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeOptions.DbMaxLengthForName">
+            <summary>
+            Максимальная длина в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeOptions.DbPrimaryKey">
+            <summary>
+            Первичный ключ в базе данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeOptions.DbUniqueIndexForName">
+            <summary>
+            Уникальный индекс в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToOne.DummyManyToOneTypeOptions.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeOptions,Makc2023.Backend.Common.Data.SQL.IDefaults,System.String,System.String)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="dummyMainTypeOptions">Параметры типа "Фиктивное главное".</param>
+            <param name="defaults">Значения по умолчанию.</param>
+            <param name="dbTable">Таблица в базе данных.</param>
+            <param name="dbSchema">Схема в базе данных.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeEntity">
+             <summary>
+             Сущность типа "Фиктивное отношение один ко многим".
+             
+             Служит для демонстрации связи одного экземпляра одной сущности
+             со многими экземплярами другой сущности.
+            
+             Один экземпляр сущности "Фиктивное отношение один ко многим"
+             связан со многими экземплярами сущности "Фиктивное главное".
+             </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeEntity.Id">
+            <summary>
+            Идентификатор.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeEntity.Name">
+            <summary>
+            Имя.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeLoader">
+            <summary>
+            Загрузчик типа "Фиктивное отношение один ко многим".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeLoader.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeEntity)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeLoader.Load(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeEntity,System.Collections.Generic.HashSet{System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeLoader.CreateAllPropertiesToLoad">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeOptions">
+            <summary>
+            Параметры типа "Фиктивное отношение один ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeOptions.DbColumnForId">
+            <summary>
+            Колонка в базе данных для поля "Id".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeOptions.DbColumnForName">
+            <summary>
+            Колонка в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeOptions.DbMaxLengthForName">
+            <summary>
+            Максимальная длина в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeOptions.DbPrimaryKey">
+            <summary>
+            Первичный ключ в базе данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeOptions.DbUniqueIndexForName">
+            <summary>
+            Уникальный индекс в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany.DummyOneToManyTypeOptions.#ctor(Makc2023.Backend.Common.Data.SQL.IDefaults,System.String,System.String)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="defaults">Значения по умолчанию.</param>
+            <param name="dbTable">Таблица в базе данных.</param>
+            <param name="dbSchema">Схема в базе данных.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTreeLink.DummyTreeLinkTypeEntity">
+            <summary>
+            Сущность типа "Связь фиктивного дерева".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTreeLink.DummyTreeLinkTypeEntity.Id">
+            <summary>
+            Идентификатор.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTreeLink.DummyTreeLinkTypeEntity.ParentId">
+            <summary>
+            Идентификатор родителя.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTreeLink.DummyTreeLinkTypeLoader">
+            <summary>
+            Загрузчик типа "Связь фиктивного дерева".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTreeLink.DummyTreeLinkTypeLoader.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTreeLink.DummyTreeLinkTypeEntity)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTreeLink.DummyTreeLinkTypeLoader.Load(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTreeLink.DummyTreeLinkTypeEntity,System.Collections.Generic.HashSet{System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTreeLink.DummyTreeLinkTypeLoader.CreateAllPropertiesToLoad">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTreeLink.DummyTreeLinkTypeOptions">
+            <summary>
+            Параметры типа "Связь фиктивного дерева".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTreeLink.DummyTreeLinkTypeOptions.DbColumnForId">
+            <summary>
+            Колонка в базе данных для поля "Id".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTreeLink.DummyTreeLinkTypeOptions.DbColumnForParentId">
+            <summary>
+            Колонка в базе данных для поля "ParentId".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTreeLink.DummyTreeLinkTypeOptions.DbForeignKeyToDummyTree">
+            <summary>
+            Внешний ключ в базе данных к типу "Фиктивное дерево".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTreeLink.DummyTreeLinkTypeOptions.DbPrimaryKey">
+            <summary>
+            Первичный ключ в базе данных.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTreeLink.DummyTreeLinkTypeOptions.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions,Makc2023.Backend.Common.Data.SQL.IDefaults,System.String,System.String)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="dummyTreeTypeOptions">Параметры типа "Фиктивное дерево".</param>
+            <param name="defaults">Значения по умолчанию в базе данных.</param>
+            <param name="dbTable">Таблица в базе данных.</param>
+            <param name="dbSchema">Схема в базе данных.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeEntity">
+            <summary>
+            Сущность типа "Фиктивное дерево".
+            
+            Служит для демонстрации иерархической структуры данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeEntity.Id">
+            <summary>
+            Идентификатор.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeEntity.Name">
+            <summary>
+            Имя.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeEntity.ParentId">
+            <summary>
+            Идентификатор родителя.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeEntity.TreeChildCount">
+            <summary>
+            Число детей в дереве.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeEntity.TreeDescendantCount">
+            <summary>
+            Число потомков в дереве.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeEntity.TreeLevel">
+            <summary>
+            Уровень в дереве.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeEntity.TreePath">
+            <summary>
+            Путь в дереве.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeEntity.TreePosition">
+            <summary>
+            Позиция в дереве.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeEntity.TreeSort">
+            <summary>
+            Сортировка в дереве.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeLoader">
+            <summary>
+            Загрузчик типа "Фиктивное дерево".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeLoader.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeEntity)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeLoader.Load(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeEntity,System.Collections.Generic.HashSet{System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeLoader.CreateAllPropertiesToLoad">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions">
+            <summary>
+            Параметры типа "Фиктивное дерево".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions.DbColumnForId">
+            <summary>
+            Колонка в базе данных для поля "Id".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions.DbColumnForName">
+            <summary>
+            Колонка в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions.DbColumnForParentId">
+            <summary>
+            Колонка в базе данных для поля "ParentId".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions.DbColumnForTreeChildCount">
+            <summary>
+            Колонка в базе данных для поля "TreeChildCount".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions.DbColumnForTreeDescendantCount">
+            <summary>
+            Колонка в базе данных для поля "TreeDescendantCount".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions.DbColumnForTreeLevel">
+            <summary>
+            Колонка в базе данных для поля "TreeLevel".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions.DbColumnForTreePath">
+            <summary>
+            Колонка в базе данных для поля "TreePath".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions.DbColumnForTreePosition">
+            <summary>
+            Колонка в базе данных для поля "TreePosition".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions.DbColumnForTreeSort">
+            <summary>
+            Колонка в базе данных для поля "TreeSort".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions.DbForeignKeyToDummyTreeParent">
+            <summary>
+            Внешний ключ в базе данных к родительскому типу "Фиктивное дерево".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions.DbIndexForParentId">
+            <summary>
+            Индекс в базе данных для поля "ParentId".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions.DbIndexForTreeSort">
+            <summary>
+            Индекс в базе данных для поля "TreeSort".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions.DbMaxLengthForName">
+            <summary>
+            Максимальная длина в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions.DbMaxLengthForTreePath">
+            <summary>
+            Максимальная длина в базе данных для поля "TreePath".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions.DbMaxLengthForTreeSort">
+            <summary>
+            Максимальная длина в базе данных для поля "TreeSort".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions.DbPrimaryKey">
+            <summary>
+            Первичный ключ в базе данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions.DbUniqueIndexForNameAndParentId">
+            <summary>
+            Индекс в базе данных для полей "Name" и "ParentId".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyTree.DummyTreeTypeOptions.#ctor(Makc2023.Backend.Common.Data.SQL.IDefaults,System.String,System.String)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="defaults">Значения по умолчанию.</param>
+            <param name="dbTable">Таблица в базе данных.</param>
+            <param name="dbSchema">Схема в базе данных.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeEntity">
+            <summary>
+            Сущность типа "Внутренний домен".
+            
+            Часть бизнес-логики сервиса, на действия с которой пользователю требуются разрешения.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeEntity.Id">
+            <summary>
+            Идентификатор.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeEntity.Name">
+            <summary>
+            Имя.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeLoader">
+            <summary>
+            Загрузчик типа "Внутренний домен".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeLoader.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeEntity)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeLoader.Load(Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeEntity,System.Collections.Generic.HashSet{System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeLoader.CreateAllPropertiesToLoad">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeOptions">
+            <summary>
+            Параметры типа "Внутренний домен".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeOptions.DbColumnForId">
+            <summary>
+            Колонка в базе данных для поля "Id".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeOptions.DbColumnForName">
+            <summary>
+            Колонка в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeOptions.DbMaxLengthForName">
+            <summary>
+            Максимальная длина в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeOptions.DbPrimaryKey">
+            <summary>
+            Первичный ключ в базе данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeOptions.DbUniqueIndexForName">
+            <summary>
+            Уникальный индекс в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeOptions.#ctor(Makc2023.Backend.Common.Data.SQL.IDefaults,System.String,System.String)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="defaults">Значения по умолчанию.</param>
+            <param name="dbTable">Таблица в базе данных.</param>
+            <param name="dbSchema">Схема в базе данных.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeEntity">
+            <summary>
+            Сущность типа "Внутреннее разрешение".
+            
+            Разрешение внутри сервиса на действие во внутреннем домене.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeEntity.Id">
+            <summary>
+            Идентификатор.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeEntity.Name">
+            <summary>
+            Имя.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeEntity.InternalDomainId">
+            <summary>
+            Идентификатор экземпляра сущности "Внутренний домен".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeLoader">
+            <summary>
+            Загрузчик типа "Внутреннее разрешение".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeLoader.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeEntity)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeLoader.Load(Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeEntity,System.Collections.Generic.HashSet{System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeLoader.CreateAllPropertiesToLoad">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeOptions">
+            <summary>
+            Параметры типа "Внутреннее разрешение".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeOptions.DbColumnForId">
+            <summary>
+            Колонка в базе данных для поля "Id".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeOptions.DbColumnForName">
+            <summary>
+            Колонка в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeOptions.DbColumnForInternalDomainId">
+            <summary>
+            Колонка в базе данных для поля "InternalDomainId".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeOptions.DbForeignKeyToInternalDomain">
+            <summary>
+            Внешний ключ в базе данных к типу "Внутренний домен".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeOptions.DbIndexForInternalDomainId">
+            <summary>
+            Индекс в базе данных для поля "InternalDomainId".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeOptions.DbMaxLengthForName">
+            <summary>
+            Максимальная длина в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeOptions.DbPrimaryKey">
+            <summary>
+            Первичный ключ в базе данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeOptions.DbUniqueIndexForName">
+            <summary>
+            Уникальный индекс в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeOptions.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalDomain.InternalDomainTypeOptions,Makc2023.Backend.Common.Data.SQL.IDefaults,System.String,System.String)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="internalDomainTypeOptions">Параметры типа "Внутренний домен".</param>
+            <param name="defaults">Значения по умолчанию.</param>
+            <param name="dbTable">Таблица в базе данных.</param>
+            <param name="dbSchema">Схема в базе данных.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.UserInternalPermission.UserInternalPermissionTypeEntity">
+             <summary>
+             Сущность типа "Внутреннее разрешение пользователя".
+             
+             Связывает экземпляр сущности "Пользователь" с экземпляром сущности "Внутреннее разрешение".
+            
+             Используется для разграничения прав доступа в доменах сервиса.
+             </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.UserInternalPermission.UserInternalPermissionTypeEntity.UserId">
+            <summary>
+            Идентификатор экземпляра сущности "Пользователь".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.UserInternalPermission.UserInternalPermissionTypeEntity.InternalPermissionId">
+            <summary>
+            Идентификатор экземпляра сущности "Внутреннее разрешение".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.UserInternalPermission.UserInternalPermissionTypeLoader">
+            <summary>
+            Загрузчик типа "Внутреннее разрешение пользователя".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.UserInternalPermission.UserInternalPermissionTypeLoader.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.UserInternalPermission.UserInternalPermissionTypeEntity)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.UserInternalPermission.UserInternalPermissionTypeLoader.Load(Makc2023.Backend.Services.Sample.Data.SQL.Types.UserInternalPermission.UserInternalPermissionTypeEntity,System.Collections.Generic.HashSet{System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.UserInternalPermission.UserInternalPermissionTypeLoader.CreateAllPropertiesToLoad">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.UserInternalPermission.UserInternalPermissionTypeOptions">
+            <summary>
+            Параметры типа "Внутреннее разрешение пользователя".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.UserInternalPermission.UserInternalPermissionTypeOptions.DbColumnForUserId">
+            <summary>
+            Колонка в базе данных для поля "UserId".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.UserInternalPermission.UserInternalPermissionTypeOptions.DbColumnForInternalPermissionId">
+            <summary>
+            Колонка в базе данных для поля "InternalPermissionId".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.UserInternalPermission.UserInternalPermissionTypeOptions.DbForeignKeyToUser">
+            <summary>
+            Внешний ключ в базе данных к типу "Пользователь".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.UserInternalPermission.UserInternalPermissionTypeOptions.DbForeignKeyToInternalPermission">
+            <summary>
+            Внешний ключ в базе данных к типу "Внутреннее разрешение".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.UserInternalPermission.UserInternalPermissionTypeOptions.DbIndexForInternalPermissionId">
+            <summary>
+            Индекс в базе данных для поля "InternalPermissionId".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.UserInternalPermission.UserInternalPermissionTypeOptions.DbPrimaryKey">
+            <summary>
+            Первичный ключ в базе данных.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.UserInternalPermission.UserInternalPermissionTypeOptions.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeOptions,Makc2023.Backend.Services.Sample.Data.SQL.Types.InternalPermission.InternalPermissionTypeOptions,Makc2023.Backend.Common.Data.SQL.IDefaults,System.String,System.String)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="userTypeOptions">Параметры типа "Пользователь".</param>
+            <param name="internalPermissionTypeOptions">Параметры типа "Внутреннее разрешение".</param>
+            <param name="defaults">Значения по умолчанию.</param>
+            <param name="dbTable">Таблица в базе данных.</param>
+            <param name="dbSchema">Схема в базе данных.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeEntity">
+            <summary>
+            Сущность типа "Пользователь".
+            
+            Учётная запись, используемая приложением для проверки прав доступа.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeEntity.Id">
+            <summary>
+            Идентификатор.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeEntity.Name">
+            <summary>
+            Имя.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeEntity.Email">
+            <summary>
+            Адрес электронной почты.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeEntity.IsBlocked">
+            <summary>
+            Признак блокировки.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeLoader">
+            <summary>
+            Загрузчик типа "Пользователь".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeLoader.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeEntity)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeLoader.Load(Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeEntity,System.Collections.Generic.HashSet{System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeLoader.CreateAllPropertiesToLoad">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeOptions">
+            <summary>
+            Параметры типа "Пользователь".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeOptions.DbColumnForId">
+            <summary>
+            Колонка в базе данных для поля "Id".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeOptions.DbColumnForName">
+            <summary>
+            Колонка в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeOptions.DbColumnForEmail">
+            <summary>
+            Колонка в базе данных для поля "Email".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeOptions.DbColumnForIsBlocked">
+            <summary>
+            Колонка в базе данных для поля "IsBlocked".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeOptions.DbMaxLengthForName">
+            <summary>
+            Максимальная длина в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeOptions.DbMaxLengthForEmail">
+            <summary>
+            Максимальная длина в базе данных для поля "Email".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeOptions.DbPrimaryKey">
+            <summary>
+            Первичный ключ в базе данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeOptions.DbUniqueIndexForName">
+            <summary>
+            Уникальный индекс в базе данных для поля "Name".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeOptions.DbUniqueIndexForEmail">
+            <summary>
+            Уникальный индекс в базе данных для поля "Email".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Types.User.UserTypeOptions.#ctor(Makc2023.Backend.Common.Data.SQL.IDefaults,System.String,System.String,System.String)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="defaults">Значения по умолчанию.</param>
+            <param name="dbTable">Таблица в базе данных.</param>
+            <param name="dbSchema">Схема в базе данных.</param>
+            <param name="dbColumnNameForEmail">Колонка в базе данных для поля "Email".</param>
+        </member>
+    </members>
+</doc>

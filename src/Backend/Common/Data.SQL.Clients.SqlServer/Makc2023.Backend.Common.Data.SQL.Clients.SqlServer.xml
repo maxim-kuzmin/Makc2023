@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Makc2023.Backend.Common.Data.SQL.Clients.SqlServer</name>
+    </assembly>
+    <members>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults">
+            <summary>
+            Значения по умолчанию клиента.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults.DbColumnForId">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults.DbColumnForName">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults.DbColumnForParentId">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults.DbColumnForTreeChildCount">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults.DbColumnForTreeDescendantCount">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults.DbColumnForTreeLevel">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults.DbColumnForTreePath">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults.DbColumnForTreePosition">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults.DbColumnForTreeSort">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults.DbColumnPartsSeparator">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults.DbForeignKeyPrefix">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults.DbIndexPrefix">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults.DbPrimaryKeyPrefix">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults.DbSchema">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults.DbSequenceSuffix">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults.DbUniqueIndexPrefix">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults.FullNamePartsSeparator">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientDefaults.NamePartsSeparator">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientProvider">
+            <summary>
+            Поставщик клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientProvider.CreateDbParameter(System.String,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientProvider.CreateDbCommand(System.Data.Common.DbConnection,System.Data.Common.DbParameter[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientProvider.CreateDbConnection(System.String,System.Func{System.String,System.String})">
+            <inheritdoc/>   
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientProvider.CreateQueryIdentityReseedBuilder">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientProvider.CreateQueryTreeCalculateBuilder">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientProvider.CreateQueryTreeTriggerBuilder">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.ClientProvider.GetSqlFilestreamHandle(System.String,Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.Filestream.ClientFilestreamAccess,System.Byte[])">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.Commands.Identity.Reseed.ClientIdentityReseedCommandBuilder">
+            <summary>
+            Построитель команды на повторное заполнение идентичности клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.Commands.Identity.Reseed.ClientIdentityReseedCommandBuilder.GetResultSql">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.Commands.Tree.Calculate.ClientTreeCalculateCommandBuilder">
+            <summary>
+            Построитель команды на вычисление дерева клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.Commands.Tree.Calculate.ClientTreeCalculateCommandBuilder.GetResultSql">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.Commands.Tree.Trigger.ClientTreeTriggerCommandBuilder">
+            <summary>
+            Построитель команды на срабатывание триггера дерева клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.Commands.Tree.Trigger.ClientTreeTriggerCommandBuilder.GetResultSql">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.Filestream.ClientFilestreamAccess">
+            <summary>
+            Доступ к файловому потоку клиента.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.Filestream.ClientFilestreamAccess.Read">
+            <summary>
+            Прочитать.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.Filestream.ClientFilestreamAccess.Write">
+            <summary>
+            Записать.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.Filestream.ClientFilestreamAccess.ReadWrite">
+            <summary>
+            Прочитать и записать.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.IClientProvider">
+            <summary>
+             Интерфейс поставщика клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.IClientProvider.GetSqlFilestreamHandle(System.String,Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.Filestream.ClientFilestreamAccess,System.Byte[])">
+            <summary>
+            Получить указатель на файловый поток базы данных SQL Server.
+            </summary>
+            <param name="filePath">Путь к файлу.</param>
+            <param name="access">Уровень доступа.</param>
+            <param name="txnToken">Токен контекста транзакции.</param>
+            <returns>Указатель на файловый поток базы данных SQL Server.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.Setup.ClientSetupAppModule">
+            <summary>
+            Модуль настройки приложения клиента.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.Setup.ClientSetupAppModule.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Clients.SqlServer.Setup.ClientSetupAppModule.GetExports">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

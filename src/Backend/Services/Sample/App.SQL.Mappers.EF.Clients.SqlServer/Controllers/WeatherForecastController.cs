@@ -6,7 +6,7 @@ namespace Makc2023.Backend.Services.Sample.App.SQL.Mappers.EF.Clients.SqlServer.
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] _Summaries = new[]
+        private static readonly string[] _summaries = new[]
         {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
@@ -25,7 +25,7 @@ namespace Makc2023.Backend.Services.Sample.App.SQL.Mappers.EF.Clients.SqlServer.
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                 TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = _Summaries[Random.Shared.Next(_Summaries.Length)]
+                Summary = _summaries[Random.Shared.Next(_summaries.Length)]
             })
             .ToArray();
         }

@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Makc2023.Backend.Common.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:Makc2023.Backend.Common.Domain.Entity`1">
+            <summary>
+            Сущность.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.Entity`1.op_Equality(Makc2023.Backend.Common.Domain.Entity{`0},Makc2023.Backend.Common.Domain.Entity{`0})">
+            <summary>
+            Оператор равенства.
+            </summary>
+            <param name="left">Левый операнд.</param>
+            <param name="right">Правый операнд.</param>
+            <returns>Результат проверки на равенство.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.Entity`1.op_Inequality(Makc2023.Backend.Common.Domain.Entity{`0},Makc2023.Backend.Common.Domain.Entity{`0})">
+            <summary>
+            Оператор неравенства.
+            </summary>
+            <param name="left">Левый операнд.</param>
+            <param name="right">Правый операнд.</param>
+            <returns>Результат проверки на неравенство.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.Entity`1.AddEvent(MediatR.INotification)">
+            <summary>
+            Добавить событие.
+            </summary>
+            <param name="eventItem"></param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.Entity`1.ClearEvents">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.Entity`1.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.Entity`1.GetEvents">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.Entity`1.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.Entity`1.IsTransient">
+            <summary>
+            Проверить на транзитивность.
+            </summary>
+            <returns>Признак транзитивности.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.Entity`1.RemoveEvent(MediatR.INotification)">
+            <summary>
+            Удалить событие.
+            </summary>
+            <param name="eventItem">Событие.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.Entity`1.GetId">
+            <summary>
+            Получить идентификатор.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Domain.Enumeration">
+            <summary>
+            Перечисление.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Domain.Enumeration.Id">
+            <summary>
+            Идентификатор.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Domain.Enumeration.Name">
+            <summary>
+            Имя.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.Enumeration.#ctor(System.Int32,System.String)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="id">Идентификатор.</param>
+            <param name="name">Имя.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.Enumeration.AbsoluteDifference(Makc2023.Backend.Common.Domain.Enumeration,Makc2023.Backend.Common.Domain.Enumeration)">
+            <summary>
+            Абсолютная разница.
+            </summary>
+            <param name="firstValue">Первое значение.</param>
+            <param name="secondValue">Второе значение.</param>
+            <returns>Разница между первым и вторым значением.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.Enumeration.CompareTo(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.Enumeration.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.Enumeration.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.Enumeration.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Domain.IAggregateRoot">
+            <summary>
+            Интерфейс, который предназначен для обозначения корня агрегата.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Domain.IEntity">
+            <summary>
+            Интерфейс сущности.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.IEntity.ClearEvents">
+            <summary>
+            Очистить события.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.IEntity.GetEvents">
+            <summary>
+            Получить события.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Domain.IRepository`1">
+            <summary>
+            Интерфейс репозитория.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Domain.IRepository`1.UnitOfWork">
+            <summary>
+            Единица работы.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Domain.IUnitOfWork">
+            <summary>
+            Интерфейс единицы работы.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.IUnitOfWork.SaveChangesAsync(System.Threading.CancellationToken)">
+            <summary>
+            Сохранить изменения асинхронно.
+            </summary>
+            <param name="cancellationToken">Токен отмены.</param>
+            <returns>Количество сохранённых записей.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.IUnitOfWork.SaveEntitiesAsync(System.Threading.CancellationToken)">
+            <summary>
+            Сохранить сущности асинхронно.
+            </summary>
+            <param name="cancellationToken">Токен отмены.</param>
+            <returns>Признак успешного сохранения.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Domain.Mediator.Behaviors.MediatorLoggingBehavior`2">
+            <summary>
+            Поведение логирующего посредника.
+            </summary>
+            <typeparam name="TRequest">Тип запроса.</typeparam>
+            <typeparam name="TResponse">Тип отклика.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.Mediator.Behaviors.MediatorLoggingBehavior`2.#ctor(Microsoft.Extensions.Logging.ILogger{Makc2023.Backend.Common.Domain.Mediator.Behaviors.MediatorLoggingBehavior{`0,`1}})">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="logger">Регистратор.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.Mediator.Behaviors.MediatorLoggingBehavior`2.Handle(`0,MediatR.RequestHandlerDelegate{`1},System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Domain.Setup.SetupAppModule">
+            <summary>
+            Модуль настройки приложения.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Domain.ValueObject">
+            <summary>
+            Объект-значение.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.ValueObject.EqualOperator(Makc2023.Backend.Common.Domain.ValueObject,Makc2023.Backend.Common.Domain.ValueObject)">
+            <summary>
+            Оператор сравнения на равенство.
+            </summary>
+            <param name="left">Левый операнд.</param>
+            <param name="right">Правый операнд.</param>
+            <returns>Результат сравнения.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.ValueObject.NotEqualOperator(Makc2023.Backend.Common.Domain.ValueObject,Makc2023.Backend.Common.Domain.ValueObject)">
+            <summary>
+            Оператор сравнения на неравенство.
+            </summary>
+            <param name="left">Левый операнд.</param>
+            <param name="right">Правый операнд.</param>
+            <returns>Результат сравнения.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.ValueObject.GetEqualityComponents">
+            <summary>
+            Получить компоненты для сравнения.
+            </summary>
+            <returns>Компоненты.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.ValueObject.Equals(System.Object)">
+            <summary>
+            Сравнить на равенство с объектом.
+            </summary>
+            <param name="obj">Объект.</param>
+            <returns>Результат сравнения.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.ValueObject.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.ValueObject.GetCopy">
+            <summary>
+            Получить копию.
+            </summary>
+            <returns>Копия.</returns>
+        </member>
+    </members>
+</doc>

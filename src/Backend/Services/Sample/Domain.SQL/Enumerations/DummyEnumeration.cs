@@ -52,7 +52,7 @@ public class DummyEnumeration : Enumeration
     /// <summary>
     /// Получить элемент перечисления по идентификатору.
     /// </summary>
-    /// <param name="name">Имя.</param>
+    /// <param name="id">Идентификатор.</param>
     /// <returns>Элемент перечисления.</returns>
     /// <exception cref="LocalizedException">Выбрасывается в случае, если элемент не найден.</exception>
     public static DummyEnumeration GetById(int id)

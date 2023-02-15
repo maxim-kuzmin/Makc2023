@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF</name>
+    </assembly>
+    <members>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Db.IMapperDbContextFactory`1">
+            <summary>
+            Фабрика контекста базы данных сопоставителя.
+            </summary>
+            <typeparam name="TDbContext">Тип контекста базы данных.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Db.IMapperDbContextFactory`1.CreateDbContext">
+            <summary>
+            Создать контекст базы данных.
+            </summary>
+            <returns>Контекст базы данных.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.MapperTypeConfiguration`1">
+            <summary>
+            Конфигурация типа сопоставителя.
+            </summary>
+            <typeparam name="TEntity">Тип сущности.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.MapperTypeConfiguration`1.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Setup.MapperSetupService`1">
+            <summary>
+            Сервис настройки сопоставителя.
+            </summary>
+            <typeparam name="TDbContext">Тип контекста базы данных.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Setup.MapperSetupService`1.MigrateDatabase">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Setup.MapperSetupService`1.SeedTestData">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Setup.MapperSetupService`1.CheckIfAnyDummyMainNotFound(`0)">
+            <summary>
+            Проверить, найден ли хоть один экземпляр сущности "Фиктивное главное".
+            </summary>
+            <param name="dbContext">Контекст базы данных.</param>
+            <returns>Задача на проверку.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Setup.MapperSetupService`1.CreateDbContext">
+            <summary>
+            Создать контекст базы данных.
+            </summary>
+            <returns>Контекст базы данных.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Setup.MapperSetupService`1.GetRandomIndex``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Получить случайный индекс.
+            </summary>
+            <typeparam name="T">Тип элемента.</typeparam>
+            <param name="items">Элементы.</param>
+            <returns>Индекс.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Setup.MapperSetupService`1.GetTestDummyMainIds">
+            <summary>
+            Получить идентификаторы экземпляров сущности "Фиктивное главное".
+            </summary>
+            <returns>Идентификаторы.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Setup.MapperSetupService`1.GetTestDummyManyToManyIds">
+            <summary>
+            Получить идентификаторы экземпляров сущности "Фиктивное отношение многие ко многим".
+            </summary>
+            <returns>Идентификаторы.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Setup.MapperSetupService`1.GetTestDummyOneToManyIds">
+            <summary>
+            Получить идентификаторы экземпляров сущности "Фиктивное отношение один ко многим".
+            </summary>
+            <returns>Идентификаторы.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Setup.MapperSetupService`1.SeedTestDummyManyToManyList(`0)">
+            <summary>
+            Засеять список экземпляров сущности "Фиктивное отношение многие ко многим".
+            </summary>
+            <param name="dbContext">Контекст базы данных.</param>
+            <returns>Задача на засеивание.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Setup.MapperSetupService`1.SeedTestDummyOneToManyList(`0)">
+            <summary>
+            Засеять список экземпляров сущности "Фиктивное отношение один ко многим".
+            </summary>
+            <param name="dbContext">Контекст базы данных.</param>
+            <returns>Задача на засеивание.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Setup.MapperSetupService`1.SeedTestDummyMainDummyManyToManyList(`0,System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.Int64})">
+            <summary>
+            Засеять список экземпляров сущности "Фиктивное отношение многие ко многим фиктивного главного".
+            </summary>
+            <param name="dbContext">Контекст базы данных.</param>
+            <param name="dummyMainIds">Идентификаторы экземпляров сущности "Фиктивное главное".</param>
+            <param name="dummyManyToManyIds">Идентификаторы экземпляров сущности "Фиктивное отношение многие ко многим".</param>
+            <returns>Задача на засеивание.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Setup.MapperSetupService`1.SeedTestDummyTreeList(`0)">
+            <summary>
+            Засеять список экземпляров сущности "Фиктивное дерево".
+            </summary>
+            <param name="dbContext">Контекст базы данных.</param>
+            <returns>Задача на засеивание.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Setup.MapperSetupService`1.SeedTestDummyMainList(`0,System.Collections.Generic.IEnumerable{System.Int64})">
+            <summary>
+            Засеять список экземпляров сущности "Фиктивное главное".
+            </summary>
+            <param name="dbContext">Контекст базы данных.</param>
+            <param name="dummyOneToManyIds">Идентификаторы экземпляров сущности "Фиктивное отношение один ко многим".</param>
+            <returns>Задача на засеивание.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyMainDummyManyToMany.MapperDummyMainDummyManyToManyTypeConfiguration`1">
+            <summary>
+            Конфигурация типа "Фиктивное отношение многие ко многим фиктивного главного" сопоставителя.
+            </summary>
+            <typeparam name="TEntity">Тип сущности.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyMainDummyManyToMany.MapperDummyMainDummyManyToManyTypeConfiguration`1.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyMainDummyManyToMany.MapperDummyMainDummyManyToManyTypeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyMain.MapperDummyMainTypeConfiguration`1">
+            <summary>
+            Конфигурация типа "Фиктивное главное" сопоставителя.
+            </summary>
+            <typeparam name="TEntity">Тип сущности.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyMain.MapperDummyMainTypeConfiguration`1.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyMain.MapperDummyMainTypeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyManyToMany.MapperDummyManyToManyTypeConfiguration`1">
+            <summary>
+            Конфигурация типа "Фиктивное отношение многие ко многим" сопоставителя.
+            </summary>
+            <typeparam name="TEntity">Тип сущности.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyManyToMany.MapperDummyManyToManyTypeConfiguration`1.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyManyToMany.MapperDummyManyToManyTypeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyManyToOne.MapperDummyManyToOneTypeConfiguration`1">
+            <summary>
+            Конфигурация типа "Фиктивное отношение многие к одному" сопоставителя.
+            </summary>
+            <typeparam name="TEntity">Тип сущности.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyManyToOne.MapperDummyManyToOneTypeConfiguration`1.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyManyToOne.MapperDummyManyToOneTypeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyOneToMany.MapperDummyOneToManyTypeConfiguration`1">
+            <summary>
+            Конфигурация типа "Фиктивное отношение один ко многим" сопоставителя.
+            </summary>
+            <typeparam name="TEntity">Тип сущности.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyOneToMany.MapperDummyOneToManyTypeConfiguration`1.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyOneToMany.MapperDummyOneToManyTypeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyTreeLink.MapperDummyTreeLinkTypeConfiguration`1">
+            <summary>
+            Конфигурация типа "Связь фиктивного дерева" сопоставителя.
+            </summary>
+            <typeparam name="TEntity">Тип сущности.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyTreeLink.MapperDummyTreeLinkTypeConfiguration`1.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyTreeLink.MapperDummyTreeLinkTypeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyTree.MapperDummyTreeTypeConfiguration`1">
+            <summary>
+            Конфигурация типа "Фиктивное дерево" сопоставителя.
+            </summary>
+            <typeparam name="TEntity">Тип сущности.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyTree.MapperDummyTreeTypeConfiguration`1.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.DummyTree.MapperDummyTreeTypeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.InternalDomain.MapperInternalDomainTypeConfiguration`1">
+            <summary>
+            Конфигурация типа "Внутренний домен" сопоставителя.
+            </summary>
+            <typeparam name="TEntity">Тип сущности.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.InternalDomain.MapperInternalDomainTypeConfiguration`1.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.InternalDomain.MapperInternalDomainTypeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.InternalPermission.MapperInternalPermissionTypeConfiguration`1">
+            <summary>
+            Конфигурация типа "Внутреннее разрешение" сопоставителя.
+            </summary>
+            <typeparam name="TEntity">Тип сущности.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.InternalPermission.MapperInternalPermissionTypeConfiguration`1.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.InternalPermission.MapperInternalPermissionTypeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.UserInternalPermission.MapperUserInternalPermissionTypeConfiguration`1">
+            <summary>
+            Конфигурация типа "Внутреннее разрешение пользователя" сопоставителя.
+            </summary>
+            <typeparam name="TEntity">Тип сущности.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.UserInternalPermission.MapperUserInternalPermissionTypeConfiguration`1.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.UserInternalPermission.MapperUserInternalPermissionTypeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.User.MapperUserTypeConfiguration`1">
+            <summary>
+            Конфигурация типа "Пользователь" сопоставителя.
+            </summary>
+            <typeparam name="TEntity">Тип сущности.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.User.MapperUserTypeConfiguration`1.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.TypesOptions)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Types.User.MapperUserTypeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

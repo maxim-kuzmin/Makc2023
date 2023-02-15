@@ -5,7 +5,7 @@ namespace Makc2023.Backend.Common.Core.Integration;
 /// <summary>
 /// Помощник интеграции.
 /// </summary>
-public static class IntegrationHelper
+public class IntegrationHelper
 {
     #region Public methods
 

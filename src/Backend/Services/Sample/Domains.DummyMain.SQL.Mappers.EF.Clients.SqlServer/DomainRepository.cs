@@ -19,6 +19,7 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
     /// Конструктор.
     /// </summary>
     /// <param name="dbContextFactory">Фабрика контекста базы данных.</param>
+    /// <param name="dbManager">Менеджер базы данных.</param>
     /// <param name="mediator">Посредник.</param>
     public DomainRepository(
         IClientMapperDbContextFactory dbContextFactory,

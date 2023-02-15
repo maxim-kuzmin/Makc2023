@@ -11,6 +11,9 @@ public abstract class MapperDbManager<TDbContext> : IMapperDbManager
 {
     #region Properties
 
+    /// <summary>
+    /// Ресурс.
+    /// </summary>
     protected IMapperResource Resource { get; init; }
 
     /// <summary>

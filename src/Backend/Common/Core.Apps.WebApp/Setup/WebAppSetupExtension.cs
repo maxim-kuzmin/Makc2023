@@ -14,12 +14,12 @@ public static class WebAppSetupExtension
     /// <summary>
     /// Настроить.
     /// </summary>
-    /// <param name="services">Сервисы.</param>
-    public static void Configure(this WebApplicationBuilder builder)
+    /// <param name="appBuilder">Построитель приложения.</param>
+    public static void Configure(this WebApplicationBuilder appBuilder)
     {
-        builder.Logging.ClearProviders();
+        appBuilder.Logging.ClearProviders();
 
-        builder.Host.UseNLog();
+        appBuilder.Host.UseNLog();
     }
 
     #endregion Public methods

@@ -75,7 +75,7 @@ public class ClientMapperSetupService : MapperSetupService<ClientMapperDbContext
         return DummyManyToManyList.Select(x => x.Id);
     }
 
-    //// <inheritdoc/>
+    /// <inheritdoc/>
     protected sealed override IEnumerable<long> GetTestDummyOneToManyIds()
     {
         return DummyOneToManyList.Select(x => x.Id);

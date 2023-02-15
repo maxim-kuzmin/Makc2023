@@ -9,6 +9,7 @@
 		<AssemblyName>Makc2023.Backend.Common.Core.Apps.WebApp</AssemblyName>
 		<RootNamespace>$(AssemblyName)</RootNamespace>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<DocumentationFile>$(AssemblyName).xml</DocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -20,12 +21,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="bin\Debug\net7.0\Makc2023.Backend.Common.Core.Apps.WebApp.xml" Pack="true">
+		<None Include="$(AssemblyName).xml" Pack="true">
 			<PackageCopyToOutput>true</PackageCopyToOutput>
-		</None>
-		<None Update="nlog.config.xml">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
 
+	<ItemGroup>
+		<None Update="nlog.config.xml" Pack="true">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<PackageCopyToOutput>true</PackageCopyToOutput>
+		</None>
+	</ItemGroup>
+	
 </Project>

@@ -32,6 +32,8 @@ public class DummyValueObject : ValueObject
     /// Конструктор.
     /// </summary>
     /// <param name="prop1">Свойство 1.</param>
+    /// <param name="prop2">Свойство 2.</param>
+    /// <param name="prop3">Свойство 3.</param>
     public DummyValueObject(string prop1, string prop2, string prop3) =>
         (Prop1, Prop2, Prop3) = (prop1, prop2, prop3);
 

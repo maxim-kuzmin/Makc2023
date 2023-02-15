@@ -2,6 +2,11 @@
 
 namespace Makc2023.Backend.Common.Domain.SQL.Mappers.EF.Mediator.Behaviors;
 
+/// <summary>
+/// Поведение транзакционного посредника сопоставителя.
+/// </summary>
+/// <typeparam name="TRequest">Тип запроса.</typeparam>
+/// <typeparam name="TResponse">Тип отклика.</typeparam>
 public class MapperMediatorTransactionBehavior<TRequest, TResponse> :
     IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>

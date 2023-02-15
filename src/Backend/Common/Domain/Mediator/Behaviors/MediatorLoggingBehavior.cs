@@ -2,6 +2,11 @@
 
 namespace Makc2023.Backend.Common.Domain.Mediator.Behaviors;
 
+/// <summary>
+/// Поведение логирующего посредника.
+/// </summary>
+/// <typeparam name="TRequest">Тип запроса.</typeparam>
+/// <typeparam name="TResponse">Тип отклика.</typeparam>
 public class MediatorLoggingBehavior<TRequest, TResponse> :
     IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>

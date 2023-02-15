@@ -1,0 +1,1260 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Makc2023.Backend.Common.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Makc2023.Backend.Common.Core.App.AppEnvironment">
+            <summary>
+            Окружение приложения.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.App.AppEnvironment.DefaultCulture">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.App.AppEnvironment.IsRetryEnabledByOrchestrator">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.App.AppEnvironment.SupportedCultures">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.App.AppEnvironment.#ctor">
+            <summary>
+            Конструктор.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.App.AppExtension">
+            <summary>
+            Расширение приложения.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.App.AppExtension.AddAppModules(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Collections.Generic.IEnumerable{Makc2023.Backend.Common.Core.App.AppModule})">
+            <summary>
+            Добавить модули приложения.
+            </summary>
+            <param name="services">Сервисы.</param>
+            <param name="modules">Модули.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.App.AppExtension.ConfigureLocalization(Microsoft.Extensions.Localization.LocalizationOptions)">
+            <summary>
+            Настроить опции локализации.
+            </summary>
+            <param name="options">Опции.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.App.AppHandler">
+            <summary>
+            Обработчик приложения.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.App.AppHandler.#ctor(NLog.ILogger)">
+            <summary>
+            Конструктор.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.App.AppHandler.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.App.AppHandler.OnError(System.Exception)">
+            <summary>
+            Обработать ошибку.
+            </summary>
+            <param name="exception">Исключение.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.App.AppHandler.OnStart(Makc2023.Backend.Common.Core.App.IAppEnvironment)">
+            <summary>
+            Обработать начало.
+            </summary>
+            <param name="appEnvironment">Окружение приложения.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.App.AppHandler.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.App.AppHelper">
+            <summary>
+            Помощник приложения.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.App.AppHelper.CreateConfiguration">
+            <summary>
+            Создать конфигурацию.
+            </summary>
+            <returns>Конфигурация.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.App.AppModule">
+            <summary>
+            Модуль приложения.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.App.AppModule.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Настроить сервисы.
+            </summary>
+            <param name="services">Сервисы.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.App.AppModule.GetDependencies">
+            <summary>
+            Получить зависимости.
+            </summary>
+            <returns>Зависимости.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.App.AppModule.GetExports">
+            <summary>
+            Получить экспортированные типы.
+            </summary>
+            <returns>Экспортированные типы.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.App.AppModule.GetNotImportedtTypes(System.Collections.Generic.HashSet{System.Type})">
+            <summary>
+            Получить не импортированные типы.
+            </summary>
+            <param name="allExports">Все экспортированные типы.</param>
+            <returns>Не импортированные типы.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.App.AppModule.GetImports">
+            <summary>
+            Получить импортированные типы.
+            </summary>
+            <returns>Импортированные типы.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.App.AppResource">
+            <summary>
+            Ресурс приложения.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.App.AppResource.#ctor(Microsoft.Extensions.Localization.IStringLocalizer{Makc2023.Backend.Common.Core.App.AppResource})">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="localizer">Локализатор.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.App.AppResource.GetErrorMessageForNotImportedTypes(System.Collections.Generic.IEnumerable{System.Type})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.App.IAppEnvironment">
+            <summary>
+            Интерфейс окружения приложения.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.App.IAppEnvironment.DefaultCulture">
+            <summary>
+            Культура по умолчанию.
+            Переменная окружения: "App__Language".
+            Значение по умолчанию: "ru".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.App.IAppEnvironment.IsRetryEnabledByOrchestrator">
+            <summary>
+            Признак включения повторной попытки оркестратором.
+            Переменная окружения: "App__IsRetryEnabledByOrchestrator".
+            Значение по умолчанию: "false".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.App.IAppEnvironment.SupportedCultures">
+            <summary>
+            Поддерживаемые культуры.
+            Значения: "ru", "en".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.App.IAppResource">
+            <summary>
+            Интерфейс ресурса приложения.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.App.IAppResource.GetErrorMessageForNotImportedTypes(System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            Получить сообщение об ошибке для не импортированных типов.
+            </summary>
+            <param name="types">Типы.</param>
+            <returns>Сообщение об ошибке.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Converting.ConvertingExtension">
+            <summary>
+            Расширение преобразования.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromIPToV4String(System.Net.IPAddress)">
+            <summary>
+            Преобразовать из IP-адреса версии в строковое представление версии 4.
+            </summary>
+            <param name="input">IP-адрес.</param>
+            <returns>Строковое представление IP-адреса.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromDateTimeToISO8601String(System.DateTime)">
+            <summary>
+            Преобразовать из даты и времени в строку в формате ISO8601.
+            </summary>
+            <param name="input">Дата и время.</param>
+            <returns>Строковое представление даты и времени в формате ISO8601.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromDateTimeToRoundTripString(System.DateTime)">
+            <summary>
+            Преобразовать из даты и времени в строку в формате двусторонней передачи.
+            </summary>
+            <param name="input">Дата и время.</param>
+            <returns>Строковое представление даты и времени в формате двусторонней передачи.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromDateTimeOffsetToRoundTripString(System.DateTimeOffset)">
+            <summary>
+            Преобразовать из даты и времени с часовым поясом в строку в формате двусторонней передачи.
+            </summary>
+            <param name="input">Дата и время с часовым поясом.</param>
+            <returns>Строковое представление даты и времени с часовым поясом в формате двусторонней передачи.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromRoundTripStringToDateTimeOffset(System.String)">
+            <summary>
+            Преобразовать из строки в формате двусторонней передачи в дату и время с часовым поясом.
+            </summary>
+            <param name="input">Строка в формате двусторонней передачи.</param>
+            <returns>Дата и время с часовым поясом.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromDateToString(System.DateTime,Makc2023.Backend.Common.Core.Converting.IConvertingResource)">
+            <summary>
+            Преобразовать из даты в строку.
+            </summary>
+            <param name="input">Дата.</param>
+            <param name="resource">Ресурс.</param>
+            <returns>Строковое представление даты.</returns>        
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToDate(System.String,Makc2023.Backend.Common.Core.Converting.IConvertingResource)">
+            <summary>
+            Преобразовать из строки в дату.
+            </summary>
+            <param name="input">Строковое представление даты.</param>
+            <param name="resource">Ресурс.</param>
+            <returns>Дата.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromDateNullableToString(System.Nullable{System.DateTime},Makc2023.Backend.Common.Core.Converting.IConvertingResource)">
+            <summary>
+            Преобразовать из даты или нуля в строку.
+            </summary>
+            <param name="input">Дата или нуль.</param>
+            <param name="resource">Ресурс.</param>
+            <returns>Строковое представления даты или нуля.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromSentencesToText(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Преобразовать из предложений в текст.
+            </summary>
+            <returns>Текст, состоящий из предложений.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToDateNullable(System.String,Makc2023.Backend.Common.Core.Converting.IConvertingResource)">
+            <summary>
+            Преобразовать из строки в дату или нуль.
+            </summary>
+            <param name="input">Строковое представление даты или нуля.</param>
+            <param name="resource">Ресурсы преобразования основы ядра.</param>
+            <returns>Дата или нуль.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToNumericDecimal(System.String)">
+            <summary>
+            Преобразовать из строки в дробное десятичное число.
+            </summary>
+            <param name="input">Строка.</param>
+            <returns>Десятичная дробь.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToNumericDecimalNullable(System.String)">
+            <summary>
+            Преобразовать из строки в дробное десятичное число или нуль.
+            </summary>
+            <param name="input">Строка.</param>
+            <returns>Десятичная дробь или нуль.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToNumericInt32(System.String)">
+            <summary>
+            Преобразовать из строки в 32-битное целое число.
+            </summary>
+            <param name="input">Строка.</param>
+            <returns>Целое число.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToNumericInt32Nullable(System.String)">
+            <summary>
+            Преобразовать из строки в 32-битное целое число или NULL.
+            </summary>
+            <param name="input">Строка.</param>
+            <returns>Целое число или NULL.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToNumericInt64(System.String)">
+            <summary>
+            Преобразовать из строки в 64-битное целое число.
+            </summary>
+            <param name="input">Строка.</param>
+            <returns>Целое число.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToNumericInt64Nullable(System.String)">
+            <summary>
+            Преобразовать из строки в 64-битное целое число или NULL.
+            </summary>
+            <param name="input">Строка.</param>
+            <returns>Целое число или NULL.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToNumericInt64Array(System.String)">
+            <summary>
+            Преобразовать из строки в массив 64-битных целых чисел.
+            </summary>
+            <param name="input">Строка.</param>
+            <returns>Массив 64-битных целых чисел.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Converting.ConvertingResource">
+            <summary>
+            Ресурс преобразования.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingResource.#ctor(Microsoft.Extensions.Localization.IStringLocalizer{Makc2023.Backend.Common.Core.Converting.ConvertingResource})">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="localizer">Локализатор.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingResource.GetFormatForDate">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Converting.IConvertingResource">
+            <summary>
+            Интерфейс ресурса преобразования.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.IConvertingResource.GetFormatForDate">
+            <summary>
+            Получить формат для даты.
+            </summary>
+            <returns>Формат.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Exceptions.LocalizedException">
+            <summary>
+            Локализованное исключение.
+            Сообщение, передаваемое в это исключение, должно быть переведено на язык,
+            соответствующий текущей культуре приложения.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Exceptions.LocalizedException.#ctor(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Exceptions.VariableException">
+            <summary>
+            Исключение переменной.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Exceptions.VariableException.VariableName">
+            <summary>
+            Имя переменной.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Exceptions.VariableException.#ctor(System.String[])">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="variableNameParts">Части имени переменной.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Exceptions.VariableException.#ctor(System.Type,System.String[])">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="type">Тип, содержащий переменную.</param>
+            <param name="variableNameParts">Части имени переменной.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Exceptions.VariableException`1">
+            <summary>
+            Исключение переменной.
+            </summary>
+            <typeparam name="T">Тип, содержащий переменную.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Exceptions.VariableException`1.#ctor(System.String[])">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="variableNameParts">Части имени переменной.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Exceptions.VariableExceptions.NullOrWhiteSpaceStringVariableException">
+            <summary>
+            Исключение, выбрасываемое в случае обнаружения в строковой переменной нуля или
+            пустой строки или строки, состоящий только из пробельных символов.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Exceptions.VariableExceptions.NullOrWhiteSpaceStringVariableException.#ctor(System.String[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Exceptions.VariableExceptions.NullOrWhiteSpaceStringVariableException.#ctor(System.Type,System.String[])">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Exceptions.VariableExceptions.NullOrWhiteSpaceStringVariableException`1">
+            <summary>
+            Исключение, выбрасываемое в случае обнаружения в строковой переменной нуля или
+            пустой строки или строки, состоящий только из пробельных символов.
+            </summary>
+            <typeparam name="T">Тип, содержащий переменную.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Exceptions.VariableExceptions.NullOrWhiteSpaceStringVariableException`1.#ctor(System.String[])">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Exceptions.VariableExceptions.NullVariableException">
+            <summary>
+            Исключение, выбрасываемое в случае если переменная равна нулю.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Exceptions.VariableExceptions.NullVariableException.#ctor(System.String[])">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Exceptions.VariableExceptions.NullVariableException.#ctor(System.Type,System.String[])">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Exceptions.VariableExceptions.NullVariableException`1">
+            <summary>
+            Исключение, выбрасываемое в случае если переменная равна нулю.
+            </summary>
+            <typeparam name="T">Тип, содержащий переменную.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Exceptions.VariableExceptions.NullVariableException`1.#ctor(System.String[])">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Extensions.GenericTypeExtension">
+            <summary>
+            Расширение общего типа.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Extensions.GenericTypeExtension.GetGenericTypeName(System.Type)">
+            <summary>
+            Получить имя общего типа.
+            </summary>
+            <param name="type">Тип.</param>
+            <returns>Имя.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Extensions.GenericTypeExtension.GetGenericTypeName(System.Object)">
+            <summary>
+            Получить имя общего типа.
+            </summary>
+            <param name="object">Объект.</param>
+            <returns>Имя.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Integration.IIntegrationDynamicEventHandler">
+            <summary>
+            Обработчик динамического события интеграции.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Integration.IIntegrationDynamicEventHandler.Handle(System.Object)">
+            <summary>
+            Обработать.
+            </summary>
+            <param name="eventData">Данные события.</param>
+            <returns>Задача на обработку.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Integration.IIntegrationEventHandler`1">
+            <summary>
+            Обработчик события интеграции.
+            </summary>
+            <typeparam name="TIntegrationEvent">Тип события интеграции.</typeparam>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Integration.IIntegrationEventHandler`1.Handle(`0)">
+            <summary>
+            Обработать.
+            </summary>
+            <param name="event">Событие.</param>
+            <returns>Задача на обработку.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Integration.IIntegrationService">
+            <summary>
+            Интерфейс сервиса интеграции.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Integration.IIntegrationService.PublishEvents(System.Guid)">
+            <summary>
+            Опубликовать события.
+            </summary>
+            <param name="transactionId">Идентификатор транзакции.</param>
+            <returns>Задача на публикацию событий.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Integration.IntegrationEvent">
+            <summary>
+            Событие интеграции.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Integration.IntegrationEvent.Id">
+            <summary>
+            Идентификатор.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Integration.IntegrationEvent.CreationDate">
+            <summary>
+            Дата создания.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Integration.IntegrationEvent.#ctor">
+            <summary>
+            Конструктор.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Integration.IntegrationEvent.#ctor(System.Guid,System.DateTime)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="id">Идентификатор.</param>
+            <param name="createDate">Дата создания.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Integration.IntegrationHelper">
+            <summary>
+            Помощник интеграции.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Integration.IntegrationHelper.CreateStringGlobalUniqueValue">
+            <summary>
+            Создать строковое глобально уникальное значение.
+            </summary>
+            <returns>Глобально уникальное значение.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.IRepeater">
+            <summary>
+            Интерфейс повторителя.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.IRepeater.Execute``1(System.Int32,System.Action)">
+            <summary>
+            Выполнить.
+            </summary>
+            <typeparam name="TException">Тип исключения.</typeparam>
+            <param name="retries">Количество повторений.</param>
+            <param name="actionToExecute">Выполняемое действие.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.IRepeater.ExecuteAsync``1(System.Int32,System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Выполнить асинхронно.
+            </summary>
+            <typeparam name="TException">Тип исключения.</typeparam>
+            <param name="retries">Количество повторений.</param>
+            <param name="functionToExecute">Выполняемая функция.</param>
+            <returns>Задача на выполнение.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Loader`1">
+            <summary>
+            Загрузчик.
+            </summary>
+            <typeparam name="TLoadable">Загружаемый тип.</typeparam>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Loader`1.Target">
+            <summary>
+            Цель.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Loader`1.#ctor(`0)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="target">Цель.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Loader`1.Load(`0,System.Collections.Generic.HashSet{System.String})">
+            <summary>
+            Загрузить.
+            </summary>
+            <param name="source">Источник.</param>
+            <param name="loadableProperties">Загружаемые свойства.</param>
+            <returns>Загруженные свойства.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Loader`1.CreateAllPropertiesToLoad">
+            <summary>
+            Создать все свойства для загрузки.
+            </summary>
+            <returns>Все свойства для загрузки.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Logging.LoggingExtension">
+            <summary>
+            Расширение ведения журнала.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Logging.LoggingExtension.TryLoadLoggerState``1(System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Action{``0})">
+            <summary>
+            Попробовать загрузить состояние регистратора.
+            </summary>
+            <typeparam name="TPropertyValue">Тип значения свойства.</typeparam>
+            <param name="loggerState">Состояние регистратора.</param>
+            <param name="key">Ключ.</param>
+            <param name="actionToSetPropertyValue">Действие по установке значения свойства.</param>
+            <returns>Признак успешности выполнения действия.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputAndOutputHandler`2">
+            <summary>
+            Интерфейс обработчика операции с входными и выходными данными.
+            </summary>
+            <typeparam name="TOperationInput">Тип входных данных операции.</typeparam>
+            <typeparam name="TOperationOutput">Тип выходных данных операции.</typeparam>    
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputAndOutputHandler`2.OperationInput">
+            <summary>
+            Входные данные операции.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputAndOutputHandler`2.OperationResult">
+            <summary>
+            Результат выполнения операции.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputAndOutputHandler`2.OnStart(`0,System.String)">
+            <summary>
+            Обработать начало.
+            </summary>
+            <param name="operationInput">Входные данные операции.</param>     
+            <param name="operationCode">Код операции.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputAndOutputHandler`2.OnSuccess(`1)">
+            <summary>
+            Обработать успех.
+            </summary>
+            <param name="operationOutput">Выходные данные операции.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputAndOutputHandler`2.OnSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResultWithOutput{`1})">
+            <summary>
+            Обработать успех с результатом.
+            </summary>
+            <param name="operationResult">Результат операции.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`1">
+            <summary>
+            Интерфейс обработчика операции с входными данными.
+            </summary>
+            <typeparam name="TOperationInput">Тип входных данных операции.</typeparam>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`1.OperationInput">
+            <summary>
+            Входные данные операции.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`1.OperationResult">
+            <summary>
+            Результат выполнения операции.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`1.OnStart(`0,System.String)">
+            <summary>
+            Обработать начало.
+            </summary>
+            <param name="operationInput">Входные данные операции.</param>
+            <param name="operationCode">Код операции.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`1.OnSuccess">
+            <summary>
+            Обработать успех.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`1.OnSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResult)">
+            <summary>
+            Обработать успех с результатом.
+            </summary>
+            <param name="operationResult">Результат операции.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler">
+            <summary>
+            Интерфейс обработчика операции без входных и выходных данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler.OperationResult">
+            <summary>
+            Результат выполнения операции.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler.OnStart(System.String)">
+            <summary>
+            Обработать начало.
+            </summary>
+            <param name="operationCode">Код операции.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler.OnSuccess">
+            <summary>
+            Обработать успех.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler.OnSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResult)">
+            <summary>
+            Обработать успех с результатом.
+            </summary>
+            <param name="operationResult">Результат операции.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithOutputHandler`1">
+            <summary>
+            Интерфейс обработчика операции с выходными данными.
+            </summary>
+            <typeparam name="TOperationOutput">Тип выходных данных операции.</typeparam>    
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithOutputHandler`1.OperationResult">
+            <summary>
+            Результат выполнения операции.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithOutputHandler`1.OnStart(System.String)">
+            <summary>
+            Обработать начало.
+            </summary>
+            <param name="operationCode">Код операции.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithOutputHandler`1.OnSuccess(`0)">
+            <summary>
+            Обработать успех.
+            </summary>
+            <param name="operationOutput">Выходные данные операции.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithOutputHandler`1.OnSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResultWithOutput{`0})">
+            <summary>
+            Обработать успех с результатом.
+            </summary>
+            <param name="operationResult">Результат операции.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`2">
+            <summary>
+            Обработчик операции с входными и выходными данными.
+            </summary>
+            <typeparam name="TOperationInput">Тип входных данных операции.</typeparam>
+            <typeparam name="TOperationOutput">Тип выходных данных операции.</typeparam>    
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`2.FunctionToTransformOperationInput">
+            <summary>
+            Функция преобразования ввода операции.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`2.FunctionToTransformOperationOutput">
+            <summary>
+            Функция преобразования вывода операции.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`2.OperationInput">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`2.OperationResult">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`2.#ctor(System.String,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`2.OnStart(`0,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`2.OnSuccess(`1)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`2.OnSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResultWithOutput{`1})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`2.GetOperationInput">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`2.GetOperationResult">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`2.InitOperationResult(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1">
+            <summary>
+            Обработчик операции с входными данными.
+            </summary>
+            <typeparam name="TOperationInput">Тип входных данных операции.</typeparam>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.FunctionToTransformOperationInput">
+            <summary>
+            Функция преобразования ввода операции.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.OperationInput">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.OperationResult">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.#ctor(System.String,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.OnStart(`0,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.OnSuccess">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.OnSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResult)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.GetOperationInput">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.GetOperationResult">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.InitOperationResult(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler">
+            <summary>
+            Обработчик операции без входных и выходных данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.OperationResult">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.#ctor(System.String,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.OnStart(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.OnSuccess">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.OnSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResult)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.GetOperationInput">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.GetOperationResult">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.InitOperationResult(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`1">
+            <summary>
+            Обработчик операции с выходными данными.
+            </summary>
+            <typeparam name="TOperationOutput">Тип выходных данных операции.</typeparam>    
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`1.FunctionToTransformOperationOutput">
+            <summary>
+            Функция преобразования вывода операции.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`1.OperationResult">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`1.#ctor(System.String,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`1.OnStart(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`1.OnSuccess(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`1.OnSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResultWithOutput{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`1.GetOperationInput">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`1.GetOperationResult">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`1.InitOperationResult(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.IOperationHandler">
+            <summary>
+            Интерфейс обработчика операции.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.IOperationHandler.OnError(System.Exception)">
+            <summary>
+            Обработать ошибку.
+            </summary>
+            <param name="exception">Исключение.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.IOperationResource">
+            <summary>
+            Интерфейс ресурса операции.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.IOperationResource.GetErrorMessageForDefault">
+            <summary>
+            Получить сообщение об ошибке по умолчанию.
+            </summary>
+            <returns>Сообщение об ошибке.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.IOperationResource.GetErrorMessageForInvalidInput(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Получить сообщение об ошибке для недействительных входных данных.
+            </summary>
+            <param name="invalidProperties">Недействительные свойства.</param>
+            <returns>Сообщение об ошибке.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.IOperationResource.GetTitleForError">
+            <summary>
+            Получить заголовок для ошибки.
+            </summary>
+            <returns>Заголовок.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.IOperationResource.GetTitleForInput">
+            <summary>
+            Получить заголовок для входных данных.
+            </summary>
+            <returns>Заголовок.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.IOperationResource.GetTitleForOperationCode">
+            <summary>
+            Получить заголовок для кода операции.
+            </summary>
+            <returns>Заголовок.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.IOperationResource.GetTitleForResult">
+            <summary>
+            Получить заголовок для результата.
+            </summary>
+            <returns>Заголовок.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.IOperationResource.GetTitleForStart">
+            <summary>
+            Получить заголовок для начала.
+            </summary>
+            <returns>Заголовок.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.IOperationResource.GetTitleForSuccess">
+            <summary>
+            Получить заголовок для успеха.
+            </summary>
+            <returns>Заголовок.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.OperationExtension">
+            <summary>
+            Расширение операции.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationExtension.Add(System.Collections.Generic.ICollection{Makc2023.Backend.Common.Core.Operation.OperationResult},System.Func{Makc2023.Backend.Common.Core.Operation.OperationResult})">
+            <summary>
+            Добавить.
+            </summary>
+            <param name="operationResults">Результаты операции.</param>
+            <param name="functionToGetOperationResult">Функция для получения результата операции.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationExtension.AddWithOutput``1(System.Collections.Generic.ICollection{Makc2023.Backend.Common.Core.Operation.OperationResult},System.Func{Makc2023.Backend.Common.Core.Operation.OperationResultWithOutput{``0}},System.Action{``0})">
+            <summary>
+            Добавить с выходными данными.
+            </summary>
+            <typeparam name="TOutput">Тип выходных данных.</typeparam>
+            <param name="operationResults">Результаты операции.</param>
+            <param name="functionToGetOperationResult">Функция для получения результата операции.</param>
+            <param name="actionToSetOutput">Действие по установке выходных данных.</param>
+            <returns>Признак успешной установки выходных данных.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationExtension.AddAsync(System.Collections.Generic.ICollection{Makc2023.Backend.Common.Core.Operation.OperationResult},System.Func{System.Threading.Tasks.Task{Makc2023.Backend.Common.Core.Operation.OperationResult}})">
+            <summary>
+            Добавить.
+            </summary>
+            <param name="operationResults">Результаты операции.</param>
+            <param name="functionToGetOperationResultTask">
+            Функция для получения задачи на получение результата операции.
+            </param>
+            <returns>Задача.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationExtension.AddWithOutputAsync``1(System.Collections.Generic.ICollection{Makc2023.Backend.Common.Core.Operation.OperationResult},System.Func{System.Threading.Tasks.Task{Makc2023.Backend.Common.Core.Operation.OperationResultWithOutput{``0}}},System.Action{``0})">
+            <summary>
+            Добавить с выходными данными асинхронно.
+            </summary>
+            <typeparam name="TOutput">Тип выходных данных.</typeparam>
+            <param name="operationResults">Результаты операции.</param>
+            <param name="functionToGetOperationResultTask">
+            Функция для получения задачи на получение результата операции.
+            </param>
+            <param name="actionToSetOutput">Действие по установке выходных данных.</param>
+            <returns>Задача на получение признака успешной установки выходных данных.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationExtension.Load(Makc2023.Backend.Common.Core.Operation.OperationResult,System.Collections.Generic.IEnumerable{Makc2023.Backend.Common.Core.Operation.OperationResult})">
+            <summary>
+            Загрузить.
+            </summary>
+            <param name="operationResult">Результат операции.</param>
+            <param name="operationResultsToLoad">Результаты операции для загрузки.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.OperationHandler">
+            <summary>
+            Обработчик операции.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.OperationHandler.OperationResource">
+            <summary>
+            Ресурс операции.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.OperationHandler.Logger">
+            <summary>
+            Регистратор.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.OperationHandler.FunctionToGetErrorMessages">
+            <summary>
+            Функция получения сообщений об ошибках.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.OperationHandler.OperationCode">
+            <summary>
+            Код операции.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.OperationHandler.SetupOptions">
+            <summary>
+            Параметры настройки.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationHandler.#ctor(System.String,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="operationName">Имя операции.</param>
+            <param name="operationResource">Ресурс операции.</param>
+            <param name="logger">Регистратор.</param>
+            <param name="setupOptions">Параметры настройки.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationHandler.OnError(System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationHandler.DoOnStart(System.String)">
+            <summary>
+            Сделать в начале операции.
+            </summary>
+            <param name="operationCode">Код операции.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationHandler.DoOnSuccess">
+            <summary>
+            Сделать в случае успешного выполнения операции.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationHandler.GetOperationInput">
+            <summary>
+            Получить входные данные операции.
+            </summary>
+            <returns>Входные данные операции.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationHandler.GetOperationResult">
+            <summary>
+            Получить результат выполнения операции.
+            </summary>
+            <returns>Результат выполнения операции.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationHandler.InitOperationResult(System.Boolean)">
+            <summary>
+            Инициализировать результат операции.
+            </summary>
+            <param name="isOk">Признак успешности выполнения.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.OperationHelper">
+            <summary>
+            Помощник операции.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationHelper.CreateOperationCode">
+            <summary>
+            Создать код операции.
+            </summary>
+            <returns>Код операции.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.OperationInput">
+            <summary>
+            Входные данные операции.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationInput.GetInvalidProperties">
+            <summary>
+            Получить список свойств с недействительными значениями.
+            </summary>
+            <returns>Список свойств.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.OperationOptions">
+            <summary>
+            Параметры операции.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Core.Operation.OperationOptions.SORT_DIRECTION_ASC">
+            <summary>
+            Направление сортировки по возрастанию.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Core.Operation.OperationOptions.SORT_DIRECTION_DESC">
+            <summary>
+            Направление сортировки по убыванию.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.OperationResource">
+            <summary>
+            Ресурс операции.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationResource.#ctor(Microsoft.Extensions.Localization.IStringLocalizer{Makc2023.Backend.Common.Core.Operation.OperationResource})">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="localizer">Локализатор.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationResource.GetErrorMessageForDefault">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationResource.GetErrorMessageForInvalidInput(System.Collections.Generic.IEnumerable{System.String})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationResource.GetErrorMessageWithCode(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationResource.GetTitleForError">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationResource.GetTitleForInput">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationResource.GetTitleForOperationCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationResource.GetTitleForResult">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationResource.GetTitleForStart">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationResource.GetTitleForSuccess">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.OperationResult">
+            <summary>
+            Результат операции.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.OperationResult.IsOk">
+            <summary>
+            Признак успешности выполнения.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.OperationResult.ErrorMessages">
+            <summary>
+            Сообщения об ошибках.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.OperationResult.OperationCode">
+            <summary>
+            Код операции.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationResult.CreateErrorMessage">
+            <summary>
+            Создать сообщение об ошибке.
+            </summary>
+            <returns>Сообщение.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.OperationResultWithOutput`1">
+            <summary>
+            Результат операции с выходными данными.
+            </summary>
+            <typeparam name="TOutput">Тип выходных данных.</typeparam>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.OperationResultWithOutput`1.Output">
+            <summary>
+            Выходные данные.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Repeater">
+            <summary>
+            Повторитель.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Repeater.#ctor(Microsoft.Extensions.Logging.ILogger{Makc2023.Backend.Common.Core.Repeater})">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="logger">Регистратор.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Repeater.Execute``1(System.Int32,System.Action)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Repeater.ExecuteAsync``1(System.Int32,System.Func{System.Threading.Tasks.Task})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtension">
+            <summary>
+            Расширение сериализации JSON.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtension.DeepCloneViaJson``1(``0)">
+            <summary>
+            Глубоко клонировать через JSON.
+            </summary>
+            <typeparam name="T">Тип клонируемого значения.</typeparam>
+            <param name="value">Клонируемое значение.</param>
+            <returns>Клон.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtension.DeserializeFromJson``1(System.String,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Десериализовать из JSON.
+            </summary>
+            <typeparam name="T">Тип значения.</typeparam>
+            <param name="json">Строка в формате JSON.</param>
+            <param name="options">Опции.</param>
+            <returns>Значение указанного типа.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtension.SerializeToJson(System.Object,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Сериализовать в JSON.
+            </summary>
+            <param name="value">Значение.</param>
+            <param name="options">Опции.</param>
+            <returns>Строка в формате JSON.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtension.TryDeserializeFromJson``1(System.String,``0@,System.Text.Json.JsonSerializerOptions,``0)">
+            <summary>
+            Расширение. JSON. Попробовать десериализовать.
+            </summary>
+            <typeparam name="T">Тип значения.</typeparam>
+            <param name="json">Строка в формате JSON.</param>
+            <param name="value">Значение указанного типа.</param>
+            <param name="options">Опции.</param>
+            <param name="defaultValue">Значение по умолчанию.</param>
+            <returns>Признак успешности десериализации.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtension.TrySerializeToJson(System.Object,System.String@,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Попробовать сериализовать в JSON.
+            </summary>
+            <param name="obj">Сериализуемый объект.</param>
+            <param name="value">Строка в формате JSON.</param>
+            <param name="options">Опции.</param>
+            <returns>Признак успешности сериализации.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationOptions">
+            <summary>
+            Опции сериализации JSON.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationOptions.ForConfig">
+            <summary>
+            Для конфигурации.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationOptions.ForJavaScript">
+            <summary>
+            Для JavaScript.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationOptions.ForLogger">
+            <summary>
+            Для регистратора.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Setup.SetupAppModule">
+            <summary>
+            Модуль настройки приложения.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Setup.SetupAppModule.#ctor(Microsoft.Extensions.Configuration.IConfigurationSection)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="configurationSection">Раздел конфигурации.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Setup.SetupAppModule.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Setup.SetupAppModule.GetExports">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Setup.SetupAppModule.GetImports">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Setup.SetupOptions">
+            <summary>
+            Параметры настройки.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Setup.SetupOptions.LogLevel">
+            <summary>
+            Уровень логирования.
+            </summary>
+        </member>
+    </members>
+</doc>

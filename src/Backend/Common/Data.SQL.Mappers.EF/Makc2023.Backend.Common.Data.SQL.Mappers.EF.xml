@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Makc2023.Backend.Common.Data.SQL.Mappers.EF</name>
+    </assembly>
+    <members>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.IMapperDbManager">
+            <summary>
+            Интерфейс менеджера базы данных сопоставителя.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.IMapperDbManager.HasTransaction">
+            <summary>
+            Содержит транзакцию.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.IMapperDbManager.IsUsed">
+            <summary>
+            Признак того, что менеджер базы данных использован.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.IMapperDbManager.CreateExecutionStrategy">
+            <summary>
+            Создать стратегию выполнения.
+            </summary>
+            <returns>Стратегия.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.IMapperDbManager.BeginTransactionAsync">
+            <summary>
+            Начать транзакцию асинхронно.
+            Если возвращается нуль, транзакция уже начата и нужно использовать текущую.
+            </summary>
+            <returns>Задача с транзакцией или нулём.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.IMapperDbManager.CommitTransactionAsync(Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction)">
+            <summary>
+            Зафиксировать транзакцию асинхронно.
+            </summary>
+            <param name="transaction">Транзакция.</param>
+            <returns>Задача.</returns>
+            <exception cref="T:System.ArgumentNullException">
+            Возникает, если NULL содержится в аргументе, который не должен его содержать.
+            </exception>
+            <exception cref="T:Makc2023.Backend.Common.Core.Exceptions.LocalizedException">
+            Возникает, если транзакция является внешней.
+            </exception>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.MapperDbExtension">
+            <summary>
+            Расширение базы данных сопоставителя.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.MapperDbExtension.BuildLogging(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.LogLevel)">
+            <summary>
+            Построить логирование.
+            </summary>
+            <param name="builder">Построитель.</param>
+            <param name="logger">Регистратор.</param>
+            <param name="logLevel">Уровень логирования.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.MapperDbManager`1">
+            <summary>
+            Менеджер базы данных сопоставителя.
+            </summary>
+            <typeparam name="TDbContext">Тип контекста базы данных.</typeparam>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.MapperDbManager`1.Resource">
+            <summary>
+            Ресурс.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.MapperDbManager`1.DbContext">
+            <summary>
+            Контекст базы данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.MapperDbManager`1.HasTransaction">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.MapperDbManager`1.IsUsed">
+            <inheritdoc/>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.MapperDbManager`1.Transaction">
+            <summary>
+            Транзакция.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.MapperDbManager`1.#ctor(`0,Makc2023.Backend.Common.Data.SQL.Mappers.EF.IMapperResource)">
+            <summary>
+            Контсруктор.
+            </summary>
+            <param name="dbContext">Контекст базы данных.</param>
+            <param name="resource">Ресурс.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.MapperDbManager`1.BeginTransactionAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.MapperDbManager`1.CommitTransactionAsync(Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.MapperDbManager`1.CreateExecutionStrategy">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.MapperDbManager`1.RollbackTransaction">
+            <summary>
+            Откатить транзакцию.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.MapperDbManager`1.Use">
+            <summary>
+            Использовать.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Mappers.EF.IMapperResource">
+            <summary>
+            Интерфейс ресурса сопоставителя.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.IMapperResource.GetErrorMessageForExternalTransaction(System.Guid)">
+            <summary>
+            Получить сообщение об ошибке для внешней транзакции.
+            </summary>
+            <param name="transactionId">Идентификатор транзакции.</param>
+            <returns>Сообщение об ошибке.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Mappers.EF.MapperResource">
+            <summary>
+            Ресурс сопоставителя.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.MapperResource.#ctor(Microsoft.Extensions.Localization.IStringLocalizer{Makc2023.Backend.Common.Data.SQL.Mappers.EF.MapperResource})">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="localizer">Локализатор.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.MapperResource.GetErrorMessageForExternalTransaction(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Mappers.EF.MapperTypeConfiguration`2">
+            <summary>
+            Конфигурация типа.
+            </summary>
+            <typeparam name="TTypesOptions">Тип параметров типов.</typeparam>
+            <typeparam name="TEntity">Тип сущности.</typeparam>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Data.SQL.Mappers.EF.MapperTypeConfiguration`2.TypesOptions">
+            <summary>
+            Параметры типов.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.MapperTypeConfiguration`2.#ctor(`0)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="typesOptions">Параметры типов.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.MapperTypeConfiguration`2.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`1})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Setup.MapperSetupAppModule">
+            <summary>
+            Модуль настройки приложения сопоставителя.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Setup.MapperSetupAppModule.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Setup.MapperSetupAppModule.GetExports">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

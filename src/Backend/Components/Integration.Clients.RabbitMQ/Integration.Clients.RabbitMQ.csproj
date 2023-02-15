@@ -9,6 +9,7 @@
 		<AssemblyName>Makc2023.Backend.Components.Integration.Clients.RabbitMQ</AssemblyName>
 		<RootNamespace>$(AssemblyName)</RootNamespace>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<DocumentationFile>$(AssemblyName).xml</DocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -20,7 +21,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="bin\Debug\net7.0\Makc2023.Backend.Components.Integration.Clients.RabbitMQ.xml" Pack="true">
+		<None Include="$(AssemblyName).xml" Pack="true">
 			<PackageCopyToOutput>true</PackageCopyToOutput>
 		</None>
 	</ItemGroup>
