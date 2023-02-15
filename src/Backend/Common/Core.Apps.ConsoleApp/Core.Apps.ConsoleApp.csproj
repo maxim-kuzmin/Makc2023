@@ -27,7 +27,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Update="nlog.config.xml" Pack="true">
+		<None Update="nlog.config" Pack="true">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<PackageCopyToOutput>true</PackageCopyToOutput>
 		</None>
