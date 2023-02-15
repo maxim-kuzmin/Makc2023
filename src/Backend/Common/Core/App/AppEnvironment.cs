@@ -13,7 +13,10 @@ public class AppEnvironment : IAppEnvironment
     public string DefaultCulture { get; }
 
     /// <inheritdoc/>
-    public string[] SupportedCultures { get; } = new[] { "ru", "en" };
+    public bool IsRetryEnabledByOrchestrator { get; }
+
+    /// <inheritdoc/>
+    public string[] SupportedCultures { get; }
 
     #endregion Properties
 
@@ -24,12 +27,34 @@ public class AppEnvironment : IAppEnvironment
     /// </summary>
     public AppEnvironment()
     {
-        string? language = Environment.GetEnvironmentVariable("App__Language");
+        SupportedCultures = new[] { "ru", "en" };
 
-        DefaultCulture = !string.IsNullOrWhiteSpace(language) && SupportedCultures.Contains(language)
-            ? language
-            : SupportedCultures[0];
+        DefaultCulture = GetDefaultCulture(SupportedCultures[0]);
+
+        IsRetryEnabledByOrchestrator = GetIsRetryEnabledByOrchestrator();
     }
 
     #endregion Constructors
+
+    #region Private methods
+
+    private string GetDefaultCulture(string defaultValue)
+    {
+        string? value = Environment.GetEnvironmentVariable("App__Language");
+
+        string result = !string.IsNullOrWhiteSpace(value) && SupportedCultures.Contains(value)
+            ? value
+            : defaultValue;
+
+        return result;
+    }
+
+    private static bool GetIsRetryEnabledByOrchestrator()
+    {
+        string? value = Environment.GetEnvironmentVariable("App__IsRetryEnabledByOrchestrator");
+
+        return bool.TryParse(value, out bool result) && result;
+    }
+
+    #endregion Private methods
 }

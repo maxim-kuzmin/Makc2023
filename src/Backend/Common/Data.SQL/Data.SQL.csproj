@@ -5,13 +5,20 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<VersionPrefix>1.0.12</VersionPrefix>		
+		<VersionPrefix>1.0.1</VersionPrefix>		
 		<AssemblyName>Makc2023.Backend.Common.Data.SQL</AssemblyName>
 		<RootNamespace>$(AssemblyName)</RootNamespace>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\Core\Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="bin\Debug\net7.0\Makc2023.Backend.Common.Data.SQL.xml" Pack="true">
+			<PackageCopyToOutput>true</PackageCopyToOutput>
+		</None>
 	</ItemGroup>
 
 </Project>

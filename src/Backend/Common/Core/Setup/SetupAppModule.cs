@@ -44,19 +44,38 @@ public class SetupAppModule : AppModule
         services.AddSingleton<IOperationResource>(x => new OperationResource(
             x.GetRequiredService<IStringLocalizer<OperationResource>>()
             ));
+
+        services.AddSingleton<IRepeater>(x => new Repeater(
+            x.GetRequiredService<ILogger<Repeater>>()
+            ));
     }
 
     /// <inheritdoc/>
     public sealed override IEnumerable<Type> GetExports()
     {
         return new[]
-        {
+            {
                 typeof(IAppResource),
                 typeof(IConvertingResource),
                 typeof(IOperationResource),
+                typeof(IRepeater),
                 typeof(SetupOptions),
             };
     }
 
     #endregion Public methods
+
+    #region Protected methods
+
+    /// <inheritdoc/>
+    protected sealed override IEnumerable<Type> GetImports()
+    {
+        return new[]
+            {
+                typeof(ILogger),
+                typeof(IStringLocalizer),
+            };
+    }
+
+    #endregion Protected methods
 }

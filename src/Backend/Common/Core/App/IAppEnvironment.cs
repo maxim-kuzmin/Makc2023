@@ -11,11 +11,21 @@ public interface IAppEnvironment
 
     /// <summary>
     /// Культура по умолчанию.
+    /// Переменная окружения: "App__Language".
+    /// Значение по умолчанию: "ru".
     /// </summary>
     string DefaultCulture { get; }
 
     /// <summary>
+    /// Признак включения повторной попытки оркестратором.
+    /// Переменная окружения: "App__IsRetryEnabledByOrchestrator".
+    /// Значение по умолчанию: "false".
+    /// </summary>
+    bool IsRetryEnabledByOrchestrator { get; }
+
+    /// <summary>
     /// Поддерживаемые культуры.
+    /// Значения: "ru", "en".
     /// </summary>
     string[] SupportedCultures { get; }
 

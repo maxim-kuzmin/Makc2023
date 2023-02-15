@@ -5,9 +5,10 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<VersionPrefix>1.0.12</VersionPrefix>
+		<VersionPrefix>1.0.1</VersionPrefix>
 		<AssemblyName>Makc2023.Backend.Common.Core</AssemblyName>
 		<RootNamespace>$(AssemblyName)</RootNamespace>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -19,6 +20,13 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="7.0.0" />
 		<PackageReference Include="NLog" Version="5.1.1" />
+		<PackageReference Include="Polly" Version="7.2.3" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<None Include="bin\Debug\net7.0\Makc2023.Backend.Common.Core.xml" Pack="true">
+			<PackageCopyToOutput>true</PackageCopyToOutput>
+		</None>
+	</ItemGroup>
+	
 </Project>
