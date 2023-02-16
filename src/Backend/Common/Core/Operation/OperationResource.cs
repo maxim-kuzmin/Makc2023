@@ -7,11 +7,11 @@ namespace Makc2023.Backend.Common.Core.Operation;
 /// </summary>
 public class OperationResource : IOperationResource
 {
-    #region Properties
+    #region Fields
 
-    private IStringLocalizer<OperationResource> Localizer { get; }
+    private readonly IStringLocalizer _localizer;
 
-    #endregion Properties
+    #endregion Fields
 
     #region Constructors
 
@@ -21,7 +21,7 @@ public class OperationResource : IOperationResource
     /// <param name="localizer">Локализатор.</param>
     public OperationResource(IStringLocalizer<OperationResource> localizer)
     {
-        Localizer = localizer;
+        _localizer = localizer;
     }
 
     #endregion Constructors
@@ -31,19 +31,19 @@ public class OperationResource : IOperationResource
     /// <inheritdoc/>
     public string GetErrorMessageForDefault()
     {
-        return Localizer["@@ErrorMessageForDefault"];
+        return _localizer["@@ErrorMessageForDefault"];
     }
 
     /// <inheritdoc/>
     public string GetErrorMessageForInvalidInput(IEnumerable<string> invalidProperties)
     {
-        return Localizer["@@ErrorMessageForInvalidInput", string.Join(", ", invalidProperties)];
+        return _localizer["@@ErrorMessageForInvalidInput", string.Join(", ", invalidProperties)];
     }
 
     /// <inheritdoc/>
     public string GetErrorMessageWithCode(string errorMessage, string code)
     {
-        string title = Localizer["@@TitleForErrorCode"];
+        string title = _localizer["@@TitleForErrorCode"];
 
         return $"{errorMessage}. {title}: {code}".Replace("!.", "!").Replace("?.", "?");
     }
@@ -51,37 +51,37 @@ public class OperationResource : IOperationResource
     /// <inheritdoc/>
     public string GetTitleForError()
     {
-        return Localizer["@@TitleForError"];
+        return _localizer["@@TitleForError"];
     }
 
     /// <inheritdoc/>
     public string GetTitleForInput()
     {
-        return Localizer["@@TitleForInput"];
+        return _localizer["@@TitleForInput"];
     }
 
     /// <inheritdoc/>
     public string GetTitleForOperationCode()
     {
-        return Localizer["@@TitleForOperationCode"];
+        return _localizer["@@TitleForOperationCode"];
     }    
 
     /// <inheritdoc/>
     public string GetTitleForResult()
     {
-        return Localizer["@@TitleForResult"];
+        return _localizer["@@TitleForResult"];
     }
 
     /// <inheritdoc/>
     public string GetTitleForStart()
     {
-        return Localizer["@@TitleForStart"];
+        return _localizer["@@TitleForStart"];
     }
 
     /// <inheritdoc/>
     public string GetTitleForSuccess()
     {
-        return Localizer["@@TitleForSuccess"];
+        return _localizer["@@TitleForSuccess"];
     }
 
     #endregion Public methods

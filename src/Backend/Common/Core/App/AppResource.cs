@@ -7,11 +7,11 @@ namespace Makc2023.Backend.Common.Core.App;
 /// </summary>
 public class AppResource : IAppResource
 {
-    #region Properties
+    #region Fields
 
-    private IStringLocalizer<AppResource> Localizer { get; }
+    private readonly IStringLocalizer _localizer;
 
-    #endregion Properties
+    #endregion Fields
 
     #region Constructors
 
@@ -21,7 +21,7 @@ public class AppResource : IAppResource
     /// <param name="localizer">Локализатор.</param>
     public AppResource(IStringLocalizer<AppResource> localizer)
     {
-        Localizer = localizer;
+        _localizer = localizer;
     }
 
     #endregion Constructors
@@ -31,7 +31,7 @@ public class AppResource : IAppResource
     /// <inheritdoc/>
     public string GetErrorMessageForNotImportedTypes(IEnumerable<Type> types)
     {
-        return Localizer["@@ErrorMessageForNotImportedTypes", string.Join(", ", types)];
+        return _localizer["@@ErrorMessageForNotImportedTypes", string.Join(", ", types)];
     }
 
     #endregion Public methods

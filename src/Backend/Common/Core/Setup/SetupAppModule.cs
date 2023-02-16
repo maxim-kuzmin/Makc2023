@@ -45,8 +45,13 @@ public class SetupAppModule : AppModule
             x.GetRequiredService<IStringLocalizer<OperationResource>>()
             ));
 
-        services.AddSingleton<IRepeater>(x => new Repeater(
-            x.GetRequiredService<ILogger<Repeater>>()
+        services.AddSingleton<IRepeatResource>(x => new RepeatResource(
+            x.GetRequiredService<IStringLocalizer<RepeatResource>>()
+            ));
+
+        services.AddSingleton<IRepeatService>(x => new RepeatService(
+            x.GetRequiredService<ILogger<RepeatService>>(),
+            x.GetRequiredService<IRepeatResource>()
             ));
     }
 
@@ -58,7 +63,8 @@ public class SetupAppModule : AppModule
                 typeof(IAppResource),
                 typeof(IConvertingResource),
                 typeof(IOperationResource),
-                typeof(IRepeater),
+                typeof(IRepeatResource),
+                typeof(IRepeatService),
                 typeof(SetupOptions),
             };
     }

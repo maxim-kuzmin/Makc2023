@@ -12,12 +12,7 @@ public abstract class MapperSetupService<TDbContext> : ISetupService
     #region Public methods
 
     /// <inheritdoc/>
-    public async Task MigrateDatabase()
-    {
-        using var dbContext = CreateDbContext();
-
-        await dbContext.Database.MigrateAsync().ConfigureAwait(false);
-    }
+    public abstract Task MigrateDatabase();
 
     /// <inheritdoc/>
     public async Task SeedTestData()

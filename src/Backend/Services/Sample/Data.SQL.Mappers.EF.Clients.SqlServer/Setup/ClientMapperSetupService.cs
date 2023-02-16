@@ -42,10 +42,22 @@ public class ClientMapperSetupService : MapperSetupService<ClientMapperDbContext
     {
         _dbContextFactory = dbContextFactory;
         _provider = provider;
-        _typesOptions = typesOptions;        
+        _typesOptions = typesOptions;
     }
 
     #endregion Constructors
+
+    #region Public methods
+
+    /// <inheritdoc/>
+    public override Task MigrateDatabase()
+    {
+        var dbContext = CreateDbContext();
+
+        return dbContext.MigrateAsync();
+    }
+
+    #endregion Public methods
 
     #region Protected methods
 

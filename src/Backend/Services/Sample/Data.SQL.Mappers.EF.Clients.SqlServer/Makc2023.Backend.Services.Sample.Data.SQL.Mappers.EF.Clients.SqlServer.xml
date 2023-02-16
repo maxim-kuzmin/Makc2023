@@ -67,6 +67,12 @@
         <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext})">
             <inheritdoc/>
         </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext.MigrateAsync">
+            <summary>
+            Мигрировать асинхронно.
+            </summary>
+            <returns>Задача на миграцию.</returns>
+        </member>
         <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc/>
         </member>
@@ -147,6 +153,9 @@
             <param name="dbContextFactory">Фабрика контекста базы данных.</param>
             <param name="provider">Поставщик.</param>
             <param name="typesOptions">Параметры сущностей.</param>            
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupService.MigrateDatabase">
+            <inheritdoc/>
         </member>
         <member name="M:Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupService.CheckIfAnyDummyMainNotFound(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbContext)">
             <inheritdoc/>

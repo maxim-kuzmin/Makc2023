@@ -76,6 +76,19 @@ public class ClientMapperDbContext : DbContext
 
     #endregion Constructors
 
+    #region Public methods
+
+    /// <summary>
+    /// Мигрировать асинхронно.
+    /// </summary>
+    /// <returns>Задача на миграцию.</returns>
+    public Task MigrateAsync()
+    {
+        return Database.MigrateAsync();
+    }
+
+    #endregion Public methods
+
     #region Protected methods
 
     /// <inheritdoc/>

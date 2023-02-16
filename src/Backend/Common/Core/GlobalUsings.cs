@@ -11,6 +11,7 @@ global using Makc2023.Backend.Common.Core.App;
 global using Makc2023.Backend.Common.Core.Converting;
 global using Makc2023.Backend.Common.Core.Exceptions;
 global using Makc2023.Backend.Common.Core.Operation;
+global using Makc2023.Backend.Common.Core.Repeat;
 global using Makc2023.Backend.Common.Core.Serialization.Json;
 global using Makc2023.Backend.Common.Core.Setup;
 global using Microsoft.Extensions.Configuration;

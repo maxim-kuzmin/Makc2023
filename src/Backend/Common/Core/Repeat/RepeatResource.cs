@@ -1,11 +1,11 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Common.Data.SQL.Mappers.EF;
+namespace Makc2023.Backend.Common.Core.Repeat;
 
 /// <summary>
-/// Ресурс сопоставителя.
+/// Интерфейс ресурса повторения.
 /// </summary>
-public class MapperResource : IMapperResource
+public class RepeatResource : IRepeatResource
 {
     #region Fields
 
@@ -19,7 +19,7 @@ public class MapperResource : IMapperResource
     /// Конструктор.
     /// </summary>
     /// <param name="localizer">Локализатор.</param>
-    public MapperResource(IStringLocalizer<MapperResource> localizer)
+    public RepeatResource(IStringLocalizer<RepeatResource> localizer)
     {
         _localizer = localizer;
     }
@@ -29,9 +29,13 @@ public class MapperResource : IMapperResource
     #region Public methods
 
     /// <inheritdoc/>
-    public string GetErrorMessageForExternalTransaction(Guid transactionId)
+    public string GetErrorMessageForRetry(Exception exception, int retryNumber, int retryCount)
     {
-        return _localizer["@@ErrorMessageForExternalTransaction", transactionId];
+        return _localizer["@@ErrorMessageForRetry",
+            exception.GetType().Name,
+            exception.Message,
+            retryNumber,
+            retryCount];
     }
 
     #endregion Public methods

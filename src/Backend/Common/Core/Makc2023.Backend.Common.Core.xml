@@ -500,28 +500,6 @@
             </summary>
             <returns>Глобально уникальное значение.</returns>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.IRepeater">
-            <summary>
-            Интерфейс повторителя.
-            </summary>
-        </member>
-        <member name="M:Makc2023.Backend.Common.Core.IRepeater.Execute``1(System.Int32,System.Action)">
-            <summary>
-            Выполнить.
-            </summary>
-            <typeparam name="TException">Тип исключения.</typeparam>
-            <param name="retries">Количество повторений.</param>
-            <param name="actionToExecute">Выполняемое действие.</param>
-        </member>
-        <member name="M:Makc2023.Backend.Common.Core.IRepeater.ExecuteAsync``1(System.Int32,System.Func{System.Threading.Tasks.Task})">
-            <summary>
-            Выполнить асинхронно.
-            </summary>
-            <typeparam name="TException">Тип исключения.</typeparam>
-            <param name="retries">Количество повторений.</param>
-            <param name="functionToExecute">Выполняемая функция.</param>
-            <returns>Задача на выполнение.</returns>
-        </member>
         <member name="T:Makc2023.Backend.Common.Core.Loader`1">
             <summary>
             Загрузчик.
@@ -1139,21 +1117,72 @@
             Выходные данные.
             </summary>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Repeater">
+        <member name="T:Makc2023.Backend.Common.Core.Repeat.IRepeatResource">
             <summary>
-            Повторитель.
+            Интерфейс ресурса повторения.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Repeater.#ctor(Microsoft.Extensions.Logging.ILogger{Makc2023.Backend.Common.Core.Repeater})">
+        <member name="M:Makc2023.Backend.Common.Core.Repeat.IRepeatResource.GetErrorMessageForRetry(System.Exception,System.Int32,System.Int32)">
+            <summary>
+            Получить сообщение об ошибке для повторной попытки.
+            </summary>
+            <param name="exception">Исключение.</param>
+            <param name="retryNumber">Номер повторения.</param>
+            <param name="retryCount">Количество повторений.</param>    
+            <returns>Сообщение об ошибке.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Repeat.IRepeatService">
+            <summary>
+            Интерфейс сервиса повторения.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Repeat.IRepeatService.Execute(System.Int32,System.Action,System.Func{System.Exception,System.Boolean})">
+            <summary>
+            Выполнить.
+            </summary>
+            <param name="retryCount">Количество повторений.</param>
+            <param name="actionToExecute">Выполняемое действие.</param>
+            <param name="functionToFilterException">Функция для фильтрации исключений.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Repeat.IRepeatService.ExecuteAsync(System.Int32,System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Boolean})">
+            <summary>
+            Выполнить асинхронно.
+            </summary>
+            <param name="retryCount">Количество повторений.</param>
+            <param name="functionToExecute">Выполняемая функция.</param>
+            <param name="functionToFilterException">Функция для фильтрации исключений.</param>
+            <returns>Задача на выполнение.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Repeat.RepeatResource">
+            <summary>
+            Интерфейс ресурса повторения.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Repeat.RepeatResource.#ctor(Microsoft.Extensions.Localization.IStringLocalizer{Makc2023.Backend.Common.Core.Repeat.RepeatResource})">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="localizer">Локализатор.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Repeat.RepeatResource.GetErrorMessageForRetry(System.Exception,System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Repeat.RepeatService">
+            <summary>
+            Сервис повторения.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Repeat.RepeatService.#ctor(Microsoft.Extensions.Logging.ILogger{Makc2023.Backend.Common.Core.Repeat.RepeatService},Makc2023.Backend.Common.Core.Repeat.IRepeatResource)">
             <summary>
             Конструктор.
             </summary>
             <param name="logger">Регистратор.</param>
+            <param name="repeatResource">Ресурс повторения.</param>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Repeater.Execute``1(System.Int32,System.Action)">
+        <member name="M:Makc2023.Backend.Common.Core.Repeat.RepeatService.Execute(System.Int32,System.Action,System.Func{System.Exception,System.Boolean})">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Repeater.ExecuteAsync``1(System.Int32,System.Func{System.Threading.Tasks.Task})">
+        <member name="M:Makc2023.Backend.Common.Core.Repeat.RepeatService.ExecuteAsync(System.Int32,System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Boolean})">
             <inheritdoc/>
         </member>
         <member name="T:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtension">

@@ -9,7 +9,7 @@ public class ConvertingResource : IConvertingResource
 {
     #region Properties
 
-    private IStringLocalizer<ConvertingResource> Localizer { get; }
+    private readonly IStringLocalizer _localizer;
 
     #endregion Properties
 
@@ -21,7 +21,7 @@ public class ConvertingResource : IConvertingResource
     /// <param name="localizer">Локализатор.</param>
     public ConvertingResource(IStringLocalizer<ConvertingResource> localizer)
     {
-        Localizer = localizer;
+        _localizer = localizer;
     }
 
     #endregion Constructors
@@ -31,7 +31,7 @@ public class ConvertingResource : IConvertingResource
     /// <inheritdoc/>
     public string GetFormatForDate()
     {
-        return Localizer["@@FormatForDate"];
+        return _localizer["@@FormatForDate"];
     }
 
     #endregion Public methods

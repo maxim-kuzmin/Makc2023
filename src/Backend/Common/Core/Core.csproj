@@ -30,4 +30,10 @@
 		</None>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <EmbeddedResource Update="ResourceFiles\Repeat\RepeatResource.en.resx">
+	    <SubType>Designer</SubType>
+	  </EmbeddedResource>
+	</ItemGroup>
+
 </Project>

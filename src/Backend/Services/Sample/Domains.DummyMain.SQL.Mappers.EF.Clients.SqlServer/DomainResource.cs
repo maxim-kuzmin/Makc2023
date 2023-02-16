@@ -7,11 +7,11 @@ namespace Makc2023.Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clie
 /// </summary>
 public class DomainResource : IDomainResource
 {
-    #region Properties
+    #region Fields
 
-    private IStringLocalizer<DomainResource> Localizer { get; }
+    private readonly IStringLocalizer _localizer;
 
-    #endregion Properties
+    #endregion Fields
 
     #region Constructors
 
@@ -21,7 +21,7 @@ public class DomainResource : IDomainResource
     /// <param name="localizer">Локализатор.</param>
     public DomainResource(IStringLocalizer<DomainResource> localizer)
     {
-        Localizer = localizer;
+        _localizer = localizer;
     }
 
     #endregion Constructors
@@ -31,19 +31,19 @@ public class DomainResource : IDomainResource
     /// <inheritdoc/>
     public string GetErrorMessageForEntityNotFound()
     {
-        return Localizer["@@ErrorMessageForEntityNotFound"];
+        return _localizer["@@ErrorMessageForEntityNotFound"];
     }
 
     /// <inheritdoc/>
     public string GetItemGetOperationName()
     {
-        return Localizer["@@ItemGetOperationName"];
+        return _localizer["@@ItemGetOperationName"];
     }
 
     /// <inheritdoc/>
     public string GetListGetOperationName()
     {
-        return Localizer["@@ListGetOperationName"];
+        return _localizer["@@ListGetOperationName"];
     }
 
     #endregion Public methods
