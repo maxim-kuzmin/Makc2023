@@ -13,7 +13,7 @@ public class ListGetOperationOutput<TItem>
     /// <summary>
     /// Элементы.
     /// </summary>
-    public TItem[]? Items { get; set; }
+    public TItem[] Items { get; set; } = null!;
 
     /// <summary>
     /// Общее число элементов.
