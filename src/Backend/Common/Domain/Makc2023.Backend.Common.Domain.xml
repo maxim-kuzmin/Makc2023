@@ -215,5 +215,72 @@
             </summary>
             <returns>Копия.</returns>
         </member>
+        <member name="T:Makc2023.Backend.Common.Domain.ValueObjects.Options.OptionWithInt32IdValueObject">
+            <summary>
+            Объект-значение параметра с 32-битным целочисленным идентификатором.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.ValueObjects.Options.OptionWithInt32IdValueObject.#ctor(System.Int32,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Domain.ValueObjects.Options.OptionWithInt64IdValueObject">
+            <summary>
+            Объект-значение параметра с 64-битным целочисленным идентификатором.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.ValueObjects.Options.OptionWithInt64IdValueObject.#ctor(System.Int64,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Domain.ValueObjects.Options.OptionWithStringIdValueObject">
+            <summary>
+            Объект-значение параметра с идентификатором строкового типа.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Domain.ValueObjects.Options.OptionWithStringIdValueObject.Id">
+            <summary>
+            Идентификатор.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Domain.ValueObjects.Options.OptionWithStringIdValueObject.Name">
+            <summary>
+            Имя.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.ValueObjects.Options.OptionWithStringIdValueObject.#ctor(System.String,System.String)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="id">Идентификатор.</param>
+            <param name="name">Имя.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.ValueObjects.Options.OptionWithStringIdValueObject.GetEqualityComponents">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Domain.ValueObjects.Options.OptionWithStructIdValueObject`1">
+            <summary>
+            Объект-значение параметра с идентификатором структурного типа.
+            </summary>
+            <typeparam name="TId">Тип идентификатора.</typeparam>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Domain.ValueObjects.Options.OptionWithStructIdValueObject`1.Id">
+            <summary>
+            Идентификатор.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Domain.ValueObjects.Options.OptionWithStructIdValueObject`1.Name">
+            <summary>
+            Имя.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.ValueObjects.Options.OptionWithStructIdValueObject`1.#ctor(`0,System.String)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="id">Идентификатор.</param>
+            <param name="name">Имя.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Domain.ValueObjects.Options.OptionWithStructIdValueObject`1.GetEqualityComponents">
+            <inheritdoc/>
+        </member>
     </members>
 </doc>

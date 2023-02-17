@@ -171,7 +171,7 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
                 {
                     if (itemLookup.TryGetValue(
                         mapperDummyMain.Id,
-                        out DummyMainEntity? item))
+                        out var item))
                     {
                         long[] mapperDummyManyToManyIds = mapperDummyMain.DummyMainDummyManyToManyList
                             .Select(x => x.DummyManyToManyId)
@@ -181,7 +181,7 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
                         {
                             if (mapperDummyManyToManyLookup.TryGetValue(
                                 mapperDummyManyToManyId,
-                                out ClientMapperDummyManyToManyTypeEntity? mapperDummyManyToMany))
+                                out var mapperDummyManyToMany))
                             {
                                 item.AddDummyManyToMany(mapperDummyManyToMany);
                             }
@@ -211,7 +211,7 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
     {
         foreach (var mapperDummyMain in mapperDummyMainList)
         {
-            if (itemLookup.TryGetValue(mapperDummyMain.Id, out DummyMainEntity? item))
+            if (itemLookup.TryGetValue(mapperDummyMain.Id, out var item))
             {
                 LoadDummyManyToOne(item, mapperDummyMain);
             }
@@ -234,7 +234,7 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
     {
         foreach (var mapperDummyMain in mapperDummyMainList)
         {
-            if (itemLookup.TryGetValue( mapperDummyMain.Id, out DummyMainEntity? item))
+            if (itemLookup.TryGetValue( mapperDummyMain.Id, out var item))
             {
                 LoadDummyOneToMany(item, mapperDummyMain);
             }
