@@ -7,7 +7,7 @@ namespace Makc2023.Backend.Common.Core.Operation;
 /// </summary>
 /// <typeparam name="TOutput">Тип выходных данных.</typeparam>
 public class OperationResultWithOutput<TOutput> : OperationResult
-    where TOutput: class
+    where TOutput: class, new()
 {
     #region Properties
 

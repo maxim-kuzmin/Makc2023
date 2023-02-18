@@ -70,7 +70,7 @@ public abstract class OperationHandler : IOperationHandler
     #region Public methods
 
     /// <inheritdoc/>
-    public void OnError(Exception? exception = null)
+    public virtual void OnError(Exception? exception = null)
     {
         InitOperationResult(false);
 
@@ -110,6 +110,7 @@ public abstract class OperationHandler : IOperationHandler
 
     #region Protected methods
 
+
     /// <summary>
     /// Сделать в начале операции.
     /// </summary>
@@ -140,20 +141,11 @@ public abstract class OperationHandler : IOperationHandler
     /// </summary>
     protected void DoOnSuccess()
     {
-        var operationResult = GetOperationResult();
+        var currentSetupOptions = SetupOptions.CurrentValue;
 
-        if (operationResult.IsOk)
+        if (currentSetupOptions.LogLevel == LogLevel.Debug)
         {
-            var currentSetupOptions = SetupOptions.CurrentValue;
-
-            if (currentSetupOptions.LogLevel == LogLevel.Debug)
-            {
-                LogDebugOnSuccess();
-            }
-        }
-        else
-        {
-            OnError();
+            LogDebugOnSuccess();
         }
     }
 

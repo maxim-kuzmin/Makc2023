@@ -10,7 +10,7 @@ namespace Makc2023.Backend.Common.Core.Operation.Handlers;
 public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutput> : OperationHandler,
     IOperationWithInputAndOutputHandler<TOperationInput, TOperationOutput>
     where TOperationInput : class
-    where TOperationOutput : class
+    where TOperationOutput : class, new()
 {
     #region Properties
 
@@ -49,6 +49,14 @@ public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutpu
     #region Public methods
 
     /// <inheritdoc/>
+    public sealed override void OnError(Exception? exception = null)
+    {
+        base.OnError(exception);
+
+        SetOutput(new());
+    }
+
+    /// <inheritdoc/>
     public void OnStart(TOperationInput operationInput, string operationCode = "")
     {
         OperationInput = FunctionToTransformOperationInput != null
@@ -63,12 +71,7 @@ public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutpu
     {
         InitOperationResult(true);
 
-        if (FunctionToTransformOperationOutput != null)
-        {
-            operationOutput = FunctionToTransformOperationOutput.Invoke(operationOutput);
-        }
-
-        OperationResult.Output = operationOutput;
+        SetOutput(operationOutput);
 
         DoOnSuccess();
     }
@@ -112,4 +115,18 @@ public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutpu
     }
 
     #endregion Protected methods
+
+    #region Private methods
+
+    private void SetOutput(TOperationOutput operationOutput)
+    {
+        if (FunctionToTransformOperationOutput != null)
+        {
+            operationOutput = FunctionToTransformOperationOutput.Invoke(operationOutput);
+        }
+
+        OperationResult.Output = operationOutput;
+    }
+
+    #endregion Private methods
 }

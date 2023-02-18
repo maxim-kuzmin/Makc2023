@@ -698,6 +698,9 @@
         <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`2.#ctor(System.String,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
             <inheritdoc/>
         </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`2.OnError(System.Exception)">
+            <inheritdoc/>
+        </member>
         <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`2.OnStart(`0,System.String)">
             <inheritdoc/>
         </member>
@@ -798,6 +801,9 @@
             <inheritdoc/>
         </member>
         <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`1.#ctor(System.String,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`1.OnError(System.Exception)">
             <inheritdoc/>
         </member>
         <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`1.OnStart(System.String)">

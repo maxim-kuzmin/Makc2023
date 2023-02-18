@@ -33,7 +33,7 @@ public static class OperationExtension
         this ICollection<OperationResult> operationResults,
         Func<OperationResultWithOutput<TOutput>> functionToGetOperationResult,
         Action<TOutput> actionToSetOutput
-        ) where TOutput : class
+        ) where TOutput : class, new()
     {
         var operationResult = functionToGetOperationResult.Invoke();
 
@@ -81,7 +81,7 @@ public static class OperationExtension
         this ICollection<OperationResult> operationResults,
         Func<Task<OperationResultWithOutput<TOutput>>> functionToGetOperationResultTask,
         Action<TOutput> actionToSetOutput
-        ) where TOutput: class
+        ) where TOutput: class, new()
     {
         var operationResult = await functionToGetOperationResultTask.Invoke().ConfigureAwait(false);
 

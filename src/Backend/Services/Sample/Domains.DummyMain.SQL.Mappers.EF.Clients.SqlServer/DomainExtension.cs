@@ -25,7 +25,7 @@ public static class DomainExtension
             query = query.Where(x => x.Id == input.Id);
         }
 
-        if (input.Name != null)
+        if (!string.IsNullOrWhiteSpace(input.Name))
         {
             query = query.Where(x => x.Name == input.Name);
         }

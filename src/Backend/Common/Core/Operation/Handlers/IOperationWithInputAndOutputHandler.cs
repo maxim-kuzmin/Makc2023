@@ -8,7 +8,7 @@ namespace Makc2023.Backend.Common.Core.Operation.Handlers;
 /// <typeparam name="TOperationInput">Тип входных данных операции.</typeparam>
 /// <typeparam name="TOperationOutput">Тип выходных данных операции.</typeparam>    
 public interface IOperationWithInputAndOutputHandler<TOperationInput, TOperationOutput> : IOperationHandler
-    where TOperationOutput: class
+    where TOperationOutput : class, new()
 {
     #region Properties
 
