@@ -48,17 +48,17 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
             .ApplyFiltering(input)
             .SingleOrDefaultAsync();
 
-        var mapperDummyMain = await taskForItem.ConfigureAwait(false);
+        var mapperForItem = await taskForItem.ConfigureAwait(false);
 
-        if (mapperDummyMain != null)
+        if (mapperForItem != null)
         {
-            var item = new DummyMainEntity(mapperDummyMain);
+            var item = new DummyMainEntity(mapperForItem);
 
-            LoadDummyOneToMany(item, mapperDummyMain);
+            LoadDummyOneToMany(item, mapperForItem);
 
-            LoadDummyManyToOne(item, mapperDummyMain);
+            LoadDummyManyToOne(item, mapperForItem);
 
-            await LoadDummyManyToMany(dbContext, item, mapperDummyMain).ConfigureAwait(false);            
+            await LoadDummyManyToMany(dbContext, item, mapperForItem).ConfigureAwait(false);            
 
             result.Item = item;
         }
@@ -92,19 +92,19 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
         var taskForItems = queryForItems.ToArrayAsync();
         var taskForTotalCount = queryForTotalCount.CountAsync();
 
-        var mapperDummyMainList = await taskForItems.ConfigureAwait(false);
+        var mapperForItems = await taskForItems.ConfigureAwait(false);
 
-        var itemLookup = mapperDummyMainList
+        var itemLookup = mapperForItems
             .Select(x => new DummyMainEntity(x))
             .ToDictionary(x => x.Data.Id);
 
-        if (mapperDummyMainList.Any())
+        if (mapperForItems.Any())
         {
-            LoadDummyOneToMany(itemLookup, mapperDummyMainList);
+            LoadDummyOneToMany(itemLookup, mapperForItems);
 
-            LoadDummyManyToOne(itemLookup, mapperDummyMainList);
+            LoadDummyManyToOne(itemLookup, mapperForItems);
 
-            await LoadDummyManyToMany(dbContext, itemLookup, mapperDummyMainList).ConfigureAwait(false);
+            await LoadDummyManyToMany(dbContext, itemLookup, mapperForItems).ConfigureAwait(false);
         }
 
         result.Items = itemLookup.Values.ToArray();
@@ -120,9 +120,9 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
     private static async Task LoadDummyManyToMany(
         ClientMapperDbContext dbContext,
         DummyMainEntity item,
-        ClientMapperDummyMainTypeEntity mapperDummyMain)
+        ClientMapperDummyMainTypeEntity mapperForItem)
     {
-        var mapperDummyMainDummyManyToManyList = mapperDummyMain.DummyMainDummyManyToManyList;
+        var mapperDummyMainDummyManyToManyList = mapperForItem.DummyMainDummyManyToManyList;
 
         if (mapperDummyMainDummyManyToManyList.Any())
         {
@@ -149,9 +149,9 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
     private static async Task LoadDummyManyToMany(
         ClientMapperDbContext dbContext,
         Dictionary<long, DummyMainEntity> itemLookup,
-        ClientMapperDummyMainTypeEntity[] mapperDummyMainList)
+        ClientMapperDummyMainTypeEntity[] mapperForItems)
     {
-        long[] mapperDummyManyToManyIdsForLookup = mapperDummyMainList
+        long[] mapperDummyManyToManyIdsForLookup = mapperForItems
             .SelectMany(x => x.DummyMainDummyManyToManyList)
             .Select(x => x.DummyManyToManyId)
             .Distinct()
@@ -167,13 +167,11 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
 
             if (mapperDummyManyToManyLookup.Any())
             {
-                foreach (var mapperDummyMain in mapperDummyMainList)
+                foreach (var mapperForItem in mapperForItems)
                 {
-                    if (itemLookup.TryGetValue(
-                        mapperDummyMain.Id,
-                        out var item))
+                    if (itemLookup.TryGetValue(mapperForItem.Id, out var item))
                     {
-                        long[] mapperDummyManyToManyIds = mapperDummyMain.DummyMainDummyManyToManyList
+                        long[] mapperDummyManyToManyIds = mapperForItem.DummyMainDummyManyToManyList
                             .Select(x => x.DummyManyToManyId)
                             .ToArray();
 
@@ -192,9 +190,9 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
         }
     }
 
-    private static void LoadDummyManyToOne(DummyMainEntity item, ClientMapperDummyMainTypeEntity mapperDummyMain)
+    private static void LoadDummyManyToOne(DummyMainEntity item, ClientMapperDummyMainTypeEntity mapperForItem)
     {
-        var mapperDummyManyToOneList = mapperDummyMain.DummyManyToOneList;
+        var mapperDummyManyToOneList = mapperForItem.DummyManyToOneList;
 
         if (mapperDummyManyToOneList.Any())
         {
@@ -207,20 +205,20 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
 
     private static void LoadDummyManyToOne(
         Dictionary<long, DummyMainEntity> itemLookup,
-        ClientMapperDummyMainTypeEntity[] mapperDummyMainList)
+        ClientMapperDummyMainTypeEntity[] mapperForItems)
     {
-        foreach (var mapperDummyMain in mapperDummyMainList)
+        foreach (var mapperForItem in mapperForItems)
         {
-            if (itemLookup.TryGetValue(mapperDummyMain.Id, out var item))
+            if (itemLookup.TryGetValue(mapperForItem.Id, out var item))
             {
-                LoadDummyManyToOne(item, mapperDummyMain);
+                LoadDummyManyToOne(item, mapperForItem);
             }
         }
     }
 
-    private static void LoadDummyOneToMany(DummyMainEntity item, ClientMapperDummyMainTypeEntity mapperDummyMain)
+    private static void LoadDummyOneToMany(DummyMainEntity item, ClientMapperDummyMainTypeEntity mapperForItem)
     {
-        var mapperDummyOneToMany = mapperDummyMain.DummyOneToMany;
+        var mapperDummyOneToMany = mapperForItem.DummyOneToMany;
 
         if (mapperDummyOneToMany != null)
         {
@@ -230,13 +228,13 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
 
     private static void LoadDummyOneToMany(
         Dictionary<long, DummyMainEntity> itemLookup,
-        ClientMapperDummyMainTypeEntity[] mapperDummyMainList)
+        ClientMapperDummyMainTypeEntity[] mapperForItems)
     {
-        foreach (var mapperDummyMain in mapperDummyMainList)
+        foreach (var mapperForItem in mapperForItems)
         {
-            if (itemLookup.TryGetValue( mapperDummyMain.Id, out var item))
+            if (itemLookup.TryGetValue( mapperForItem.Id, out var item))
             {
-                LoadDummyOneToMany(item, mapperDummyMain);
+                LoadDummyOneToMany(item, mapperForItem);
             }
         }
     }

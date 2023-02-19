@@ -2,7 +2,6 @@
 
 global using Makc2023.Backend.Common.Core.App;
 global using Makc2023.Backend.Common.Core.Exceptions;
-global using Makc2023.Backend.Common.Core.Exceptions.VariableExceptions;
 global using Makc2023.Backend.Common.Core.Operation;
 global using Makc2023.Backend.Common.Core.Operation.Handlers;
 global using Makc2023.Backend.Common.Core.Setup;
@@ -10,7 +9,6 @@ global using Makc2023.Backend.Common.Data.SQL.Operations.List.Get;
 global using Makc2023.Backend.Common.Domain.SQL.Mappers.EF;
 global using Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db;
 global using Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain;
-global using Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToMany;
 global using Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain;
 global using Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany;
 global using Makc2023.Backend.Services.Sample.Domain.SQL.Entities;

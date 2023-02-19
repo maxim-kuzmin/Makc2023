@@ -55,5 +55,19 @@ public static class TreeCommandExtension
             : Array.Empty<long>();
     }
 
+    /// <summary>
+    /// Преобразовать из пути в дереве в путь в дереве родителя.
+    /// </summary>
+    /// <param name="treePath">Путь в дереве.</param>
+    /// <returns>Путь в дереве родителя.</returns>
+    public static string FromTreePathToParentTreePath(this string treePath)
+    {
+        long[] ancestors = treePath.FromTreePathToInt64ArrayOfAncestors();
+
+        return ancestors.Length > 0
+            ? string.Join(TREE_PATH_SEPARATOR, ancestors)
+            : "";
+    }
+
     #endregion Public methods
 }

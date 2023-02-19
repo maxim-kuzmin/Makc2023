@@ -11,7 +11,7 @@
         </member>
         <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.DomainExtension.ApplyFiltering(System.Linq.IQueryable{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity},Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput)">
             <summary>
-            Применить. Фильтрацию.
+            Применить фильтрацию.
             </summary>
             <param name="query">Запрос.</param>
             <param name="input">Входные данные.</param>
@@ -19,7 +19,7 @@
         </member>
         <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.DomainExtension.ApplyFiltering(System.Linq.IQueryable{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity},Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationInput)">
             <summary>
-            Применить. Фильтрацию.
+            Применить фильтрацию.
             </summary>
             <param name="query">Запрос.</param>
             <param name="input">Входные данные.</param>
@@ -27,7 +27,7 @@
         </member>
         <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.DomainExtension.ApplySorting(System.Linq.IQueryable{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity},Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationInput)">
             <summary>
-            Применить. Сортировку.
+            Применить сортировку.
             </summary>
             <param name="query">Запрос.</param>
             <param name="input">Входные данные.</param>

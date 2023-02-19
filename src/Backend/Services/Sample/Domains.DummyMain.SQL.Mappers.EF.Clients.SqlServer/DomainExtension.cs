@@ -10,7 +10,7 @@ public static class DomainExtension
     #region Public methods
 
     /// <summary>
-    /// Применить. Фильтрацию.
+    /// Применить фильтрацию.
     /// </summary>
     /// <param name="query">Запрос.</param>
     /// <param name="input">Входные данные.</param>
@@ -34,7 +34,7 @@ public static class DomainExtension
     }
 
     /// <summary>
-    /// Применить. Фильтрацию.
+    /// Применить фильтрацию.
     /// </summary>
     /// <param name="query">Запрос.</param>
     /// <param name="input">Входные данные.</param>
@@ -91,7 +91,7 @@ public static class DomainExtension
     }
 
     /// <summary>
-    /// Применить. Сортировку.
+    /// Применить сортировку.
     /// </summary>
     /// <param name="query">Запрос.</param>
     /// <param name="input">Входные данные.</param>
@@ -101,88 +101,64 @@ public static class DomainExtension
         DummyMainListGetOperationInput input
         )
     {
-        if (string.IsNullOrWhiteSpace(input.SortField))
+        if (input.SortField.Equals(nameof(DummyMainTypeEntity.Id), StringComparison.OrdinalIgnoreCase))
         {
-            throw new NullOrWhiteSpaceStringVariableException(typeof(DomainExtension), nameof(input), nameof(input.SortField));
-        }
-
-        string sortField = input.SortField.ToLower();
-
-        if (string.IsNullOrWhiteSpace(input.SortDirection))
-        {
-            throw new NullOrWhiteSpaceStringVariableException(typeof(DomainExtension), nameof(input), nameof(input.SortDirection));
-        }
-
-        string sortDirection = input.SortDirection.ToLower();
-
-        string sortFieldForId = nameof(DummyMainTypeEntity.Id).ToLower();
-        string sortFieldForName = nameof(DummyMainTypeEntity.Name).ToLower();
-        string sortFieldForObjectDummyOneToMany = $"{typeof(DummyOneToManyTypeEntity).Name}.{nameof(DummyOneToManyTypeEntity.Name)}".ToLower();
-        string sortFieldForPropDate = nameof(DummyMainTypeEntity.PropDate).ToLower();
-        string sortFieldForPropBoolean = nameof(DummyMainTypeEntity.PropBoolean).ToLower();
-
-        if (sortField == sortFieldForId)
-        {
-            switch (sortDirection)
+            if (input.SortDirection.Equals(OperationOptions.SORT_DIRECTION_ASC, StringComparison.OrdinalIgnoreCase))
             {
-                case OperationOptions.SORT_DIRECTION_ASC:
-                    query = query.OrderBy(x => x.Id);
-                    break;
-                case OperationOptions.SORT_DIRECTION_DESC:
-                    query = query.OrderByDescending(x => x.Id);
-                    break;
+                query = query.OrderBy(x => x.Id);
+            }
+            else if (input.SortDirection.Equals(OperationOptions.SORT_DIRECTION_DESC, StringComparison.OrdinalIgnoreCase))
+            {
+                query = query.OrderByDescending(x => x.Id);
             }
         }
-        else if (sortField == sortFieldForName)
+        else if (input.SortField.Equals(nameof(DummyMainTypeEntity.Name), StringComparison.OrdinalIgnoreCase))
         {
-            switch (sortDirection)
+            if (input.SortDirection.Equals(OperationOptions.SORT_DIRECTION_ASC, StringComparison.OrdinalIgnoreCase))
             {
-                case OperationOptions.SORT_DIRECTION_ASC:
-                    query = query.OrderBy(x => x.Name);
-                    break;
-                case OperationOptions.SORT_DIRECTION_DESC:
-                    query = query.OrderByDescending(x => x.Name);
-                    break;
+                query = query.OrderBy(x => x.Name);
+            }
+            else if (input.SortDirection.Equals(OperationOptions.SORT_DIRECTION_DESC, StringComparison.OrdinalIgnoreCase))
+            {
+                query = query.OrderByDescending(x => x.Name);
             }
         }
-        else if (sortField == sortFieldForObjectDummyOneToMany)
+        else if (input.SortField.Equals($"{typeof(DummyOneToManyTypeEntity).Name}.{nameof(DummyOneToManyTypeEntity.Name)}", StringComparison.OrdinalIgnoreCase))
         {
-            switch (sortDirection)
+            if (input.SortDirection.Equals(OperationOptions.SORT_DIRECTION_ASC, StringComparison.OrdinalIgnoreCase))
             {
-                case OperationOptions.SORT_DIRECTION_ASC:
-                    query = query.OrderBy(x => x.DummyOneToMany!.Name);
-                    break;
-                case OperationOptions.SORT_DIRECTION_DESC:
-                    query = query.OrderByDescending(x => x.DummyOneToMany!.Name);
-                    break;
+                query = query.OrderBy(x => x.DummyOneToMany != null ? x.DummyOneToMany.Name : "");
+            }
+            else if (input.SortDirection.Equals(OperationOptions.SORT_DIRECTION_DESC, StringComparison.OrdinalIgnoreCase))
+            {
+                query = query.OrderByDescending(x => x.DummyOneToMany != null ? x.DummyOneToMany.Name : "");
             }
         }
-        else if (sortField == sortFieldForPropDate)
+        else if (input.SortField.Equals(nameof(DummyMainTypeEntity.PropDate), StringComparison.OrdinalIgnoreCase))
         {
-            switch (sortDirection)
+            if (input.SortDirection.Equals(OperationOptions.SORT_DIRECTION_ASC, StringComparison.OrdinalIgnoreCase))
             {
-                case OperationOptions.SORT_DIRECTION_ASC:
-                    query = query.OrderBy(x => x.PropDate);
-                    break;
-                case OperationOptions.SORT_DIRECTION_DESC:
-                    query = query.OrderByDescending(x => x.PropDate);
-                    break;
+                query = query.OrderBy(x => x.PropDate);
+            }
+            else if (input.SortDirection.Equals(OperationOptions.SORT_DIRECTION_DESC, StringComparison.OrdinalIgnoreCase))
+            {
+                query = query.OrderByDescending(x => x.PropDate);
             }
         }
-        else if (sortField == sortFieldForPropBoolean)
+        else if (input.SortField.Equals(nameof(DummyMainTypeEntity.PropBoolean), StringComparison.OrdinalIgnoreCase))
         {
-            switch (sortDirection)
+            if (input.SortDirection.Equals(OperationOptions.SORT_DIRECTION_ASC, StringComparison.OrdinalIgnoreCase))
             {
-                case OperationOptions.SORT_DIRECTION_ASC:
-                    query = query.OrderBy(x => x.PropBoolean);
-                    break;
-                case OperationOptions.SORT_DIRECTION_DESC:
-                    query = query.OrderByDescending(x => x.PropBoolean);
-                    break;
+                query = query.OrderBy(x => x.PropBoolean);
+            }
+            else if (input.SortDirection.Equals(OperationOptions.SORT_DIRECTION_DESC, StringComparison.OrdinalIgnoreCase))
+            {
+                query = query.OrderByDescending(x => x.PropBoolean);
             }
         }
 
-        if (!string.IsNullOrWhiteSpace(sortField) && sortField != sortFieldForId)
+        if (!string.IsNullOrWhiteSpace(input.SortField)
+            && !input.SortField.Equals(nameof(DummyMainTypeEntity.Id), StringComparison.OrdinalIgnoreCase))
         {
             query = ((IOrderedQueryable<ClientMapperDummyMainTypeEntity>)query).ThenBy(x => x.Id);
         }

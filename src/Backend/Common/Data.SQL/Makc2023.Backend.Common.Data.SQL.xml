@@ -181,6 +181,13 @@
             <param name="treePath">Путь в дереве.</param>
             <returns>Массив 64-битных целых чисел предков.</returns>
         </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandExtension.FromTreePathToParentTreePath(System.String)">
+            <summary>
+            Преобразовать из пути в дереве в путь в дереве родителя.
+            </summary>
+            <param name="treePath">Путь в дереве.</param>
+            <returns>Путь в дереве родителя.</returns>
+        </member>
         <member name="T:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandParameters">
             <summary>
             Параметры команды дерева.
