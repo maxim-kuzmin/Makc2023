@@ -56,7 +56,7 @@ public class DomainItemGetOperationHandler :
 
     private DummyMainItemGetOperationOutput TransformOperationOutput(DummyMainItemGetOperationOutput output)
     {
-        output.Item ??= new DummyMainEntity(new DummyMainTypeEntity());
+        output.Item ??= new DummyMainEntity();
 
         if (output.IsItemNotFound)
         {

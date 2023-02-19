@@ -22,9 +22,9 @@ public class InternalPermissionEntity : Entity<long>
     /// Конструктор.
     /// </summary>
     /// <param name="data">Данные.</param>
-    public InternalPermissionEntity(InternalPermissionTypeEntity data)
+    public InternalPermissionEntity(InternalPermissionTypeEntity? data = null)
     {
-        Data = data;
+        Data = data ?? new InternalPermissionTypeEntity();
     }
 
     #endregion Constructors

@@ -37,9 +37,9 @@ public class UserEntity : Entity<long>
     /// Конструктор.
     /// </summary>
     /// <param name="data">Данные.</param>
-    public UserEntity(UserTypeEntity data)
+    public UserEntity(UserTypeEntity? data = null)
     {
-        Data = data;
+        Data = data ?? new UserTypeEntity();
     }
 
     #endregion Constructors

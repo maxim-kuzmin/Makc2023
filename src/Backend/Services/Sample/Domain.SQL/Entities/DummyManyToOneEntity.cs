@@ -22,9 +22,9 @@ public class DummyManyToOneEntity : Entity<long>
     /// Конструктор.
     /// </summary>
     /// <param name="data">Данные.</param>
-    public DummyManyToOneEntity(DummyManyToOneTypeEntity data)
+    public DummyManyToOneEntity(DummyManyToOneTypeEntity? data = null)
     {
-        Data = data;
+        Data = data ?? new DummyManyToOneTypeEntity();
     }
 
     #endregion Constructors

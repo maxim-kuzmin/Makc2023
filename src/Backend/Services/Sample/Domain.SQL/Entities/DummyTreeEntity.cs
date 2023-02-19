@@ -38,9 +38,9 @@ public class DummyTreeEntity : Entity<long>, IAggregateRoot
     /// Конструктор.
     /// </summary>
     /// <param name="data">Данные.</param>
-    public DummyTreeEntity(DummyTreeTypeEntity data)
+    public DummyTreeEntity(DummyTreeTypeEntity? data = null)
     {
-        Data = data;
+        Data = data ?? new DummyTreeTypeEntity();
     }
 
     #endregion Constructors

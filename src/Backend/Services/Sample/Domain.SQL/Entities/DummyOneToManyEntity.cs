@@ -22,9 +22,9 @@ public class DummyOneToManyEntity : Entity<long>, IAggregateRoot
     /// Конструктор.
     /// </summary>
     /// <param name="data">Данные.</param>
-    public DummyOneToManyEntity(DummyOneToManyTypeEntity data)
+    public DummyOneToManyEntity(DummyOneToManyTypeEntity? data = null)
     {
-        Data = data;
+        Data = data ?? new DummyOneToManyTypeEntity();
     }
 
     #endregion Constructors

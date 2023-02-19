@@ -45,9 +45,9 @@ public class DummyMainEntity : Entity<long>, IAggregateRoot
     /// Конструктор.
     /// </summary>
     /// <param name="data">Данные.</param>
-    public DummyMainEntity(DummyMainTypeEntity data)
+    public DummyMainEntity(DummyMainTypeEntity? data = null)
     {
-        Data = data;
+        Data = data ?? new DummyMainTypeEntity();
     }
 
     #endregion Constructors

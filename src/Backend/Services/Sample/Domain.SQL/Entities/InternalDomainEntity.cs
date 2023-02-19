@@ -33,9 +33,9 @@ public class InternalDomainEntity : Entity<long>
     /// Конструктор.
     /// </summary>
     /// <param name="data">Данные.</param>
-    public InternalDomainEntity(InternalDomainTypeEntity data)
+    public InternalDomainEntity(InternalDomainTypeEntity? data = null)
     {
-        Data = data;
+        Data = data ?? new InternalDomainTypeEntity();
     }
 
     #endregion Constructors
