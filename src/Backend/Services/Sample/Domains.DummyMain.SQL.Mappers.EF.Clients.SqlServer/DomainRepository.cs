@@ -149,7 +149,7 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
     private static async Task LoadDummyManyToMany(
         ClientMapperDbContext dbContext,
         Dictionary<long, DummyMainEntity> itemLookup,
-        ClientMapperDummyMainTypeEntity[] mapperForItems)
+        IEnumerable<ClientMapperDummyMainTypeEntity> mapperForItems)
     {
         long[] mapperDummyManyToManyIdsForLookup = mapperForItems
             .SelectMany(x => x.DummyMainDummyManyToManyList)
@@ -205,7 +205,7 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
 
     private static void LoadDummyManyToOne(
         Dictionary<long, DummyMainEntity> itemLookup,
-        ClientMapperDummyMainTypeEntity[] mapperForItems)
+        IEnumerable<ClientMapperDummyMainTypeEntity> mapperForItems)
     {
         foreach (var mapperForItem in mapperForItems)
         {
@@ -228,7 +228,7 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
 
     private static void LoadDummyOneToMany(
         Dictionary<long, DummyMainEntity> itemLookup,
-        ClientMapperDummyMainTypeEntity[] mapperForItems)
+        IEnumerable<ClientMapperDummyMainTypeEntity> mapperForItems)
     {
         foreach (var mapperForItem in mapperForItems)
         {
