@@ -245,6 +245,15 @@
             <param name="resource">Ресурсы преобразования основы ядра.</param>
             <returns>Дата или нуль.</returns>
         </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToEnum``1(System.String,``0)">
+            <summary>
+            Преобразовать из строки в элемент перечисления.
+            </summary>
+            <typeparam name="TEnum">Тип перечисления.</typeparam>
+            <param name="input">Строковое представление элемента перечисления.</param>
+            <param name="defaultValue">Значение по умолчанию.</param>
+            <returns>Элемент перечисления.</returns>
+        </member>
         <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToNumericDecimal(System.String)">
             <summary>
             Преобразовать из строки в дробное десятичное число.

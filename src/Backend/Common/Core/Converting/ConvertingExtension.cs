@@ -131,6 +131,24 @@ public static class ConvertingExtension
     }
 
     /// <summary>
+    /// Преобразовать из строки в элемент перечисления.
+    /// </summary>
+    /// <typeparam name="TEnum">Тип перечисления.</typeparam>
+    /// <param name="input">Строковое представление элемента перечисления.</param>
+    /// <param name="defaultValue">Значение по умолчанию.</param>
+    /// <returns>Элемент перечисления.</returns>
+    public static TEnum FromStringToEnum<TEnum>(this string input, TEnum defaultValue)
+        where TEnum: struct
+    {
+        if (string.IsNullOrWhiteSpace(input))
+        {
+            return defaultValue;
+        }
+
+        return Enum.TryParse(input, true, out TEnum result) ? result : defaultValue;
+    }
+
+    /// <summary>
     /// Преобразовать из строки в дробное десятичное число.
     /// </summary>
     /// <param name="input">Строка.</param>
