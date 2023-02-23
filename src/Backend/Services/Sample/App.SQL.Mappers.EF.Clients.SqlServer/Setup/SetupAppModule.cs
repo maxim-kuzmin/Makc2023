@@ -33,6 +33,12 @@ public class SetupAppModule : AppModule
     {
         services.AddSingleton(x => _appEnvironment);
 
+        services.AddSingleton(x => new SetupService(
+            x.GetRequiredService<IAppEnvironment>(),
+            x.GetRequiredService<IRepeatService>(),
+            x.GetRequiredService<ISetupServiceOfServiceDataSQL>()
+            ));
+
         services.AddLocalization(x => x.ConfigureLocalization());
 
         services.AddMediatR(
@@ -45,14 +51,28 @@ public class SetupAppModule : AppModule
     public sealed override IEnumerable<Type> GetExports()
     {
         return new[]
-        {          
-            typeof(IAppEnvironment),
-            typeof(IConfiguration),
-            typeof(ILogger),
-            typeof(IMediator),
-            typeof(IStringLocalizer),
-        };
+            {          
+                typeof(IAppEnvironment),
+                typeof(IConfiguration),
+                typeof(ILogger),
+                typeof(IMediator),
+                typeof(IStringLocalizer),
+            };
     }
 
     #endregion Public methods
+
+    #region Protected methods
+
+    /// <inheritdoc/>
+    protected sealed override IEnumerable<Type> GetImports()
+    {
+        return new[]
+            {
+                typeof(IRepeatService),
+                typeof(ISetupServiceOfServiceDataSQL),
+            };
+    }
+
+    #endregion Protected methods
 }

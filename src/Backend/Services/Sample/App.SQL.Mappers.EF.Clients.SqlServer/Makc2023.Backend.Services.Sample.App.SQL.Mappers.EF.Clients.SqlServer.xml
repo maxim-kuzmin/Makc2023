@@ -21,6 +21,9 @@
         <member name="M:Makc2023.Backend.Services.Sample.App.SQL.Mappers.EF.Clients.SqlServer.Setup.SetupAppModule.GetExports">
             <inheritdoc/>
         </member>
+        <member name="M:Makc2023.Backend.Services.Sample.App.SQL.Mappers.EF.Clients.SqlServer.Setup.SetupAppModule.GetImports">
+            <inheritdoc/>
+        </member>
         <member name="T:Makc2023.Backend.Services.Sample.App.SQL.Mappers.EF.Clients.SqlServer.Setup.SetupExtension">
             <summary>
             Расширение настройки.
@@ -40,6 +43,25 @@
             <param name="app">Приложение.</param>
             <param name="appEnvironment">Окружение приложения.</param>
             <returns>Задача на использование.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.App.SQL.Mappers.EF.Clients.SqlServer.Setup.SetupService">
+            <summary>
+            Сервис настройки.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.App.SQL.Mappers.EF.Clients.SqlServer.Setup.SetupService.#ctor(Makc2023.Backend.Common.Core.App.IAppEnvironment,Makc2023.Backend.Common.Core.Repeat.IRepeatService,Makc2023.Backend.Services.Sample.Data.SQL.Setup.ISetupService)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="appEnvironment">Окружение приложения.</param>
+            <param name="repeatService">Сервис повторения.</param>
+            <param name="dbSetupService">Сервис настройки базы данных.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.App.SQL.Mappers.EF.Clients.SqlServer.Setup.SetupService.Execute">
+            <summary>
+            Выполнить.
+            </summary>
+            <returns>Задача на выполнение.</returns>
         </member>
     </members>
 </doc>
