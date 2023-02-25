@@ -6,7 +6,6 @@ global using Makc2023.Backend.Common.Core.Apps.WebApp;
 global using Makc2023.Backend.Common.Core.Apps.WebApp.Setup;
 global using Makc2023.Backend.Common.Core.Repeat;
 global using Makc2023.Backend.Services.Sample.App.SQL.Mappers.EF.Clients.SqlServer.Setup;
-global using Makc2023.Backend.Services.Sample.Data.SQL.Setup;
 global using MediatR;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.Extensions.Localization;
@@ -21,4 +20,6 @@ global using ModuleOfServiceDataSQLClientsSqlServer = Makc2023.Backend.Services.
 global using ModuleOfServiceDataSQLMappersEFClientsSqlServer = Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupAppModule;
 global using ISetupServiceOfServiceDataSQL = Makc2023.Backend.Services.Sample.Data.SQL.Setup.ISetupService;
 global using ModuleOfServiceDataSQL = Makc2023.Backend.Services.Sample.Data.SQL.Setup.SetupAppModule;
+global using RequestHandlerOfServiceDomainsDummyMainOperationsItemGet = Makc2023.Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.Operations.Item.Get.DomainItemGetOperationRequestHandler;
+global using RequestHandlerOfServiceDomainsDummyMainOperationsListGet = Makc2023.Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.Operations.List.Get.DomainListGetOperationRequestHandler;
 global using ModuleOfServiceDomainsDummyMain = Makc2023.Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.Setup.DomainSetupAppModule;

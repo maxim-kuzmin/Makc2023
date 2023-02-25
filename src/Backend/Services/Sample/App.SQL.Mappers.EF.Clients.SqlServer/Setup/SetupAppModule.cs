@@ -71,6 +71,8 @@ public class SetupAppModule : AppModule
             {
                 typeof(IRepeatService),
                 typeof(ISetupServiceOfServiceDataSQL),
+                typeof(RequestHandlerOfServiceDomainsDummyMainOperationsItemGet),
+                typeof(RequestHandlerOfServiceDomainsDummyMainOperationsListGet),
             };
     }
 

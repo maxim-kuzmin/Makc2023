@@ -38,12 +38,14 @@ public class DomainSetupAppModule : AppModule
     public sealed override IEnumerable<Type> GetExports()
     {
         return new[]
-        {
-            typeof(IDomainResource),
-            typeof(IDummyMainItemGetOperationHandler),
-            typeof(IDummyMainListGetOperationHandler),
-            typeof(IDummyMainRepository),
-        };
+            {
+                typeof(DomainItemGetOperationRequestHandler),
+                typeof(DomainListGetOperationRequestHandler),
+                typeof(IDomainResource),
+                typeof(IDummyMainItemGetOperationHandler),
+                typeof(IDummyMainListGetOperationHandler),
+                typeof(IDummyMainRepository),
+            };
     }
 
     #endregion Public methods
@@ -54,15 +56,15 @@ public class DomainSetupAppModule : AppModule
     protected sealed override IEnumerable<Type> GetImports()
     {
         return new[]
-        {
-            typeof(ClientMapperDbManager),
-            typeof(IClientMapperDbContextFactory),
-            typeof(ILogger),
-            typeof(IMediator),
-            typeof(IOperationResource),
-            typeof(IStringLocalizer),
-            typeof(SetupOptions),
-        };
+            {
+                typeof(ClientMapperDbManager),
+                typeof(IClientMapperDbContextFactory),
+                typeof(ILogger),
+                typeof(IMediator),
+                typeof(IOperationResource),
+                typeof(IStringLocalizer),
+                typeof(SetupOptions),
+            };
     }
 
     #endregion Protected methods
