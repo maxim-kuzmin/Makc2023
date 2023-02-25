@@ -40,7 +40,7 @@ public abstract class OperationHandler : IOperationHandler
     /// <summary>
     /// Параметры настройки.
     /// </summary>
-    protected IOptionsMonitor<SetupOptions> SetupOptions { get; init; }
+    protected IOptionsMonitor<SetupOptions> SetupOptions { get; }
 
     #endregion Properties
 

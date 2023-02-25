@@ -18,7 +18,7 @@ public class UserEntity : Entity<long>
     /// <summary>
     /// Данные.
     /// </summary>
-    public UserTypeEntity Data { get; init; }
+    public UserTypeEntity Data { get; }
 
     #endregion Properties    
 

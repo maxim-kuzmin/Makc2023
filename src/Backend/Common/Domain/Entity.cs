@@ -56,7 +56,7 @@ public abstract class Entity<T> : IEntity
     /// <param name="eventItem"></param>
     public void AddEvent(INotification eventItem)
     {
-        _events ??= new List<INotification>();
+        _events ??= new();
 
         _events.Add(eventItem);
     }

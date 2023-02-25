@@ -11,7 +11,7 @@ public abstract class MapperRepository<TEntity> : IRepository<TEntity> where TEn
     #region Properties
 
     /// <inheritdoc/>
-    public IUnitOfWork UnitOfWork { get; init; }
+    public IUnitOfWork UnitOfWork { get; }
 
     #endregion Properties
 

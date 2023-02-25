@@ -13,7 +13,7 @@ public class MediatorLoggingBehavior<TRequest, TResponse> :
 {
     #region Properties
 
-    private ILogger Logger { get; init; }
+    private ILogger Logger { get; }
 
     #endregion Properties
 

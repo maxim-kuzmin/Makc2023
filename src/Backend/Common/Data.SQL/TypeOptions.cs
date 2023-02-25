@@ -9,22 +9,22 @@ public class TypeOptions
 {
     #region Properties
 
-    private IDefaults Defaults { get; init; }
+    private IDefaults Defaults { get; }
 
     /// <summary>
     /// Таблица в базе данных.
     /// </summary>
-    public string DbTable { get; init; }
+    public string DbTable { get; }
 
     /// <summary>
     /// Схема в базе данных.
     /// </summary>
-    public string DbSchema { get; init; }
+    public string DbSchema { get; }
 
     /// <summary>
     /// Таблица со схемой в базе данных.
     /// </summary>
-    public string DbTableWithSchema { get; init; }
+    public string DbTableWithSchema { get; }
 
     #endregion Properties
 

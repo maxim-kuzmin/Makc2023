@@ -285,6 +285,17 @@
             Выходные данные операции получения элемента "Фиктивное главное".
             </summary>
         </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationResult">
+            <summary>
+            Результат операции получения элемента "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationResult.#ctor(Makc2023.Backend.Common.Core.Operation.OperationResultWithOutput{Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationOutput})">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="operationResult">Результат операции.</param>
+        </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.IDummyMainItemGetOperationHandler">
             <summary>
             Интерфейс обработчика операции получения элемента "Фиктивное главное".
@@ -337,6 +348,17 @@
             <summary>
             Выходные данные операции получения списка "Фиктивное главное".
             </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationResult">
+            <summary>
+            Результат операции получения списка "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationResult.#ctor(Makc2023.Backend.Common.Core.Operation.OperationResultWithOutput{Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationOutput})">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="operationResult">Результат операции.</param>
         </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.IDummyMainListGetOperationHandler">
             <summary>

@@ -12,12 +12,12 @@ public class DomainItemGetOperationRequest : IRequest<DomainItemGetOperationResp
     /// <summary>
     /// Входные данные.
     /// </summary>
-    public DummyMainItemGetOperationInput Input { get; init; }
+    public DummyMainItemGetOperationInput Input { get; }
 
     /// <summary>
     /// Код операции.
     /// </summary>
-    public string OperationCode { get; init; }
+    public string OperationCode { get; }
 
     #endregion Properties
 

@@ -12,7 +12,7 @@ public class DummyOneToManyEntity : Entity<long>, IAggregateRoot
     /// <summary>
     /// Данные.
     /// </summary>
-    public DummyOneToManyTypeEntity Data { get; init; }
+    public DummyOneToManyTypeEntity Data { get; }
 
     #endregion Properties    
 

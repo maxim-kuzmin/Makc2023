@@ -12,7 +12,7 @@ public class InternalPermissionEntity : Entity<long>
     /// <summary>
     /// Данные.
     /// </summary>
-    public InternalPermissionTypeEntity Data { get; init; }
+    public InternalPermissionTypeEntity Data { get; }
 
     #endregion Properties    
 

@@ -12,7 +12,7 @@ public class DummyManyToOneEntity : Entity<long>
     /// <summary>
     /// Данные.
     /// </summary>
-    public DummyManyToOneTypeEntity Data { get; init; }
+    public DummyManyToOneTypeEntity Data { get; }
 
     #endregion Properties    
 

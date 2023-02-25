@@ -18,7 +18,7 @@ public class InternalDomainEntity : Entity<long>
     /// <summary>
     /// Данные.
     /// </summary>
-    public InternalDomainTypeEntity Data { get; init; }
+    public InternalDomainTypeEntity Data { get; }
 
     /// <summary>
     /// Список экземпляров сущности "Внутреннее разрешение".

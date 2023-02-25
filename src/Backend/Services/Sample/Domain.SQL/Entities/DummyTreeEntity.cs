@@ -18,7 +18,7 @@ public class DummyTreeEntity : Entity<long>, IAggregateRoot
     /// <summary>
     /// Данные.
     /// </summary>
-    public DummyTreeTypeEntity Data { get; init; }
+    public DummyTreeTypeEntity Data { get; }
 
     /// <summary>
     /// Список дочерних экземпляров сущности "Фиктивное дерево".

@@ -14,12 +14,12 @@ public abstract class MapperDbManager<TDbContext> : IMapperDbManager
     /// <summary>
     /// Ресурс.
     /// </summary>
-    protected IMapperResource Resource { get; init; }
+    protected IMapperResource Resource { get; }
 
     /// <summary>
     /// Контекст базы данных.
     /// </summary>
-    public TDbContext DbContext { get; init; }
+    public TDbContext DbContext { get; }
 
     /// <inheritdoc/>
     public bool HasTransaction => Transaction is not null;

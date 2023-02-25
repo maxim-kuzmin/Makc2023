@@ -20,7 +20,7 @@ public class DummyMainEntity : Entity<long>, IAggregateRoot
     /// <summary>
     /// Данные.
     /// </summary>
-    public DummyMainTypeEntity Data { get; init; }
+    public DummyMainTypeEntity Data { get; }
 
     /// <summary>
     /// Список элементов сущности "Фиктивное отношение многие ко многим".
