@@ -4,6 +4,58 @@
         <name>Makc2023.Backend.Common.Core.Apps.WebApp</name>
     </assembly>
     <members>
+        <member name="T:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.Error.WebAppInputValidationErrorResponse">
+            <summary>
+            Отклик веб-приложения, содержащий ошибки проверки входных данных.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.Error.WebAppInputValidationErrorResponse.InvalidInputProperties">
+            <summary>
+            Список свойств с недействительными значениями во входных данных.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.Error.WebAppInputValidationErrorResponse.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="operationCode">Код операции.</param>
+            <param name="errorMessages">Сообщения об ошибках.</param>
+            <param name="invalidInputProperties">Список свойств с недействительными значениями во входных данных.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppDataResponse`1">
+            <summary>
+            Отклик веб-приложения, содержащий данные.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppDataResponse`1.Data">
+            <summary>
+            Сообщения об ошибках.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppDataResponse`1.#ctor(System.String,`0)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="operationCode">Код операции.</param>
+            <param name="data">Данные.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppErrorResponse">
+            <summary>
+            Отклик веб-приложения, содержащий ошибки.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppErrorResponse.ErrorMessages">
+            <summary>
+            Сообщения об ошибках.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppErrorResponse.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="operationCode">Код операции.</param>
+            <param name="errorMessages">Сообщения об ошибках.</param>
+        </member>
         <member name="T:Makc2023.Backend.Common.Core.Apps.WebApp.Setup.WebAppSetupExtension">
             <summary>
             Расширение ведения журнала в веб-приложении.
@@ -24,6 +76,22 @@
             <summary>
             Конструктор.
             </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Apps.WebApp.WebAppResponse">
+            <summary>
+            Отклик веб-приложения.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Apps.WebApp.WebAppResponse.OperationCode">
+            <summary>
+            Код операции.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Apps.WebApp.WebAppResponse.#ctor(System.String)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="operationCode">Код операции.</param>
         </member>
     </members>
 </doc>

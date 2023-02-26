@@ -29,12 +29,6 @@ public class DomainResource : IDomainResource
     #region Public methods
 
     /// <inheritdoc/>
-    public string GetErrorMessageForEntityNotFound()
-    {
-        return _localizer["@@ErrorMessageForEntityNotFound"];
-    }
-
-    /// <inheritdoc/>
     public string GetItemGetOperationName()
     {
         return _localizer["@@ItemGetOperationName"];

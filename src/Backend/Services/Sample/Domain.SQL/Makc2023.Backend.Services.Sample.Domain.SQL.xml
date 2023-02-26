@@ -290,6 +290,11 @@
             Результат операции получения элемента "Фиктивное главное".
             </summary>
         </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationResult.InvalidInputProperties">
+            <summary>
+            Список свойств с недействительными значениями во входных данных.
+            </summary>
+        </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.IDummyMainItemGetOperationHandler">
             <summary>
             Интерфейс обработчика операции получения элемента "Фиктивное главное".
@@ -346,6 +351,11 @@
         <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationResult">
             <summary>
             Результат операции получения списка "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationResult.InvalidInputProperties">
+            <summary>
+            Список свойств с недействительными значениями во входных данных.
             </summary>
         </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.IDummyMainListGetOperationHandler">

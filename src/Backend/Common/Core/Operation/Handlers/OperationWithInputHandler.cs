@@ -6,13 +6,15 @@ namespace Makc2023.Backend.Common.Core.Operation.Handlers;
 /// Обработчик операции с входными данными.
 /// </summary>
 /// <typeparam name="TOperationInput">Тип входных данных операции.</typeparam>
-public class OperationWithInputHandler<TOperationInput> : OperationHandler, IOperationWithInputHandler<TOperationInput>
-    where TOperationInput : class
+public class OperationWithInputHandler<TOperationInput> :
+    OperationHandler,
+    IOperationWithInputHandler<TOperationInput>
+    where TOperationInput : class, new()
 {
     #region Properties
 
     /// <summary>
-    /// Функция преобразования ввода операции.
+    /// Функция преобразования входных данных операции.
     /// </summary>
     protected Func<TOperationInput, TOperationInput>? FunctionToTransformOperationInput { get; set; }
 
@@ -44,6 +46,8 @@ public class OperationWithInputHandler<TOperationInput> : OperationHandler, IOpe
     /// <inheritdoc/>
     public void OnStart(TOperationInput operationInput, string operationCode = "")
     {
+        operationInput ??= new();
+
         OperationInput = FunctionToTransformOperationInput != null
             ? FunctionToTransformOperationInput.Invoke(operationInput)
             : operationInput;

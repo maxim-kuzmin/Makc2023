@@ -12,6 +12,15 @@ public class DomainListGetOperationHandler :
         DummyMainListGetOperationResult>,
     IDummyMainListGetOperationHandler
 {
+    #region Properties
+
+    /// <summary>
+    /// Список свойств с недействительными значениями во входных данных.
+    /// </summary>
+    private List<string> InvalidInputProperties { get; set; } = null!;
+
+    #endregion Properties
+
     #region Constructors
 
     /// <inheritdoc/>
@@ -28,34 +37,40 @@ public class DomainListGetOperationHandler :
     {
         FunctionToTransformOperationInput = TransformOperationInput;
         FunctionToTransformOperationOutput = TransformOperationOutput;
+        FunctionToTransformOperationResult = TransformOperationResult;
     }
 
     #endregion Constructors
 
     #region Private methods
 
-    private DummyMainListGetOperationInput TransformOperationInput(DummyMainListGetOperationInput input)
+    private DummyMainListGetOperationInput TransformOperationInput(DummyMainListGetOperationInput source)
     {
-        input ??= new();
+        source.Normalize();
 
-        input.Normalize();
+        InvalidInputProperties = source.GetInvalidProperties();
 
-        var invalidProperties = input.GetInvalidProperties();
-
-        if (invalidProperties.Any())
+        if (InvalidInputProperties.Any())
         {
-            throw new LocalizedException(OperationResource.GetErrorMessageForInvalidInput(invalidProperties));
+            throw new LocalizedException(OperationResource.GetErrorMessageForInvalidInput(InvalidInputProperties));
         }
 
-        return input;
+        return source;
     }
 
-    private DummyMainListGetOperationOutput TransformOperationOutput(DummyMainListGetOperationOutput output)
+    private DummyMainListGetOperationOutput TransformOperationOutput(DummyMainListGetOperationOutput source)
     {
-        output.Items ??= Array.Empty<DummyMainEntity>();
+        source.Items ??= Array.Empty<DummyMainEntity>();
 
-        return output;
+        return source;
     }
 
+    private DummyMainListGetOperationResult TransformOperationResult(DummyMainListGetOperationResult source)
+    {
+        source.InvalidInputProperties = InvalidInputProperties;
+
+        return source;
+    }
+    
     #endregion Private methods
 }

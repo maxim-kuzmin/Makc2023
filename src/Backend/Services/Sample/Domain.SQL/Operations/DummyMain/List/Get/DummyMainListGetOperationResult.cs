@@ -7,4 +7,12 @@ namespace Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.
 /// </summary>
 public class DummyMainListGetOperationResult : OperationResultWithOutput<DummyMainListGetOperationOutput>
 {
+    #region Properties
+
+    /// <summary>
+    /// Список свойств с недействительными значениями во входных данных.
+    /// </summary>
+    public List<string> InvalidInputProperties { get; set; } = null!;
+
+    #endregion Properties
 }

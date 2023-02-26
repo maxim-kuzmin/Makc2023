@@ -391,11 +391,6 @@
             Элемент.
             </summary>
         </member>
-        <member name="P:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemGetOperationOutput`1.IsItemNotFound">
-            <summary>
-            Признак того, что элемент не найден.
-            </summary>
-        </member>
         <member name="T:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemWithInt32IdGetOperationInput">
             <summary>
             Входные данные операции получения элемента с 32-битным целочисленным идентификатором.

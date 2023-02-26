@@ -693,12 +693,17 @@
         </member>
         <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`3.FunctionToTransformOperationInput">
             <summary>
-            Функция преобразования ввода операции.
+            Функция преобразования входных данных операции.
             </summary>
         </member>
         <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`3.FunctionToTransformOperationOutput">
             <summary>
-            Функция преобразования вывода операции.
+            Функция преобразования выходных данных операции.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`3.FunctionToTransformOperationResult">
+            <summary>
+            Функция преобразования результата операции.
             </summary>
         </member>
         <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`3.OperationInput">
@@ -739,7 +744,7 @@
         </member>
         <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.FunctionToTransformOperationInput">
             <summary>
-            Функция преобразования ввода операции.
+            Функция преобразования входных данных операции.
             </summary>
         </member>
         <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.OperationInput">
@@ -807,7 +812,12 @@
         </member>
         <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`2.FunctionToTransformOperationOutput">
             <summary>
-            Функция преобразования вывода операции.
+            Функция преобразования выходных данных операции.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`2.FunctionToTransformOperationResult">
+            <summary>
+            Функция преобразования результата операции.
             </summary>
         </member>
         <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`2.OperationResult">

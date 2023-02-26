@@ -16,9 +16,14 @@ public class OperationWithOutputHandler<TOperationOutput, TOperationResult> :
     #region Properties
 
     /// <summary>
-    /// Функция преобразования вывода операции.
+    /// Функция преобразования выходных данных операции.
     /// </summary>
     protected Func<TOperationOutput, TOperationOutput>? FunctionToTransformOperationOutput { get; set; }
+
+    /// <summary>
+    /// Функция преобразования результата операции.
+    /// </summary>
+    protected Func<TOperationResult, TOperationResult>? FunctionToTransformOperationResult { get; set; }
 
     /// <inheritdoc/>
     public TOperationResult OperationResult { get; private set; } = null!;
@@ -92,15 +97,19 @@ public class OperationWithOutputHandler<TOperationOutput, TOperationResult> :
     /// <inheritdoc/>
     protected sealed override void InitOperationResult(bool isOk)
     {
-        OperationResult = new()
+        TOperationResult operationResult = new()
         {
             IsOk = isOk,
         };
 
         if (!string.IsNullOrWhiteSpace(OperationCode))
         {
-            OperationResult.OperationCode = OperationCode;
+            operationResult.OperationCode = OperationCode;
         }
+
+        OperationResult = FunctionToTransformOperationResult != null
+            ? FunctionToTransformOperationResult.Invoke(operationResult)
+            : operationResult;
     }
 
     #endregion Protected methods

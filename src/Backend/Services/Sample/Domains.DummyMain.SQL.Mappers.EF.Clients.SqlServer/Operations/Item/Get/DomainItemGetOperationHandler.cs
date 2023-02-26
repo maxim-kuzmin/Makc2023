@@ -18,6 +18,15 @@ public class DomainItemGetOperationHandler :
 
     #endregion Fields
 
+    #region Properties
+
+    /// <summary>
+    /// Список свойств с недействительными значениями во входных данных.
+    /// </summary>
+    private List<string> InvalidInputProperties { get; set; } = null!;
+
+    #endregion Properties
+
     #region Constructors
 
     /// <inheritdoc/>
@@ -33,40 +42,42 @@ public class DomainItemGetOperationHandler :
             setupOptions)
     {
         _domainResource = domainResource;
+
         FunctionToTransformOperationInput = TransformOperationInput;
         FunctionToTransformOperationOutput = TransformOperationOutput;
+        FunctionToTransformOperationResult = TransformOperationResult;
     }
 
     #endregion Constructors
 
     #region Private methods
 
-    private DummyMainItemGetOperationInput TransformOperationInput(DummyMainItemGetOperationInput input)
+    private DummyMainItemGetOperationInput TransformOperationInput(DummyMainItemGetOperationInput source)
     {
-        input ??= new();
+        source.Normalize();
 
-        input.Normalize();
+        InvalidInputProperties = source.GetInvalidProperties();
 
-        var invalidProperties = input.GetInvalidProperties();
-
-        if (invalidProperties.Any())
+        if (InvalidInputProperties.Any())
         {
-            throw new LocalizedException(OperationResource.GetErrorMessageForInvalidInput(invalidProperties));
+            throw new LocalizedException(OperationResource.GetErrorMessageForInvalidInput(InvalidInputProperties));
         }
 
-        return input;
+        return source;
     }
 
-    private DummyMainItemGetOperationOutput TransformOperationOutput(DummyMainItemGetOperationOutput output)
+    private DummyMainItemGetOperationOutput TransformOperationOutput(DummyMainItemGetOperationOutput source)
     {
-        output.Item ??= new();
+        source.Item ??= new();
 
-        if (output.IsItemNotFound)
-        {
-            throw new LocalizedException(_domainResource.GetErrorMessageForEntityNotFound());
-        }
+        return source;
+    }
 
-        return output;
+    private DummyMainItemGetOperationResult TransformOperationResult(DummyMainItemGetOperationResult source)
+    {
+        source.InvalidInputProperties = InvalidInputProperties;
+
+        return source;
     }
 
     #endregion Private methods

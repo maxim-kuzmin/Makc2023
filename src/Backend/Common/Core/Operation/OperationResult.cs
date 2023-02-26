@@ -41,7 +41,7 @@ public class OperationResult
     /// Загрузить.
     /// </summary>
     /// <param name="operationResult">Результат операции.</param>
-    public virtual void Load(OperationResult operationResult)
+    public void Load(OperationResult operationResult)
     {
         ErrorMessages.Clear();
 

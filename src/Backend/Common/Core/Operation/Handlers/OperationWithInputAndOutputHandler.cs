@@ -11,21 +11,26 @@ namespace Makc2023.Backend.Common.Core.Operation.Handlers;
 public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutput, TOperationResult> :
     OperationHandler,
     IOperationWithInputAndOutputHandler<TOperationInput, TOperationOutput, TOperationResult>
-    where TOperationInput : class
+    where TOperationInput : class, new()
     where TOperationOutput : class, new()
     where TOperationResult : OperationResultWithOutput<TOperationOutput>, new()
 {
     #region Properties
 
     /// <summary>
-    /// Функция преобразования ввода операции.
+    /// Функция преобразования входных данных операции.
     /// </summary>
     protected Func<TOperationInput, TOperationInput>? FunctionToTransformOperationInput { get; set; }
 
     /// <summary>
-    /// Функция преобразования вывода операции.
+    /// Функция преобразования выходных данных операции.
     /// </summary>
     protected Func<TOperationOutput, TOperationOutput>? FunctionToTransformOperationOutput { get; set; }
+
+    /// <summary>
+    /// Функция преобразования результата операции.
+    /// </summary>
+    protected Func<TOperationResult, TOperationResult>? FunctionToTransformOperationResult { get; set; }
 
     /// <inheritdoc/>
     public TOperationInput OperationInput { get; private set; } = null!;
@@ -62,6 +67,8 @@ public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutpu
     /// <inheritdoc/>
     public void OnStart(TOperationInput operationInput, string operationCode = "")
     {
+        operationInput ??= new();
+
         OperationInput = FunctionToTransformOperationInput != null
             ? FunctionToTransformOperationInput.Invoke(operationInput)
             : operationInput;
@@ -106,15 +113,19 @@ public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutpu
     /// <inheritdoc/>
     protected sealed override void InitOperationResult(bool isOk)
     {
-        OperationResult = new()
+        TOperationResult operationResult = new()
         {
             IsOk = isOk,
         };
 
         if (!string.IsNullOrWhiteSpace(OperationCode))
         {
-            OperationResult.OperationCode = OperationCode;
+           operationResult.OperationCode = OperationCode;
         }
+
+        OperationResult = FunctionToTransformOperationResult != null
+            ? FunctionToTransformOperationResult.Invoke(operationResult)
+            : operationResult;
     }
 
     #endregion Protected methods

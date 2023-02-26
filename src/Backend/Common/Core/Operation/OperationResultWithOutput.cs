@@ -24,7 +24,7 @@ public class OperationResultWithOutput<TOutput> : OperationResult
     /// Загрузить с выходными данными.
     /// </summary>
     /// <param name="operationResult">Результат операции.</param>
-    public virtual void LoadWithOutput(OperationResultWithOutput<TOutput> operationResult)
+    public void LoadWithOutput(OperationResultWithOutput<TOutput> operationResult)
     {
         Load(operationResult);
 

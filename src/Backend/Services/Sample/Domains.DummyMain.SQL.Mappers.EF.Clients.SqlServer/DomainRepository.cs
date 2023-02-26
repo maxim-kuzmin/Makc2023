@@ -62,10 +62,6 @@ public class DomainRepository : MapperRepository<DummyMainEntity>, IDummyMainRep
 
             result.Item = item;
         }
-        else
-        {
-            result.IsItemNotFound = true;
-        }
 
         return result;
     }

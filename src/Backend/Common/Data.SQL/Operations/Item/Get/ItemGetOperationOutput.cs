@@ -16,10 +16,5 @@ public class ItemGetOperationOutput<TItem>
     /// </summary>
     public TItem Item { get; set; } = null!;
 
-    /// <summary>
-    /// Признак того, что элемент не найден.
-    /// </summary>
-    public bool IsItemNotFound { get; set; }
-
     #endregion Properties
 }
