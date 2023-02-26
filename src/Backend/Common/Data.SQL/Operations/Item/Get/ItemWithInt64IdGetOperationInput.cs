@@ -23,7 +23,7 @@ public class ItemWithInt64IdGetOperationInput : OperationInput
     /// </summary>
     public virtual void Normalize()
     {
-        if (Id < 0)
+        if (Id < 0L)
         {
             Id = 0L;
         }

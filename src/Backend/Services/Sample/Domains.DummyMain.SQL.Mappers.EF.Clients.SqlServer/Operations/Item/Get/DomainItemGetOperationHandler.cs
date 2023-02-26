@@ -12,12 +12,6 @@ public class DomainItemGetOperationHandler :
         DummyMainItemGetOperationResult>,
     IDummyMainItemGetOperationHandler
 {
-    #region Fields
-
-    private readonly IDomainResource _domainResource;
-
-    #endregion Fields
-
     #region Properties
 
     /// <summary>
@@ -41,8 +35,6 @@ public class DomainItemGetOperationHandler :
             logger,
             setupOptions)
     {
-        _domainResource = domainResource;
-
         FunctionToTransformOperationInput = TransformOperationInput;
         FunctionToTransformOperationOutput = TransformOperationOutput;
         FunctionToTransformOperationResult = TransformOperationResult;
