@@ -6,7 +6,10 @@ namespace Makc2023.Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clie
 /// Обработчик операции получения элемента в домене.
 /// </summary>
 public class DomainItemGetOperationHandler :
-    OperationWithInputAndOutputHandler<DummyMainItemGetOperationInput, DummyMainItemGetOperationOutput>,
+    OperationWithInputAndOutputHandler<
+        DummyMainItemGetOperationInput,
+        DummyMainItemGetOperationOutput,
+        DummyMainItemGetOperationResult>,
     IDummyMainItemGetOperationHandler
 {
     #region Fields

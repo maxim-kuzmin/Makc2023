@@ -5,16 +5,18 @@ namespace Makc2023.Backend.Common.Core.Operation.Handlers;
 /// <summary>
 /// Интерфейс обработчика операции с выходными данными.
 /// </summary>
-/// <typeparam name="TOperationOutput">Тип выходных данных операции.</typeparam>    
-public interface IOperationWithOutputHandler<TOperationOutput> : IOperationHandler
+/// <typeparam name="TOperationOutput">Тип выходных данных операции.</typeparam>
+/// <typeparam name="TOperationResult">Тип результата операции.</typeparam>
+public interface IOperationWithOutputHandler<TOperationOutput, TOperationResult> : IOperationHandler
     where TOperationOutput : class, new()
+    where TOperationResult : OperationResultWithOutput<TOperationOutput>, new()
 {
     #region Properties
 
     /// <summary>
     /// Результат выполнения операции.
     /// </summary>
-    OperationResultWithOutput<TOperationOutput> OperationResult { get; }
+    TOperationResult OperationResult { get; }
 
     #endregion Properties
 
@@ -36,7 +38,7 @@ public interface IOperationWithOutputHandler<TOperationOutput> : IOperationHandl
     /// Обработать успех с результатом.
     /// </summary>
     /// <param name="operationResult">Результат операции.</param>
-    void OnSuccessWithResult(OperationResultWithOutput<TOperationOutput> operationResult);
+    void OnSuccessWithResult(TOperationResult operationResult);
 
     #endregion Public methods
 }

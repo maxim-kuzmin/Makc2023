@@ -6,6 +6,9 @@ namespace Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.
 /// Интерфейс обработчика операции получения элемента "Фиктивное главное".
 /// </summary>
 public interface IDummyMainItemGetOperationHandler :
-    IOperationWithInputAndOutputHandler<DummyMainItemGetOperationInput, DummyMainItemGetOperationOutput>
+    IOperationWithInputAndOutputHandler<
+        DummyMainItemGetOperationInput,
+        DummyMainItemGetOperationOutput,
+        DummyMainItemGetOperationResult>
 {
 }

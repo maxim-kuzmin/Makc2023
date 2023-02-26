@@ -5,9 +5,13 @@ namespace Makc2023.Backend.Common.Core.Operation.Handlers;
 /// <summary>
 /// Обработчик операции с выходными данными.
 /// </summary>
-/// <typeparam name="TOperationOutput">Тип выходных данных операции.</typeparam>    
-public class OperationWithOutputHandler<TOperationOutput> : OperationHandler, IOperationWithOutputHandler<TOperationOutput>
+/// <typeparam name="TOperationOutput">Тип выходных данных операции.</typeparam>
+/// <typeparam name="TOperationResult">Тип результата операции.</typeparam>
+public class OperationWithOutputHandler<TOperationOutput, TOperationResult> :
+    OperationHandler,
+    IOperationWithOutputHandler<TOperationOutput, TOperationResult>
     where TOperationOutput : class, new()
+    where TOperationResult : OperationResultWithOutput<TOperationOutput>, new()
 {
     #region Properties
 
@@ -17,7 +21,7 @@ public class OperationWithOutputHandler<TOperationOutput> : OperationHandler, IO
     protected Func<TOperationOutput, TOperationOutput>? FunctionToTransformOperationOutput { get; set; }
 
     /// <inheritdoc/>
-    public OperationResultWithOutput<TOperationOutput> OperationResult { get; private set; } = null!;
+    public TOperationResult OperationResult { get; private set; } = null!;
 
     #endregion Properties
 
@@ -62,7 +66,7 @@ public class OperationWithOutputHandler<TOperationOutput> : OperationHandler, IO
     }
 
     /// <inheritdoc/>
-    public void OnSuccessWithResult(OperationResultWithOutput<TOperationOutput> operationResult)
+    public void OnSuccessWithResult(TOperationResult operationResult)
     {
         OperationResult = operationResult;
 
@@ -88,7 +92,7 @@ public class OperationWithOutputHandler<TOperationOutput> : OperationHandler, IO
     /// <inheritdoc/>
     protected sealed override void InitOperationResult(bool isOk)
     {
-        OperationResult = new OperationResultWithOutput<TOperationOutput>
+        OperationResult = new()
         {
             IsOk = isOk,
         };

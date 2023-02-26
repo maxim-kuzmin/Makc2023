@@ -97,24 +97,5 @@ public static class OperationExtension
         return false;
     }
 
-    /// <summary>
-    /// Загрузить.
-    /// </summary>
-    /// <param name="operationResult">Результат операции.</param>
-    /// <param name="operationResultsToLoad">Результаты операции для загрузки.</param>
-    public static void Load(this OperationResult operationResult, IEnumerable<OperationResult> operationResultsToLoad)
-    {
-        bool isOk = true;
-
-        foreach (var operationResultToLoad in operationResultsToLoad)
-        {
-            isOk = isOk && operationResultToLoad.IsOk;
-
-            operationResult.ErrorMessages.UnionWith(operationResultToLoad.ErrorMessages);
-        }
-
-        operationResult.IsOk = isOk;
-    }
-
     #endregion Public methods
 }

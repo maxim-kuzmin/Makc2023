@@ -37,5 +37,41 @@ public class OperationResult
         return ErrorMessages.FromSentencesToText();
     }
 
+    /// <summary>
+    /// Загрузить.
+    /// </summary>
+    /// <param name="operationResult">Результат операции.</param>
+    public virtual void Load(OperationResult operationResult)
+    {
+        ErrorMessages.Clear();
+
+        IsOk = operationResult.IsOk;
+
+        OperationCode = operationResult.OperationCode;
+
+        foreach (string errorMessage in operationResult.ErrorMessages)
+        {
+            ErrorMessages.Add(errorMessage);
+        }
+    }
+
+    /// <summary>
+    /// Слить.
+    /// </summary>
+    /// <param name="operationResults">Результаты операции.</param>
+    public void Merge(IEnumerable<OperationResult> operationResults)
+    {
+        bool isOk = true;
+
+        foreach (var operationResult in operationResults)
+        {
+            isOk = isOk && operationResult.IsOk;
+
+            ErrorMessages.UnionWith(operationResult.ErrorMessages);
+        }
+
+        IsOk = isOk;
+    }
+
     #endregion Public methods
 }

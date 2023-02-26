@@ -17,4 +17,19 @@ public class OperationResultWithOutput<TOutput> : OperationResult
     public TOutput Output { get; set; } = null!;
 
     #endregion Properties
+
+    #region Public methods
+
+    /// <summary>
+    /// Загрузить с выходными данными.
+    /// </summary>
+    /// <param name="operationResult">Результат операции.</param>
+    public virtual void LoadWithOutput(OperationResultWithOutput<TOutput> operationResult)
+    {
+        Load(operationResult);
+
+        Output = operationResult.Output;
+    }
+
+    #endregion Public methods
 }

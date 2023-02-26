@@ -150,7 +150,7 @@
             Результат операции.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.Operations.Item.Get.DomainItemGetOperationResponse.#ctor(Makc2023.Backend.Common.Core.Operation.OperationResultWithOutput{Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationOutput})">
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.Operations.Item.Get.DomainItemGetOperationResponse.#ctor(Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationResult)">
             <summary>
             Конструктор.
             </summary>
@@ -211,7 +211,7 @@
             Результат операции.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.Operations.List.Get.DomainListGetOperationResponse.#ctor(Makc2023.Backend.Common.Core.Operation.OperationResultWithOutput{Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationOutput})">
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.Operations.List.Get.DomainListGetOperationResponse.#ctor(Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationResult)">
             <summary>
             Конструктор.
             </summary>

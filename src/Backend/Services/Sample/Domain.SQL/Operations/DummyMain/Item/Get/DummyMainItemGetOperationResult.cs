@@ -7,25 +7,4 @@ namespace Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.
 /// </summary>
 public class DummyMainItemGetOperationResult : OperationResultWithOutput<DummyMainItemGetOperationOutput>
 {
-    #region Constructors
-
-    /// <summary>
-    /// Конструктор.
-    /// </summary>
-    /// <param name="operationResult">Результат операции.</param>
-    public DummyMainItemGetOperationResult(OperationResultWithOutput<DummyMainItemGetOperationOutput> operationResult)
-    {
-        IsOk = operationResult.IsOk;
-
-        OperationCode = operationResult.OperationCode;
-
-        Output = operationResult.Output;
-
-        foreach (string errorMessage in operationResult.ErrorMessages)
-        {
-            ErrorMessages.Add(errorMessage);
-        }
-    }
-
-    #endregion Constructors
 }

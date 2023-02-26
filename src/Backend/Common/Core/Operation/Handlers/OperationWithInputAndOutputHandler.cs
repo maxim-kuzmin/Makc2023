@@ -6,11 +6,14 @@ namespace Makc2023.Backend.Common.Core.Operation.Handlers;
 /// Обработчик операции с входными и выходными данными.
 /// </summary>
 /// <typeparam name="TOperationInput">Тип входных данных операции.</typeparam>
-/// <typeparam name="TOperationOutput">Тип выходных данных операции.</typeparam>    
-public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutput> : OperationHandler,
-    IOperationWithInputAndOutputHandler<TOperationInput, TOperationOutput>
+/// <typeparam name="TOperationOutput">Тип выходных данных операции.</typeparam>
+/// <typeparam name="TOperationResult">Тип результата операции.</typeparam>
+public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutput, TOperationResult> :
+    OperationHandler,
+    IOperationWithInputAndOutputHandler<TOperationInput, TOperationOutput, TOperationResult>
     where TOperationInput : class
     where TOperationOutput : class, new()
+    where TOperationResult : OperationResultWithOutput<TOperationOutput>, new()
 {
     #region Properties
 
@@ -28,7 +31,7 @@ public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutpu
     public TOperationInput OperationInput { get; private set; } = null!;
 
     /// <inheritdoc/>
-    public OperationResultWithOutput<TOperationOutput> OperationResult { get; private set; } = null!;
+    public TOperationResult OperationResult { get; private set; } = null!;
 
     #endregion Properties
 
@@ -77,7 +80,7 @@ public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutpu
     }
 
     /// <inheritdoc/>
-    public void OnSuccessWithResult(OperationResultWithOutput<TOperationOutput> operationResult)
+    public void OnSuccessWithResult(TOperationResult operationResult)
     {
         OperationResult = operationResult;
 
@@ -103,7 +106,7 @@ public class OperationWithInputAndOutputHandler<TOperationInput, TOperationOutpu
     /// <inheritdoc/>
     protected sealed override void InitOperationResult(bool isOk)
     {
-        OperationResult = new OperationResultWithOutput<TOperationOutput>
+        OperationResult = new()
         {
             IsOk = isOk,
         };
