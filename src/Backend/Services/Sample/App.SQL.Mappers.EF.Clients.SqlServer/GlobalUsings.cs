@@ -20,6 +20,7 @@ global using ModuleOfServiceDataSQLClientsSqlServer = Makc2023.Backend.Services.
 global using ModuleOfServiceDataSQLMappersEFClientsSqlServer = Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Setup.ClientMapperSetupAppModule;
 global using ISetupServiceOfServiceDataSQL = Makc2023.Backend.Services.Sample.Data.SQL.Setup.ISetupService;
 global using ModuleOfServiceDataSQL = Makc2023.Backend.Services.Sample.Data.SQL.Setup.SetupAppModule;
+global using ModuleOfServiceDomainSQL = Makc2023.Backend.Services.Sample.Domain.SQL.Setup.SetupAppModule;
 global using RequestHandlerOfServiceDomainsDummyMainOperationsItemGet = Makc2023.Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.Operations.Item.Get.DomainItemGetOperationRequestHandler;
 global using RequestHandlerOfServiceDomainsDummyMainOperationsListGet = Makc2023.Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.Operations.List.Get.DomainListGetOperationRequestHandler;
 global using ModuleOfServiceDomainsDummyMain = Makc2023.Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.Setup.DomainSetupAppModule;

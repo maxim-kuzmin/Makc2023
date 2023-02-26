@@ -23,3 +23,5 @@ global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Localization;
 global using Microsoft.Extensions.Logging;
 global using Microsoft.Extensions.Options;
+global using IResourceOfCommonDataSQL = Makc2023.Backend.Common.Data.SQL.IResource;
+global using IResourceOfServiceDomainSQL = Makc2023.Backend.Services.Sample.Domain.SQL.IResource;

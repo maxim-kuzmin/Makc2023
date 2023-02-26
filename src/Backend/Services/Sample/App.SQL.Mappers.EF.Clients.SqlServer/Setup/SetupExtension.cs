@@ -30,7 +30,8 @@ public static class SetupExtension
             new ModuleOfServiceDataSQLClientsSqlServer(),
             new ModuleOfServiceDataSQL(configuration.GetRequiredSection("App:Service:Data:SQL")),
             new ModuleOfServiceDataSQLMappersEFClientsSqlServer(),
-            new ModuleOfServiceDomainsDummyMain()
+            new ModuleOfServiceDomainSQL(),
+            new ModuleOfServiceDomainsDummyMain(),
         });
 
         // Add services to the container.

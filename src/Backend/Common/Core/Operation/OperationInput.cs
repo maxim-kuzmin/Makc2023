@@ -10,12 +10,12 @@ public class OperationInput
     #region Public methods
 
     /// <summary>
-    /// Получить список свойств с недействительными значениями.
+    /// Создать свойства с недействительными значениями.
     /// </summary>
-    /// <returns>Список свойств.</returns>
-    public virtual List<string> GetInvalidProperties()
+    /// <returns>Свойства.</returns>
+    public OperationInputInvalidProperties CreateInvalidProperties()
     {
-        return new List<string>();
+        return new();
     }
 
     #endregion Public methods

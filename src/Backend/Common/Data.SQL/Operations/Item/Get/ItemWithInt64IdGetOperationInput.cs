@@ -29,14 +29,21 @@ public class ItemWithInt64IdGetOperationInput : OperationInput
         }
     }
 
-    /// <inheritdoc/>
-    public override List<string> GetInvalidProperties()
+    /// <summary>
+    /// Получить свойства с недействительными значениями.
+    /// </summary>
+    /// <returns>Свойства с недействительными значениями.</returns>
+    public virtual OperationInputInvalidProperties GetInvalidProperties(IResource resource)
     {
-        var result = base.GetInvalidProperties();
+        var result = CreateInvalidProperties();
 
         if (Id < 1L)
         {
-            result.Add(nameof(Id));
+            var values = result.GetOrAdd(nameof(Id));
+
+            string value = resource.GetValidValueForId();
+
+            values.Add(value);
         }
 
         return result;

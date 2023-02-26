@@ -873,7 +873,7 @@
             <summary>
             Получить сообщение об ошибке для недействительных входных данных.
             </summary>
-            <param name="invalidProperties">Недействительные свойства.</param>
+            <param name="propertyNames">Имена свойств.</param>
             <returns>Сообщение об ошибке.</returns>
         </member>
         <member name="M:Makc2023.Backend.Common.Core.Operation.IOperationResource.GetTitleForError">
@@ -1043,11 +1043,40 @@
             Входные данные операции.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationInput.GetInvalidProperties">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationInput.CreateInvalidProperties">
             <summary>
-            Получить список свойств с недействительными значениями.
+            Создать свойства с недействительными значениями.
             </summary>
-            <returns>Список свойств.</returns>
+            <returns>Свойства.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.OperationInputInvalidProperties">
+            <summary>
+            Cвойства с недействительными значениями во входных данных операции.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationInputInvalidProperties.Any">
+            <summary>
+            Проверить, существует ли любое значение.
+            </summary>
+            <returns>Результат проверки.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationInputInvalidProperties.Clear">
+            <summary>
+            Очистить.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationInputInvalidProperties.GetOrAdd(System.String)">
+            <summary>
+            Получить или добавить свойство.
+            </summary>
+            <param name="propertyName">Имя свойства.</param>
+            <returns>Значения существующего или только что добавленного свойства.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationInputInvalidProperties.GetPropertyNames">
+            <summary>
+            Получить имена свойств.
+            </summary>
+            <returns>Имена свойств.</returns>
         </member>
         <member name="T:Makc2023.Backend.Common.Core.Operation.OperationOptions">
             <summary>

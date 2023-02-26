@@ -22,12 +22,15 @@ public class DomainSetupAppModule : AppModule
             ));
 
         services.AddTransient<IDummyMainItemGetOperationHandler>(x => new DomainItemGetOperationHandler(
+            x.GetRequiredService<IResourceOfCommonDataSQL>(),
+            x.GetRequiredService<IResourceOfServiceDomainSQL>(),
             x.GetRequiredService<IDomainResource>(),
             x.GetRequiredService<IOperationResource>(),
             x.GetRequiredService<ILogger<DomainItemGetOperationHandler>>(),
             x.GetRequiredService<IOptionsMonitor<SetupOptions>>()));
 
         services.AddTransient<IDummyMainListGetOperationHandler>(x => new DomainListGetOperationHandler(
+            x.GetRequiredService<IResourceOfCommonDataSQL>(),
             x.GetRequiredService<IDomainResource>(),
             x.GetRequiredService<IOperationResource>(),
             x.GetRequiredService<ILogger<DomainListGetOperationHandler>>(),
@@ -62,6 +65,8 @@ public class DomainSetupAppModule : AppModule
                 typeof(ILogger),
                 typeof(IMediator),
                 typeof(IOperationResource),
+                typeof(IResourceOfCommonDataSQL),
+                typeof(IResourceOfServiceDomainSQL),
                 typeof(IStringLocalizer),
                 typeof(SetupOptions),
             };

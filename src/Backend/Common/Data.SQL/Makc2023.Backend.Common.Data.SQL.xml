@@ -380,6 +380,25 @@
             </summary>
             <returns>Построитель команды.</returns>
         </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.IResource">
+            <summary>
+            Инитерфейс ресурса.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.IResource.GetValidValueForId">
+            <summary>
+            Получить корректное значение свойства "Id".
+            </summary>
+            <returns>Корректное значение.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.IResource.GetValidValueForSortField(System.String,System.String)">
+            <summary>
+            Получить корректное значение свойства "SortField".
+            </summary>
+            <param name="asc">Вариант значения по возрастанию.</param>
+            <param name="desc">Вариант значения по убыванию.</param>
+            <returns>Корректое значение.</returns>
+        </member>
         <member name="T:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemGetOperationOutput`1">
             <summary>
             Выходные данные операции получения элемента.
@@ -406,8 +425,11 @@
             Нормализовать.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemWithInt32IdGetOperationInput.GetInvalidProperties">
-            <inheritdoc/>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemWithInt32IdGetOperationInput.GetInvalidProperties(Makc2023.Backend.Common.Data.SQL.IResource)">
+            <summary>
+            Получить свойства с недействительными значениями.
+            </summary>
+            <returns>Свойства с недействительными значениями.</returns>
         </member>
         <member name="T:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemWithInt64IdGetOperationInput">
             <summary>
@@ -424,8 +446,11 @@
             Нормализовать.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemWithInt64IdGetOperationInput.GetInvalidProperties">
-            <inheritdoc/>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Operations.Item.Get.ItemWithInt64IdGetOperationInput.GetInvalidProperties(Makc2023.Backend.Common.Data.SQL.IResource)">
+            <summary>
+            Получить свойства с недействительными значениями.
+            </summary>
+            <returns>Свойства с недействительными значениями.</returns>
         </member>
         <member name="T:Makc2023.Backend.Common.Data.SQL.Operations.List.Get.ListGetOperationExtension">
             <summary>
@@ -466,8 +491,11 @@
             Направление сортировки.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Data.SQL.Operations.List.Get.ListGetOperationInput.GetInvalidProperties">
-            <inheritdoc/>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Operations.List.Get.ListGetOperationInput.GetInvalidProperties(Makc2023.Backend.Common.Data.SQL.IResource)">
+            <summary>
+            Получить свойства с недействительными значениями.
+            </summary>
+            <returns>Свойства с недействительными значениями.</returns>
         </member>
         <member name="M:Makc2023.Backend.Common.Data.SQL.Operations.List.Get.ListGetOperationInput.Normalize">
             <summary>
@@ -555,6 +583,23 @@
             Родитель или корневой узел.
             </summary>
         </member>
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Resource">
+            <summary>
+            Ресурс.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Resource.#ctor(Microsoft.Extensions.Localization.IStringLocalizer{Makc2023.Backend.Common.Data.SQL.Resource})">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="localizer">Локализатор.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Resource.GetValidValueForId">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Resource.GetValidValueForSortField(System.String,System.String)">
+            <inheritdoc/>
+        </member>
         <member name="T:Makc2023.Backend.Common.Data.SQL.Setup.SetupAppModule">
             <summary>
             Модуль настройки приложения.
@@ -570,6 +615,9 @@
             <inheritdoc/>
         </member>
         <member name="M:Makc2023.Backend.Common.Data.SQL.Setup.SetupAppModule.GetExports">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Setup.SetupAppModule.GetImports">
             <inheritdoc/>
         </member>
         <member name="T:Makc2023.Backend.Common.Data.SQL.Setup.SetupOptions">

@@ -33,10 +33,13 @@ public abstract class ListGetOperationInput : OperationInput
 
     #region Public methods
 
-    /// <inheritdoc/>
-    public override List<string> GetInvalidProperties()
+    /// <summary>
+    /// Получить свойства с недействительными значениями.
+    /// </summary>
+    /// <returns>Свойства с недействительными значениями.</returns>
+    public OperationInputInvalidProperties GetInvalidProperties(IResource resource)
     {
-        var result = base.GetInvalidProperties();
+        var result = CreateInvalidProperties();
 
         if (!string.IsNullOrWhiteSpace(SortDirection)
             &&
@@ -46,7 +49,13 @@ public abstract class ListGetOperationInput : OperationInput
                 !OperationOptions.SORT_DIRECTION_DESC.Equals(SortDirection, StringComparison.OrdinalIgnoreCase)
             ))
         {
-            result.Add(nameof(SortField));
+            var values = result.GetOrAdd(nameof(SortField));
+
+            string value = resource.GetValidValueForSortField(
+                OperationOptions.SORT_DIRECTION_ASC,
+                OperationOptions.SORT_DIRECTION_DESC);
+
+            values.Add(value);
         }
 
         return result;

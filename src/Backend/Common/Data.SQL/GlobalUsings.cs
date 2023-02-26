@@ -9,4 +9,5 @@ global using Makc2023.Backend.Common.Data.SQL.Commands.Tree.Trigger;
 global using Makc2023.Backend.Common.Data.SQL.Commands.Trigger;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Localization;
 global using Microsoft.Extensions.Logging;

@@ -264,6 +264,17 @@
             <returns>Элемент перечисления.</returns>
             <exception cref="T:Makc2023.Backend.Common.Core.Exceptions.LocalizedException">Выбрасывается в случае, если элемент не найден.</exception>
         </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.IResource">
+            <summary>
+            Инитерфейс ресурса.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.IResource.GetValidValueForName">
+            <summary>
+            Получить корректное значение свойства "Name".
+            </summary>
+            <returns>Корректное значение.</returns>
+        </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput">
             <summary>
             Входные данные операции получения элемента "Фиктивное главное".
@@ -277,7 +288,7 @@
         <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput.Normalize">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput.GetInvalidProperties">
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput.GetInvalidProperties(Makc2023.Backend.Services.Sample.Domain.SQL.IResource,Makc2023.Backend.Common.Data.SQL.IResource)">
             <inheritdoc/>
         </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationOutput">
@@ -381,6 +392,34 @@
             </summary>
             <param name="input">Входные данные.</param>
             <returns>Задача на получение списка.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Resource">
+            <summary>
+            Ресурс.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Resource.#ctor(Microsoft.Extensions.Localization.IStringLocalizer{Makc2023.Backend.Services.Sample.Domain.SQL.Resource})">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="localizer">Локализатор.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Resource.GetValidValueForName">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Setup.SetupAppModule">
+            <summary>
+            Модуль настройки приложения.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Setup.SetupAppModule.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Setup.SetupAppModule.GetExports">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Setup.SetupAppModule.GetImports">
+            <inheritdoc/>
         </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.ValueObjects.DummyValueObject">
             <summary>

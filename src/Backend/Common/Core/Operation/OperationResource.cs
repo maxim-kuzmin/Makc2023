@@ -35,9 +35,9 @@ public class OperationResource : IOperationResource
     }
 
     /// <inheritdoc/>
-    public string GetErrorMessageForInvalidInput(IEnumerable<string> invalidProperties)
+    public string GetErrorMessageForInvalidInput(IEnumerable<string> propertyNames)
     {
-        return _localizer["@@ErrorMessageForInvalidInput", string.Join(", ", invalidProperties)];
+        return _localizer["@@ErrorMessageForInvalidInput", string.Join(", ", propertyNames)];
     }
 
     /// <inheritdoc/>

@@ -1,5 +1,6 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
+global using Makc2023.Backend.Common.Core.App;
 global using Makc2023.Backend.Common.Core.Converting;
 global using Makc2023.Backend.Common.Core.Exceptions;
 global using Makc2023.Backend.Common.Core.Operation;
@@ -18,3 +19,6 @@ global using Makc2023.Backend.Services.Sample.Data.SQL.Types.User;
 global using Makc2023.Backend.Services.Sample.Domain.SQL.Entities;
 global using Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get;
 global using Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Localization;
+global using IResourceOfCommonDataSQL = Makc2023.Backend.Common.Data.SQL.IResource;

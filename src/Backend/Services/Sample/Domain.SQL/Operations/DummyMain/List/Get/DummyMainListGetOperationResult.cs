@@ -12,7 +12,7 @@ public class DummyMainListGetOperationResult : OperationResultWithOutput<DummyMa
     /// <summary>
     /// Список свойств с недействительными значениями во входных данных.
     /// </summary>
-    public List<string> InvalidInputProperties { get; set; } = null!;
+    public OperationInputInvalidProperties InvalidInputProperties { get; set; } = null!;
 
     #endregion Properties
 }

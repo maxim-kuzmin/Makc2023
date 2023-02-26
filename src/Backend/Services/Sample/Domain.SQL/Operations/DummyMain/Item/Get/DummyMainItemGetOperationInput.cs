@@ -30,15 +30,21 @@ public class DummyMainItemGetOperationInput : ItemWithInt64IdGetOperationInput
     }
 
     /// <inheritdoc/>
-    public sealed override List<string> GetInvalidProperties()
+    public OperationInputInvalidProperties GetInvalidProperties(
+        IResource resource,
+        IResourceOfCommonDataSQL resourceOfCommonDataSQL)
     {
-        var result = base.GetInvalidProperties();
+        var result = base.GetInvalidProperties(resourceOfCommonDataSQL);
 
         if (result.Any())
         {
             if (string.IsNullOrWhiteSpace(Name))
             {
-                result.Add(nameof(Name));
+                var values = result.GetOrAdd(nameof(Name));
+
+                string value = resource.GetValidValueForName();
+
+                values.Add(value);
             }
             else
             {

@@ -18,9 +18,9 @@ public interface IOperationResource
     /// <summary>
     /// Получить сообщение об ошибке для недействительных входных данных.
     /// </summary>
-    /// <param name="invalidProperties">Недействительные свойства.</param>
+    /// <param name="propertyNames">Имена свойств.</param>
     /// <returns>Сообщение об ошибке.</returns>
-    string GetErrorMessageForInvalidInput(IEnumerable<string> invalidProperties);
+    string GetErrorMessageForInvalidInput(IEnumerable<string> propertyNames);
 
     /// <summary>
     /// Получить заголовок для ошибки.
