@@ -555,6 +555,29 @@
             <param name="actionToSetPropertyValue">Действие по установке значения свойства.</param>
             <returns>Признак успешности выполнения действия.</returns>
         </member>
+        <member name="T:Makc2023.Backend.Common.Core.NamedValues`1">
+            <summary>
+            Именованные значения.
+            </summary>
+            <typeparam name="TValue">Тип значения.</typeparam>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.NamedValues`1.Name">
+            <summary>
+            Имя.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.NamedValues`1.Values">
+            <summary>
+            Значения.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.NamedValues`1.#ctor(System.String,System.Collections.Generic.List{`0})">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="name">Имя.</param>
+            <param name="values">Значения.</param>
+        </member>
         <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputAndOutputHandler`3">
             <summary>
             Интерфейс обработчика операции с входными и выходными данными.
@@ -1053,6 +1076,13 @@
             <summary>
             Cвойства с недействительными значениями во входных данных операции.
             </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.OperationInputInvalidProperties.Item(System.String)">
+            <summary>
+            Получить свойство по имени.
+            </summary>
+            <param name="propertyName">Имя свойства.</param>
+            <returns>Свойство.</returns>
         </member>
         <member name="M:Makc2023.Backend.Common.Core.Operation.OperationInputInvalidProperties.Any">
             <summary>

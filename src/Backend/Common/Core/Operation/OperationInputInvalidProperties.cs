@@ -13,6 +13,27 @@ public class OperationInputInvalidProperties
 
     #endregion Fields
 
+    #region Indexers
+
+    /// <summary>
+    /// Получить свойство по имени.
+    /// </summary>
+    /// <param name="propertyName">Имя свойства.</param>
+    /// <returns>Свойство.</returns>
+    public HashSet<string> this[string propertyName]
+    {
+        get
+        {
+            return _data[propertyName];
+        }
+        set
+        {
+            _data[propertyName] = value;
+        }
+    }
+
+    #endregion Indexers
+
     #region Public methods
 
     /// <summary>

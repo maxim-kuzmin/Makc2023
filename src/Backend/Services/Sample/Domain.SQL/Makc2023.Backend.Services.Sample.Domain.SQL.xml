@@ -288,6 +288,9 @@
         <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput.Normalize">
             <inheritdoc/>
         </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput.GetInvalidProperties(Makc2023.Backend.Common.Data.SQL.IResource)">
+            <inheritdoc/>
+        </member>
         <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput.GetInvalidProperties(Makc2023.Backend.Services.Sample.Domain.SQL.IResource,Makc2023.Backend.Common.Data.SQL.IResource)">
             <inheritdoc/>
         </member>

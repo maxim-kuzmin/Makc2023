@@ -25,16 +25,16 @@ public class DomainSetupAppModule : AppModule
             x.GetRequiredService<IResourceOfCommonDataSQL>(),
             x.GetRequiredService<IResourceOfServiceDomainSQL>(),
             x.GetRequiredService<IDomainResource>(),
-            x.GetRequiredService<IOperationResource>(),
+            x.GetRequiredService<IResourceOfCommonCoreOperation>(),
             x.GetRequiredService<ILogger<DomainItemGetOperationHandler>>(),
-            x.GetRequiredService<IOptionsMonitor<SetupOptions>>()));
+            x.GetRequiredService<IOptionsMonitor<SetupOptionsOfCommonCore>>()));
 
         services.AddTransient<IDummyMainListGetOperationHandler>(x => new DomainListGetOperationHandler(
             x.GetRequiredService<IResourceOfCommonDataSQL>(),
             x.GetRequiredService<IDomainResource>(),
-            x.GetRequiredService<IOperationResource>(),
+            x.GetRequiredService<IResourceOfCommonCoreOperation>(),
             x.GetRequiredService<ILogger<DomainListGetOperationHandler>>(),
-            x.GetRequiredService<IOptionsMonitor<SetupOptions>>()));
+            x.GetRequiredService<IOptionsMonitor<SetupOptionsOfCommonCore>>()));
     }
 
     /// <inheritdoc/>
@@ -64,11 +64,11 @@ public class DomainSetupAppModule : AppModule
                 typeof(IClientMapperDbContextFactory),
                 typeof(ILogger),
                 typeof(IMediator),
-                typeof(IOperationResource),
+                typeof(IResourceOfCommonCoreOperation),
                 typeof(IResourceOfCommonDataSQL),
                 typeof(IResourceOfServiceDomainSQL),
                 typeof(IStringLocalizer),
-                typeof(SetupOptions),
+                typeof(SetupOptionsOfCommonCore),
             };
     }
 

@@ -36,14 +36,14 @@ public class DomainItemGetOperationHandler :
         IResourceOfCommonDataSQL resourceOfCommonDataSQL,
         IResourceOfServiceDomainSQL resourceOfServiceDomainSQL,
         IDomainResource domainResource,
-        IOperationResource operationResource,
+        IResourceOfCommonCoreOperation resourceOfCommonCoreOperation,
         ILogger<DomainItemGetOperationHandler> logger,
-        IOptionsMonitor<SetupOptions> setupOptions)
+        IOptionsMonitor<SetupOptionsOfCommonCore> setupOptionsOfCommonCore)
         : base(
             domainResource.GetItemGetOperationName(),
-            operationResource,
+            resourceOfCommonCoreOperation,
             logger,
-            setupOptions)
+            setupOptionsOfCommonCore)
     {     
         _resourceOfCommonDataSQL = resourceOfCommonDataSQL;
         _resourceOfServiceDomainSQL = resourceOfServiceDomainSQL;

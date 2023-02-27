@@ -12,7 +12,7 @@ public class WebAppInputValidationErrorResponse : WebAppErrorResponse
     /// <summary>
     /// Список свойств с недействительными значениями во входных данных.
     /// </summary>
-    public List<string> InvalidInputProperties { get; } = new();
+    public List<NamedValues<string>> InvalidInputProperties { get; } = new();
 
     #endregion Properties
 
@@ -27,12 +27,21 @@ public class WebAppInputValidationErrorResponse : WebAppErrorResponse
     public WebAppInputValidationErrorResponse(
         string operationCode,
         IEnumerable<string> errorMessages,
-        IEnumerable<string> invalidInputProperties)
+        OperationInputInvalidProperties invalidInputProperties)
         : base(operationCode, errorMessages)
     {
         if (invalidInputProperties != null && invalidInputProperties.Any())
         {
-            InvalidInputProperties.AddRange(invalidInputProperties);
+            foreach (string propertyName in invalidInputProperties.GetPropertyNames())
+            {                
+                var propertyValues = invalidInputProperties[propertyName];
+
+                NamedValues<string> property = new(propertyName);
+
+                property.Values.AddRange(propertyValues);
+
+                InvalidInputProperties.Add(property);
+            }
         }
     }
 

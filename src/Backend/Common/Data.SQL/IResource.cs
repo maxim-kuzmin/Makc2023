@@ -7,6 +7,8 @@ namespace Makc2023.Backend.Common.Data.SQL;
 /// </summary>
 public interface IResource
 {
+    #region Methods
+
     /// <summary>
     /// Получить корректное значение свойства "Id".
     /// </summary>
@@ -20,4 +22,6 @@ public interface IResource
     /// <param name="desc">Вариант значения по убыванию.</param>
     /// <returns>Корректое значение.</returns>
     string GetValidValueForSortField(string asc, string desc);
+
+    #endregion Methods
 }

@@ -30,6 +30,13 @@ public class DummyMainItemGetOperationInput : ItemWithInt64IdGetOperationInput
     }
 
     /// <inheritdoc/>
+    public sealed override OperationInputInvalidProperties GetInvalidProperties(
+        IResourceOfCommonDataSQL resourceOfCommonDataSQL)
+    {
+        throw new NotImplementedException();
+    }
+
+    /// <inheritdoc/>
     public OperationInputInvalidProperties GetInvalidProperties(
         IResource resource,
         IResourceOfCommonDataSQL resourceOfCommonDataSQL)

@@ -33,14 +33,14 @@ public class DomainListGetOperationHandler :
     public DomainListGetOperationHandler(
         IResourceOfCommonDataSQL resourceOfCommonDataSQL,
         IDomainResource domainResource,
-        IOperationResource operationResource,
+        IResourceOfCommonCoreOperation resourceOfCommonCoreOperation,
         ILogger<DomainListGetOperationHandler> logger,
-        IOptionsMonitor<SetupOptions> setupOptions)
+        IOptionsMonitor<SetupOptionsOfCommonCore> setupOptionsOfCommonCore)
         : base(
             domainResource.GetListGetOperationName(),
-            operationResource,
+            resourceOfCommonCoreOperation,
             logger,
-            setupOptions)
+            setupOptionsOfCommonCore)
     {
         _resourceOfCommonDataSQL = resourceOfCommonDataSQL;
 

@@ -14,7 +14,7 @@
             Список свойств с недействительными значениями во входных данных.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.Error.WebAppInputValidationErrorResponse.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String})">
+        <member name="M:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.Error.WebAppInputValidationErrorResponse.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String},Makc2023.Backend.Common.Core.Operation.OperationInputInvalidProperties)">
             <summary>
             Конструктор.
             </summary>
