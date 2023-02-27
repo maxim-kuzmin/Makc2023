@@ -1077,13 +1077,6 @@
             Cвойства с недействительными значениями во входных данных операции.
             </summary>
         </member>
-        <member name="P:Makc2023.Backend.Common.Core.Operation.OperationInputInvalidProperties.Item(System.String)">
-            <summary>
-            Получить свойство по имени.
-            </summary>
-            <param name="propertyName">Имя свойства.</param>
-            <returns>Свойство.</returns>
-        </member>
         <member name="M:Makc2023.Backend.Common.Core.Operation.OperationInputInvalidProperties.Any">
             <summary>
             Проверить, существует ли любое значение.
@@ -1093,6 +1086,11 @@
         <member name="M:Makc2023.Backend.Common.Core.Operation.OperationInputInvalidProperties.Clear">
             <summary>
             Очистить.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationInputInvalidProperties.CopyToNamedValuesList(System.Collections.Generic.List{Makc2023.Backend.Common.Core.NamedValues{System.String}})">
+            <summary>
+            Копировать в список именованных значений.
             </summary>
         </member>
         <member name="M:Makc2023.Backend.Common.Core.Operation.OperationInputInvalidProperties.GetOrAdd(System.String)">

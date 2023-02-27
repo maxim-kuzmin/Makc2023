@@ -82,7 +82,7 @@ public class DomainItemGetOperationHandler :
 
     private DummyMainItemGetOperationResult TransformOperationResult(DummyMainItemGetOperationResult source)
     {
-        source.InvalidInputProperties = InvalidInputProperties;
+        InvalidInputProperties.CopyToNamedValuesList(source.InvalidInputProperties);
 
         return source;
     }

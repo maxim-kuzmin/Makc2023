@@ -13,27 +13,6 @@ public class OperationInputInvalidProperties
 
     #endregion Fields
 
-    #region Indexers
-
-    /// <summary>
-    /// Получить свойство по имени.
-    /// </summary>
-    /// <param name="propertyName">Имя свойства.</param>
-    /// <returns>Свойство.</returns>
-    public HashSet<string> this[string propertyName]
-    {
-        get
-        {
-            return _data[propertyName];
-        }
-        set
-        {
-            _data[propertyName] = value;
-        }
-    }
-
-    #endregion Indexers
-
     #region Public methods
 
     /// <summary>
@@ -51,6 +30,23 @@ public class OperationInputInvalidProperties
     public void Clear()
     {
         _data.Clear();
+    }
+
+    /// <summary>
+    /// Копировать в список именованных значений.
+    /// </summary>
+    public void CopyToNamedValuesList(List<NamedValues<string>> target)
+    {
+        foreach (string propertyName in GetPropertyNames())
+        {
+            var propertyValues = _data[propertyName];
+
+            NamedValues<string> property = new(propertyName);
+
+            property.Values.AddRange(propertyValues);
+
+            target.Add(property);
+        }
     }
 
     /// <summary>

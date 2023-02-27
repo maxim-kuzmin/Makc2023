@@ -78,7 +78,7 @@ public class DomainListGetOperationHandler :
 
     private DummyMainListGetOperationResult TransformOperationResult(DummyMainListGetOperationResult source)
     {
-        source.InvalidInputProperties = InvalidInputProperties;
+        InvalidInputProperties.CopyToNamedValuesList(source.InvalidInputProperties);
 
         return source;
     }
