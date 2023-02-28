@@ -3,16 +3,16 @@
 namespace Makc2023.Backend.Common.Core.Apps.WebApp.Responses;
 
 /// <summary>
-/// Отклик веб-приложения, содержащий данные.
+/// Отклик веб-приложения, содержащий ошибки.
 /// </summary>
-public class WebAppDataResponse<TData> : WebAppResponse
+public class WebAppResponseWithErrors : WebAppResponse
 {
     #region Properties
 
     /// <summary>
     /// Сообщения об ошибках.
     /// </summary>
-    public TData Data { get; }
+    public List<string> ErrorMessages { get; } = new();
 
     #endregion Properties
 
@@ -22,11 +22,14 @@ public class WebAppDataResponse<TData> : WebAppResponse
     /// Конструктор.
     /// </summary>
     /// <param name="operationCode">Код операции.</param>
-    /// <param name="data">Данные.</param>
-    public WebAppDataResponse(string operationCode, TData data)
+    /// <param name="errorMessages">Сообщения об ошибках.</param>
+    public WebAppResponseWithErrors(string operationCode, IEnumerable<string> errorMessages)
         : base(operationCode)
     {
-        Data = data;
+        if (errorMessages != null && errorMessages.Any())
+        {
+            ErrorMessages.AddRange(errorMessages);
+        }
     }
 
     #endregion Constructors

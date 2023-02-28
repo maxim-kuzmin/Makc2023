@@ -4,52 +4,57 @@
         <name>Makc2023.Backend.Common.Core.Apps.WebApp</name>
     </assembly>
     <members>
-        <member name="T:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.Error.WebAppInputValidationErrorResponse">
-            <summary>
-            Отклик веб-приложения, содержащий ошибки проверки входных данных.
-            </summary>
-        </member>
-        <member name="P:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.Error.WebAppInputValidationErrorResponse.InvalidInputProperties">
-            <summary>
-            Список свойств с недействительными значениями во входных данных.
-            </summary>
-        </member>
-        <member name="M:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.Error.WebAppInputValidationErrorResponse.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.List{Makc2023.Backend.Common.Core.NamedValues{System.String}})">
-            <summary>
-            Конструктор.
-            </summary>
-            <param name="operationCode">Код операции.</param>
-            <param name="errorMessages">Сообщения об ошибках.</param>
-            <param name="invalidInputProperties">Список свойств с недействительными значениями во входных данных.</param>
-        </member>
-        <member name="T:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppDataResponse`1">
+        <member name="T:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppResponseWithData`1">
             <summary>
             Отклик веб-приложения, содержащий данные.
             </summary>
         </member>
-        <member name="P:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppDataResponse`1.Data">
+        <member name="P:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppResponseWithData`1.Data">
             <summary>
             Сообщения об ошибках.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppDataResponse`1.#ctor(System.String,`0)">
+        <member name="M:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppResponseWithData`1.#ctor(System.String,`0)">
             <summary>
             Конструктор.
             </summary>
             <param name="operationCode">Код операции.</param>
             <param name="data">Данные.</param>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppErrorResponse">
+        <member name="T:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppResponseWithDetails">
+            <summary>
+            Отклик веб-приложения, содержащий подробности.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppResponseWithDetails.Details">
+            <summary>
+            Подробности.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppResponseWithDetails.Summary">
+            <summary>
+            Резюме.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppResponseWithDetails.#ctor(System.String,System.Collections.Generic.List{Makc2023.Backend.Common.Core.NamedValues{System.String}},System.String)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="operationCode">Код операции.</param>
+            <param name="details">Подробности.</param>
+            <param name="summary">Резюме.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppResponseWithErrors">
             <summary>
             Отклик веб-приложения, содержащий ошибки.
             </summary>
         </member>
-        <member name="P:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppErrorResponse.ErrorMessages">
+        <member name="P:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppResponseWithErrors.ErrorMessages">
             <summary>
             Сообщения об ошибках.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppErrorResponse.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String})">
+        <member name="M:Makc2023.Backend.Common.Core.Apps.WebApp.Responses.WebAppResponseWithErrors.#ctor(System.String,System.Collections.Generic.IEnumerable{System.String})">
             <summary>
             Конструктор.
             </summary>
