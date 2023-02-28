@@ -4,15 +4,15 @@
 		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<AssemblyName>Makc2023.Backend.Services.Sample.Data.SQL.Clients.SqlServer</AssemblyName>
+		<AssemblyName>Makc2023.Backend.Services.Sample.Domain.SQL</AssemblyName>
 		<RootNamespace>$(AssemblyName)</RootNamespace>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<DocumentationFile>$(AssemblyName).xml</DocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\..\Common\Data.SQL.Clients.SqlServer\Data.SQL.Clients.SqlServer.csproj" />
-		<ProjectReference Include="..\Data.SQL\Data.SQL.csproj" />
+		<ProjectReference Include="..\..\..\Common\Domain\Backend.Common.Domain.csproj" />
+		<ProjectReference Include="..\Data.SQL\Backend.Services.Sample.Data.SQL.csproj" />
 	</ItemGroup>
 
 </Project>

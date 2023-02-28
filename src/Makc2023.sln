@@ -13,47 +13,47 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{79F7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{437CA0B3-1D6C-445C-8C9E-DAABC6FABF55}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Backend\Common\Core\Core.csproj", "{B3D98836-284C-43B9-A0B1-FCE85FB449E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Common.Core", "Backend\Common\Core\Backend.Common.Core.csproj", "{B3D98836-284C-43B9-A0B1-FCE85FB449E4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Apps.ConsoleApp", "Backend\Common\Core.Apps.ConsoleApp\Core.Apps.ConsoleApp.csproj", "{A3727EE8-FBD7-4285-8F89-41A49CD360F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Common.Core.Apps.ConsoleApp", "Backend\Common\Core.Apps.ConsoleApp\Backend.Common.Core.Apps.ConsoleApp.csproj", "{A3727EE8-FBD7-4285-8F89-41A49CD360F6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Apps.WebApp", "Backend\Common\Core.Apps.WebApp\Core.Apps.WebApp.csproj", "{9359F76B-298D-4F01-8DCF-F55517296BB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Common.Core.Apps.WebApp", "Backend\Common\Core.Apps.WebApp\Backend.Common.Core.Apps.WebApp.csproj", "{9359F76B-298D-4F01-8DCF-F55517296BB0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.SQL", "Backend\Common\Data.SQL\Data.SQL.csproj", "{BE2D3C5B-08A1-456A-9858-57EEA92242DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Common.Data.SQL", "Backend\Common\Data.SQL\Backend.Common.Data.SQL.csproj", "{BE2D3C5B-08A1-456A-9858-57EEA92242DE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.SQL.Clients.PostgreSQL", "Backend\Common\Data.SQL.Clients.PostgreSql\Data.SQL.Clients.PostgreSQL.csproj", "{A8C5B903-4A52-42D9-AE4C-F679848F198F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Common.Data.SQL.Clients.PostgreSQL", "Backend\Common\Data.SQL.Clients.PostgreSql\Backend.Common.Data.SQL.Clients.PostgreSQL.csproj", "{A8C5B903-4A52-42D9-AE4C-F679848F198F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.SQL.Clients.SqlServer", "Backend\Common\Data.SQL.Clients.SqlServer\Data.SQL.Clients.SqlServer.csproj", "{CF3B17A6-E5FE-4A3E-B6BD-697095A71B33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Common.Data.SQL.Clients.SqlServer", "Backend\Common\Data.SQL.Clients.SqlServer\Backend.Common.Data.SQL.Clients.SqlServer.csproj", "{CF3B17A6-E5FE-4A3E-B6BD-697095A71B33}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.SQL.Mappers.EF", "Backend\Common\Data.SQL.Mappers.EF\Data.SQL.Mappers.EF.csproj", "{447B20FA-9E34-490E-A827-FDF07394315D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Common.Data.SQL.Mappers.EF", "Backend\Common\Data.SQL.Mappers.EF\Backend.Common.Data.SQL.Mappers.EF.csproj", "{447B20FA-9E34-490E-A827-FDF07394315D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Backend\Common\Domain\Domain.csproj", "{D26F9C8C-6439-475E-9180-AD200143C3D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Common.Domain", "Backend\Common\Domain\Backend.Common.Domain.csproj", "{D26F9C8C-6439-475E-9180-AD200143C3D7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.SQL.Mappers.EF", "Backend\Common\Domain.SQL.Mappers.EF\Domain.SQL.Mappers.EF.csproj", "{8ACCEBB3-9BB8-42EC-835A-6E1D9AE470C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Common.Domain.SQL.Mappers.EF", "Backend\Common\Domain.SQL.Mappers.EF\Backend.Common.Domain.SQL.Mappers.EF.csproj", "{8ACCEBB3-9BB8-42EC-835A-6E1D9AE470C0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{0D6109AF-BDC9-47F2-A630-B3A4D37C9222}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Integration", "Backend\Components\Integration\Integration.csproj", "{FC7CE37A-F2A4-4F97-B321-50684467DE76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Components.Integration", "Backend\Components\Integration\Backend.Components.Integration.csproj", "{FC7CE37A-F2A4-4F97-B321-50684467DE76}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Integration.Clients.RabbitMQ", "Backend\Components\Integration.Clients.RabbitMQ\Integration.Clients.RabbitMQ.csproj", "{7AD92029-0BA2-4898-A2B1-FFE44A0FC895}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Components.Integration.Clients.RabbitMQ", "Backend\Components\Integration.Clients.RabbitMQ\Backend.Components.Integration.Clients.RabbitMQ.csproj", "{7AD92029-0BA2-4898-A2B1-FFE44A0FC895}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{42625803-44FD-44F7-9BC5-BEC8C21A7DB7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{BAE95757-FC92-41EC-9D55-F73E695A9CC4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.SQL.Mappers.EF.Clients.SqlServer", "Backend\Services\Sample\App.SQL.Mappers.EF.Clients.SqlServer\App.SQL.Mappers.EF.Clients.SqlServer.csproj", "{41438686-E6DE-4104-B271-48697387556F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Services.Sample.App.SQL.Mappers.EF.Clients.SqlServer", "Backend\Services\Sample\App.SQL.Mappers.EF.Clients.SqlServer\Backend.Services.Sample.App.SQL.Mappers.EF.Clients.SqlServer.csproj", "{41438686-E6DE-4104-B271-48697387556F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.SQL", "Backend\Services\Sample\Data.SQL\Data.SQL.csproj", "{7C81ED11-5196-4EF2-9C0B-08BC3E9F3D22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Services.Sample.Data.SQL", "Backend\Services\Sample\Data.SQL\Backend.Services.Sample.Data.SQL.csproj", "{7C81ED11-5196-4EF2-9C0B-08BC3E9F3D22}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.SQL.Clients.SqlServer", "Backend\Services\Sample\Data.SQL.Clients.SqlServer\Data.SQL.Clients.SqlServer.csproj", "{1C479008-C71C-4A87-83C1-A08A3949749B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Services.Sample.Data.SQL.Clients.SqlServer", "Backend\Services\Sample\Data.SQL.Clients.SqlServer\Backend.Services.Sample.Data.SQL.Clients.SqlServer.csproj", "{1C479008-C71C-4A87-83C1-A08A3949749B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.SQL.Mappers.EF", "Backend\Services\Sample\Data.SQL.Mappers.EF\Data.SQL.Mappers.EF.csproj", "{5F0DD392-60C9-4D07-B381-2D979D5DA189}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Services.Sample.Data.SQL.Mappers.EF", "Backend\Services\Sample\Data.SQL.Mappers.EF\Backend.Services.Sample.Data.SQL.Mappers.EF.csproj", "{5F0DD392-60C9-4D07-B381-2D979D5DA189}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.SQL.Mappers.EF.Clients.SqlServer", "Backend\Services\Sample\Data.SQL.Mappers.EF.Clients.SqlServer\Data.SQL.Mappers.EF.Clients.SqlServer.csproj", "{DC4CA452-997F-4E86-8754-A9465F58B903}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer", "Backend\Services\Sample\Data.SQL.Mappers.EF.Clients.SqlServer\Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.csproj", "{DC4CA452-997F-4E86-8754-A9465F58B903}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.SQL", "Backend\Services\Sample\Domain.SQL\Domain.SQL.csproj", "{D66BCD9F-E84E-48C8-A4BA-D263E932A530}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Services.Sample.Domain.SQL", "Backend\Services\Sample\Domain.SQL\Backend.Services.Sample.Domain.SQL.csproj", "{D66BCD9F-E84E-48C8-A4BA-D263E932A530}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer", "Backend\Services\Sample\Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer\Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.csproj", "{7162D967-4819-4593-A65A-006A30221C2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer", "Backend\Services\Sample\Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer\Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.csproj", "{7162D967-4819-4593-A65A-006A30221C2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

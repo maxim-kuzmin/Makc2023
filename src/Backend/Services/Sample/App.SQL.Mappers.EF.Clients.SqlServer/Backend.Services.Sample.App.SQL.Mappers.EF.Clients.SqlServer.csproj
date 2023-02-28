@@ -17,10 +17,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\..\Common\Core.Apps.WebApp\Core.Apps.WebApp.csproj" />
-		<ProjectReference Include="..\Data.SQL.Clients.SqlServer\Data.SQL.Clients.SqlServer.csproj" />
-		<ProjectReference Include="..\Data.SQL.Mappers.EF.Clients.SqlServer\Data.SQL.Mappers.EF.Clients.SqlServer.csproj" />
-		<ProjectReference Include="..\Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer\Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.csproj" />
+		<ProjectReference Include="..\..\..\Common\Core.Apps.WebApp\Backend.Common.Core.Apps.WebApp.csproj" />
+		<ProjectReference Include="..\Data.SQL.Clients.SqlServer\Backend.Services.Sample.Data.SQL.Clients.SqlServer.csproj" />
+		<ProjectReference Include="..\Data.SQL.Mappers.EF.Clients.SqlServer\Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.csproj" />
+		<ProjectReference Include="..\Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer\Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.csproj" />
 	</ItemGroup>
 
 </Project>

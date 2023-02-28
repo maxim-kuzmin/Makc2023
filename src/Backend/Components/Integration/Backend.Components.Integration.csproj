@@ -6,15 +6,14 @@
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<VersionPrefix>1.0.1</VersionPrefix>
-		<AssemblyName>Makc2023.Backend.Common.Domain.SQL.Mappers.EF</AssemblyName>
+		<AssemblyName>Makc2023.Backend.Components.Integration</AssemblyName>
 		<RootNamespace>$(AssemblyName)</RootNamespace>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<DocumentationFile>$(AssemblyName).xml</DocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Data.SQL.Mappers.EF\Data.SQL.Mappers.EF.csproj" />
-		<ProjectReference Include="..\Domain\Domain.csproj" />
+		<ProjectReference Include="..\..\Common\Core\Backend.Common.Core.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -22,5 +21,5 @@
 			<PackageCopyToOutput>true</PackageCopyToOutput>
 		</None>
 	</ItemGroup>
-
+	
 </Project>

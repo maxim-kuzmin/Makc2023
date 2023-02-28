@@ -6,18 +6,19 @@
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<VersionPrefix>1.0.1</VersionPrefix>
-		<AssemblyName>Makc2023.Backend.Components.Integration.Clients.RabbitMQ</AssemblyName>
+		<AssemblyName>Makc2023.Backend.Common.Data.SQL.Mappers.EF</AssemblyName>
 		<RootNamespace>$(AssemblyName)</RootNamespace>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<DocumentationFile>$(AssemblyName).xml</DocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.2" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Integration\Integration.csproj" />
+		<ProjectReference Include="..\Data.SQL\Backend.Common.Data.SQL.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

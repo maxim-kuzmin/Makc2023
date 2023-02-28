@@ -6,18 +6,18 @@
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<VersionPrefix>1.0.1</VersionPrefix>
-		<AssemblyName>Makc2023.Backend.Common.Data.SQL.Clients.PostgreSQL</AssemblyName>
+		<AssemblyName>Makc2023.Backend.Common.Domain</AssemblyName>
 		<RootNamespace>$(AssemblyName)</RootNamespace>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<DocumentationFile>$(AssemblyName).xml</DocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Npgsql" Version="7.0.1" />
+		<PackageReference Include="MediatR" Version="11.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Data.SQL\Data.SQL.csproj" />
+		<ProjectReference Include="..\Core\Backend.Common.Core.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -11,7 +11,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\..\Common\Data.SQL\Data.SQL.csproj" />
+		<ProjectReference Include="..\..\..\Common\Data.SQL\Backend.Common.Data.SQL.csproj" />
 	</ItemGroup>
 
 </Project>

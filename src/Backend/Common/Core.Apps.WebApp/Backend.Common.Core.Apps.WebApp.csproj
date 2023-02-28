@@ -5,15 +5,19 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<VersionPrefix>1.0.1</VersionPrefix>		
-		<AssemblyName>Makc2023.Backend.Common.Data.SQL</AssemblyName>
+		<VersionPrefix>1.0.1</VersionPrefix>
+		<AssemblyName>Makc2023.Backend.Common.Core.Apps.WebApp</AssemblyName>
 		<RootNamespace>$(AssemblyName)</RootNamespace>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<DocumentationFile>$(AssemblyName).xml</DocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Core\Core.csproj" />
+		<PackageReference Include="NLog.Web.AspNetCore" Version="5.2.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Core\Backend.Common.Core.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -22,4 +26,11 @@
 		</None>
 	</ItemGroup>
 
+	<ItemGroup>
+		<None Update="nlog.config" Pack="true">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<PackageCopyToOutput>true</PackageCopyToOutput>
+		</None>
+	</ItemGroup>
+	
 </Project>

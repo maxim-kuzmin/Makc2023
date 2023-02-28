@@ -6,29 +6,19 @@
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<VersionPrefix>1.0.1</VersionPrefix>
-		<AssemblyName>Makc2023.Backend.Common.Core.Apps.ConsoleApp</AssemblyName>
+		<AssemblyName>Makc2023.Backend.Common.Domain.SQL.Mappers.EF</AssemblyName>
 		<RootNamespace>$(AssemblyName)</RootNamespace>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<DocumentationFile>$(AssemblyName).xml</DocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="NLog.Extensions.Logging" Version="5.2.1" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\Core\Core.csproj" />
+		<ProjectReference Include="..\Data.SQL.Mappers.EF\Backend.Common.Data.SQL.Mappers.EF.csproj" />
+		<ProjectReference Include="..\Domain\Backend.Common.Domain.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<None Include="$(AssemblyName).xml" Pack="true">
-			<PackageCopyToOutput>true</PackageCopyToOutput>
-		</None>
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Update="nlog.config" Pack="true">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<PackageCopyToOutput>true</PackageCopyToOutput>
 		</None>
 	</ItemGroup>
