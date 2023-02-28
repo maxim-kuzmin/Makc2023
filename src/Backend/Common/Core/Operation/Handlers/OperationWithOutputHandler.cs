@@ -97,19 +97,20 @@ public class OperationWithOutputHandler<TOperationOutput, TOperationResult> :
     /// <inheritdoc/>
     protected sealed override void InitOperationResult(bool isOk)
     {
-        TOperationResult operationResult = new()
+        OperationResult = new()
         {
             IsOk = isOk,
         };
 
         if (!string.IsNullOrWhiteSpace(OperationCode))
         {
-            operationResult.OperationCode = OperationCode;
+            OperationResult.OperationCode = OperationCode;
         }
 
-        OperationResult = FunctionToTransformOperationResult != null
-            ? FunctionToTransformOperationResult.Invoke(operationResult)
-            : operationResult;
+        if (FunctionToTransformOperationResult != null)
+        {
+            OperationResult = FunctionToTransformOperationResult.Invoke(OperationResult);
+        }
     }
 
     #endregion Protected methods
@@ -118,12 +119,12 @@ public class OperationWithOutputHandler<TOperationOutput, TOperationResult> :
 
     private void SetOutput(TOperationOutput operationOutput)
     {
+        OperationResult.Output = operationOutput;
+
         if (FunctionToTransformOperationOutput != null)
         {
-            operationOutput = FunctionToTransformOperationOutput.Invoke(operationOutput);
+            OperationResult.Output = FunctionToTransformOperationOutput.Invoke(OperationResult.Output);
         }
-
-        OperationResult.Output = operationOutput;
     }
 
     #endregion Private methods

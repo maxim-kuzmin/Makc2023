@@ -71,7 +71,7 @@ public class OperationWithoutInputAndOutputHandler : OperationHandler, IOperatio
     /// <inheritdoc/>
     protected sealed override void InitOperationResult(bool isOk)
     {
-        OperationResult = new OperationResult
+        OperationResult = new()
         {
             IsOk = isOk,
         };

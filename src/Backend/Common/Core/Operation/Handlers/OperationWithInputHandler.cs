@@ -46,13 +46,14 @@ public class OperationWithInputHandler<TOperationInput> :
     /// <inheritdoc/>
     public void OnStart(TOperationInput operationInput, string operationCode = "")
     {
-        operationInput ??= new();
-
-        OperationInput = FunctionToTransformOperationInput != null
-            ? FunctionToTransformOperationInput.Invoke(operationInput)
-            : operationInput;
+        OperationInput = operationInput ?? new();
 
         DoOnStart(operationCode);
+
+        if (FunctionToTransformOperationInput != null)
+        {
+            OperationInput = FunctionToTransformOperationInput.Invoke(OperationInput);
+        }
     }
 
     /// <inheritdoc/>
@@ -90,7 +91,7 @@ public class OperationWithInputHandler<TOperationInput> :
     /// <inheritdoc/>
     protected sealed override void InitOperationResult(bool isOk)
     {
-        OperationResult = new OperationResult
+        OperationResult = new()
         {
             IsOk = isOk,
         };
