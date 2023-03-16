@@ -1,6 +1,6 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Common.Core.Apps.WebApp.Responses;
+namespace Makc2023.Backend.Common.Core.Apps.WebApp;
 
 /// <summary>
 /// Отклик веб-приложения, содержащий данные.

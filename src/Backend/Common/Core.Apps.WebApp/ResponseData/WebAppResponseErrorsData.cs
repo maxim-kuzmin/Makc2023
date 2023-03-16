@@ -1,11 +1,11 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Common.Core.Apps.WebApp.Responses;
+namespace Makc2023.Backend.Common.Core.Apps.WebApp.ResponseData;
 
 /// <summary>
-/// Отклик веб-приложения, содержащий ошибки.
+/// Данные об ошибках отклика веб-приложения.
 /// </summary>
-public class WebAppResponseWithErrors : WebAppResponse
+public class WebAppResponseErrorsData
 {
     #region Properties
 
@@ -21,10 +21,8 @@ public class WebAppResponseWithErrors : WebAppResponse
     /// <summary>
     /// Конструктор.
     /// </summary>
-    /// <param name="operationCode">Код операции.</param>
     /// <param name="errorMessages">Сообщения об ошибках.</param>
-    public WebAppResponseWithErrors(string operationCode, IEnumerable<string> errorMessages)
-        : base(operationCode)
+    public WebAppResponseErrorsData(IEnumerable<string> errorMessages)
     {
         if (errorMessages != null && errorMessages.Any())
         {
