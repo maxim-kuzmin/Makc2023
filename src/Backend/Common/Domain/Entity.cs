@@ -5,7 +5,8 @@ namespace Makc2023.Backend.Common.Domain;
 /// <summary>
 /// Сущность.
 /// </summary>
-public abstract class Entity<T> : IEntity
+/// <typeparam name="TId">Тип идентификатора.</typeparam>
+public abstract class Entity<TId> : IEntity
 {
     #region Fields
 
@@ -23,7 +24,7 @@ public abstract class Entity<T> : IEntity
     /// <param name="left">Левый операнд.</param>
     /// <param name="right">Правый операнд.</param>
     /// <returns>Результат проверки на равенство.</returns>
-    public static bool operator ==(Entity<T> left, Entity<T> right)
+    public static bool operator ==(Entity<TId> left, Entity<TId> right)
     {
         if (Equals(left, null))
         {
@@ -41,7 +42,7 @@ public abstract class Entity<T> : IEntity
     /// <param name="left">Левый операнд.</param>
     /// <param name="right">Правый операнд.</param>
     /// <returns>Результат проверки на неравенство.</returns>
-    public static bool operator !=(Entity<T> left, Entity<T> right)
+    public static bool operator !=(Entity<TId> left, Entity<TId> right)
     {
         return !(left == right);
     }
@@ -70,7 +71,7 @@ public abstract class Entity<T> : IEntity
     /// <inheritdoc/>
     public override bool Equals(object? obj)
     {
-        if (obj == null || obj is not Entity<T>)
+        if (obj == null || obj is not Entity<TId>)
         {
             return false;
         }
@@ -85,7 +86,7 @@ public abstract class Entity<T> : IEntity
             return false;
         }
 
-        Entity<T> item = (Entity<T>)obj;
+        Entity<TId> item = (Entity<TId>)obj;
 
         if (item.IsTransient() || IsTransient())
         {
@@ -124,7 +125,7 @@ public abstract class Entity<T> : IEntity
     /// <returns>Признак транзитивности.</returns>
     public bool IsTransient()
     {
-        T id = GetId();
+        TId id = GetId();
 
         return id is null || id.Equals(default);
     }
@@ -145,7 +146,7 @@ public abstract class Entity<T> : IEntity
     /// <summary>
     /// Получить идентификатор.
     /// </summary>
-    protected abstract T GetId();
+    protected abstract TId GetId();
 
     #endregion Protected methods
 }
