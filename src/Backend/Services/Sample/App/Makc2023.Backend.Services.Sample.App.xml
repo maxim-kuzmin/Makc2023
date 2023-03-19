@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Makc2023.Backend.Services.Sample.App</name>
+    </assembly>
+    <members>
+        <member name="T:Makc2023.Backend.Services.Sample.App.Setup.SetupAppModule">
+            <summary>
+            Модуль настройки приложения.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.App.Setup.SetupAppModule.#ctor(Makc2023.Backend.Common.Core.App.IAppEnvironment)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="appEnvironment">Окружение приложения.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.App.Setup.SetupAppModule.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.App.Setup.SetupAppModule.GetExports">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.App.Setup.SetupAppModule.GetImports">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.App.Setup.SetupExtension">
+            <summary>
+            Расширение настройки.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.App.Setup.SetupExtension.AddAppModules(Microsoft.AspNetCore.Builder.WebApplicationBuilder,Makc2023.Backend.Common.Core.App.IAppEnvironment)">
+            <summary>
+            Добавить модули приложения.
+            </summary>
+            <param name="appBuilder">Построитель приложения.</param>
+            <param name="appEnvironment">Окружение приложения.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.App.Setup.SetupExtension.UseAppModules(Microsoft.AspNetCore.Builder.WebApplication,Makc2023.Backend.Common.Core.App.IAppEnvironment)">
+            <summary>
+            Использовать модули приложения.
+            </summary>
+            <param name="app">Приложение.</param>
+            <param name="appEnvironment">Окружение приложения.</param>
+            <returns>Задача на использование.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.App.Setup.SetupService">
+            <summary>
+            Сервис настройки.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.App.Setup.SetupService.#ctor(Makc2023.Backend.Common.Core.App.IAppEnvironment,Makc2023.Backend.Common.Core.Repeat.IRepeatService,Makc2023.Backend.Services.Sample.Data.SQL.Setup.ISetupService)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="appEnvironment">Окружение приложения.</param>
+            <param name="repeatService">Сервис повторения.</param>
+            <param name="dbSetupService">Сервис настройки базы данных.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.App.Setup.SetupService.Execute">
+            <summary>
+            Выполнить.
+            </summary>
+            <returns>Задача на выполнение.</returns>
+        </member>
+    </members>
+</doc>

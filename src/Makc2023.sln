@@ -41,7 +41,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{42
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{BAE95757-FC92-41EC-9D55-F73E695A9CC4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Services.Sample.App.SQL.Mappers.EF.Clients.SqlServer", "Backend\Services\Sample\App.SQL.Mappers.EF.Clients.SqlServer\Backend.Services.Sample.App.SQL.Mappers.EF.Clients.SqlServer.csproj", "{41438686-E6DE-4104-B271-48697387556F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Services.Sample.App", "Backend\Services\Sample\App\Backend.Services.Sample.App.csproj", "{41438686-E6DE-4104-B271-48697387556F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Services.Sample.Data.SQL", "Backend\Services\Sample\Data.SQL\Backend.Services.Sample.Data.SQL.csproj", "{7C81ED11-5196-4EF2-9C0B-08BC3E9F3D22}"
 EndProject
@@ -53,7 +53,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Services.Sample.Dat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Services.Sample.Domain.SQL", "Backend\Services\Sample\Domain.SQL\Backend.Services.Sample.Domain.SQL.csproj", "{D66BCD9F-E84E-48C8-A4BA-D263E932A530}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer", "Backend\Services\Sample\Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer\Backend.Services.Sample.Domains.DummyMain.SQL.Mappers.EF.Clients.SqlServer.csproj", "{7162D967-4819-4593-A65A-006A30221C2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Services.Sample.Domains.DummyMain", "Backend\Services\Sample\Domains.DummyMain\Backend.Services.Sample.Domains.DummyMain.csproj", "{7162D967-4819-4593-A65A-006A30221C2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
