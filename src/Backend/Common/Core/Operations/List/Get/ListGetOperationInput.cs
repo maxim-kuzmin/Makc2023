@@ -1,6 +1,6 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Common.Data.SQL.Operations.List.Get;
+namespace Makc2023.Backend.Common.Core.Operations.List.Get;
 
 /// <summary>
 /// Входные данные операции получения списка.
@@ -37,7 +37,7 @@ public abstract class ListGetOperationInput : OperationInput
     /// Получить свойства с недействительными значениями.
     /// </summary>
     /// <returns>Свойства с недействительными значениями.</returns>
-    public OperationInputInvalidProperties GetInvalidProperties(IResource resource)
+    public OperationInputInvalidProperties GetInvalidProperties(IOperationsResource operationsResource)
     {
         var result = CreateInvalidProperties();
 
@@ -51,7 +51,7 @@ public abstract class ListGetOperationInput : OperationInput
         {
             var values = result.GetOrAdd(nameof(SortField));
 
-            string value = resource.GetValidValueForSortField(
+            string value = operationsResource.GetOperationInputValidValueForSortField(
                 OperationOptions.SORT_DIRECTION_ASC,
                 OperationOptions.SORT_DIRECTION_DESC);
 

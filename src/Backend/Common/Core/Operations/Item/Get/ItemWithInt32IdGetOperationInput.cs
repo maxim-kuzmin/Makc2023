@@ -1,6 +1,6 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Common.Data.SQL.Operations.Item.Get;
+namespace Makc2023.Backend.Common.Core.Operations.Item.Get;
 
 /// <summary>
 /// Входные данные операции получения элемента с 32-битным целочисленным идентификатором.
@@ -33,7 +33,7 @@ public class ItemWithInt32IdGetOperationInput : OperationInput
     /// Получить свойства с недействительными значениями.
     /// </summary>
     /// <returns>Свойства с недействительными значениями.</returns>
-    public OperationInputInvalidProperties GetInvalidProperties(IResource resource)
+    public OperationInputInvalidProperties GetInvalidProperties(IOperationsResource operationsResource)
     {
         var result = CreateInvalidProperties();
 
@@ -41,7 +41,7 @@ public class ItemWithInt32IdGetOperationInput : OperationInput
         {
             var values = result.GetOrAdd(nameof(Id));
 
-            string value = resource.GetValidValueForId();
+            string value = operationsResource.GetOperationInputValidValueForId();
 
             values.Add(value);
         }

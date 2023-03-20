@@ -5,8 +5,9 @@ global using Makc2023.Backend.Common.Core.Converting;
 global using Makc2023.Backend.Common.Core.Exceptions;
 global using Makc2023.Backend.Common.Core.Operation;
 global using Makc2023.Backend.Common.Core.Operation.Handlers;
-global using Makc2023.Backend.Common.Data.SQL.Operations.Item.Get;
-global using Makc2023.Backend.Common.Data.SQL.Operations.List.Get;
+global using Makc2023.Backend.Common.Core.Operations;
+global using Makc2023.Backend.Common.Core.Operations.Item.Get;
+global using Makc2023.Backend.Common.Core.Operations.List.Get;
 global using Makc2023.Backend.Common.Domain;
 global using Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain;
 global using Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyManyToMany;
@@ -21,4 +22,3 @@ global using Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.It
 global using Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Localization;
-global using IResourceOfCommonDataSQL = Makc2023.Backend.Common.Data.SQL.IResource;

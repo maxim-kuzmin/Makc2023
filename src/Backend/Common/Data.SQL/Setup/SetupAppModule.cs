@@ -32,9 +32,6 @@ public class SetupAppModule : AppModule
     public sealed override void ConfigureServices(IServiceCollection services)
     {
         services.Configure<SetupOptions>(_configurationSection);
-
-        services.AddSingleton<IResource>(x => new Resource(
-            x.GetRequiredService<IStringLocalizer<Resource>>()));
     }
 
     /// <inheritdoc/>
@@ -42,7 +39,6 @@ public class SetupAppModule : AppModule
     {
         return new[]
             {
-                typeof(IResource),
                 typeof(SetupOptions),
             };
     }

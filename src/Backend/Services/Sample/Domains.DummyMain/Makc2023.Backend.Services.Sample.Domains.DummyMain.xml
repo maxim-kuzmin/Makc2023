@@ -96,7 +96,7 @@
             Список свойств с недействительными значениями во входных данных.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationHandler.#ctor(Makc2023.Backend.Common.Data.SQL.IResource,Makc2023.Backend.Services.Sample.Domain.SQL.IResource,Makc2023.Backend.Services.Sample.Domains.DummyMain.IDummyMainDomainResource,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger{Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationHandler},Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationHandler.#ctor(Makc2023.Backend.Common.Core.Operations.IOperationsResource,Makc2023.Backend.Services.Sample.Domain.SQL.IResource,Makc2023.Backend.Services.Sample.Domains.DummyMain.IDummyMainDomainResource,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger{Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationHandler},Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
             <inheritdoc/>
         </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationRequest">
@@ -162,7 +162,7 @@
             Список свойств с недействительными значениями во входных данных.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationHandler.#ctor(Makc2023.Backend.Common.Data.SQL.IResource,Makc2023.Backend.Services.Sample.Domains.DummyMain.IDummyMainDomainResource,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger{Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationHandler},Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationHandler.#ctor(Makc2023.Backend.Common.Core.Operations.IOperationsResource,Makc2023.Backend.Services.Sample.Domains.DummyMain.IDummyMainDomainResource,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger{Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationHandler},Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
             <inheritdoc/>
         </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationRequest">

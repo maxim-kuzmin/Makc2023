@@ -1,6 +1,6 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Common.Data.SQL.Operations.Item.Get;
+namespace Makc2023.Backend.Common.Core.Operations.Item.Get;
 
 /// <summary>
 /// Выходные данные операции получения элемента.

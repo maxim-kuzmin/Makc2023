@@ -29,9 +29,9 @@ public class Resource : IResource
     #region Public methods
 
     /// <inheritdoc/>
-    public string GetValidValueForName()
+    public string GetOperationInputValidValueForName()
     {
-        return _localizer["@@ValidValueForName"];
+        return _localizer["@@OperationInputValidValueForName"];
     }
 
     #endregion Public methods

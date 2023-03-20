@@ -45,6 +45,11 @@ public class SetupAppModule : AppModule
             x.GetRequiredService<IStringLocalizer<OperationResource>>()
             ));
 
+        services.AddSingleton<IOperationsResource>(x => new OperationsResource(
+            x.GetRequiredService<IStringLocalizer<OperationsResource>>()
+            ));
+
+
         services.AddSingleton<IRepeatResource>(x => new RepeatResource(
             x.GetRequiredService<IStringLocalizer<RepeatResource>>()
             ));
@@ -63,6 +68,7 @@ public class SetupAppModule : AppModule
                 typeof(IAppResource),
                 typeof(IConvertingResource),
                 typeof(IOperationResource),
+                typeof(IOperationsResource),
                 typeof(IRepeatResource),
                 typeof(IRepeatService),
                 typeof(SetupOptions),

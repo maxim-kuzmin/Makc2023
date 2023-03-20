@@ -31,7 +31,7 @@ public class DummyMainItemGetOperationInput : ItemWithInt64IdGetOperationInput
 
     /// <inheritdoc/>
     public sealed override OperationInputInvalidProperties GetInvalidProperties(
-        IResourceOfCommonDataSQL resourceOfCommonDataSQL)
+        IOperationsResource operationsResource)
     {
         throw new NotImplementedException();
     }
@@ -39,9 +39,9 @@ public class DummyMainItemGetOperationInput : ItemWithInt64IdGetOperationInput
     /// <inheritdoc/>
     public OperationInputInvalidProperties GetInvalidProperties(
         IResource resource,
-        IResourceOfCommonDataSQL resourceOfCommonDataSQL)
+        IOperationsResource operationsResource)
     {
-        var result = base.GetInvalidProperties(resourceOfCommonDataSQL);
+        var result = base.GetInvalidProperties(operationsResource);
 
         if (result.Any())
         {
@@ -49,7 +49,7 @@ public class DummyMainItemGetOperationInput : ItemWithInt64IdGetOperationInput
             {
                 var values = result.GetOrAdd(nameof(Name));
 
-                string value = resource.GetValidValueForName();
+                string value = resource.GetOperationInputValidValueForName();
 
                 values.Add(value);
             }

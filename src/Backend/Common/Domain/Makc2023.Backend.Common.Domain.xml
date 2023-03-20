@@ -8,6 +8,7 @@
             <summary>
             Сущность.
             </summary>
+            <typeparam name="TId">Тип идентификатора.</typeparam>
         </member>
         <member name="M:Makc2023.Backend.Common.Domain.Entity`1.op_Equality(Makc2023.Backend.Common.Domain.Entity{`0},Makc2023.Backend.Common.Domain.Entity{`0})">
             <summary>

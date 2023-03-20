@@ -1,6 +1,6 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Common.Data.SQL.Operations.Tree.Path.Get;
+namespace Makc2023.Backend.Common.Core.Operations.Tree.Path.Get;
 
 /// <summary>
 /// Ось операции получения ветви дерева.

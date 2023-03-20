@@ -10,10 +10,10 @@ public interface IResource
     #region Methods
 
     /// <summary>
-    /// Получить корректное значение свойства "Name".
+    /// Получить корректное значение свойства "Name" входных данных операции.
     /// </summary>
     /// <returns>Корректное значение.</returns>
-    string GetValidValueForName();
+    string GetOperationInputValidValueForName();
 
     #endregion Methods
 }

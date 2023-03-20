@@ -1,11 +1,11 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Common.Data.SQL;
+namespace Makc2023.Backend.Common.Core.Operations;
 
 /// <summary>
-/// Ресурс.
+/// Ресурс операций.
 /// </summary>
-public class Resource : IResource
+public class OperationsResource : IOperationsResource
 {
     #region Fields
 
@@ -19,7 +19,7 @@ public class Resource : IResource
     /// Конструктор.
     /// </summary>
     /// <param name="localizer">Локализатор.</param>
-    public Resource(IStringLocalizer<Resource> localizer)
+    public OperationsResource(IStringLocalizer<OperationsResource> localizer)
     {
         _localizer = localizer;
     }
@@ -29,15 +29,15 @@ public class Resource : IResource
     #region Public methods
 
     /// <inheritdoc/>
-    public string GetValidValueForId()
+    public string GetOperationInputValidValueForId()
     {
-        return _localizer["@@ValidValueForId"];
+        return _localizer["@@OperationInputValidValueForId"];
     }
 
     /// <inheritdoc/>
-    public string GetValidValueForSortField(string asc, string desc)
+    public string GetOperationInputValidValueForSortField(string asc, string desc)
     {
-        return _localizer["@@ValidValueForSortField", asc, desc];
+        return _localizer["@@OperationInputValidValueForSortField", asc, desc];
     }
 
     #endregion Public methods

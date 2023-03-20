@@ -14,7 +14,7 @@ public class DummyMainDomainItemGetOperationHandler :
 {
     #region Fields
 
-    private readonly IResourceOfCommonDataSQL _resourceOfCommonDataSQL;
+    private readonly IOperationsResource _operationsResource;
 
     private readonly IResourceOfServiceDomainSQL _resourceOfServiceDomainSQL;
 
@@ -33,19 +33,19 @@ public class DummyMainDomainItemGetOperationHandler :
 
     /// <inheritdoc/>
     public DummyMainDomainItemGetOperationHandler(
-        IResourceOfCommonDataSQL resourceOfCommonDataSQL,
+        IOperationsResource operationsResource,
         IResourceOfServiceDomainSQL resourceOfServiceDomainSQL,
         IDummyMainDomainResource domainResource,
-        IResourceOfCommonCoreOperation resourceOfCommonCoreOperation,
+        IOperationResource operationResource,
         ILogger<DummyMainDomainItemGetOperationHandler> logger,
         IOptionsMonitor<SetupOptionsOfCommonCore> setupOptionsOfCommonCore)
         : base(
             domainResource.GetItemGetOperationName(),
-            resourceOfCommonCoreOperation,
+            operationResource,
             logger,
             setupOptionsOfCommonCore)
     {     
-        _resourceOfCommonDataSQL = resourceOfCommonDataSQL;
+        _operationsResource = operationsResource;
         _resourceOfServiceDomainSQL = resourceOfServiceDomainSQL;
 
         FunctionToTransformOperationInput = TransformOperationInput;
@@ -61,7 +61,7 @@ public class DummyMainDomainItemGetOperationHandler :
     {
         source.Normalize();
 
-        InvalidInputProperties = source.GetInvalidProperties(_resourceOfServiceDomainSQL, _resourceOfCommonDataSQL);
+        InvalidInputProperties = source.GetInvalidProperties(_resourceOfServiceDomainSQL, _operationsResource);
 
         if (InvalidInputProperties.Any())
         {

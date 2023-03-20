@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="@@ValidValueForId" xml:space="preserve">
-    <value>Значение должно быть больше нуля</value>
+  <data name="@@OperationInputValidValueForId" xml:space="preserve">
+    <value>Value should be more then zero</value>
   </data>
-  <data name="@@ValidValueForSortField" xml:space="preserve">
-    <value>Значение должно быть равно "{0}" или "{1}"</value>
+  <data name="@@OperationInputValidValueForSortField" xml:space="preserve">
+    <value>Value should be equals "{0}" or "{1}"</value>
   </data>
 </root>

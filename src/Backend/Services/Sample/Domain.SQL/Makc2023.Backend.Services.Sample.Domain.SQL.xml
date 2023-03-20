@@ -269,9 +269,9 @@
             Инитерфейс ресурса.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.IResource.GetValidValueForName">
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.IResource.GetOperationInputValidValueForName">
             <summary>
-            Получить корректное значение свойства "Name".
+            Получить корректное значение свойства "Name" входных данных операции.
             </summary>
             <returns>Корректное значение.</returns>
         </member>
@@ -288,10 +288,10 @@
         <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput.Normalize">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput.GetInvalidProperties(Makc2023.Backend.Common.Data.SQL.IResource)">
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput.GetInvalidProperties(Makc2023.Backend.Common.Core.Operations.IOperationsResource)">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput.GetInvalidProperties(Makc2023.Backend.Services.Sample.Domain.SQL.IResource,Makc2023.Backend.Common.Data.SQL.IResource)">
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput.GetInvalidProperties(Makc2023.Backend.Services.Sample.Domain.SQL.IResource,Makc2023.Backend.Common.Core.Operations.IOperationsResource)">
             <inheritdoc/>
         </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationOutput">
@@ -407,7 +407,7 @@
             </summary>
             <param name="localizer">Локализатор.</param>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Resource.GetValidValueForName">
+        <member name="M:Makc2023.Backend.Services.Sample.Domain.SQL.Resource.GetOperationInputValidValueForName">
             <inheritdoc/>
         </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domain.SQL.Setup.SetupAppModule">

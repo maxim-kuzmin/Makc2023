@@ -1,6 +1,6 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Common.Data.SQL.Operations.Tree.Node.Get;
+namespace Makc2023.Backend.Common.Core.Operations.Tree.Node.Get;
 
 /// <summary>
 /// Ось операции получения узла дерева.
