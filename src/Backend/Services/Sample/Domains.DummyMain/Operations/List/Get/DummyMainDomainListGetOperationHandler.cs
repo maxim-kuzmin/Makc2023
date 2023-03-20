@@ -1,7 +1,5 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-using Makc2023.Backend.Common.Core.Operation;
-
 namespace Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get;
 
 /// <summary>
