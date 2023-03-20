@@ -22,18 +22,18 @@ public interface IOperationWithoutInputAndOutputHandler : IOperationHandler
     /// Обработать начало.
     /// </summary>
     /// <param name="operationCode">Код операции.</param>
-    void OnStart(string operationCode = "");
+    void HandleStart(string operationCode = "");
 
     /// <summary>
     /// Обработать успех.
     /// </summary>
-    public void OnSuccess();
+    public void HandleSuccess();
 
     /// <summary>
     /// Обработать успех с результатом.
     /// </summary>
     /// <param name="operationResult">Результат операции.</param>
-    void OnSuccessWithResult(OperationResult operationResult);
+    void HandleSuccessWithResult(OperationResult operationResult);
 
     #endregion Methods
 }

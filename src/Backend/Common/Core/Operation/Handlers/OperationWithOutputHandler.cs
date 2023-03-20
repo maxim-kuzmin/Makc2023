@@ -47,35 +47,35 @@ public class OperationWithOutputHandler<TOperationOutput, TOperationResult> :
     #region Public methods
 
     /// <inheritdoc/>
-    public sealed override void OnError(Exception? exception = null)
+    public sealed override void HandleError(Exception? exception = null)
     {
-        base.OnError(exception);
+        base.HandleError(exception);
 
         SetOutput(new());
     }
 
     /// <inheritdoc/>
-    public void OnStart(string operationCode = "")
+    public void HandleStart(string operationCode = "")
     {
-        DoOnStart(operationCode);
+        OnStart(operationCode);
     }
 
     /// <inheritdoc/>
-    public void OnSuccess(TOperationOutput operationOutput)
+    public void HandleSuccess(TOperationOutput operationOutput)
     {
         InitOperationResult(true);
 
         SetOutput(operationOutput);
 
-        DoOnSuccess();
+        OnSuccess();
     }
 
     /// <inheritdoc/>
-    public void OnSuccessWithResult(TOperationResult operationResult)
+    public void HandleSuccessWithResult(TOperationResult operationResult)
     {
         OperationResult = operationResult;
 
-        DoOnSuccess();
+        OnSuccess();
     }
 
     #endregion Public methods

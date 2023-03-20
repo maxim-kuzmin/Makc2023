@@ -54,13 +54,13 @@
         <member name="M:Makc2023.Backend.Common.Core.App.AppHandler.Dispose">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.App.AppHandler.OnError(System.Exception)">
+        <member name="M:Makc2023.Backend.Common.Core.App.AppHandler.HandleError(System.Exception)">
             <summary>
             Обработать ошибку.
             </summary>
             <param name="exception">Исключение.</param>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.App.AppHandler.OnStart(Makc2023.Backend.Common.Core.App.IAppEnvironment)">
+        <member name="M:Makc2023.Backend.Common.Core.App.AppHandler.HandleStart(Makc2023.Backend.Common.Core.App.IAppEnvironment)">
             <summary>
             Обработать начало.
             </summary>
@@ -816,20 +816,20 @@
             Результат выполнения операции.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputAndOutputHandler`3.OnStart(`0,System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputAndOutputHandler`3.HandleStart(`0,System.String)">
             <summary>
             Обработать начало.
             </summary>
             <param name="operationInput">Входные данные операции.</param>     
             <param name="operationCode">Код операции.</param>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputAndOutputHandler`3.OnSuccess(`1)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputAndOutputHandler`3.HandleSuccess(`1)">
             <summary>
             Обработать успех.
             </summary>
             <param name="operationOutput">Выходные данные операции.</param>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputAndOutputHandler`3.OnSuccessWithResult(`2)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputAndOutputHandler`3.HandleSuccessWithResult(`2)">
             <summary>
             Обработать успех с результатом.
             </summary>
@@ -851,19 +851,19 @@
             Результат выполнения операции.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`1.OnStart(`0,System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`1.HandleStart(`0,System.String)">
             <summary>
             Обработать начало.
             </summary>
             <param name="operationInput">Входные данные операции.</param>
             <param name="operationCode">Код операции.</param>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`1.OnSuccess">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`1.HandleSuccess">
             <summary>
             Обработать успех.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`1.OnSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResult)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`1.HandleSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResult)">
             <summary>
             Обработать успех с результатом.
             </summary>
@@ -879,18 +879,18 @@
             Результат выполнения операции.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler.OnStart(System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler.HandleStart(System.String)">
             <summary>
             Обработать начало.
             </summary>
             <param name="operationCode">Код операции.</param>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler.OnSuccess">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler.HandleSuccess">
             <summary>
             Обработать успех.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler.OnSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResult)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler.HandleSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResult)">
             <summary>
             Обработать успех с результатом.
             </summary>
@@ -908,19 +908,19 @@
             Результат выполнения операции.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithOutputHandler`2.OnStart(System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithOutputHandler`2.HandleStart(System.String)">
             <summary>
             Обработать начало.
             </summary>
             <param name="operationCode">Код операции.</param>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithOutputHandler`2.OnSuccess(`0)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithOutputHandler`2.HandleSuccess(`0)">
             <summary>
             Обработать успех.
             </summary>
             <param name="operationOutput">Выходные данные операции.</param>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithOutputHandler`2.OnSuccessWithResult(`1)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithOutputHandler`2.HandleSuccessWithResult(`1)">
             <summary>
             Обработать успех с результатом.
             </summary>
@@ -958,16 +958,16 @@
         <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`3.#ctor(System.String,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`3.OnError(System.Exception)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`3.HandleError(System.Exception)">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`3.OnStart(`0,System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`3.HandleStart(`0,System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`3.OnSuccess(`1)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`3.HandleSuccess(`1)">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`3.OnSuccessWithResult(`2)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`3.HandleSuccessWithResult(`2)">
             <inheritdoc/>
         </member>
         <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`3.GetOperationInput">
@@ -999,13 +999,13 @@
         <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.#ctor(System.String,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.OnStart(`0,System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.HandleStart(`0,System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.OnSuccess">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.HandleSuccess">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.OnSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResult)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.HandleSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResult)">
             <inheritdoc/>
         </member>
         <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.GetOperationInput">
@@ -1028,13 +1028,13 @@
         <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.#ctor(System.String,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.OnStart(System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.HandleStart(System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.OnSuccess">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.HandleSuccess">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.OnSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResult)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.HandleSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResult)">
             <inheritdoc/>
         </member>
         <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.GetOperationInput">
@@ -1069,16 +1069,16 @@
         <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`2.#ctor(System.String,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`2.OnError(System.Exception)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`2.HandleError(System.Exception)">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`2.OnStart(System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`2.HandleStart(System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`2.OnSuccess(`0)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`2.HandleSuccess(`0)">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`2.OnSuccessWithResult(`1)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`2.HandleSuccessWithResult(`1)">
             <inheritdoc/>
         </member>
         <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`2.GetOperationInput">
@@ -1095,7 +1095,7 @@
             Интерфейс обработчика операции.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.IOperationHandler.OnError(System.Exception)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.IOperationHandler.HandleError(System.Exception)">
             <summary>
             Обработать ошибку.
             </summary>
@@ -1238,19 +1238,8 @@
             <param name="logger">Регистратор.</param>
             <param name="setupOptions">Параметры настройки.</param>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationHandler.OnError(System.Exception)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationHandler.HandleError(System.Exception)">
             <inheritdoc/>
-        </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationHandler.DoOnStart(System.String)">
-            <summary>
-            Сделать в начале операции.
-            </summary>
-            <param name="operationCode">Код операции.</param>
-        </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationHandler.DoOnSuccess">
-            <summary>
-            Сделать в случае успешного выполнения операции.
-            </summary>
         </member>
         <member name="M:Makc2023.Backend.Common.Core.Operation.OperationHandler.GetOperationInput">
             <summary>
@@ -1269,6 +1258,17 @@
             Инициализировать результат операции.
             </summary>
             <param name="isOk">Признак успешности выполнения.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationHandler.OnStart(System.String)">
+            <summary>
+            Отреагировать на начало.
+            </summary>
+            <param name="operationCode">Код операции.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationHandler.OnSuccess">
+             <summary>
+            Отреагировать на успех.
+             </summary>
         </member>
         <member name="T:Makc2023.Backend.Common.Core.Operation.OperationHelper">
             <summary>

@@ -13,7 +13,7 @@ public interface IOperationHandler
     /// Обработать ошибку.
     /// </summary>
     /// <param name="exception">Исключение.</param>
-    void OnError(Exception exception);
+    void HandleError(Exception exception);
 
     #endregion Methods
 }

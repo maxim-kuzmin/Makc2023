@@ -31,25 +31,25 @@ public class OperationWithoutInputAndOutputHandler : OperationHandler, IOperatio
     #region Public methods
 
     /// <inheritdoc/>
-    public void OnStart(string operationCode = "")
+    public void HandleStart(string operationCode = "")
     {
-        DoOnStart(operationCode);
+        OnStart(operationCode);
     }
 
     /// <inheritdoc/>
-    public void OnSuccess()
+    public void HandleSuccess()
     {
         InitOperationResult(true);
 
-        DoOnSuccess();
+        OnSuccess();
     }
 
     /// <inheritdoc/>
-    public void OnSuccessWithResult(OperationResult operationResult)
+    public void HandleSuccessWithResult(OperationResult operationResult)
     {
         OperationResult = operationResult;
 
-        DoOnSuccess();
+        OnSuccess();
     }
 
     #endregion Public methods

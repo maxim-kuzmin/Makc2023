@@ -44,11 +44,11 @@ public class OperationWithInputHandler<TOperationInput> :
     #region Public methods
 
     /// <inheritdoc/>
-    public void OnStart(TOperationInput operationInput, string operationCode = "")
+    public void HandleStart(TOperationInput operationInput, string operationCode = "")
     {
         OperationInput = operationInput ?? new();
 
-        DoOnStart(operationCode);
+        OnStart(operationCode);
 
         if (FunctionToTransformOperationInput != null)
         {
@@ -57,19 +57,19 @@ public class OperationWithInputHandler<TOperationInput> :
     }
 
     /// <inheritdoc/>
-    public void OnSuccess()
+    public void HandleSuccess()
     {
         InitOperationResult(true);
 
-        DoOnSuccess();
+        OnSuccess();
     }
 
     /// <inheritdoc/>
-    public void OnSuccessWithResult(OperationResult operationResult)
+    public void HandleSuccessWithResult(OperationResult operationResult)
     {
         OperationResult = operationResult;
 
-        DoOnSuccess();
+        OnSuccess();
     }
 
     #endregion Public methods

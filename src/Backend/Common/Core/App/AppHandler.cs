@@ -41,22 +41,22 @@ namespace Makc2023.Backend.Common.Core.App
         /// Обработать ошибку.
         /// </summary>
         /// <param name="exception">Исключение.</param>
-        public void OnError(Exception exception)
+        public void HandleError(Exception exception)
         {
-            _logger.Error(exception, nameof(OnError));
+            _logger.Error(exception, nameof(HandleError));
         }
 
         /// <summary>
         /// Обработать начало.
         /// </summary>
         /// <param name="appEnvironment">Окружение приложения.</param>
-        public void OnStart(IAppEnvironment appEnvironment)
+        public void HandleStart(IAppEnvironment appEnvironment)
         {
             CultureInfo.CurrentCulture =
                 CultureInfo.CurrentUICulture =
                     CultureInfo.GetCultureInfo(appEnvironment.DefaultCulture);
 
-            _logger.Debug($$"""{{nameof(OnStart)}}: {MachineName}""", Environment.MachineName);
+            _logger.Debug($$"""{{nameof(HandleStart)}}: {MachineName}""", Environment.MachineName);
         }
 
         #endregion Public methods

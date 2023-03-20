@@ -29,18 +29,18 @@ public interface IOperationWithInputHandler<TOperationInput> : IOperationHandler
     /// </summary>
     /// <param name="operationInput">Входные данные операции.</param>
     /// <param name="operationCode">Код операции.</param>
-    void OnStart(TOperationInput operationInput, string operationCode = "");
+    void HandleStart(TOperationInput operationInput, string operationCode = "");
 
     /// <summary>
     /// Обработать успех.
     /// </summary>
-    void OnSuccess();
+    void HandleSuccess();
 
     /// <summary>
     /// Обработать успех с результатом.
     /// </summary>
     /// <param name="operationResult">Результат операции.</param>
-    void OnSuccessWithResult(OperationResult operationResult);
+    void HandleSuccessWithResult(OperationResult operationResult);
 
     #endregion Methods
 }

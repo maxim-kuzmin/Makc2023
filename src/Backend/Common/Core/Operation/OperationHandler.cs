@@ -70,7 +70,7 @@ public abstract class OperationHandler : IOperationHandler
     #region Public methods
 
     /// <inheritdoc/>
-    public virtual void OnError(Exception? exception = null)
+    public virtual void HandleError(Exception? exception = null)
     {
         InitOperationResult(false);
 
@@ -110,12 +110,29 @@ public abstract class OperationHandler : IOperationHandler
 
     #region Protected methods
 
+    /// <summary>
+    /// Получить входные данные операции.
+    /// </summary>
+    /// <returns>Входные данные операции.</returns>
+    protected abstract object? GetOperationInput();
 
     /// <summary>
-    /// Сделать в начале операции.
+    /// Получить результат выполнения операции.
+    /// </summary>
+    /// <returns>Результат выполнения операции.</returns>
+    protected abstract OperationResult GetOperationResult();
+
+    /// <summary>
+    /// Инициализировать результат операции.
+    /// </summary>
+    /// <param name="isOk">Признак успешности выполнения.</param>
+    protected abstract void InitOperationResult(bool isOk);
+
+    /// <summary>
+    /// Отреагировать на начало.
     /// </summary>
     /// <param name="operationCode">Код операции.</param>
-    protected virtual void DoOnStart(string operationCode)
+    protected virtual void OnStart(string operationCode)
     {
         OperationCode = string.IsNullOrWhiteSpace(operationCode) ? OperationHelper.CreateOperationCode() : operationCode;
 
@@ -137,9 +154,9 @@ public abstract class OperationHandler : IOperationHandler
     }
 
     /// <summary>
-    /// Сделать в случае успешного выполнения операции.
+    ///Отреагировать на успех.
     /// </summary>
-    protected void DoOnSuccess()
+    protected void OnSuccess()
     {
         var currentSetupOptions = SetupOptions.CurrentValue;
 
@@ -148,24 +165,6 @@ public abstract class OperationHandler : IOperationHandler
             LogDebugOnSuccess();
         }
     }
-
-    /// <summary>
-    /// Получить входные данные операции.
-    /// </summary>
-    /// <returns>Входные данные операции.</returns>
-    protected abstract object? GetOperationInput();
-
-    /// <summary>
-    /// Получить результат выполнения операции.
-    /// </summary>
-    /// <returns>Результат выполнения операции.</returns>
-    protected abstract OperationResult GetOperationResult();
-
-    /// <summary>
-    /// Инициализировать результат операции.
-    /// </summary>
-    /// <param name="isOk">Признак успешности выполнения.</param>
-    protected abstract void InitOperationResult(bool isOk);
 
     #endregion Protected methods
 

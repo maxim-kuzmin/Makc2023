@@ -26,19 +26,19 @@ public interface IOperationWithOutputHandler<TOperationOutput, TOperationResult>
     /// Обработать начало.
     /// </summary>
     /// <param name="operationCode">Код операции.</param>
-    void OnStart(string operationCode = "");
+    void HandleStart(string operationCode = "");
 
     /// <summary>
     /// Обработать успех.
     /// </summary>
     /// <param name="operationOutput">Выходные данные операции.</param>
-    void OnSuccess(TOperationOutput operationOutput);
+    void HandleSuccess(TOperationOutput operationOutput);
 
     /// <summary>
     /// Обработать успех с результатом.
     /// </summary>
     /// <param name="operationResult">Результат операции.</param>
-    void OnSuccessWithResult(TOperationResult operationResult);
+    void HandleSuccessWithResult(TOperationResult operationResult);
 
     #endregion Public methods
 }
