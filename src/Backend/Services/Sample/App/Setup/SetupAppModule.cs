@@ -1,5 +1,7 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
+using System.Reflection.PortableExecutable;
+
 namespace Makc2023.Backend.Services.Sample.App.Setup;
 
 /// <summary>
@@ -45,6 +47,13 @@ public class SetupAppModule : AppModule
             typeof(ModuleOfCommonDomain),
             typeof(ModuleOfCommonDomainSqlMappersEF),
             typeof(ModuleOfServiceDomainsDummyMain));
+
+        // Add services to the container.
+
+        services.AddControllers();
+        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+        services.AddEndpointsApiExplorer();
+        services.AddSwaggerGen();
     }
 
     /// <inheritdoc/>

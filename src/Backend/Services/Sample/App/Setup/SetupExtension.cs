@@ -33,13 +33,6 @@ public static class SetupExtension
             new ModuleOfServiceDomainSQL(),
             new ModuleOfServiceDomainsDummyMain(),
         });
-
-        // Add services to the container.
-
-        appBuilder.Services.AddControllers();
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-        appBuilder.Services.AddEndpointsApiExplorer();
-        appBuilder.Services.AddSwaggerGen();
     }
 
     /// <summary>
