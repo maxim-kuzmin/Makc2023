@@ -1,11 +1,11 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Common.Core.Apps.WebApp.ResponseData;
+namespace Makc2023.Backend.Common.Core.Apps.WebApp.Response.Data;
 
 /// <summary>
-/// Данные о деталях отклика веб-приложения.
+/// Данные отклика веб-приложения с деталями.
 /// </summary>
-public class WebAppResponseDetailsData
+public class WebAppResponseDataWithDetails
 {
     #region Properties
 
@@ -28,7 +28,7 @@ public class WebAppResponseDetailsData
     /// </summary>
     /// <param name="details">Подробности.</param>
     /// <param name="summary">Резюме.</param>
-    public WebAppResponseDetailsData(List<NamedValues<string>> details, string summary)
+    public WebAppResponseDataWithDetails(List<NamedValues<string>> details, string summary)
     {
         Details = details;
         Summary = summary;

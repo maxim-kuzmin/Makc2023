@@ -1,11 +1,11 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Common.Core.Apps.WebApp.ResponsesWithData;
+namespace Makc2023.Backend.Common.Core.Apps.WebApp.Responses;
 
 /// <summary>
-/// Отклик веб-приложения с данными о деталях.
+/// Отклик веб-приложения с деталями.
 /// </summary>
-public class WebAppResponseWithDetailsData : WebAppResponseWithData<WebAppResponseDetailsData>
+public class WebAppResponseWithDetails : WebAppResponseWithData<WebAppResponseDataWithDetails>
 {
     #region Constructors
 
@@ -14,7 +14,7 @@ public class WebAppResponseWithDetailsData : WebAppResponseWithData<WebAppRespon
     /// </summary>
     /// <param name="operationCode">Код операции.</param>
     /// <param name="data">Данные.</param>
-    public WebAppResponseWithDetailsData(string operationCode, WebAppResponseDetailsData data)
+    public WebAppResponseWithDetails(string operationCode, WebAppResponseDataWithDetails data)
         : base(operationCode, data)
     {
     }
