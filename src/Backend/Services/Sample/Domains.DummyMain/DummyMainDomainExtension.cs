@@ -3,7 +3,7 @@
 namespace Makc2023.Backend.Services.Sample.Domains.DummyMain;
 
 /// <summary>
-/// Расширение домена.
+/// Расширение домена "Фиктивное главное".
 /// </summary>
 public static class DummyMainDomainExtension
 {
@@ -17,7 +17,7 @@ public static class DummyMainDomainExtension
     /// <returns>Запрос с учётом фильтрации.</returns>
     public static IQueryable<ClientMapperDummyMainTypeEntity> ApplyFiltering(
         this IQueryable<ClientMapperDummyMainTypeEntity> query,
-        DummyMainItemGetOperationInput input
+        DummyMainDomainItemGetOperationInput input
         )
     {
         if (input.Id > 0)
@@ -41,7 +41,7 @@ public static class DummyMainDomainExtension
     /// <returns>Запрос с учётом фильтрации.</returns>
     public static IQueryable<ClientMapperDummyMainTypeEntity> ApplyFiltering(
         this IQueryable<ClientMapperDummyMainTypeEntity> query,
-        DummyMainListGetOperationInput input
+        DummyMainDomainListGetOperationInput input
         )
     {
         if (!string.IsNullOrWhiteSpace(input.Name))
@@ -98,7 +98,7 @@ public static class DummyMainDomainExtension
     /// <returns>Запрос с учётом сортировки.</returns>
     public static IQueryable<ClientMapperDummyMainTypeEntity> ApplySorting(
         this IQueryable<ClientMapperDummyMainTypeEntity> query,
-        DummyMainListGetOperationInput input
+        DummyMainDomainListGetOperationInput input
         )
     {
         if (input.SortField.Equals(nameof(DummyMainTypeEntity.Id), StringComparison.OrdinalIgnoreCase))

@@ -123,4 +123,7 @@
   <data name="@@ListGetOperationName" xml:space="preserve">
     <value>The operation to get a list</value>
   </data>
+  <data name="@@ValidValueForName" xml:space="preserve">
+    <value>Value should be not empty string</value>
+  </data>
 </root>

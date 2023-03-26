@@ -15,23 +15,22 @@ public class DummyMainDomainSetupAppModule : AppModule
         services.AddSingleton<IDummyMainDomainResource>(x => new DummyMainDomainResource(
             x.GetRequiredService<IStringLocalizer<DummyMainDomainResource>>()));
 
-        services.AddTransient<IDummyMainRepository>(x => new DummyMainDomainRepository(
+        services.AddTransient<IDummyMainDomainRepository>(x => new DummyMainDomainRepository(
             x.GetRequiredService<IClientMapperDbContextFactory>(),
             x.GetRequiredService<ClientMapperDbManager>(),
             x.GetRequiredService<IMediator>()
             ));
 
-        services.AddTransient<IDummyMainItemGetOperationHandler>(x => new DummyMainDomainItemGetOperationHandler(
-            x.GetRequiredService<IOperationsResource>(),
-            x.GetRequiredService<IResourceOfServiceDomainSQL>(),
+        services.AddTransient<IDummyMainDomainItemGetOperationHandler>(x => new DummyMainDomainItemGetOperationHandler(
             x.GetRequiredService<IDummyMainDomainResource>(),
+            x.GetRequiredService<IOperationsResource>(),            
             x.GetRequiredService<IOperationResource>(),
             x.GetRequiredService<ILogger<DummyMainDomainItemGetOperationHandler>>(),
             x.GetRequiredService<IOptionsMonitor<SetupOptionsOfCommonCore>>()));
 
-        services.AddTransient<IDummyMainListGetOperationHandler>(x => new DummyMainDomainListGetOperationHandler(
-            x.GetRequiredService<IOperationsResource>(),
+        services.AddTransient<IDummyMainDomainListGetOperationHandler>(x => new DummyMainDomainListGetOperationHandler(
             x.GetRequiredService<IDummyMainDomainResource>(),
+            x.GetRequiredService<IOperationsResource>(),            
             x.GetRequiredService<IOperationResource>(),
             x.GetRequiredService<ILogger<DummyMainDomainListGetOperationHandler>>(),
             x.GetRequiredService<IOptionsMonitor<SetupOptionsOfCommonCore>>()));
@@ -45,9 +44,9 @@ public class DummyMainDomainSetupAppModule : AppModule
                 typeof(DummyMainDomainItemGetOperationRequestHandler),
                 typeof(DummyMainDomainListGetOperationRequestHandler),
                 typeof(IDummyMainDomainResource),
-                typeof(IDummyMainItemGetOperationHandler),
-                typeof(IDummyMainListGetOperationHandler),
-                typeof(IDummyMainRepository),
+                typeof(IDummyMainDomainItemGetOperationHandler),
+                typeof(IDummyMainDomainListGetOperationHandler),
+                typeof(IDummyMainDomainRepository),
             };
     }
 
@@ -66,7 +65,6 @@ public class DummyMainDomainSetupAppModule : AppModule
                 typeof(IMediator),
                 typeof(IOperationResource),
                 typeof(IOperationsResource),
-                typeof(IResourceOfServiceDomainSQL),
                 typeof(IStringLocalizer),
                 typeof(SetupOptionsOfCommonCore),
             };

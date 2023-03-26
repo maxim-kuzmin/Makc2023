@@ -3,7 +3,7 @@
 namespace Makc2023.Backend.Services.Sample.Domains.DummyMain;
 
 /// <summary>
-/// Ресурс домена.
+/// Ресурс домена "Фиктивное главное".
 /// </summary>
 public class DummyMainDomainResource : IDummyMainDomainResource
 {
@@ -38,6 +38,12 @@ public class DummyMainDomainResource : IDummyMainDomainResource
     public string GetListGetOperationName()
     {
         return _localizer["@@ListGetOperationName"];
+    }
+
+    /// <inheritdoc/>
+    public string GetValidValueForName()
+    {
+        return _localizer["@@ValidValueForName"];
     }
 
     #endregion Public methods

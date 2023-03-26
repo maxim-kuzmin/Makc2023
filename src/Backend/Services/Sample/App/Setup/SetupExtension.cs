@@ -30,7 +30,6 @@ public static class SetupExtension
             new ModuleOfServiceDataSQLClientsSqlServer(),
             new ModuleOfServiceDataSQL(configuration.GetRequiredSection("App:Service:Data:SQL")),
             new ModuleOfServiceDataSQLMappersEFClientsSqlServer(),
-            new ModuleOfServiceDomainSQL(),
             new ModuleOfServiceDomainsDummyMain(),
         });
     }

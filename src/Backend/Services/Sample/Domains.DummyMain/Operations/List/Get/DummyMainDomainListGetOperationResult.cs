@@ -1,13 +1,11 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-using Makc2023.Backend.Common.Core;
-
-namespace Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get;
+namespace Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get;
 
 /// <summary>
-/// Результат операции получения списка "Фиктивное главное".
+/// Результат операции получения списка в домене "Фиктивное главное".
 /// </summary>
-public class DummyMainListGetOperationResult : OperationResultWithOutput<DummyMainListGetOperationOutput>
+public class DummyMainDomainListGetOperationResult : OperationResultWithOutput<DummyMainDomainListGetOperationOutput>
 {
     #region Properties
 

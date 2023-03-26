@@ -1,11 +1,11 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Services.Sample.Domain.SQL.Repositories;
+namespace Makc2023.Backend.Services.Sample.Domains.DummyMain;
 
 /// <summary>
-/// Интерфейс репозитория "Фиктивное главное".
+/// Интерфейс репозитория домена "Фиктивное главное".
 /// </summary>
-public interface IDummyMainRepository : IRepository<DummyMainEntity>
+public interface IDummyMainDomainRepository : IRepository<DummyMainDomainEntity>
 {
     #region Methods
 
@@ -14,14 +14,14 @@ public interface IDummyMainRepository : IRepository<DummyMainEntity>
     /// </summary>
     /// <param name="input">Входные данные.</param>
     /// <returns>Задача на получение элемента.</returns>
-    Task<DummyMainItemGetOperationOutput> GetItem(DummyMainItemGetOperationInput input);
+    Task<DummyMainDomainItemGetOperationOutput> GetItem(DummyMainDomainItemGetOperationInput input);
 
     /// <summary>
     /// Получить список.
     /// </summary>
     /// <param name="input">Входные данные.</param>
     /// <returns>Задача на получение списка.</returns>
-    Task<DummyMainListGetOperationOutput> GetList(DummyMainListGetOperationInput input);
+    Task<DummyMainDomainListGetOperationOutput> GetList(DummyMainDomainListGetOperationInput input);
 
     #endregion Methods
 }

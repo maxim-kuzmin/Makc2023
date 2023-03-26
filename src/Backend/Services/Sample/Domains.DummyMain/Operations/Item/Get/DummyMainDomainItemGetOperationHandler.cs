@@ -3,20 +3,20 @@
 namespace Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get;
 
 /// <summary>
-/// Обработчик операции получения элемента в домене.
+/// Обработчик операции получения элемента в домене "Фиктивное главное".
 /// </summary>
 public class DummyMainDomainItemGetOperationHandler :
     OperationWithInputAndOutputHandler<
-        DummyMainItemGetOperationInput,
-        DummyMainItemGetOperationOutput,
-        DummyMainItemGetOperationResult>,
-    IDummyMainItemGetOperationHandler
+        DummyMainDomainItemGetOperationInput,
+        DummyMainDomainItemGetOperationOutput,
+        DummyMainDomainItemGetOperationResult>,
+    IDummyMainDomainItemGetOperationHandler
 {
     #region Fields
 
-    private readonly IOperationsResource _operationsResource;
+    private readonly IDummyMainDomainResource _domainResource;
 
-    private readonly IResourceOfServiceDomainSQL _resourceOfServiceDomainSQL;
+    private readonly IOperationsResource _operationsResource;    
 
     #endregion Fields
 
@@ -33,9 +33,8 @@ public class DummyMainDomainItemGetOperationHandler :
 
     /// <inheritdoc/>
     public DummyMainDomainItemGetOperationHandler(
-        IOperationsResource operationsResource,
-        IResourceOfServiceDomainSQL resourceOfServiceDomainSQL,
         IDummyMainDomainResource domainResource,
+        IOperationsResource operationsResource,        
         IOperationResource operationResource,
         ILogger<DummyMainDomainItemGetOperationHandler> logger,
         IOptionsMonitor<SetupOptionsOfCommonCore> setupOptionsOfCommonCore)
@@ -46,7 +45,7 @@ public class DummyMainDomainItemGetOperationHandler :
             setupOptionsOfCommonCore)
     {     
         _operationsResource = operationsResource;
-        _resourceOfServiceDomainSQL = resourceOfServiceDomainSQL;
+        _domainResource = domainResource;
 
         FunctionToTransformOperationInput = TransformOperationInput;
         FunctionToTransformOperationOutput = TransformOperationOutput;
@@ -57,11 +56,11 @@ public class DummyMainDomainItemGetOperationHandler :
 
     #region Private methods
 
-    private DummyMainItemGetOperationInput TransformOperationInput(DummyMainItemGetOperationInput source)
+    private DummyMainDomainItemGetOperationInput TransformOperationInput(DummyMainDomainItemGetOperationInput source)
     {
         source.Normalize();
 
-        InvalidInputProperties = source.GetInvalidProperties(_resourceOfServiceDomainSQL, _operationsResource);
+        InvalidInputProperties = source.GetInvalidProperties(_domainResource, _operationsResource);
 
         if (InvalidInputProperties.Any())
         {
@@ -73,14 +72,14 @@ public class DummyMainDomainItemGetOperationHandler :
         return source;
     }
 
-    private DummyMainItemGetOperationOutput TransformOperationOutput(DummyMainItemGetOperationOutput source)
+    private DummyMainDomainItemGetOperationOutput TransformOperationOutput(DummyMainDomainItemGetOperationOutput source)
     {
         source.Item ??= new();
 
         return source;
     }
 
-    private DummyMainItemGetOperationResult TransformOperationResult(DummyMainItemGetOperationResult source)
+    private DummyMainDomainItemGetOperationResult TransformOperationResult(DummyMainDomainItemGetOperationResult source)
     {
         InvalidInputProperties.CopyToNamedValuesList(source.InvalidInputProperties);
 

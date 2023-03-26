@@ -4,12 +4,60 @@
         <name>Makc2023.Backend.Services.Sample.Domains.DummyMain</name>
     </assembly>
     <members>
+        <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainEntity">
+            <summary>
+            Сущность домена "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainEntity.Data">
+            <summary>
+            Данные.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainEntity.DummyManyToManyList">
+            <summary>
+            Список элементов сущности "Фиктивное отношение многие ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainEntity.DummyManyToOneList">
+            <summary>
+            Список элементов сущности "Фиктивное отношение многие к одному".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainEntity.DummyOneToMany">
+            <summary>
+            Экземпляр сущности "Фиктивное отношение один ко многим".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainEntity.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain.DummyMainTypeEntity)">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="data">Данные.</param>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainEntity.AddDummyManyToMany(Makc2023.Backend.Common.Domain.ValueObjects.Options.OptionValueObjectWithInt64Id)">
+            <summary>
+            Добавить экземпляр сущности "Фиктивное отношение многие ко многим".
+            </summary>
+            <param name="data">Данные.</param>
+            <returns>Добавленный экземпляр.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainEntity.AddDummyManyToOne(Makc2023.Backend.Common.Domain.ValueObjects.Options.OptionValueObjectWithInt64Id)">
+            <summary>
+            Добавить экземпляр сущности "Фиктивное отношение многие к одному".
+            </summary>
+            <param name="data">Данные.</param>
+            <returns>Добавленный экземпляр.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainEntity.GetId">
+            <inheritdoc/>
+        </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainExtension">
             <summary>
-            Расширение домена.
+            Расширение домена "Фиктивное главное".
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainExtension.ApplyFiltering(System.Linq.IQueryable{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity},Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput)">
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainExtension.ApplyFiltering(System.Linq.IQueryable{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity},Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationInput)">
             <summary>
             Применить фильтрацию.
             </summary>
@@ -17,7 +65,7 @@
             <param name="input">Входные данные.</param>
             <returns>Запрос с учётом фильтрации.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainExtension.ApplyFiltering(System.Linq.IQueryable{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity},Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationInput)">
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainExtension.ApplyFiltering(System.Linq.IQueryable{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity},Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput)">
             <summary>
             Применить фильтрацию.
             </summary>
@@ -25,7 +73,7 @@
             <param name="input">Входные данные.</param>
             <returns>Запрос с учётом фильтрации.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainExtension.ApplySorting(System.Linq.IQueryable{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity},Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationInput)">
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainExtension.ApplySorting(System.Linq.IQueryable{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity},Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput)">
             <summary>
             Применить сортировку.
             </summary>
@@ -35,7 +83,7 @@
         </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainRepository">
             <summary>
-            Репозиторий домена.
+            Репозиторий домена "Фиктивное главное".
             </summary>
         </member>
         <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainRepository.#ctor(Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.IClientMapperDbContextFactory,Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Db.ClientMapperDbManager,MediatR.IMediator)">
@@ -46,15 +94,15 @@
             <param name="dbManager">Менеджер базы данных.</param>
             <param name="mediator">Посредник.</param>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainRepository.GetItem(Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput)">
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainRepository.GetItem(Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationInput)">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainRepository.GetList(Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationInput)">
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainRepository.GetList(Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput)">
             <inheritdoc/>
         </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainResource">
             <summary>
-            Ресурс домена.
+            Ресурс домена "Фиктивное главное".
             </summary>
         </member>
         <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainResource.#ctor(Microsoft.Extensions.Localization.IStringLocalizer{Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainResource})">
@@ -69,9 +117,31 @@
         <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainResource.GetListGetOperationName">
             <inheritdoc/>
         </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainResource.GetValidValueForName">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.IDummyMainDomainRepository">
+            <summary>
+            Интерфейс репозитория домена "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.IDummyMainDomainRepository.GetItem(Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationInput)">
+            <summary>
+            Получить элемент.
+            </summary>
+            <param name="input">Входные данные.</param>
+            <returns>Задача на получение элемента.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.IDummyMainDomainRepository.GetList(Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput)">
+            <summary>
+            Получить список.
+            </summary>
+            <param name="input">Входные данные.</param>
+            <returns>Задача на получение списка.</returns>
+        </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.IDummyMainDomainResource">
             <summary>
-            Интерфейс ресурса домена.
+            Интерфейс ресурса домена "Фиктивное главное".
             </summary>
         </member>
         <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.IDummyMainDomainResource.GetItemGetOperationName">
@@ -86,9 +156,15 @@
             </summary>
             <returns>Имя операции.</returns>
         </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.IDummyMainDomainResource.GetValidValueForName">
+            <summary>
+            Получить корректное значение свойства "Name".
+            </summary>
+            <returns>Корректное значение.</returns>
+        </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationHandler">
             <summary>
-            Обработчик операции получения элемента в домене.
+            Обработчик операции получения элемента в домене "Фиктивное главное".
             </summary>
         </member>
         <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationHandler.InvalidInputProperties">
@@ -96,12 +172,36 @@
             Список свойств с недействительными значениями во входных данных.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationHandler.#ctor(Makc2023.Backend.Common.Core.Operations.IOperationsResource,Makc2023.Backend.Services.Sample.Domain.SQL.IResource,Makc2023.Backend.Services.Sample.Domains.DummyMain.IDummyMainDomainResource,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger{Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationHandler},Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationHandler.#ctor(Makc2023.Backend.Services.Sample.Domains.DummyMain.IDummyMainDomainResource,Makc2023.Backend.Common.Core.Operations.IOperationsResource,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger{Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationHandler},Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
             <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationInput">
+            <summary>
+            Входные данные операции получения элемента в домене "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationInput.Name">
+            <summary>
+            Имя.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationInput.Normalize">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationInput.GetInvalidProperties(Makc2023.Backend.Common.Core.Operations.IOperationsResource)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationInput.GetInvalidProperties(Makc2023.Backend.Services.Sample.Domains.DummyMain.IDummyMainDomainResource,Makc2023.Backend.Common.Core.Operations.IOperationsResource)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationOutput">
+            <summary>
+            Выходные данные операции получения элемента в домене "Фиктивное главное".
+            </summary>
         </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationRequest">
             <summary>
-            Запрос операции получения элемента в домене.
+            Запрос операции получения элемента в домене "Фиктивное главное".
             </summary>
         </member>
         <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationRequest.Input">
@@ -114,7 +214,7 @@
             Код операции.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationRequest.#ctor(Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationInput,System.String)">
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationRequest.#ctor(Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationInput,System.String)">
             <summary>
             Конструктор.
             </summary>
@@ -123,10 +223,10 @@
         </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationRequestHandler">
             <summary>
-            Обработчик запроса операции получения элемента в домене.
+            Обработчик запроса операции получения элемента в домене "Фиктивное главное".
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationRequestHandler.#ctor(Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.IDummyMainItemGetOperationHandler,Makc2023.Backend.Services.Sample.Domain.SQL.Repositories.IDummyMainRepository)">
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationRequestHandler.#ctor(Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.IDummyMainDomainItemGetOperationHandler,Makc2023.Backend.Services.Sample.Domains.DummyMain.IDummyMainDomainRepository)">
             <summary>
             Конструктор.
             </summary>
@@ -138,7 +238,7 @@
         </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationResponse">
             <summary>
-            Отклик операции получения элемента в домене.
+            Отклик операции получения элемента в домене "Фиктивное главное".
             </summary>
         </member>
         <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationResponse.OperationResult">
@@ -146,15 +246,93 @@
             Результат операции.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationResponse.#ctor(Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get.DummyMainItemGetOperationResult)">
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationResponse.#ctor(Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationResult)">
             <summary>
             Конструктор.
             </summary>
             <param name="operationResult">Результат операции.</param>
         </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationResult">
+            <summary>
+            Результат операции получения элемента в домене "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationResult.InvalidInputProperties">
+            <summary>
+            Список свойств с недействительными значениями во входных данных.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.IDummyMainDomainItemGetOperationHandler">
+            <summary>
+            Интерфейс обработчика операции получения элемента в домене "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput">
+            <summary>
+            Входные данные операции получения списка в домене "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput.Ids">
+            <summary>
+            Идентификаторы.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput.IdsString">
+            <summary>
+            Строка идентификаторов.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput.Name">
+            <summary>
+            Имя.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput.DummyOneToManyId">
+            <summary>
+            Идентификатор экземпляра сущности "Фиктивное отношение один ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput.DummyOneToManyIds">
+            <summary>
+            Идентификаторы экземпляров сущности "Фиктивное отношение один ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput.DummyOneToManyIdsString">
+            <summary>
+            Строка идентификаторов экземпляров сущности "Фиктивное отношение один ко многим".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput.DummyOneToManyName">
+            <summary>
+            Имя экземпляра сущности "Фиктивное отношение один ко многим".
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput.Normalize">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationOutput">
+            <summary>
+            Выходные данные операции получения списка в домене "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationResult">
+            <summary>
+            Результат операции получения списка в домене "Фиктивное главное".
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationResult.InvalidInputProperties">
+            <summary>
+            Список свойств с недействительными значениями во входных данных.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.IDummyMainDomainListGetOperationHandler">
+            <summary>
+            Интерфейс обработчика операции получения списка в домене "Фиктивное главное".
+            </summary>
+        </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationHandler">
             <summary>
-            Обработчик операции получения списка в домене.
+            Обработчик операции получения списка в домене "Фиктивное главное".
             </summary>
         </member>
         <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationHandler.InvalidInputProperties">
@@ -162,12 +340,12 @@
             Список свойств с недействительными значениями во входных данных.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationHandler.#ctor(Makc2023.Backend.Common.Core.Operations.IOperationsResource,Makc2023.Backend.Services.Sample.Domains.DummyMain.IDummyMainDomainResource,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger{Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationHandler},Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationHandler.#ctor(Makc2023.Backend.Services.Sample.Domains.DummyMain.IDummyMainDomainResource,Makc2023.Backend.Common.Core.Operations.IOperationsResource,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger{Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationHandler},Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
             <inheritdoc/>
         </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationRequest">
             <summary>
-            Запрос операции получения списка в домене.
+            Запрос операции получения списка в домене "Фиктивное главное".
             </summary>
         </member>
         <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationRequest.Input">
@@ -180,7 +358,7 @@
             Код операции.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationRequest.#ctor(Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationInput,System.String)">
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationRequest.#ctor(Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput,System.String)">
             <summary>
             Конструктор.
             </summary>
@@ -189,10 +367,10 @@
         </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationRequestHandler">
             <summary>
-            Обработчик запроса операции получения списка в домене.
+            Обработчик запроса операции получения списка в домене "Фиктивное главное".
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationRequestHandler.#ctor(Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.IDummyMainListGetOperationHandler,Makc2023.Backend.Services.Sample.Domain.SQL.Repositories.IDummyMainRepository)">
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationRequestHandler.#ctor(Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.IDummyMainDomainListGetOperationHandler,Makc2023.Backend.Services.Sample.Domains.DummyMain.IDummyMainDomainRepository)">
             <summary>
             Конструктор.
             </summary>
@@ -204,7 +382,7 @@
         </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationResponse">
             <summary>
-            Отклик операции получения списка в домене.
+            Отклик операции получения списка в домене "Фиктивное главное".
             </summary>
         </member>
         <member name="P:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationResponse.OperationResult">
@@ -212,7 +390,7 @@
             Результат операции.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationResponse.#ctor(Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.List.Get.DummyMainListGetOperationResult)">
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get.DummyMainDomainListGetOperationResponse.#ctor(Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationResult)">
             <summary>
             Конструктор.
             </summary>

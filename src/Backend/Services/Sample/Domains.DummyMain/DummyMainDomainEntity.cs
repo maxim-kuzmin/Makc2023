@@ -1,17 +1,17 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Services.Sample.Domain.SQL.Entities;
+namespace Makc2023.Backend.Services.Sample.Domains.DummyMain;
 
 /// <summary>
-/// Сущность "Фиктивное главное".
+/// Сущность домена "Фиктивное главное".
 /// </summary>
-public class DummyMainEntity : Entity<long>, IAggregateRoot
+public class DummyMainDomainEntity : Entity<long>, IAggregateRoot
 {
     #region Fields
 
-    private readonly List<DummyManyToOneEntity> _dummyManyToOneList = new();
+    private readonly List<OptionValueObjectWithInt64Id> _dummyManyToOneList = new();
 
-    private readonly List<DummyManyToManyEntity> _dummyManyToManyList = new();
+    private readonly List<OptionValueObjectWithInt64Id> _dummyManyToManyList = new();
 
     #endregion Fields
 
@@ -25,17 +25,17 @@ public class DummyMainEntity : Entity<long>, IAggregateRoot
     /// <summary>
     /// Список элементов сущности "Фиктивное отношение многие ко многим".
     /// </summary>
-    public IReadOnlyCollection<DummyManyToManyEntity> DummyManyToManyList => _dummyManyToManyList;
+    public IReadOnlyCollection<OptionValueObjectWithInt64Id> DummyManyToManyList => _dummyManyToManyList;
 
     /// <summary>
     /// Список элементов сущности "Фиктивное отношение многие к одному".
     /// </summary>
-    public IReadOnlyCollection<DummyManyToOneEntity> DummyManyToOneList => _dummyManyToOneList;
+    public IReadOnlyCollection<OptionValueObjectWithInt64Id> DummyManyToOneList => _dummyManyToOneList;
 
     /// <summary>
     /// Экземпляр сущности "Фиктивное отношение один ко многим".
     /// </summary>
-    public DummyOneToManyEntity? DummyOneToMany { get; set; }
+    public OptionValueObjectWithInt64Id? DummyOneToMany { get; set; }
 
     #endregion Properties    
 
@@ -45,7 +45,7 @@ public class DummyMainEntity : Entity<long>, IAggregateRoot
     /// Конструктор.
     /// </summary>
     /// <param name="data">Данные.</param>
-    public DummyMainEntity(DummyMainTypeEntity? data = null)
+    public DummyMainDomainEntity(DummyMainTypeEntity? data = null)
     {
         Data = data ?? new DummyMainTypeEntity();
     }
@@ -59,18 +59,16 @@ public class DummyMainEntity : Entity<long>, IAggregateRoot
     /// </summary>
     /// <param name="data">Данные.</param>
     /// <returns>Добавленный экземпляр.</returns>
-    public DummyManyToManyEntity AddDummyManyToMany(DummyManyToManyTypeEntity data)
+    public OptionValueObjectWithInt64Id AddDummyManyToMany(OptionValueObjectWithInt64Id data)
     {
-        var result = _dummyManyToManyList.Where(x => x.Data.Id == data.Id).SingleOrDefault();
+        var result = _dummyManyToManyList.Where(x => x.Id == data.Id).SingleOrDefault();
 
         if (result is null)
         {
-            result = new DummyManyToManyEntity(data);
-
-            _dummyManyToManyList.Add(result);
+            _dummyManyToManyList.Add(data);
         }
 
-        return result;
+        return result ?? data;
     }
 
     /// <summary>
@@ -78,20 +76,16 @@ public class DummyMainEntity : Entity<long>, IAggregateRoot
     /// </summary>
     /// <param name="data">Данные.</param>
     /// <returns>Добавленный экземпляр.</returns>
-    public DummyManyToOneEntity AddDummyManyToOne(DummyManyToOneTypeEntity data)
+    public OptionValueObjectWithInt64Id AddDummyManyToOne(OptionValueObjectWithInt64Id data)
     {
-        var result = _dummyManyToOneList.Where(x => x.Data.Name == data.Name).SingleOrDefault();
+        var result = _dummyManyToOneList.Where(x => x.Name == data.Name).SingleOrDefault();
 
         if (result is null)
         {
-            data.DummyMainId = GetId();
-
-            result = new DummyManyToOneEntity(data);
-
-            _dummyManyToOneList.Add(result);
+            _dummyManyToOneList.Add(data);
         }
 
-        return result;
+        return result ?? data;
     }
 
     #endregion Public methods

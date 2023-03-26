@@ -3,7 +3,7 @@
 namespace Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get;
 
 /// <summary>
-/// Запрос операции получения элемента в домене.
+/// Запрос операции получения элемента в домене "Фиктивное главное".
 /// </summary>
 public class DummyMainDomainItemGetOperationRequest : IRequest<DummyMainDomainItemGetOperationResponse>
 {
@@ -12,7 +12,7 @@ public class DummyMainDomainItemGetOperationRequest : IRequest<DummyMainDomainIt
     /// <summary>
     /// Входные данные.
     /// </summary>
-    public DummyMainItemGetOperationInput Input { get; }
+    public DummyMainDomainItemGetOperationInput Input { get; }
 
     /// <summary>
     /// Код операции.
@@ -28,7 +28,7 @@ public class DummyMainDomainItemGetOperationRequest : IRequest<DummyMainDomainIt
     /// </summary>
     /// <param name="input">Входные данные.</param>
     /// <param name="operationCode">Код операции.</param>
-    public DummyMainDomainItemGetOperationRequest(DummyMainItemGetOperationInput input, string operationCode = "")
+    public DummyMainDomainItemGetOperationRequest(DummyMainDomainItemGetOperationInput input, string operationCode = "")
     {
         Input = input;
         OperationCode = operationCode;

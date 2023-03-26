@@ -1,11 +1,11 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Services.Sample.Domain.SQL.Operations.DummyMain.Item.Get;
+namespace Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get;
 
 /// <summary>
-/// Входные данные операции получения элемента "Фиктивное главное".
+/// Входные данные операции получения элемента в домене "Фиктивное главное".
 /// </summary>
-public class DummyMainItemGetOperationInput : ItemWithInt64IdGetOperationInput
+public class DummyMainDomainItemGetOperationInput : ItemWithInt64IdGetOperationInput
 {
     #region Properties
 
@@ -38,7 +38,7 @@ public class DummyMainItemGetOperationInput : ItemWithInt64IdGetOperationInput
 
     /// <inheritdoc/>
     public OperationInputInvalidProperties GetInvalidProperties(
-        IResource resource,
+        IDummyMainDomainResource domainResource,
         IOperationsResource operationsResource)
     {
         var result = base.GetInvalidProperties(operationsResource);
@@ -49,7 +49,7 @@ public class DummyMainItemGetOperationInput : ItemWithInt64IdGetOperationInput
             {
                 var values = result.GetOrAdd(nameof(Name));
 
-                string value = resource.GetOperationInputValidValueForName();
+                string value = domainResource.GetValidValueForName();
 
                 values.Add(value);
             }

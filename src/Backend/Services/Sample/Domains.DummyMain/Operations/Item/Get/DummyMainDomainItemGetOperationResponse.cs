@@ -3,7 +3,7 @@
 namespace Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get;
 
 /// <summary>
-/// Отклик операции получения элемента в домене.
+/// Отклик операции получения элемента в домене "Фиктивное главное".
 /// </summary>
 public class DummyMainDomainItemGetOperationResponse
 {
@@ -12,7 +12,7 @@ public class DummyMainDomainItemGetOperationResponse
     /// <summary>
     /// Результат операции.
     /// </summary>
-    public DummyMainItemGetOperationResult OperationResult { get; }
+    public DummyMainDomainItemGetOperationResult OperationResult { get; }
 
     #endregion Properties
 
@@ -22,7 +22,7 @@ public class DummyMainDomainItemGetOperationResponse
     /// Конструктор.
     /// </summary>
     /// <param name="operationResult">Результат операции.</param>
-    public DummyMainDomainItemGetOperationResponse(DummyMainItemGetOperationResult operationResult)
+    public DummyMainDomainItemGetOperationResponse(DummyMainDomainItemGetOperationResult operationResult)
     {
         OperationResult = operationResult;
     }

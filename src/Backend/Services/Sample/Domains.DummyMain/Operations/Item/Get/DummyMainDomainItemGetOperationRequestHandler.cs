@@ -3,16 +3,16 @@
 namespace Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get;
 
 /// <summary>
-/// Обработчик запроса операции получения элемента в домене.
+/// Обработчик запроса операции получения элемента в домене "Фиктивное главное".
 /// </summary>
 public class DummyMainDomainItemGetOperationRequestHandler :
     IRequestHandler<DummyMainDomainItemGetOperationRequest, DummyMainDomainItemGetOperationResponse>
 {
     #region Fields
 
-    private readonly IDummyMainItemGetOperationHandler _operationHandler;
+    private readonly IDummyMainDomainItemGetOperationHandler _operationHandler;
 
-    private readonly IDummyMainRepository _repository;
+    private readonly IDummyMainDomainRepository _repository;
 
     #endregion Fields
 
@@ -24,8 +24,8 @@ public class DummyMainDomainItemGetOperationRequestHandler :
     /// <param name="operationHandler">Обработчик операции.</param>
     /// <param name="repository">Репозиторий.</param>
     public DummyMainDomainItemGetOperationRequestHandler(
-        IDummyMainItemGetOperationHandler operationHandler,
-        IDummyMainRepository repository)
+        IDummyMainDomainItemGetOperationHandler operationHandler,
+        IDummyMainDomainRepository repository)
     {
         _operationHandler = operationHandler;
         _repository = repository;

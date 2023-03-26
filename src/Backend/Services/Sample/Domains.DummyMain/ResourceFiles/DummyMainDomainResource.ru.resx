@@ -123,4 +123,7 @@
   <data name="@@ListGetOperationName" xml:space="preserve">
     <value>Операция получения списка</value>
   </data>
+  <data name="@@ValidValueForName" xml:space="preserve">
+    <value>Значение должно быть непустой строкой</value>
+  </data>
 </root>

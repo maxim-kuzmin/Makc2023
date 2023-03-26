@@ -3,14 +3,14 @@
 namespace Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get;
 
 /// <summary>
-/// Обработчик операции получения списка в домене.
+/// Обработчик операции получения списка в домене "Фиктивное главное".
 /// </summary>
 public class DummyMainDomainListGetOperationHandler :
     OperationWithInputAndOutputHandler<
-        DummyMainListGetOperationInput,
-        DummyMainListGetOperationOutput,
-        DummyMainListGetOperationResult>,
-    IDummyMainListGetOperationHandler
+        DummyMainDomainListGetOperationInput,
+        DummyMainDomainListGetOperationOutput,
+        DummyMainDomainListGetOperationResult>,
+    IDummyMainDomainListGetOperationHandler
 {
     #region Fields
 
@@ -31,8 +31,8 @@ public class DummyMainDomainListGetOperationHandler :
 
     /// <inheritdoc/>
     public DummyMainDomainListGetOperationHandler(
-        IOperationsResource operationsResource,
         IDummyMainDomainResource domainResource,
+        IOperationsResource operationsResource,        
         IOperationResource operationResource,
         ILogger<DummyMainDomainListGetOperationHandler> logger,
         IOptionsMonitor<SetupOptionsOfCommonCore> setupOptionsOfCommonCore)
@@ -53,7 +53,7 @@ public class DummyMainDomainListGetOperationHandler :
 
     #region Private methods
 
-    private DummyMainListGetOperationInput TransformOperationInput(DummyMainListGetOperationInput source)
+    private DummyMainDomainListGetOperationInput TransformOperationInput(DummyMainDomainListGetOperationInput source)
     {
         source.Normalize();
 
@@ -69,14 +69,14 @@ public class DummyMainDomainListGetOperationHandler :
         return source;
     }
 
-    private DummyMainListGetOperationOutput TransformOperationOutput(DummyMainListGetOperationOutput source)
+    private DummyMainDomainListGetOperationOutput TransformOperationOutput(DummyMainDomainListGetOperationOutput source)
     {
-        source.Items ??= Array.Empty<DummyMainEntity>();
+        source.Items ??= Array.Empty<DummyMainDomainEntity>();
 
         return source;
     }
 
-    private DummyMainListGetOperationResult TransformOperationResult(DummyMainListGetOperationResult source)
+    private DummyMainDomainListGetOperationResult TransformOperationResult(DummyMainDomainListGetOperationResult source)
     {
         InvalidInputProperties.CopyToNamedValuesList(source.InvalidInputProperties);
 
