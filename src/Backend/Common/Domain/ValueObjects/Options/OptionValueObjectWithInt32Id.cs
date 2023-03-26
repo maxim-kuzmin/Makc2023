@@ -5,12 +5,12 @@ namespace Makc2023.Backend.Common.Domain.ValueObjects.Options;
 /// <summary>
 /// Объект-значение параметра с 32-битным целочисленным идентификатором.
 /// </summary>
-public class OptionWithInt32IdValueObject : OptionWithStructIdValueObject<int>
+public class OptionValueObjectWithInt32Id : OptionValueObjectWithNumberId<int>
 {
     #region Constructors
 
     /// <inheritdoc/>
-    public OptionWithInt32IdValueObject(int id, string name) : base(id, name)
+    public OptionValueObjectWithInt32Id(int id, string name) : base(id, name)
     {
     }
 
