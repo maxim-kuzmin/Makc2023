@@ -1,18 +1,18 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Common.Core.Operations.Item.Get;
+namespace Makc2023.Backend.Common.Core.Operations.Item.Get.Inputs;
 
 /// <summary>
-/// Входные данные операции получения элемента с 32-битным целочисленным идентификатором.
+/// Входные данные операции получения элемента с 64-битным целочисленным идентификатором.
 /// </summary>
-public class ItemGetOperationInputWithInt32Id : OperationInput
+public class ItemGetOperationInputWithInt64Id : OperationInput
 {
     #region Properties
 
     /// <summary>
     /// Идентификатор.
     /// </summary>
-    public int Id { get; set; }
+    public long Id { get; set; }
 
     #endregion Properties
 
@@ -23,9 +23,9 @@ public class ItemGetOperationInputWithInt32Id : OperationInput
     /// </summary>
     public virtual void Normalize()
     {
-        if (Id < 0)
+        if (Id < 0L)
         {
-            Id = 0;
+            Id = 0L;
         }
     }
 
@@ -33,11 +33,11 @@ public class ItemGetOperationInputWithInt32Id : OperationInput
     /// Получить свойства с недействительными значениями.
     /// </summary>
     /// <returns>Свойства с недействительными значениями.</returns>
-    public OperationInputInvalidProperties GetInvalidProperties(IOperationsResource operationsResource)
+    public virtual OperationInputInvalidProperties GetInvalidProperties(IOperationsResource operationsResource)
     {
         var result = CreateInvalidProperties();
 
-        if (Id < 1)
+        if (Id < 1L)
         {
             var values = result.GetOrAdd(nameof(Id));
 

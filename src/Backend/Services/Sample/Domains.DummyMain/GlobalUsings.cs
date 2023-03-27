@@ -8,6 +8,7 @@ global using Makc2023.Backend.Common.Core.Operation;
 global using Makc2023.Backend.Common.Core.Operation.Handlers;
 global using Makc2023.Backend.Common.Core.Operations;
 global using Makc2023.Backend.Common.Core.Operations.Item.Get;
+global using Makc2023.Backend.Common.Core.Operations.Item.Get.Inputs;
 global using Makc2023.Backend.Common.Core.Operations.List.Get;
 global using Makc2023.Backend.Common.Domain;
 global using Makc2023.Backend.Common.Domain.SQL.Mappers.EF;
@@ -16,7 +17,6 @@ global using Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlSer
 global using Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain;
 global using Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyMain;
 global using Makc2023.Backend.Services.Sample.Data.SQL.Types.DummyOneToMany;
-global using Makc2023.Backend.Services.Sample.Domain.SQL.Entities;
 global using Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get;
 global using Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.List.Get;
 global using MediatR;
