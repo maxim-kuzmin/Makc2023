@@ -5,7 +5,7 @@ namespace Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get
 /// <summary>
 /// Входные данные операции получения элемента в домене "Фиктивное главное".
 /// </summary>
-public class DummyMainDomainItemGetOperationInput : ItemWithInt64IdGetOperationInput
+public class DummyMainDomainItemGetOperationInput : ItemGetOperationInputWithInt64Id
 {
     #region Properties
 

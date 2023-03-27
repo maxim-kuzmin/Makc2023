@@ -597,6 +597,48 @@
             <param name="desc">Вариант значения по убыванию.</param>
             <returns>Корректое значение.</returns>
         </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemGetOperationInputWithInt32Id">
+            <summary>
+            Входные данные операции получения элемента с 32-битным целочисленным идентификатором.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemGetOperationInputWithInt32Id.Id">
+            <summary>
+            Идентификатор.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemGetOperationInputWithInt32Id.Normalize">
+            <summary>
+            Нормализовать.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemGetOperationInputWithInt32Id.GetInvalidProperties(Makc2023.Backend.Common.Core.Operations.IOperationsResource)">
+            <summary>
+            Получить свойства с недействительными значениями.
+            </summary>
+            <returns>Свойства с недействительными значениями.</returns>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemGetOperationInputWithInt64Id">
+            <summary>
+            Входные данные операции получения элемента с 64-битным целочисленным идентификатором.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemGetOperationInputWithInt64Id.Id">
+            <summary>
+            Идентификатор.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemGetOperationInputWithInt64Id.Normalize">
+            <summary>
+            Нормализовать.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemGetOperationInputWithInt64Id.GetInvalidProperties(Makc2023.Backend.Common.Core.Operations.IOperationsResource)">
+            <summary>
+            Получить свойства с недействительными значениями.
+            </summary>
+            <returns>Свойства с недействительными значениями.</returns>
+        </member>
         <member name="T:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemGetOperationOutput`1">
             <summary>
             Выходные данные операции получения элемента.
@@ -607,48 +649,6 @@
             <summary>
             Элемент.
             </summary>
-        </member>
-        <member name="T:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemWithInt32IdGetOperationInput">
-            <summary>
-            Входные данные операции получения элемента с 32-битным целочисленным идентификатором.
-            </summary>
-        </member>
-        <member name="P:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemWithInt32IdGetOperationInput.Id">
-            <summary>
-            Идентификатор.
-            </summary>
-        </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemWithInt32IdGetOperationInput.Normalize">
-            <summary>
-            Нормализовать.
-            </summary>
-        </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemWithInt32IdGetOperationInput.GetInvalidProperties(Makc2023.Backend.Common.Core.Operations.IOperationsResource)">
-            <summary>
-            Получить свойства с недействительными значениями.
-            </summary>
-            <returns>Свойства с недействительными значениями.</returns>
-        </member>
-        <member name="T:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemWithInt64IdGetOperationInput">
-            <summary>
-            Входные данные операции получения элемента с 64-битным целочисленным идентификатором.
-            </summary>
-        </member>
-        <member name="P:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemWithInt64IdGetOperationInput.Id">
-            <summary>
-            Идентификатор.
-            </summary>
-        </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemWithInt64IdGetOperationInput.Normalize">
-            <summary>
-            Нормализовать.
-            </summary>
-        </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemWithInt64IdGetOperationInput.GetInvalidProperties(Makc2023.Backend.Common.Core.Operations.IOperationsResource)">
-            <summary>
-            Получить свойства с недействительными значениями.
-            </summary>
-            <returns>Свойства с недействительными значениями.</returns>
         </member>
         <member name="T:Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationExtension">
             <summary>

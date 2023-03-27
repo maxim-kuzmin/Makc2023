@@ -5,7 +5,7 @@ namespace Makc2023.Backend.Common.Core.Operations.Item.Get;
 /// <summary>
 /// Входные данные операции получения элемента с 32-битным целочисленным идентификатором.
 /// </summary>
-public class ItemWithInt32IdGetOperationInput : OperationInput
+public class ItemGetOperationInputWithInt32Id : OperationInput
 {
     #region Properties
 

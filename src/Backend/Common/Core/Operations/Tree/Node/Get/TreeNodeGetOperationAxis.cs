@@ -10,9 +10,9 @@ public enum TreeNodeGetOperationAxis
     /// <summary>
     /// Сам.
     /// </summary>
-    Self = 0,
+    Self = 1,
     /// <summary>
     /// Родитель.
     /// </summary>
-    Parent = 1
+    Parent = 2
 }

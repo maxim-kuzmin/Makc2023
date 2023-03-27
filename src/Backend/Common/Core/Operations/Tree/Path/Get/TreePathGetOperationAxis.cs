@@ -10,37 +10,37 @@ public enum TreePathGetOperationAxis
     /// <summary>
     /// Отсутствует.
     /// </summary>
-    None = 0,
+    None = 1,
     /// <summary>
     /// Все.
     /// </summary>
-    All = 1,
+    All = 2,
     /// <summary>
     /// Предок.
     /// </summary>
-    Ancestor = 2,
+    Ancestor = 3,
     /// <summary>
     /// Предок или корневой узел.
     /// </summary>
-    AncestorOrSelf = 3,
+    AncestorOrSelf = 4,
     /// <summary>
     /// Ребёнок.
     /// </summary>
-    Child = 4,
+    Child = 5,
     /// <summary>
     /// Ребёнок или корневой узел.
     /// </summary>
-    ChildOrSelf = 5,
+    ChildOrSelf = 6,
     /// <summary>
     /// Потомок.
     /// </summary>
-    Descendant = 6,
+    Descendant = 7,
     /// <summary>
     /// Потомок или корневой узел.
     /// </summary>
-    DescendantOrSelf = 7,
+    DescendantOrSelf = 8,
     /// <summary>
     /// Родитель или корневой узел.
     /// </summary>
-    ParentOrSelf = 8
+    ParentOrSelf = 9
 }
