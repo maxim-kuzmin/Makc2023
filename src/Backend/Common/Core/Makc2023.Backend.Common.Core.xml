@@ -172,6 +172,14 @@
             Расширение преобразования.
             </summary>
         </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.NotNumericRegex">
+            <remarks>
+            Pattern explanation:<br/>
+            <code>
+            ○ Match a character in the set [^+-\d].<br/>
+            </code>
+            </remarks>
+        </member>
         <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromIPToV4String(System.Net.IPAddress)">
             <summary>
             Преобразовать из IP-адреса версии в строковое представление версии 4.
@@ -295,6 +303,13 @@
             </summary>
             <param name="input">Строка.</param>
             <returns>Целое число или NULL.</returns>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToNumericInt32Array(System.String)">
+            <summary>
+            Преобразовать из строки в массив 32-битных целых чисел.
+            </summary>
+            <param name="input">Строка.</param>
+            <returns>Массив 64-битных целых чисел.</returns>
         </member>
         <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToNumericInt64Array(System.String)">
             <summary>
@@ -700,18 +715,19 @@
             Нормализовать.
             </summary>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationOutput`1">
+        <member name="T:Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationOutput`2">
             <summary>
             Выходные данные операции получения списка.
             </summary>
             <typeparam name="TItem">Тип элемента.</typeparam>
+            <typeparam name="TTotalCount">Тип общего числа элементов.</typeparam>
         </member>
-        <member name="P:Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationOutput`1.Items">
+        <member name="P:Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationOutput`2.Items">
             <summary>
             Элементы.
             </summary>
         </member>
-        <member name="P:Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationOutput`1.TotalCount">
+        <member name="P:Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationOutput`2.TotalCount">
             <summary>
             Общее число элементов.
             </summary>
@@ -839,18 +855,24 @@
             Входные данные операции получения дерева.
             </summary>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Operations.Tree.Get.TreeGetOperationOutput`1">
+        <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.TreeGetOperationInput.ExpandedNodeIdsString">
+            <summary>
+            Строка идентификаторов раскрытых узлов.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operations.Tree.Get.TreeGetOperationOutput`2">
             <summary>
             Выходные данные операции получения дерева.
             </summary>
             <typeparam name="TNode">Тип узла.</typeparam>
+            <typeparam name="TTotalCount">Тип общего числа узлов.</typeparam>
         </member>
-        <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.TreeGetOperationOutput`1.Nodes">
+        <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.TreeGetOperationOutput`2.Nodes">
             <summary>
             Узлы.
             </summary>
         </member>
-        <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.TreeGetOperationOutput`1.TotalCount">
+        <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.TreeGetOperationOutput`2.TotalCount">
             <summary>
             Общее число узлов.
             </summary>
@@ -1658,6 +1680,42 @@
             <summary>
             Уровень логирования.
             </summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.NotNumericRegex_0">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the NotNumericRegex method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.NotNumericRegex_0.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.NotNumericRegex_0.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.NotNumericRegex_0.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.NotNumericRegex_0.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.NotNumericRegex_0.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.NotNumericRegex_0.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.NotNumericRegex_0.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.Utilities">
+            <summary>Helper methods used by generated <see cref="T:System.Text.RegularExpressions.Regex"/>-derived implementations.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout">
+            <summary>Default timeout value set in <see cref="T:System.AppContext"/>, or <see cref="F:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout"/> if none was set.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_hasTimeout">
+            <summary>Whether <see cref="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout"/> is non-infinite.</summary>
         </member>
     </members>
 </doc>

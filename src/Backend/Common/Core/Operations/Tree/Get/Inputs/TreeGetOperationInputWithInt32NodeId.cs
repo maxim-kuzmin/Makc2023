@@ -32,6 +32,11 @@ public class TreeGetOperationInputWithInt32NodeId : TreeGetOperationInput
         {
             RootNodeId = 0;
         }
+
+        if (!string.IsNullOrWhiteSpace(ExpandedNodeIdsString) && !ExpandedNodeIds.Any())
+        {
+            ExpandedNodeIds = ExpandedNodeIdsString.FromStringToNumericInt32Array();
+        }
     }
 
     #endregion Public methods

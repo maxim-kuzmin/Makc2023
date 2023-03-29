@@ -5,6 +5,6 @@ namespace Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get
 /// <summary>
 /// Выходные данные операции получения списка в домене "Фиктивное главное".
 /// </summary>
-public class DummyMainDomainListGetOperationOutput : ListGetOperationOutput<DummyMainDomainEntity>
+public class DummyMainDomainListGetOperationOutput : ListGetOperationOutput<DummyMainDomainEntity, long>
 {
 }

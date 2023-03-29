@@ -6,7 +6,10 @@ namespace Makc2023.Backend.Common.Core.Operations.List.Get;
 /// Выходные данные операции получения списка.
 /// </summary>
 /// <typeparam name="TItem">Тип элемента.</typeparam>
-public class ListGetOperationOutput<TItem>
+/// <typeparam name="TTotalCount">Тип общего числа элементов.</typeparam>
+public class ListGetOperationOutput<TItem, TTotalCount>
+    where TItem : class
+    where TTotalCount : struct
 {
     #region Properties
 
@@ -18,7 +21,7 @@ public class ListGetOperationOutput<TItem>
     /// <summary>
     /// Общее число элементов.
     /// </summary>
-    public long TotalCount { get; set; }
+    public TTotalCount TotalCount { get; set; }
 
     #endregion Properties
 }

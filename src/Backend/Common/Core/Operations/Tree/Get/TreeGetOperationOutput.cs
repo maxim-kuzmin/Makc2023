@@ -6,8 +6,10 @@ namespace Makc2023.Backend.Common.Core.Operations.Tree.Get;
 /// Выходные данные операции получения дерева.
 /// </summary>
 /// <typeparam name="TNode">Тип узла.</typeparam>
-public class TreeGetOperationOutput<TNode>
+/// <typeparam name="TTotalCount">Тип общего числа узлов.</typeparam>
+public class TreeGetOperationOutput<TNode, TTotalCount>
    where TNode : class
+   where TTotalCount : struct
 {
     #region Properties
 
@@ -19,7 +21,7 @@ public class TreeGetOperationOutput<TNode>
     /// <summary>
     /// Общее число узлов.
     /// </summary>
-    public long TotalCount { get; set; }
+    public TTotalCount TotalCount { get; set; }
 
     #endregion Properties
 }

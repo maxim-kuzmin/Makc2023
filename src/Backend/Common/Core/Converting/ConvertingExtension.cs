@@ -7,8 +7,15 @@ namespace Makc2023.Backend.Common.Core.Converting;
 /// <summary>
 /// Расширение преобразования.
 /// </summary>
-public static class ConvertingExtension
+public static partial class ConvertingExtension
 {
+    #region Fields
+
+    [GeneratedRegex(@"[^\d\+\-]")]
+    private static partial Regex NotNumericRegex();
+
+    #endregion Fields
+
     #region Public methods
 
     /// <summary>
@@ -213,13 +220,23 @@ public static class ConvertingExtension
     }
 
     /// <summary>
+    /// Преобразовать из строки в массив 32-битных целых чисел.
+    /// </summary>
+    /// <param name="input">Строка.</param>
+    /// <returns>Массив 64-битных целых чисел.</returns>
+    public static int[] FromStringToNumericInt32Array(this string input)
+    {
+        return input.FromStringToNumericArray(int.Parse);
+    }
+
+    /// <summary>
     /// Преобразовать из строки в массив 64-битных целых чисел.
     /// </summary>
     /// <param name="input">Строка.</param>
     /// <returns>Массив 64-битных целых чисел.</returns>
     public static long[] FromStringToNumericInt64Array(this string input)
     {
-        return input.FromStringToNumericArray(x => long.Parse(x));
+        return input.FromStringToNumericArray(long.Parse);
     }
 
     #endregion Public methods
@@ -234,9 +251,9 @@ public static class ConvertingExtension
         }
         else
         {
-            return Regex.Replace(input, @"[^\d\+\-]", " ").Split(' ')
+            return NotNumericRegex().Replace(input, " ").Split(' ')
                 .Where(x => !string.IsNullOrWhiteSpace(x))
-                .Select(x => funcParse.Invoke(x))
+                .Select(funcParse.Invoke)
                 .ToArray();
         }
     }

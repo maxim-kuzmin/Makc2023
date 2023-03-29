@@ -7,4 +7,12 @@ namespace Makc2023.Backend.Common.Core.Operations.Tree.Get;
 /// </summary>
 public abstract class TreeGetOperationInput : ListGetOperationInput
 {
+    #region Properties
+
+    /// <summary>
+    /// Строка идентификаторов раскрытых узлов.
+    /// </summary>
+    public string ExpandedNodeIdsString { get; set; } = "";
+
+    #endregion Properties
 }
