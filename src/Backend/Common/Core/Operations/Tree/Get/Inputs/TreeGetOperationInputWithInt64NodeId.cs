@@ -5,7 +5,7 @@ namespace Makc2023.Backend.Common.Core.Operations.Tree.Get.Inputs;
 /// <summary>
 /// Входные данные операции получения дерева с 64-битным целочисленным идентификатором узла.
 /// </summary>
-public class TreeGetOperationInputWithInt64NodeId : OperationInput
+public class TreeGetOperationInputWithInt64NodeId : TreeGetOperationInput
 {
     #region Properties
 
@@ -23,11 +23,11 @@ public class TreeGetOperationInputWithInt64NodeId : OperationInput
 
     #region Public methods
 
-    /// <summary>
-    /// Нормализовать.
-    /// </summary>
-    public virtual void Normalize()
+    /// <inheritdoc/>
+    public override void Normalize()
     {
+        base.Normalize();
+
         if (RootNodeId < 0L)
         {
             RootNodeId = 0L;

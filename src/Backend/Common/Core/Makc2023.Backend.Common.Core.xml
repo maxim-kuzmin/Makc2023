@@ -814,9 +814,7 @@
             </summary>
         </member>
         <member name="M:Makc2023.Backend.Common.Core.Operations.Tree.Get.Inputs.TreeGetOperationInputWithInt32NodeId.Normalize">
-            <summary>
-            Нормализовать.
-            </summary>
+            <inheritdoc/>
         </member>
         <member name="T:Makc2023.Backend.Common.Core.Operations.Tree.Get.Inputs.TreeGetOperationInputWithInt64NodeId">
             <summary>
@@ -834,19 +832,27 @@
             </summary>
         </member>
         <member name="M:Makc2023.Backend.Common.Core.Operations.Tree.Get.Inputs.TreeGetOperationInputWithInt64NodeId.Normalize">
+            <inheritdoc/>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operations.Tree.Get.TreeGetOperationInput">
             <summary>
-            Нормализовать.
+            Входные данные операции получения дерева.
             </summary>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Operations.Tree.Get.ItemGetOperationOutput`1">
+        <member name="T:Makc2023.Backend.Common.Core.Operations.Tree.Get.TreeGetOperationOutput`1">
             <summary>
             Выходные данные операции получения дерева.
             </summary>
             <typeparam name="TNode">Тип узла.</typeparam>
         </member>
-        <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.ItemGetOperationOutput`1.Nodes">
+        <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.TreeGetOperationOutput`1.Nodes">
             <summary>
             Узлы.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.TreeGetOperationOutput`1.TotalCount">
+            <summary>
+            Общее число узлов.
             </summary>
         </member>
         <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputAndOutputHandler`3">
