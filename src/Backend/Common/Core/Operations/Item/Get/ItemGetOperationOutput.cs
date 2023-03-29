@@ -5,7 +5,7 @@ namespace Makc2023.Backend.Common.Core.Operations.Item.Get;
 /// <summary>
 /// Выходные данные операции получения элемента.
 /// </summary>
-/// <typeparam name="TItem">Элемент.</typeparam>
+/// <typeparam name="TItem">Тип элемента.</typeparam>
 public class ItemGetOperationOutput<TItem>
    where TItem : class
 {

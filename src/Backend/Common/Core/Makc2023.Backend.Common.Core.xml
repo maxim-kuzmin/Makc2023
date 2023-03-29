@@ -643,7 +643,7 @@
             <summary>
             Выходные данные операции получения элемента.
             </summary>
-            <typeparam name="TItem">Элемент.</typeparam>
+            <typeparam name="TItem">Тип элемента.</typeparam>
         </member>
         <member name="P:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemGetOperationOutput`1.Item">
             <summary>
@@ -733,69 +733,120 @@
         <member name="M:Makc2023.Backend.Common.Core.Operations.OperationsResource.GetOperationInputValidValueForSortField(System.String,System.String)">
             <inheritdoc/>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Operations.Tree.Node.Get.TreeNodeGetOperationAxis">
+        <member name="T:Makc2023.Backend.Common.Core.Operations.Tree.Get.Axes.TreeGetOperationAxisForItem">
             <summary>
-            Ось операции получения узла дерева.
+            Ось для операции получения элемента в дереве.
             </summary>
         </member>
-        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Node.Get.TreeNodeGetOperationAxis.Self">
+        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Get.Axes.TreeGetOperationAxisForItem.Self">
             <summary>
             Сам.
             </summary>
         </member>
-        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Node.Get.TreeNodeGetOperationAxis.Parent">
+        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Get.Axes.TreeGetOperationAxisForItem.Parent">
             <summary>
             Родитель.
             </summary>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Operations.Tree.Path.Get.TreePathGetOperationAxis">
+        <member name="T:Makc2023.Backend.Common.Core.Operations.Tree.Get.Axes.TreeGetOperationAxisForList">
             <summary>
-            Ось операции получения ветви дерева.
+            Ось для операции получения списка в дереве.
             </summary>
         </member>
-        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Path.Get.TreePathGetOperationAxis.None">
+        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Get.Axes.TreeGetOperationAxisForList.None">
             <summary>
             Отсутствует.
             </summary>
         </member>
-        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Path.Get.TreePathGetOperationAxis.All">
+        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Get.Axes.TreeGetOperationAxisForList.All">
             <summary>
             Все.
             </summary>
         </member>
-        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Path.Get.TreePathGetOperationAxis.Ancestor">
+        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Get.Axes.TreeGetOperationAxisForList.Ancestor">
             <summary>
             Предок.
             </summary>
         </member>
-        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Path.Get.TreePathGetOperationAxis.AncestorOrSelf">
+        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Get.Axes.TreeGetOperationAxisForList.AncestorOrSelf">
             <summary>
             Предок или корневой узел.
             </summary>
         </member>
-        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Path.Get.TreePathGetOperationAxis.Child">
+        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Get.Axes.TreeGetOperationAxisForList.Child">
             <summary>
             Ребёнок.
             </summary>
         </member>
-        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Path.Get.TreePathGetOperationAxis.ChildOrSelf">
+        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Get.Axes.TreeGetOperationAxisForList.ChildOrSelf">
             <summary>
             Ребёнок или корневой узел.
             </summary>
         </member>
-        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Path.Get.TreePathGetOperationAxis.Descendant">
+        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Get.Axes.TreeGetOperationAxisForList.Descendant">
             <summary>
             Потомок.
             </summary>
         </member>
-        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Path.Get.TreePathGetOperationAxis.DescendantOrSelf">
+        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Get.Axes.TreeGetOperationAxisForList.DescendantOrSelf">
             <summary>
             Потомок или корневой узел.
             </summary>
         </member>
-        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Path.Get.TreePathGetOperationAxis.ParentOrSelf">
+        <member name="F:Makc2023.Backend.Common.Core.Operations.Tree.Get.Axes.TreeGetOperationAxisForList.ParentOrSelf">
             <summary>
             Родитель или корневой узел.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operations.Tree.Get.Inputs.TreeGetOperationInputWithInt32NodeId">
+            <summary>
+            Входные данные операции получения дерева с 32-битным целочисленным идентификатором узла.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.Inputs.TreeGetOperationInputWithInt32NodeId.ExpandedNodeIds">
+            <summary>
+            Идентификаторы раскрытых узлов.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.Inputs.TreeGetOperationInputWithInt32NodeId.RootNodeId">
+            <summary>
+            Идентификатор корневого узла.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operations.Tree.Get.Inputs.TreeGetOperationInputWithInt32NodeId.Normalize">
+            <summary>
+            Нормализовать.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operations.Tree.Get.Inputs.TreeGetOperationInputWithInt64NodeId">
+            <summary>
+            Входные данные операции получения дерева с 64-битным целочисленным идентификатором узла.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.Inputs.TreeGetOperationInputWithInt64NodeId.ExpandedNodeIds">
+            <summary>
+            Идентификаторы раскрытых узлов.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.Inputs.TreeGetOperationInputWithInt64NodeId.RootNodeId">
+            <summary>
+            Идентификатор корневого узла.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operations.Tree.Get.Inputs.TreeGetOperationInputWithInt64NodeId.Normalize">
+            <summary>
+            Нормализовать.
+            </summary>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operations.Tree.Get.ItemGetOperationOutput`1">
+            <summary>
+            Выходные данные операции получения дерева.
+            </summary>
+            <typeparam name="TNode">Тип узла.</typeparam>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.ItemGetOperationOutput`1.Nodes">
+            <summary>
+            Узлы.
             </summary>
         </member>
         <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputAndOutputHandler`3">

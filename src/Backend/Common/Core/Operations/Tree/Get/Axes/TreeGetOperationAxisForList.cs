@@ -1,11 +1,11 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Common.Core.Operations.Tree.Path.Get;
+namespace Makc2023.Backend.Common.Core.Operations.Tree.Get.Axes;
 
 /// <summary>
-/// Ось операции получения ветви дерева.
+/// Ось для операции получения списка в дереве.
 /// </summary>
-public enum TreePathGetOperationAxis
+public enum TreeGetOperationAxisForList
 {
     /// <summary>
     /// Отсутствует.
