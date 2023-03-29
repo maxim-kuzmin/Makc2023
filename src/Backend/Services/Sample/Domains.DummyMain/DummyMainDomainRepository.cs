@@ -1,5 +1,7 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
+using Microsoft.EntityFrameworkCore.Internal;
+
 namespace Makc2023.Backend.Services.Sample.Domains.DummyMain;
 
 /// <summary>
@@ -72,7 +74,6 @@ public class DummyMainDomainRepository : MapperRepository<DummyMainDomainEntity>
         DummyMainDomainListGetOperationOutput result = new();
 
         using var dbContext = _dbContextFactory.CreateDbContext();
-        using var dbContextForTotalCount = _dbContextFactory.CreateDbContext();
 
         var queryForItems = dbContext.DummyMain
             .Include(x => x.DummyOneToMany)
@@ -82,11 +83,18 @@ public class DummyMainDomainRepository : MapperRepository<DummyMainDomainEntity>
             .ApplySorting(input)
             .ApplyPagination(input);
 
-        var queryForTotalCount = dbContextForTotalCount.DummyMain
-            .ApplyFiltering(input);
-
         var taskForItems = queryForItems.ToArrayAsync();
-        var taskForTotalCount = queryForTotalCount.CountAsync();
+
+        long? totalCount = null;
+
+        if (input.PageSize > 0)
+        {
+            using var dbContextForTotalCount = _dbContextFactory.CreateDbContext();
+
+            var queryForTotalCount = dbContextForTotalCount.DummyMain.ApplyFiltering(input);
+
+            totalCount = await queryForTotalCount.LongCountAsync().ConfigureAwait(false);
+        }
 
         var mapperForItems = await taskForItems.ConfigureAwait(false);
 
@@ -104,7 +112,13 @@ public class DummyMainDomainRepository : MapperRepository<DummyMainDomainEntity>
         }
 
         result.Items = itemLookup.Values.ToArray();
-        result.TotalCount = await taskForTotalCount.ConfigureAwait(false);
+
+        if (!totalCount.HasValue)
+        {
+            totalCount = result.Items.LongLength;
+        }
+
+        result.TotalCount = totalCount.Value;
 
         return result;
     }
