@@ -37,6 +37,14 @@ public class TreeGetOperationInputWithInt32NodeId : TreeGetOperationInput
         {
             ExpandedNodeIds = ExpandedNodeIdsString.FromStringToNumericInt32Array();
         }
+
+        if (string.IsNullOrWhiteSpace(RootNodeTreePath) || RootNodeId < 1)
+        {
+            if (Axis == TreeGetOperationAxisForList.ChildOrSelf)
+            {
+                Axis = TreeGetOperationAxisForList.Child;
+            }
+        }
     }
 
     #endregion Public methods

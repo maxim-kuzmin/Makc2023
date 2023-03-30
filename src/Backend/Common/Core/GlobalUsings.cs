@@ -13,6 +13,7 @@ global using Makc2023.Backend.Common.Core.Exceptions;
 global using Makc2023.Backend.Common.Core.Operation;
 global using Makc2023.Backend.Common.Core.Operations;
 global using Makc2023.Backend.Common.Core.Operations.List.Get;
+global using Makc2023.Backend.Common.Core.Operations.Tree.Get.Axes;
 global using Makc2023.Backend.Common.Core.Repeat;
 global using Makc2023.Backend.Common.Core.Serialization.Json;
 global using Makc2023.Backend.Common.Core.Setup;

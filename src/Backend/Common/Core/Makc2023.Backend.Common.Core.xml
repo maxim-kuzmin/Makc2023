@@ -855,10 +855,23 @@
             Входные данные операции получения дерева.
             </summary>
         </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.TreeGetOperationInput.Axis">
+            <summary>
+            Ось.
+            </summary>
+        </member>
         <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.TreeGetOperationInput.ExpandedNodeIdsString">
             <summary>
             Строка идентификаторов раскрытых узлов.
             </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.TreeGetOperationInput.RootNodeTreePath">
+            <summary>
+            Путь в дереве корневого узла.
+            </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operations.Tree.Get.TreeGetOperationInput.Normalize">
+            <inheritdoc/>
         </member>
         <member name="T:Makc2023.Backend.Common.Core.Operations.Tree.Get.TreeGetOperationOutput`2">
             <summary>
