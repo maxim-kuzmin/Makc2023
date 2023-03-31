@@ -1,7 +1,5 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-using System.Reflection.PortableExecutable;
-
 namespace Makc2023.Backend.Services.Sample.App.Setup;
 
 /// <summary>
@@ -43,10 +41,12 @@ public class SetupAppModule : AppModule
 
         services.AddLocalization(x => x.ConfigureLocalization());
 
-        services.AddMediatR(
-            typeof(ModuleOfCommonDomain),
-            typeof(ModuleOfCommonDomainSqlMappersEF),
-            typeof(ModuleOfServiceDomainsDummyMain));
+        services.AddMediatR(cfg =>
+        {
+            cfg.RegisterServicesFromAssemblyContaining<ModuleOfCommonDomain>()
+                .RegisterServicesFromAssemblyContaining<ModuleOfCommonDomainSqlMappersEF>()
+                .RegisterServicesFromAssemblyContaining<ModuleOfServiceDomainsDummyMain>();
+        });
 
         // Add services to the container.
 
@@ -60,7 +60,7 @@ public class SetupAppModule : AppModule
     public sealed override IEnumerable<Type> GetExports()
     {
         return new[]
-            {          
+            {
                 typeof(IAppEnvironment),
                 typeof(IConfiguration),
                 typeof(ILogger),
