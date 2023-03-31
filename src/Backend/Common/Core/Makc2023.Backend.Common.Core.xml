@@ -819,6 +819,11 @@
             Входные данные операции получения дерева с 32-битным целочисленным идентификатором узла.
             </summary>
         </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.Inputs.TreeGetOperationInputWithInt32NodeId.ExpandedNodeId">
+            <summary>
+            Идентификатор раскрытого узла.
+            </summary>
+        </member>
         <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.Inputs.TreeGetOperationInputWithInt32NodeId.ExpandedNodeIds">
             <summary>
             Идентификаторы раскрытых узлов.
@@ -835,6 +840,11 @@
         <member name="T:Makc2023.Backend.Common.Core.Operations.Tree.Get.Inputs.TreeGetOperationInputWithInt64NodeId">
             <summary>
             Входные данные операции получения дерева с 64-битным целочисленным идентификатором узла.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.Inputs.TreeGetOperationInputWithInt64NodeId.ExpandedNodeId">
+            <summary>
+            Идентификатор раскрытого узла.
             </summary>
         </member>
         <member name="P:Makc2023.Backend.Common.Core.Operations.Tree.Get.Inputs.TreeGetOperationInputWithInt64NodeId.ExpandedNodeIds">

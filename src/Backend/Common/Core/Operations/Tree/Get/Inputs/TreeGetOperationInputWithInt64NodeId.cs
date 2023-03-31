@@ -10,6 +10,11 @@ public class TreeGetOperationInputWithInt64NodeId : TreeGetOperationInput
     #region Properties
 
     /// <summary>
+    /// Идентификатор раскрытого узла.
+    /// </summary>
+    public long ExpandedNodeId { get; set; }
+
+    /// <summary>
     /// Идентификаторы раскрытых узлов.
     /// </summary>
     public long[] ExpandedNodeIds { get; set; } = Array.Empty<long>();
@@ -31,6 +36,11 @@ public class TreeGetOperationInputWithInt64NodeId : TreeGetOperationInput
         if (RootNodeId < 0L)
         {
             RootNodeId = 0L;
+        }
+
+        if (ExpandedNodeId < 0L)
+        {
+            ExpandedNodeId = 0L;
         }
 
         if (!string.IsNullOrWhiteSpace(ExpandedNodeIdsString) && !ExpandedNodeIds.Any())
