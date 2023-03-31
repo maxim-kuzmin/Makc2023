@@ -48,6 +48,59 @@ public class DummyMainDomainListGetOperationInput : ListGetOperationInput
 
     #region Public methods
 
+    /// <summary>
+    /// Создать предикат.
+    /// </summary>
+    /// <returns>Предикат.</returns>
+    public ExpressionStarter<ClientMapperDummyMainTypeEntity> CreatePredicate()
+    {
+        var result = PredicateBuilder.New<ClientMapperDummyMainTypeEntity>(true);
+
+        if (!string.IsNullOrWhiteSpace(Name))
+        {
+            result = result.And(x => x.Name!.Contains(Name));
+        }
+
+        if (Ids != null && Ids.Any())
+        {
+            if (Ids.Length > 1)
+            {
+                result = result.And(x => Ids.Contains(x.Id));
+            }
+            else
+            {
+                long entityId = Ids[0];
+
+                result = result.And(x => x.Id == entityId);
+            }
+        }
+        if (DummyOneToManyId > 0)
+        {
+            result = result.And(x => x.DummyOneToManyId == DummyOneToManyId);
+        }
+
+        if (DummyOneToManyIds != null && DummyOneToManyIds.Any())
+        {
+            if (DummyOneToManyIds.Length > 1)
+            {
+                result = result.And(x => DummyOneToManyIds.Contains(x.DummyOneToManyId));
+            }
+            else
+            {
+                long id = DummyOneToManyIds[0];
+
+                result = result.And(x => x.DummyOneToManyId == id);
+            }
+        }
+
+        if (!string.IsNullOrWhiteSpace(DummyOneToManyName))
+        {
+            result = result.And(x => x.DummyOneToMany!.Name!.Contains(DummyOneToManyName));
+        }
+
+        return result;
+    }
+
     /// <inheritdoc/>
     public sealed override void Normalize()
     {

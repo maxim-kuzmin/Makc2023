@@ -57,22 +57,6 @@
             Расширение домена "Фиктивное главное".
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainExtension.ApplyFiltering(System.Linq.IQueryable{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity},Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationInput)">
-            <summary>
-            Применить фильтрацию.
-            </summary>
-            <param name="query">Запрос.</param>
-            <param name="input">Входные данные.</param>
-            <returns>Запрос с учётом фильтрации.</returns>
-        </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainExtension.ApplyFiltering(System.Linq.IQueryable{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity},Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput)">
-            <summary>
-            Применить фильтрацию.
-            </summary>
-            <param name="query">Запрос.</param>
-            <param name="input">Входные данные.</param>
-            <returns>Запрос с учётом фильтрации.</returns>
-        </member>
         <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainExtension.ApplySorting(System.Linq.IQueryable{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity},Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput)">
             <summary>
             Применить сортировку.
@@ -184,6 +168,12 @@
             <summary>
             Имя.
             </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationInput.CreatePredicate">
+            <summary>
+            Создать предикат.
+            </summary>
+            <returns>Предикат.</returns>
         </member>
         <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationInput.Normalize">
             <inheritdoc/>
@@ -306,6 +296,12 @@
             <summary>
             Имя экземпляра сущности "Фиктивное отношение один ко многим".
             </summary>
+        </member>
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput.CreatePredicate">
+            <summary>
+            Создать предикат.
+            </summary>
+            <returns>Предикат.</returns>
         </member>
         <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput.Normalize">
             <inheritdoc/>

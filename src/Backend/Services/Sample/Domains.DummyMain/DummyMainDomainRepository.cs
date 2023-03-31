@@ -43,11 +43,13 @@ public class DummyMainDomainRepository : MapperRepository<DummyMainDomainEntity>
 
         using var dbContext = _dbContextFactory.CreateDbContext();
 
+        var predicate = input.CreatePredicate();
+
         var taskForItem = dbContext.DummyMain
             .Include(x => x.DummyOneToMany)
             .Include(x => x.DummyMainDummyManyToManyList)
             .Include(x => x.DummyManyToOneList)
-            .ApplyFiltering(input)
+            .Where(predicate)
             .SingleOrDefaultAsync();
 
         var mapperForItem = await taskForItem.ConfigureAwait(false);
@@ -75,15 +77,16 @@ public class DummyMainDomainRepository : MapperRepository<DummyMainDomainEntity>
 
         using var dbContext = _dbContextFactory.CreateDbContext();
 
-        var queryForItems = dbContext.DummyMain
+        var predicate = input.CreatePredicate();
+
+        var taskForItems = dbContext.DummyMain
             .Include(x => x.DummyOneToMany)
             .Include(x => x.DummyMainDummyManyToManyList)
             .Include(x => x.DummyManyToOneList)
-            .ApplyFiltering(input)
+            .Where(predicate)
             .ApplySorting(input)
-            .ApplyPagination(input);
-
-        var taskForItems = queryForItems.ToArrayAsync();
+            .ApplyPagination(input)
+            .ToArrayAsync();
 
         long? totalCount = null;
 
@@ -91,9 +94,9 @@ public class DummyMainDomainRepository : MapperRepository<DummyMainDomainEntity>
         {
             using var dbContextForTotalCount = _dbContextFactory.CreateDbContext();
 
-            var queryForTotalCount = dbContextForTotalCount.DummyMain.ApplyFiltering(input);
+            var taskForTotalCount = dbContextForTotalCount.DummyMain.Where(predicate).LongCountAsync();
 
-            totalCount = await queryForTotalCount.LongCountAsync().ConfigureAwait(false);
+            totalCount = await taskForTotalCount.ConfigureAwait(false);
         }
 
         var mapperForItems = await taskForItems.ConfigureAwait(false);

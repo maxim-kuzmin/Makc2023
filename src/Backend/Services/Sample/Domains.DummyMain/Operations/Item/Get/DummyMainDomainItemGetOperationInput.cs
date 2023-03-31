@@ -18,6 +18,27 @@ public class DummyMainDomainItemGetOperationInput : ItemGetOperationInputWithInt
 
     #region Public methods
 
+    /// <summary>
+    /// Создать предикат.
+    /// </summary>
+    /// <returns>Предикат.</returns>
+    public ExpressionStarter<ClientMapperDummyMainTypeEntity> CreatePredicate()
+    {
+        var result = PredicateBuilder.New<ClientMapperDummyMainTypeEntity>(true);
+
+        if (Id > 0)
+        {
+            result = result.And(x => x.Id == Id);
+        }
+
+        if (!string.IsNullOrWhiteSpace(Name))
+        {
+            result = result.And(x => x.Name == Name);
+        }
+
+        return result;
+    }
+
     /// <inheritdoc/>
     public sealed override void Normalize()
     {
