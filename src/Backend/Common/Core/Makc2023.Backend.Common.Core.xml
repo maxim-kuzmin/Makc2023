@@ -670,6 +670,15 @@
             Расширение операции получения списка.
             </summary>
         </member>
+        <member name="M:Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationExtension.ApplyPagination``1(System.Collections.Generic.IEnumerable{``0},Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationInput)">
+            <summary>
+            Применить разбиение на страницы.
+            </summary>
+            <typeparam name="T">Тип запрашиваемых данных.</typeparam>
+            <param name="items">Элементы.</param>
+            <param name="input">Входные данные.</param>
+            <returns>Элементы страницы.</returns>
+        </member>
         <member name="M:Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationExtension.ApplyPagination``1(System.Linq.IQueryable{``0},Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationInput)">
             <summary>
             Применить разбиение на страницы.

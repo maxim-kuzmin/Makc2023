@@ -13,6 +13,20 @@ public static class ListGetOperationExtension
     /// Применить разбиение на страницы.
     /// </summary>
     /// <typeparam name="T">Тип запрашиваемых данных.</typeparam>
+    /// <param name="items">Элементы.</param>
+    /// <param name="input">Входные данные.</param>
+    /// <returns>Элементы страницы.</returns>
+    public static IEnumerable<T> ApplyPagination<T>(this IEnumerable<T> items, ListGetOperationInput input)
+    {
+        return input.PageSize > 0
+            ? items.Skip((input.PageNumber - 1) * input.PageSize).Take(input.PageSize)
+            : items;
+    }
+
+    /// <summary>
+    /// Применить разбиение на страницы.
+    /// </summary>
+    /// <typeparam name="T">Тип запрашиваемых данных.</typeparam>
     /// <param name="query">Запрос.</param>
     /// <param name="input">Входные данные.</param>
     /// <returns>Запрос страницы.</returns>
