@@ -6,10 +6,12 @@ namespace Makc2023.Backend.Common.Core.Operation.Handlers;
 /// Обработчик операции с входными данными.
 /// </summary>
 /// <typeparam name="TOperationInput">Тип входных данных операции.</typeparam>
-public class OperationWithInputHandler<TOperationInput> :
+/// <typeparam name="TOperationResult">Тип результата операции.</typeparam>
+public class OperationWithInputHandler<TOperationInput, TOperationResult> :
     OperationHandler,
-    IOperationWithInputHandler<TOperationInput>
+    IOperationWithInputHandler<TOperationInput, TOperationResult>
     where TOperationInput : class, new()
+    where TOperationResult : OperationResult, new()
 {
     #region Properties
 
@@ -18,11 +20,16 @@ public class OperationWithInputHandler<TOperationInput> :
     /// </summary>
     protected Func<TOperationInput, TOperationInput>? FunctionToTransformOperationInput { get; set; }
 
+    /// <summary>
+    /// Функция преобразования результата операции.
+    /// </summary>
+    protected Func<TOperationResult, TOperationResult>? FunctionToTransformOperationResult { get; set; }
+
     /// <inheritdoc/>
     public TOperationInput OperationInput { get; private set; } = null!;
 
     /// <inheritdoc/>
-    public OperationResult OperationResult { get; private set; } = null!;
+    public TOperationResult OperationResult { get; private set; } = null!;
 
     #endregion Properties
 
@@ -65,7 +72,7 @@ public class OperationWithInputHandler<TOperationInput> :
     }
 
     /// <inheritdoc/>
-    public void HandleSuccessWithResult(OperationResult operationResult)
+    public void HandleSuccessWithResult(TOperationResult operationResult)
     {
         OperationResult = operationResult;
 
@@ -99,6 +106,11 @@ public class OperationWithInputHandler<TOperationInput> :
         if (!string.IsNullOrWhiteSpace(OperationCode))
         {
             OperationResult.OperationCode = OperationCode;
+        }
+
+        if (FunctionToTransformOperationResult != null)
+        {
+            OperationResult = FunctionToTransformOperationResult.Invoke(OperationResult);
         }
     }
 

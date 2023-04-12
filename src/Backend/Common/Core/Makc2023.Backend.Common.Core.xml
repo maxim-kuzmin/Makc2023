@@ -631,6 +631,7 @@
             <summary>
             Получить свойства с недействительными значениями.
             </summary>
+            <param name="operationsResource">Ресурс операций.</param>
             <returns>Свойства с недействительными значениями.</returns>
         </member>
         <member name="T:Makc2023.Backend.Common.Core.Operations.Item.Get.Inputs.ItemGetOperationInputWithInt64Id">
@@ -652,6 +653,7 @@
             <summary>
             Получить свойства с недействительными значениями.
             </summary>
+            <param name="operationsResource">Ресурс операций.</param>
             <returns>Свойства с недействительными значениями.</returns>
         </member>
         <member name="T:Makc2023.Backend.Common.Core.Operations.Item.Get.ItemGetOperationOutput`1">
@@ -717,6 +719,7 @@
             <summary>
             Получить свойства с недействительными значениями.
             </summary>
+            <param name="operationsResource">Ресурс операций.</param>
             <returns>Свойства с недействительными значениями.</returns>
         </member>
         <member name="M:Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationInput.Normalize">
@@ -946,62 +949,64 @@
             </summary>
             <param name="operationResult">Результат операции.</param>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`1">
+        <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`2">
             <summary>
             Интерфейс обработчика операции с входными данными.
             </summary>
             <typeparam name="TOperationInput">Тип входных данных операции.</typeparam>
+            <typeparam name="TOperationResult">Тип результата операции.</typeparam>
         </member>
-        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`1.OperationInput">
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`2.OperationInput">
             <summary>
             Входные данные операции.
             </summary>
         </member>
-        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`1.OperationResult">
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`2.OperationResult">
             <summary>
             Результат выполнения операции.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`1.HandleStart(`0,System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`2.HandleStart(`0,System.String)">
             <summary>
             Обработать начало.
             </summary>
             <param name="operationInput">Входные данные операции.</param>
             <param name="operationCode">Код операции.</param>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`1.HandleSuccess">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`2.HandleSuccess">
             <summary>
             Обработать успех.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`1.HandleSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResult)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithInputHandler`2.HandleSuccessWithResult(`1)">
             <summary>
             Обработать успех с результатом.
             </summary>
             <param name="operationResult">Результат операции.</param>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler">
+        <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler`1">
             <summary>
             Интерфейс обработчика операции без входных и выходных данных.
             </summary>
+            <typeparam name="TOperationResult">Тип результата операции.</typeparam>
         </member>
-        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler.OperationResult">
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler`1.OperationResult">
             <summary>
             Результат выполнения операции.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler.HandleStart(System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler`1.HandleStart(System.String)">
             <summary>
             Обработать начало.
             </summary>
             <param name="operationCode">Код операции.</param>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler.HandleSuccess">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler`1.HandleSuccess">
             <summary>
             Обработать успех.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler.HandleSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResult)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.IOperationWithoutInputAndOutputHandler`1.HandleSuccessWithResult(`0)">
             <summary>
             Обработать успех с результатом.
             </summary>
@@ -1090,71 +1095,83 @@
         <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputAndOutputHandler`3.InitOperationResult(System.Boolean)">
             <inheritdoc/>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1">
+        <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`2">
             <summary>
             Обработчик операции с входными данными.
             </summary>
             <typeparam name="TOperationInput">Тип входных данных операции.</typeparam>
+            <typeparam name="TOperationResult">Тип результата операции.</typeparam>
         </member>
-        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.FunctionToTransformOperationInput">
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`2.FunctionToTransformOperationInput">
             <summary>
             Функция преобразования входных данных операции.
             </summary>
         </member>
-        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.OperationInput">
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`2.FunctionToTransformOperationResult">
+            <summary>
+            Функция преобразования результата операции.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`2.OperationInput">
             <inheritdoc/>
         </member>
-        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.OperationResult">
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`2.OperationResult">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.#ctor(System.String,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`2.#ctor(System.String,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.HandleStart(`0,System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`2.HandleStart(`0,System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.HandleSuccess">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`2.HandleSuccess">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.HandleSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResult)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`2.HandleSuccessWithResult(`1)">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.GetOperationInput">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`2.GetOperationInput">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.GetOperationResult">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`2.GetOperationResult">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`1.InitOperationResult(System.Boolean)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithInputHandler`2.InitOperationResult(System.Boolean)">
             <inheritdoc/>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler">
+        <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler`1">
             <summary>
             Обработчик операции без входных и выходных данных.
             </summary>
+            <typeparam name="TOperationResult">Тип результата операции.</typeparam>
         </member>
-        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.OperationResult">
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler`1.FunctionToTransformOperationResult">
+            <summary>
+            Функция преобразования результата операции.
+            </summary>
+        </member>
+        <member name="P:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler`1.OperationResult">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.#ctor(System.String,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler`1.#ctor(System.String,Makc2023.Backend.Common.Core.Operation.IOperationResource,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Options.IOptionsMonitor{Makc2023.Backend.Common.Core.Setup.SetupOptions})">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.HandleStart(System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler`1.HandleStart(System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.HandleSuccess">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler`1.HandleSuccess">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.HandleSuccessWithResult(Makc2023.Backend.Common.Core.Operation.OperationResult)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler`1.HandleSuccessWithResult(`0)">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.GetOperationInput">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler`1.GetOperationInput">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.GetOperationResult">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler`1.GetOperationResult">
             <inheritdoc/>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler.InitOperationResult(System.Boolean)">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithoutInputAndOutputHandler`1.InitOperationResult(System.Boolean)">
             <inheritdoc/>
         </member>
         <member name="T:Makc2023.Backend.Common.Core.Operation.Handlers.OperationWithOutputHandler`2">

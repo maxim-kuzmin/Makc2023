@@ -57,7 +57,12 @@ public class DummyMainDomainItemGetOperationInput : ItemGetOperationInputWithInt
         throw new NotImplementedException();
     }
 
-    /// <inheritdoc/>
+    /// <summary>
+    /// Получить свойства с недействительными значениями.
+    /// </summary>
+    /// <param name="domainResource">Ресурс домена.</param>
+    /// <param name="operationsResource">Ресурс операций.</param>
+    /// <returns>Свойства с недействительными значениями.</returns>
     public OperationInputInvalidProperties GetInvalidProperties(
         IDummyMainDomainResource domainResource,
         IOperationsResource operationsResource)

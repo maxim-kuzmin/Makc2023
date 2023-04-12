@@ -182,7 +182,12 @@
             <inheritdoc/>
         </member>
         <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationInput.GetInvalidProperties(Makc2023.Backend.Services.Sample.Domains.DummyMain.IDummyMainDomainResource,Makc2023.Backend.Common.Core.Operations.IOperationsResource)">
-            <inheritdoc/>
+            <summary>
+            Получить свойства с недействительными значениями.
+            </summary>
+            <param name="domainResource">Ресурс домена.</param>
+            <param name="operationsResource">Ресурс операций.</param>
+            <returns>Свойства с недействительными значениями.</returns>
         </member>
         <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainItemGetOperationOutput">
             <summary>

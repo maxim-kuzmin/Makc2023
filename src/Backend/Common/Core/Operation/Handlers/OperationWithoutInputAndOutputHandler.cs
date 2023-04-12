@@ -5,12 +5,21 @@ namespace Makc2023.Backend.Common.Core.Operation.Handlers;
 /// <summary>
 /// Обработчик операции без входных и выходных данных.
 /// </summary>
-public class OperationWithoutInputAndOutputHandler : OperationHandler, IOperationWithoutInputAndOutputHandler
+/// <typeparam name="TOperationResult">Тип результата операции.</typeparam>
+public class OperationWithoutInputAndOutputHandler<TOperationResult> :
+    OperationHandler,
+    IOperationWithoutInputAndOutputHandler<TOperationResult>
+    where TOperationResult : OperationResult, new()
 {
     #region Properties
 
+    /// <summary>
+    /// Функция преобразования результата операции.
+    /// </summary>
+    protected Func<TOperationResult, TOperationResult>? FunctionToTransformOperationResult { get; set; }
+
     /// <inheritdoc/>
-    public OperationResult OperationResult { get; private set; } = null!;
+    public TOperationResult OperationResult { get; private set; } = null!;
 
     #endregion Properties
 
@@ -45,7 +54,7 @@ public class OperationWithoutInputAndOutputHandler : OperationHandler, IOperatio
     }
 
     /// <inheritdoc/>
-    public void HandleSuccessWithResult(OperationResult operationResult)
+    public void HandleSuccessWithResult(TOperationResult operationResult)
     {
         OperationResult = operationResult;
 
@@ -79,6 +88,11 @@ public class OperationWithoutInputAndOutputHandler : OperationHandler, IOperatio
         if (!string.IsNullOrWhiteSpace(OperationCode))
         {
             OperationResult.OperationCode = OperationCode;
+        }
+
+        if (FunctionToTransformOperationResult != null)
+        {
+            OperationResult = FunctionToTransformOperationResult.Invoke(OperationResult);
         }
     }
 

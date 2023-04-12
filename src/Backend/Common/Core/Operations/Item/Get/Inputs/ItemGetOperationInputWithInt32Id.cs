@@ -32,6 +32,7 @@ public class ItemGetOperationInputWithInt32Id : OperationInput
     /// <summary>
     /// Получить свойства с недействительными значениями.
     /// </summary>
+    /// <param name="operationsResource">Ресурс операций.</param>
     /// <returns>Свойства с недействительными значениями.</returns>
     public OperationInputInvalidProperties GetInvalidProperties(IOperationsResource operationsResource)
     {
