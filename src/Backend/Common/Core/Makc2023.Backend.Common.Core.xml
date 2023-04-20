@@ -1454,21 +1454,6 @@
             </summary>
             <returns>Имена свойств.</returns>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Operation.OperationOptions">
-            <summary>
-            Параметры операции.
-            </summary>
-        </member>
-        <member name="F:Makc2023.Backend.Common.Core.Operation.OperationOptions.SORT_DIRECTION_ASC">
-            <summary>
-            Направление сортировки по возрастанию.
-            </summary>
-        </member>
-        <member name="F:Makc2023.Backend.Common.Core.Operation.OperationOptions.SORT_DIRECTION_DESC">
-            <summary>
-            Направление сортировки по убыванию.
-            </summary>
-        </member>
         <member name="T:Makc2023.Backend.Common.Core.Operation.OperationResource">
             <summary>
             Ресурс операции.
@@ -1561,6 +1546,21 @@
             Загрузить с выходными данными.
             </summary>
             <param name="operationResult">Результат операции.</param>
+        </member>
+        <member name="T:Makc2023.Backend.Common.Core.Operation.OperationSortDirection">
+            <summary>
+            Направление сортировки операции.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Core.Operation.OperationSortDirection.ASC">
+            <summary>
+            По возрастанию.
+            </summary>
+        </member>
+        <member name="F:Makc2023.Backend.Common.Core.Operation.OperationSortDirection.DESC">
+            <summary>
+            По убыванию.
+            </summary>
         </member>
         <member name="T:Makc2023.Backend.Common.Core.Repeat.IRepeatResource">
             <summary>

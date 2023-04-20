@@ -45,16 +45,16 @@ public abstract class ListGetOperationInput : OperationInput
         if (!string.IsNullOrWhiteSpace(SortDirection)
             &&
             (
-                !OperationOptions.SORT_DIRECTION_ASC.Equals(SortDirection, StringComparison.OrdinalIgnoreCase)
+                !OperationSortDirection.ASC.Equals(SortDirection, StringComparison.OrdinalIgnoreCase)
                 &&
-                !OperationOptions.SORT_DIRECTION_DESC.Equals(SortDirection, StringComparison.OrdinalIgnoreCase)
+                !OperationSortDirection.DESC.Equals(SortDirection, StringComparison.OrdinalIgnoreCase)
             ))
         {
             var values = result.GetOrAdd(nameof(SortField));
 
             string value = operationsResource.GetOperationInputValidValueForSortField(
-                OperationOptions.SORT_DIRECTION_ASC,
-                OperationOptions.SORT_DIRECTION_DESC);
+                OperationSortDirection.ASC,
+                OperationSortDirection.DESC);
 
             values.Add(value);
         }
