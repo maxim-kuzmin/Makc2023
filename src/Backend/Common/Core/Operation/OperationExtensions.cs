@@ -3,9 +3,9 @@
 namespace Makc2023.Backend.Common.Core.Operation;
 
 /// <summary>
-/// Расширение операции.
+/// Расширения операции.
 /// </summary>
-public static class OperationExtension
+public static class OperationExtensions
 {
     #region Public methods
 

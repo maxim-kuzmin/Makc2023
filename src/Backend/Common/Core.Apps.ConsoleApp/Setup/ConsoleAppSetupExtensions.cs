@@ -5,9 +5,9 @@ using NLog.Extensions.Logging;
 namespace Makc2023.Backend.Common.Core.Apps.ConsoleApp.Setup;
 
 /// <summary>
-/// Расширение ведения журнала в консольном приложении.
+/// Расширения ведения журнала в консольном приложении.
 /// </summary>
-public static class ConsoleAppLoggingExtension
+public static class ConsoleAppLoggingExtensions
 {
     #region Public methods
 

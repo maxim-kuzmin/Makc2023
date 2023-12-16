@@ -149,17 +149,17 @@
             Получить результирующий SQL.
             </summary>
         </member>
-        <member name="T:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandExtension">
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandExtensions">
             <summary>
-            Расширение команды дерева.
+            Расширения команды дерева.
             </summary>
         </member>
-        <member name="F:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandExtension.TREE_PATH_SEPARATOR">
+        <member name="F:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandExtensions.TREE_PATH_SEPARATOR">
             <summary>
             Разделитель пути в дереве.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandExtension.FromInt64ToTreePath(System.Int64,System.String)">
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandExtensions.FromInt64ToTreePath(System.Int64,System.String)">
             <summary>
             Преобразовать из 64-битного целого числа в путь в дереве.
             </summary>
@@ -167,21 +167,21 @@
             <param name="parentTreePath">Путь родителя в дереве.</param>
             <returns>Путь в дереве.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandExtension.FromTreePathToInt64Array(System.String)">
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandExtensions.FromTreePathToInt64Array(System.String)">
             <summary>
             Преобразовать из пути в дереве в массив 64-битных целых чисел.
             </summary>
             <param name="treePath">Путь в дереве.</param>
             <returns>Массив 64-битных целых чисел.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandExtension.FromTreePathToInt64ArrayOfAncestors(System.String)">
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandExtensions.FromTreePathToInt64ArrayOfAncestors(System.String)">
             <summary>
             Преобразовать из пути в дереве в массив 64-битных целых чисел предков.
             </summary>
             <param name="treePath">Путь в дереве.</param>
             <returns>Массив 64-битных целых чисел предков.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandExtension.FromTreePathToParentTreePath(System.String)">
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Commands.Tree.TreeCommandExtensions.FromTreePathToParentTreePath(System.String)">
             <summary>
             Преобразовать из пути в дереве в путь в дереве родителя.
             </summary>

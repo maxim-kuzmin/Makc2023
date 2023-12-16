@@ -1,11 +1,11 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToMany;
+namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToOne;
 
 /// <summary>
-/// Расширение типа "Фиктивное отношение многие ко многим" сопоставителя клиента.
+/// Расширения типа "Фиктивное главное" сопоставителя клиента.
 /// </summary>
-public static class ClientMapperDummyManyToManyTypeExtension
+public static class ClientMapperDummyManyToOneTypeExtensions
 {
     #region Public methods
 
@@ -14,11 +14,11 @@ public static class ClientMapperDummyManyToManyTypeExtension
     /// </summary>
     /// <param name="entity">Сущность.</param>
     /// <returns>Сущность сопоставителя клиента.</returns>
-    public static ClientMapperDummyManyToManyTypeEntity ToMapperEntity(this DummyManyToManyTypeEntity entity)
+    public static ClientMapperDummyManyToOneTypeEntity ToMapperEntity(this DummyManyToOneTypeEntity entity)
     {
-        ClientMapperDummyManyToManyTypeEntity result = new();
+        ClientMapperDummyManyToOneTypeEntity result = new();
 
-        new DummyManyToManyTypeLoader(result).Load(entity);
+        new DummyManyToOneTypeLoader(result).Load(entity);
 
         return result;
     }
@@ -28,9 +28,9 @@ public static class ClientMapperDummyManyToManyTypeExtension
     /// </summary>
     /// <param name="mapperEntity">Сущность сопоставителя клиента.</param>
     /// <returns>Сущность.</returns>
-    public static DummyManyToManyTypeEntity ToEntity(this ClientMapperDummyManyToManyTypeEntity mapperEntity)
+    public static DummyManyToOneTypeEntity ToEntity(this ClientMapperDummyManyToOneTypeEntity mapperEntity)
     {
-        DummyManyToManyTypeLoader loader = new();
+        DummyManyToOneTypeLoader loader = new();
 
         loader.Load(mapperEntity);
 

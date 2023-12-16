@@ -23,19 +23,19 @@
             Конструктор.
             </summary>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.App.AppExtension">
+        <member name="T:Makc2023.Backend.Common.Core.App.AppExtensions">
             <summary>
-            Расширение приложения.
+            Расширения приложения.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.App.AppExtension.AddAppModules(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Collections.Generic.IEnumerable{Makc2023.Backend.Common.Core.App.AppModule})">
+        <member name="M:Makc2023.Backend.Common.Core.App.AppExtensions.AddAppModules(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Collections.Generic.IEnumerable{Makc2023.Backend.Common.Core.App.AppModule})">
             <summary>
             Добавить модули приложения.
             </summary>
             <param name="services">Сервисы.</param>
             <param name="modules">Модули.</param>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.App.AppExtension.ConfigureLocalization(Microsoft.Extensions.Localization.LocalizationOptions)">
+        <member name="M:Makc2023.Backend.Common.Core.App.AppExtensions.ConfigureLocalization(Microsoft.Extensions.Localization.LocalizationOptions)">
             <summary>
             Настроить опции локализации.
             </summary>
@@ -167,12 +167,12 @@
             <param name="types">Типы.</param>
             <returns>Сообщение об ошибке.</returns>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Converting.ConvertingExtension">
+        <member name="T:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions">
             <summary>
-            Расширение преобразования.
+            Расширения преобразования.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.NotNumericRegex">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.NotNumericRegex">
             <remarks>
             Pattern explanation:<br/>
             <code>
@@ -180,42 +180,42 @@
             </code>
             </remarks>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromIPToV4String(System.Net.IPAddress)">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromIPToV4String(System.Net.IPAddress)">
             <summary>
             Преобразовать из IP-адреса версии в строковое представление версии 4.
             </summary>
             <param name="input">IP-адрес.</param>
             <returns>Строковое представление IP-адреса.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromDateTimeToISO8601String(System.DateTime)">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromDateTimeToISO8601String(System.DateTime)">
             <summary>
             Преобразовать из даты и времени в строку в формате ISO8601.
             </summary>
             <param name="input">Дата и время.</param>
             <returns>Строковое представление даты и времени в формате ISO8601.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromDateTimeToRoundTripString(System.DateTime)">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromDateTimeToRoundTripString(System.DateTime)">
             <summary>
             Преобразовать из даты и времени в строку в формате двусторонней передачи.
             </summary>
             <param name="input">Дата и время.</param>
             <returns>Строковое представление даты и времени в формате двусторонней передачи.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromDateTimeOffsetToRoundTripString(System.DateTimeOffset)">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromDateTimeOffsetToRoundTripString(System.DateTimeOffset)">
             <summary>
             Преобразовать из даты и времени с часовым поясом в строку в формате двусторонней передачи.
             </summary>
             <param name="input">Дата и время с часовым поясом.</param>
             <returns>Строковое представление даты и времени с часовым поясом в формате двусторонней передачи.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromRoundTripStringToDateTimeOffset(System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromRoundTripStringToDateTimeOffset(System.String)">
             <summary>
             Преобразовать из строки в формате двусторонней передачи в дату и время с часовым поясом.
             </summary>
             <param name="input">Строка в формате двусторонней передачи.</param>
             <returns>Дата и время с часовым поясом.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromDateToString(System.DateTime,Makc2023.Backend.Common.Core.Converting.IConvertingResource)">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromDateToString(System.DateTime,Makc2023.Backend.Common.Core.Converting.IConvertingResource)">
             <summary>
             Преобразовать из даты в строку.
             </summary>
@@ -223,7 +223,7 @@
             <param name="resource">Ресурс.</param>
             <returns>Строковое представление даты.</returns>        
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToDate(System.String,Makc2023.Backend.Common.Core.Converting.IConvertingResource)">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromStringToDate(System.String,Makc2023.Backend.Common.Core.Converting.IConvertingResource)">
             <summary>
             Преобразовать из строки в дату.
             </summary>
@@ -231,7 +231,7 @@
             <param name="resource">Ресурс.</param>
             <returns>Дата.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromDateNullableToString(System.Nullable{System.DateTime},Makc2023.Backend.Common.Core.Converting.IConvertingResource)">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromDateNullableToString(System.Nullable{System.DateTime},Makc2023.Backend.Common.Core.Converting.IConvertingResource)">
             <summary>
             Преобразовать из даты или нуля в строку.
             </summary>
@@ -239,13 +239,13 @@
             <param name="resource">Ресурс.</param>
             <returns>Строковое представления даты или нуля.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromSentencesToText(System.Collections.Generic.IEnumerable{System.String})">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromSentencesToText(System.Collections.Generic.IEnumerable{System.String})">
             <summary>
             Преобразовать из предложений в текст.
             </summary>
             <returns>Текст, состоящий из предложений.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToDateNullable(System.String,Makc2023.Backend.Common.Core.Converting.IConvertingResource)">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromStringToDateNullable(System.String,Makc2023.Backend.Common.Core.Converting.IConvertingResource)">
             <summary>
             Преобразовать из строки в дату или нуль.
             </summary>
@@ -253,7 +253,7 @@
             <param name="resource">Ресурсы преобразования основы ядра.</param>
             <returns>Дата или нуль.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToEnum``1(System.String,``0)">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromStringToEnum``1(System.String,``0)">
             <summary>
             Преобразовать из строки в элемент перечисления.
             </summary>
@@ -262,56 +262,56 @@
             <param name="defaultValue">Значение по умолчанию.</param>
             <returns>Элемент перечисления.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToNumericDecimal(System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromStringToNumericDecimal(System.String)">
             <summary>
             Преобразовать из строки в дробное десятичное число.
             </summary>
             <param name="input">Строка.</param>
             <returns>Десятичная дробь.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToNumericDecimalNullable(System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromStringToNumericDecimalNullable(System.String)">
             <summary>
             Преобразовать из строки в дробное десятичное число или нуль.
             </summary>
             <param name="input">Строка.</param>
             <returns>Десятичная дробь или нуль.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToNumericInt32(System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromStringToNumericInt32(System.String)">
             <summary>
             Преобразовать из строки в 32-битное целое число.
             </summary>
             <param name="input">Строка.</param>
             <returns>Целое число.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToNumericInt32Nullable(System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromStringToNumericInt32Nullable(System.String)">
             <summary>
             Преобразовать из строки в 32-битное целое число или NULL.
             </summary>
             <param name="input">Строка.</param>
             <returns>Целое число или NULL.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToNumericInt64(System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromStringToNumericInt64(System.String)">
             <summary>
             Преобразовать из строки в 64-битное целое число.
             </summary>
             <param name="input">Строка.</param>
             <returns>Целое число.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToNumericInt64Nullable(System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromStringToNumericInt64Nullable(System.String)">
             <summary>
             Преобразовать из строки в 64-битное целое число или NULL.
             </summary>
             <param name="input">Строка.</param>
             <returns>Целое число или NULL.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToNumericInt32Array(System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromStringToNumericInt32Array(System.String)">
             <summary>
             Преобразовать из строки в массив 32-битных целых чисел.
             </summary>
             <param name="input">Строка.</param>
             <returns>Массив 64-битных целых чисел.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtension.FromStringToNumericInt64Array(System.String)">
+        <member name="M:Makc2023.Backend.Common.Core.Converting.ConvertingExtensions.FromStringToNumericInt64Array(System.String)">
             <summary>
             Преобразовать из строки в массив 64-битных целых чисел.
             </summary>
@@ -430,19 +430,19 @@
         <member name="M:Makc2023.Backend.Common.Core.Exceptions.VariableExceptions.NullVariableException`1.#ctor(System.String[])">
             <inheritdoc/>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Extensions.GenericTypeExtension">
+        <member name="T:Makc2023.Backend.Common.Core.Extensions.GenericTypeExtensions">
             <summary>
-            Расширение общего типа.
+            Расширения общего типа.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Extensions.GenericTypeExtension.GetGenericTypeName(System.Type)">
+        <member name="M:Makc2023.Backend.Common.Core.Extensions.GenericTypeExtensions.GetGenericTypeName(System.Type)">
             <summary>
             Получить имя общего типа.
             </summary>
             <param name="type">Тип.</param>
             <returns>Имя.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Extensions.GenericTypeExtension.GetGenericTypeName(System.Object)">
+        <member name="M:Makc2023.Backend.Common.Core.Extensions.GenericTypeExtensions.GetGenericTypeName(System.Object)">
             <summary>
             Получить имя общего типа.
             </summary>
@@ -555,12 +555,12 @@
             </summary>
             <returns>Все свойства для загрузки.</returns>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Logging.LoggingExtension">
+        <member name="T:Makc2023.Backend.Common.Core.Logging.LoggingExtensions">
             <summary>
-            Расширение ведения журнала.
+            Расширения ведения журнала.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Logging.LoggingExtension.TryLoadLoggerState``1(System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Action{``0})">
+        <member name="M:Makc2023.Backend.Common.Core.Logging.LoggingExtensions.TryLoadLoggerState``1(System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Action{``0})">
             <summary>
             Попробовать загрузить состояние регистратора.
             </summary>
@@ -667,12 +667,12 @@
             Элемент.
             </summary>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationExtension">
+        <member name="T:Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationExtensions">
             <summary>
-            Расширение операции получения списка.
+            Расширения операции получения списка.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationExtension.ApplyPagination``1(System.Collections.Generic.IEnumerable{``0},Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationInput)">
+        <member name="M:Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationExtensions.ApplyPagination``1(System.Collections.Generic.IEnumerable{``0},Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationInput)">
             <summary>
             Применить разбиение на страницы.
             </summary>
@@ -681,7 +681,7 @@
             <param name="input">Входные данные.</param>
             <returns>Элементы страницы.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationExtension.ApplyPagination``1(System.Linq.IQueryable{``0},Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationInput)">
+        <member name="M:Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationExtensions.ApplyPagination``1(System.Linq.IQueryable{``0},Makc2023.Backend.Common.Core.Operations.List.Get.ListGetOperationInput)">
             <summary>
             Применить разбиение на страницы.
             </summary>
@@ -1283,19 +1283,19 @@
             </summary>
             <returns>Заголовок.</returns>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Operation.OperationExtension">
+        <member name="T:Makc2023.Backend.Common.Core.Operation.OperationExtensions">
             <summary>
-            Расширение операции.
+            Расширения операции.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationExtension.Add(System.Collections.Generic.ICollection{Makc2023.Backend.Common.Core.Operation.OperationResult},System.Func{Makc2023.Backend.Common.Core.Operation.OperationResult})">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationExtensions.Add(System.Collections.Generic.ICollection{Makc2023.Backend.Common.Core.Operation.OperationResult},System.Func{Makc2023.Backend.Common.Core.Operation.OperationResult})">
             <summary>
             Добавить.
             </summary>
             <param name="operationResults">Результаты операции.</param>
             <param name="functionToGetOperationResult">Функция для получения результата операции.</param>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationExtension.AddWithOutput``1(System.Collections.Generic.ICollection{Makc2023.Backend.Common.Core.Operation.OperationResult},System.Func{Makc2023.Backend.Common.Core.Operation.OperationResultWithOutput{``0}},System.Action{``0})">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationExtensions.AddWithOutput``1(System.Collections.Generic.ICollection{Makc2023.Backend.Common.Core.Operation.OperationResult},System.Func{Makc2023.Backend.Common.Core.Operation.OperationResultWithOutput{``0}},System.Action{``0})">
             <summary>
             Добавить с выходными данными.
             </summary>
@@ -1305,7 +1305,7 @@
             <param name="actionToSetOutput">Действие по установке выходных данных.</param>
             <returns>Признак успешной установки выходных данных.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationExtension.AddAsync(System.Collections.Generic.ICollection{Makc2023.Backend.Common.Core.Operation.OperationResult},System.Func{System.Threading.Tasks.Task{Makc2023.Backend.Common.Core.Operation.OperationResult}})">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationExtensions.AddAsync(System.Collections.Generic.ICollection{Makc2023.Backend.Common.Core.Operation.OperationResult},System.Func{System.Threading.Tasks.Task{Makc2023.Backend.Common.Core.Operation.OperationResult}})">
             <summary>
             Добавить.
             </summary>
@@ -1315,7 +1315,7 @@
             </param>
             <returns>Задача.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationExtension.AddWithOutputAsync``1(System.Collections.Generic.ICollection{Makc2023.Backend.Common.Core.Operation.OperationResult},System.Func{System.Threading.Tasks.Task{Makc2023.Backend.Common.Core.Operation.OperationResultWithOutput{``0}}},System.Action{``0})">
+        <member name="M:Makc2023.Backend.Common.Core.Operation.OperationExtensions.AddWithOutputAsync``1(System.Collections.Generic.ICollection{Makc2023.Backend.Common.Core.Operation.OperationResult},System.Func{System.Threading.Tasks.Task{Makc2023.Backend.Common.Core.Operation.OperationResultWithOutput{``0}}},System.Action{``0})">
             <summary>
             Добавить с выходными данными асинхронно.
             </summary>
@@ -1630,12 +1630,12 @@
         <member name="M:Makc2023.Backend.Common.Core.Repeat.RepeatService.ExecuteAsync(System.Int32,System.Func{System.Threading.Tasks.Task},System.Func{System.Exception,System.Boolean})">
             <inheritdoc/>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtension">
+        <member name="T:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtensions">
             <summary>
-            Расширение сериализации JSON.
+            Расширения сериализации JSON.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtension.DeepCloneViaJson``1(``0)">
+        <member name="M:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtensions.DeepCloneViaJson``1(``0)">
             <summary>
             Глубоко клонировать через JSON.
             </summary>
@@ -1643,7 +1643,7 @@
             <param name="value">Клонируемое значение.</param>
             <returns>Клон.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtension.DeserializeFromJson``1(System.String,System.Text.Json.JsonSerializerOptions)">
+        <member name="M:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtensions.DeserializeFromJson``1(System.String,System.Text.Json.JsonSerializerOptions)">
             <summary>
             Десериализовать из JSON.
             </summary>
@@ -1652,7 +1652,7 @@
             <param name="options">Опции.</param>
             <returns>Значение указанного типа.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtension.SerializeToJson(System.Object,System.Text.Json.JsonSerializerOptions)">
+        <member name="M:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtensions.SerializeToJson(System.Object,System.Text.Json.JsonSerializerOptions)">
             <summary>
             Сериализовать в JSON.
             </summary>
@@ -1660,7 +1660,7 @@
             <param name="options">Опции.</param>
             <returns>Строка в формате JSON.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtension.TryDeserializeFromJson``1(System.String,``0@,System.Text.Json.JsonSerializerOptions,``0)">
+        <member name="M:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtensions.TryDeserializeFromJson``1(System.String,``0@,System.Text.Json.JsonSerializerOptions,``0)">
             <summary>
             Расширение. JSON. Попробовать десериализовать.
             </summary>
@@ -1671,7 +1671,7 @@
             <param name="defaultValue">Значение по умолчанию.</param>
             <returns>Признак успешности десериализации.</returns>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtension.TrySerializeToJson(System.Object,System.String@,System.Text.Json.JsonSerializerOptions)">
+        <member name="M:Makc2023.Backend.Common.Core.Serialization.Json.JsonSerializationExtensions.TrySerializeToJson(System.Object,System.String@,System.Text.Json.JsonSerializerOptions)">
             <summary>
             Попробовать сериализовать в JSON.
             </summary>

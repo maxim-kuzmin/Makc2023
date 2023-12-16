@@ -3,9 +3,9 @@
 namespace Makc2023.Backend.Common.Core.Logging
 {
     /// <summary>
-    /// Расширение ведения журнала.
+    /// Расширения ведения журнала.
     /// </summary>
-    public static class LoggingExtension
+    public static class LoggingExtensions
     {
         #region Public methods
 

@@ -3,9 +3,9 @@
 namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain;
 
 /// <summary>
-/// Расширение типа "Фиктивное главное" сопоставителя клиента.
+/// Расширения типа "Фиктивное главное" сопоставителя клиента.
 /// </summary>
-public static class ClientMapperDummyMainTypeExtension
+public static class ClientMapperDummyMainTypeExtensions
 {
     #region Public methods
 

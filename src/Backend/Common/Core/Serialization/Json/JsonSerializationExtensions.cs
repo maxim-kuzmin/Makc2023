@@ -3,9 +3,9 @@
 namespace Makc2023.Backend.Common.Core.Serialization.Json
 {
     /// <summary>
-    /// Расширение сериализации JSON.
+    /// Расширения сериализации JSON.
     /// </summary>
-    public static class JsonSerializationExtension
+    public static class JsonSerializationExtensions
     {
         #region Public methods
 

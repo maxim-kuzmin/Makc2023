@@ -3,9 +3,9 @@
 namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMainDummyManyToMany;
 
 /// <summary>
-/// Расширение типа "Фиктивное отношение многие ко многим фиктивного главного" сопоставителя клиента.
+/// Расширения типа "Фиктивное отношение многие ко многим фиктивного главного" сопоставителя клиента.
 /// </summary>
-public static class ClientMapperDummyMainDummyManyToManyTypeExtension
+public static class ClientMapperDummyMainDummyManyToManyTypeExtensions
 {
     #region Public methods
 

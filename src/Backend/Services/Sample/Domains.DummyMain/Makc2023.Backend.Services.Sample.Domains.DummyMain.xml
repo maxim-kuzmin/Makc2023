@@ -52,12 +52,12 @@
         <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainEntity.GetId">
             <inheritdoc/>
         </member>
-        <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainExtension">
+        <member name="T:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainExtensions">
             <summary>
-            Расширение домена "Фиктивное главное".
+            Расширения домена "Фиктивное главное".
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainExtension.ApplySorting(System.Linq.IQueryable{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity},Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput)">
+        <member name="M:Makc2023.Backend.Services.Sample.Domains.DummyMain.DummyMainDomainExtensions.ApplySorting(System.Linq.IQueryable{Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyMain.ClientMapperDummyMainTypeEntity},Makc2023.Backend.Services.Sample.Domains.DummyMain.Operations.Item.Get.DummyMainDomainListGetOperationInput)">
             <summary>
             Применить сортировку.
             </summary>

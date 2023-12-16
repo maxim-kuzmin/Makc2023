@@ -3,9 +3,9 @@
 namespace Makc2023.Backend.Common.Core.Extensions;
 
 /// <summary>
-/// Расширение общего типа.
+/// Расширения общего типа.
 /// </summary>
-public static class GenericTypeExtension
+public static class GenericTypeExtensions
 {
     #region Public methods
 

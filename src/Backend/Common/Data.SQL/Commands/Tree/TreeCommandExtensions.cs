@@ -3,9 +3,9 @@
 namespace Makc2023.Backend.Common.Data.SQL.Commands.Tree;
 
 /// <summary>
-/// Расширение команды дерева.
+/// Расширения команды дерева.
 /// </summary>
-public static class TreeCommandExtension
+public static class TreeCommandExtensions
 {
     #region Constants
 

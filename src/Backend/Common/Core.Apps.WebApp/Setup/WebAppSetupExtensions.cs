@@ -5,9 +5,9 @@ using NLog.Web;
 namespace Makc2023.Backend.Common.Core.Apps.WebApp.Setup;
 
 /// <summary>
-/// Расширение ведения журнала в веб-приложении.
+/// Расширения ведения журнала в веб-приложении.
 /// </summary>
-public static class WebAppSetupExtension
+public static class WebAppSetupExtensions
 {
     #region Public methods
 

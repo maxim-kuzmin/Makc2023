@@ -1,11 +1,11 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalPermission;
+namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.UserInternalPermission;
 
 /// <summary>
-/// Расширение типа "Внутреннее разрешение" сопоставителя клиента.
+/// Расширения типа "Внутреннее разрешение пользователя" сопоставителя клиента.
 /// </summary>
-public static class ClientMapperInternalPermissionTypeExtension
+public static class ClientMapperUserInternalPermissionTypeExtensions
 {
     #region Public methods
 
@@ -14,11 +14,11 @@ public static class ClientMapperInternalPermissionTypeExtension
     /// </summary>
     /// <param name="entity">Сущность.</param>
     /// <returns>Сущность сопоставителя клиента.</returns>
-    public static ClientMapperInternalPermissionTypeEntity ToMapperEntity(this InternalPermissionTypeEntity entity)
+    public static ClientMapperUserInternalPermissionTypeEntity ToMapperEntity(this UserInternalPermissionTypeEntity entity)
     {
-        ClientMapperInternalPermissionTypeEntity result = new();
+        ClientMapperUserInternalPermissionTypeEntity result = new();
 
-        new InternalPermissionTypeLoader(result).Load(entity);
+        new UserInternalPermissionTypeLoader(result).Load(entity);
 
         return result;
     }
@@ -28,9 +28,9 @@ public static class ClientMapperInternalPermissionTypeExtension
     /// </summary>
     /// <param name="mapperEntity">Сущность сопоставителя клиента.</param>
     /// <returns>Сущность.</returns>
-    public static InternalPermissionTypeEntity ToEntity(this ClientMapperInternalPermissionTypeEntity mapperEntity)
+    public static UserInternalPermissionTypeEntity ToEntity(this ClientMapperUserInternalPermissionTypeEntity mapperEntity)
     {
-        InternalPermissionTypeLoader loader = new();
+        UserInternalPermissionTypeLoader loader = new();
 
         loader.Load(mapperEntity);
 

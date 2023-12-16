@@ -3,9 +3,9 @@
 namespace Makc2023.Backend.Services.Sample.Domains.DummyMain;
 
 /// <summary>
-/// Расширение домена "Фиктивное главное".
+/// Расширения домена "Фиктивное главное".
 /// </summary>
-public static class DummyMainDomainExtension
+public static class DummyMainDomainExtensions
 {
     #region Public methods
 

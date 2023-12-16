@@ -1,11 +1,11 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyManyToOne;
+namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalPermission;
 
 /// <summary>
-/// Расширение типа "Фиктивное главное" сопоставителя клиента.
+/// Расширения типа "Внутреннее разрешение" сопоставителя клиента.
 /// </summary>
-public static class ClientMapperDummyManyToOneTypeExtension
+public static class ClientMapperInternalPermissionTypeExtensions
 {
     #region Public methods
 
@@ -14,11 +14,11 @@ public static class ClientMapperDummyManyToOneTypeExtension
     /// </summary>
     /// <param name="entity">Сущность.</param>
     /// <returns>Сущность сопоставителя клиента.</returns>
-    public static ClientMapperDummyManyToOneTypeEntity ToMapperEntity(this DummyManyToOneTypeEntity entity)
+    public static ClientMapperInternalPermissionTypeEntity ToMapperEntity(this InternalPermissionTypeEntity entity)
     {
-        ClientMapperDummyManyToOneTypeEntity result = new();
+        ClientMapperInternalPermissionTypeEntity result = new();
 
-        new DummyManyToOneTypeLoader(result).Load(entity);
+        new InternalPermissionTypeLoader(result).Load(entity);
 
         return result;
     }
@@ -28,9 +28,9 @@ public static class ClientMapperDummyManyToOneTypeExtension
     /// </summary>
     /// <param name="mapperEntity">Сущность сопоставителя клиента.</param>
     /// <returns>Сущность.</returns>
-    public static DummyManyToOneTypeEntity ToEntity(this ClientMapperDummyManyToOneTypeEntity mapperEntity)
+    public static InternalPermissionTypeEntity ToEntity(this ClientMapperInternalPermissionTypeEntity mapperEntity)
     {
-        DummyManyToOneTypeLoader loader = new();
+        InternalPermissionTypeLoader loader = new();
 
         loader.Load(mapperEntity);
 

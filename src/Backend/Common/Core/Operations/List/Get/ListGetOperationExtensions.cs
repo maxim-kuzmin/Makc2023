@@ -3,9 +3,9 @@
 namespace Makc2023.Backend.Common.Core.Operations.List.Get;
 
 /// <summary>
-/// Расширение операции получения списка.
+/// Расширения операции получения списка.
 /// </summary>
-public static class ListGetOperationExtension
+public static class ListGetOperationExtensions
 {
     #region Public methods
 

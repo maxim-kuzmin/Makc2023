@@ -99,12 +99,12 @@
             <param name="operationCode">Код операции.</param>
             <param name="data">Данные.</param>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Apps.WebApp.Setup.WebAppSetupExtension">
+        <member name="T:Makc2023.Backend.Common.Core.Apps.WebApp.Setup.WebAppSetupExtensions">
             <summary>
-            Расширение ведения журнала в веб-приложении.
+            Расширения ведения журнала в веб-приложении.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Apps.WebApp.Setup.WebAppSetupExtension.Configure(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
+        <member name="M:Makc2023.Backend.Common.Core.Apps.WebApp.Setup.WebAppSetupExtensions.Configure(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
             <summary>
             Настроить.
             </summary>

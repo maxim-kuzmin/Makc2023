@@ -3,9 +3,9 @@
 namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.InternalDomain;
 
 /// <summary>
-/// Расширение сущности "Внутренний домен" сопоставителя клиента.
+/// Расширения сущности "Внутренний домен" сопоставителя клиента.
 /// </summary>
-public static class ClientMapperInternalDomainTypeExtension
+public static class ClientMapperInternalDomainTypeExtensions
 {
     #region Public methods
 

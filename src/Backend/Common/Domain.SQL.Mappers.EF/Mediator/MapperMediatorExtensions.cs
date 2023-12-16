@@ -3,9 +3,9 @@
 namespace Makc2023.Backend.Common.Domain.SQL.Mappers.EF.Mediator;
 
 /// <summary>
-/// Расширение посредника.
+/// Расширения посредника.
 /// </summary>
-static class MapperMediatorExtension
+static class MapperMediatorExtensions
 {
     #region Public methods
 

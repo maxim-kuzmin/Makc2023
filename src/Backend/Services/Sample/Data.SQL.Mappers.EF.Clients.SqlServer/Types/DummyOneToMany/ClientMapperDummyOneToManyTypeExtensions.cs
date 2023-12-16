@@ -1,11 +1,11 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.UserInternalPermission;
+namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyOneToMany;
 
 /// <summary>
-/// Расширение типа "Внутреннее разрешение пользователя" сопоставителя клиента.
+/// Расширения сущности "Фиктивное отношение один ко многим" сопоставителя клиента.
 /// </summary>
-public static class ClientMapperUserInternalPermissionTypeExtension
+public static class ClientMapperDummyOneToManyTypeExtensions
 {
     #region Public methods
 
@@ -14,11 +14,11 @@ public static class ClientMapperUserInternalPermissionTypeExtension
     /// </summary>
     /// <param name="entity">Сущность.</param>
     /// <returns>Сущность сопоставителя клиента.</returns>
-    public static ClientMapperUserInternalPermissionTypeEntity ToMapperEntity(this UserInternalPermissionTypeEntity entity)
+    public static ClientMapperDummyOneToManyTypeEntity ToMapperEntity(this DummyOneToManyTypeEntity entity)
     {
-        ClientMapperUserInternalPermissionTypeEntity result = new();
+        ClientMapperDummyOneToManyTypeEntity result = new();
 
-        new UserInternalPermissionTypeLoader(result).Load(entity);
+        new DummyOneToManyTypeLoader(result).Load(entity);
 
         return result;
     }
@@ -28,9 +28,9 @@ public static class ClientMapperUserInternalPermissionTypeExtension
     /// </summary>
     /// <param name="mapperEntity">Сущность сопоставителя клиента.</param>
     /// <returns>Сущность.</returns>
-    public static UserInternalPermissionTypeEntity ToEntity(this ClientMapperUserInternalPermissionTypeEntity mapperEntity)
+    public static DummyOneToManyTypeEntity ToEntity(this ClientMapperDummyOneToManyTypeEntity mapperEntity)
     {
-        UserInternalPermissionTypeLoader loader = new();
+        DummyOneToManyTypeLoader loader = new();
 
         loader.Load(mapperEntity);
 

@@ -45,12 +45,12 @@
             Возникает, если транзакция является внешней.
             </exception>
         </member>
-        <member name="T:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.MapperDbExtension">
+        <member name="T:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.MapperDbExtensions">
             <summary>
-            Расширение базы данных сопоставителя.
+            Расширения базы данных сопоставителя.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.MapperDbExtension.BuildLogging(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.LogLevel)">
+        <member name="M:Makc2023.Backend.Common.Data.SQL.Mappers.EF.Db.MapperDbExtensions.BuildLogging(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,Microsoft.Extensions.Logging.ILogger,Microsoft.Extensions.Logging.LogLevel)">
             <summary>
             Построить логирование.
             </summary>

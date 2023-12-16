@@ -4,12 +4,12 @@
         <name>Makc2023.Backend.Common.Domain.SQL.Mappers.EF</name>
     </assembly>
     <members>
-        <member name="T:Makc2023.Backend.Common.Domain.SQL.Mappers.EF.Db.MapperDbExtension">
+        <member name="T:Makc2023.Backend.Common.Domain.SQL.Mappers.EF.Db.MapperDbExtensions">
             <summary>
-            Расширение базы данных сопоставителя.
+            Расширения базы данных сопоставителя.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Domain.SQL.Mappers.EF.Db.MapperDbExtension.CreateUnitOfWork(Microsoft.EntityFrameworkCore.DbContext,MediatR.IMediator)">
+        <member name="M:Makc2023.Backend.Common.Domain.SQL.Mappers.EF.Db.MapperDbExtensions.CreateUnitOfWork(Microsoft.EntityFrameworkCore.DbContext,MediatR.IMediator)">
             <summary>
             Создать единицу работы.
             </summary>
@@ -51,12 +51,12 @@
         <member name="M:Makc2023.Backend.Common.Domain.SQL.Mappers.EF.Mediator.Behaviors.MapperMediatorTransactionBehavior`2.Handle(`0,MediatR.RequestHandlerDelegate{`1},System.Threading.CancellationToken)">
             <inheritdoc/>
         </member>
-        <member name="T:Makc2023.Backend.Common.Domain.SQL.Mappers.EF.Mediator.MapperMediatorExtension">
+        <member name="T:Makc2023.Backend.Common.Domain.SQL.Mappers.EF.Mediator.MapperMediatorExtensions">
             <summary>
-            Расширение посредника.
+            Расширения посредника.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Domain.SQL.Mappers.EF.Mediator.MapperMediatorExtension.DispatchEventsAsync(MediatR.IMediator,Microsoft.EntityFrameworkCore.DbContext)">
+        <member name="M:Makc2023.Backend.Common.Domain.SQL.Mappers.EF.Mediator.MapperMediatorExtensions.DispatchEventsAsync(MediatR.IMediator,Microsoft.EntityFrameworkCore.DbContext)">
             <summary>
             Отправить события асинхронно.
             </summary>

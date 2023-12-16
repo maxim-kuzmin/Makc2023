@@ -3,9 +3,9 @@
 namespace Makc2023.Backend.Common.Domain.SQL.Mappers.EF.Db;
 
 /// <summary>
-/// Расширение базы данных сопоставителя.
+/// Расширения базы данных сопоставителя.
 /// </summary>
-public static class MapperDbExtension
+public static class MapperDbExtensions
 {
     /// <summary>
     /// Создать единицу работы.

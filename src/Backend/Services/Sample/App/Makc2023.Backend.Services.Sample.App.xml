@@ -24,19 +24,19 @@
         <member name="M:Makc2023.Backend.Services.Sample.App.Setup.SetupAppModule.GetImports">
             <inheritdoc/>
         </member>
-        <member name="T:Makc2023.Backend.Services.Sample.App.Setup.SetupExtension">
+        <member name="T:Makc2023.Backend.Services.Sample.App.Setup.SetupExtensions">
             <summary>
-            Расширение настройки.
+            Расширения настройки.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.App.Setup.SetupExtension.AddAppModules(Microsoft.AspNetCore.Builder.WebApplicationBuilder,Makc2023.Backend.Common.Core.App.IAppEnvironment)">
+        <member name="M:Makc2023.Backend.Services.Sample.App.Setup.SetupExtensions.AddAppModules(Microsoft.AspNetCore.Builder.WebApplicationBuilder,Makc2023.Backend.Common.Core.App.IAppEnvironment)">
             <summary>
             Добавить модули приложения.
             </summary>
             <param name="appBuilder">Построитель приложения.</param>
             <param name="appEnvironment">Окружение приложения.</param>
         </member>
-        <member name="M:Makc2023.Backend.Services.Sample.App.Setup.SetupExtension.UseAppModules(Microsoft.AspNetCore.Builder.WebApplication,Makc2023.Backend.Common.Core.App.IAppEnvironment)">
+        <member name="M:Makc2023.Backend.Services.Sample.App.Setup.SetupExtensions.UseAppModules(Microsoft.AspNetCore.Builder.WebApplication,Makc2023.Backend.Common.Core.App.IAppEnvironment)">
             <summary>
             Использовать модули приложения.
             </summary>

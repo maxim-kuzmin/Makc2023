@@ -3,9 +3,9 @@
 namespace Makc2023.Backend.Services.Sample.App.Setup;
 
 /// <summary>
-/// Расширение настройки.
+/// Расширения настройки.
 /// </summary>
-public static class SetupExtension
+public static class SetupExtensions
 {
     #region Public methods
 

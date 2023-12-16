@@ -3,9 +3,9 @@
 namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.User;
 
 /// <summary>
-/// Расширение типа "Пользователь" сопоставителя клиента.
+/// Расширения типа "Пользователь" сопоставителя клиента.
 /// </summary>
-public static class ClientMapperUserTypeExtension
+public static class ClientMapperUserTypeExtensions
 {
     #region Public methods
 

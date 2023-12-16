@@ -14,12 +14,12 @@
             Конструктор.
             </summary>
         </member>
-        <member name="T:Makc2023.Backend.Common.Core.Apps.ConsoleApp.Setup.ConsoleAppLoggingExtension">
+        <member name="T:Makc2023.Backend.Common.Core.Apps.ConsoleApp.Setup.ConsoleAppLoggingExtensions">
             <summary>
-            Расширение ведения журнала в консольном приложении.
+            Расширения ведения журнала в консольном приложении.
             </summary>
         </member>
-        <member name="M:Makc2023.Backend.Common.Core.Apps.ConsoleApp.Setup.ConsoleAppLoggingExtension.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+        <member name="M:Makc2023.Backend.Common.Core.Apps.ConsoleApp.Setup.ConsoleAppLoggingExtensions.Configure(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
             Настроить.
             </summary>

@@ -5,9 +5,9 @@ using System.IO;
 namespace Makc2023.Backend.Common.Core.Converting;
 
 /// <summary>
-/// Расширение преобразования.
+/// Расширения преобразования.
 /// </summary>
-public static partial class ConvertingExtension
+public static partial class ConvertingExtensions
 {
     #region Fields
 

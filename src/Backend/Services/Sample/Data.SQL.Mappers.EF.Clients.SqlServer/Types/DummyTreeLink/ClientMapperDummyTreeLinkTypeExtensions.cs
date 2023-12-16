@@ -1,11 +1,11 @@
 ﻿// Copyright (c) 2023 Maxim Kuzmin. All rights reserved. Licensed under the MIT License.
 
-namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTree;
+namespace Makc2023.Backend.Services.Sample.Data.SQL.Mappers.EF.Clients.SqlServer.Types.DummyTreeLink;
 
 /// <summary>
-/// Расширение сущности "Фиктивное дерево" сопоставителя клиента.
+/// Расширения сущности "Связь фиктивного дерева" сопоставителя клиента.
 /// </summary>
-public static class ClientMapperDummyTreeTypeExtension
+public static class ClientMapperDummyTreeLinkTypeExtensions
 {
     #region Public methods
 
@@ -14,11 +14,11 @@ public static class ClientMapperDummyTreeTypeExtension
     /// </summary>
     /// <param name="entity">Сущность.</param>
     /// <returns>Сущность сопоставителя клиента.</returns>
-    public static ClientMapperDummyTreeTypeEntity ToMapperEntity(this DummyTreeTypeEntity entity)
+    public static ClientMapperDummyTreeLinkTypeEntity ToMapperEntity(this DummyTreeLinkTypeEntity entity)
     {
-        ClientMapperDummyTreeTypeEntity result = new();
+        ClientMapperDummyTreeLinkTypeEntity result = new();
 
-        new DummyTreeTypeLoader(result).Load(entity);
+        new DummyTreeLinkTypeLoader(result).Load(entity);
 
         return result;
     }
@@ -28,9 +28,9 @@ public static class ClientMapperDummyTreeTypeExtension
     /// </summary>
     /// <param name="mapperEntity">Сущность сопоставителя клиента.</param>
     /// <returns>Сущность.</returns>
-    public static DummyTreeTypeEntity ToEntity(this ClientMapperDummyTreeTypeEntity mapperEntity)
+    public static DummyTreeLinkTypeEntity ToEntity(this ClientMapperDummyTreeLinkTypeEntity mapperEntity)
     {
-        DummyTreeTypeLoader loader = new();
+        DummyTreeLinkTypeLoader loader = new();
 
         loader.Load(mapperEntity);
 

@@ -3,9 +3,9 @@
 namespace Makc2023.Backend.Common.Core.App;
 
 /// <summary>
-/// Расширение приложения.
+/// Расширения приложения.
 /// </summary>
-public static class AppExtension
+public static class AppExtensions
 {
     #region Public methods
 
